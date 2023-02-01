@@ -1,0 +1,35 @@
+# TODO: Update with exact module version
+numpy
+torch
+loguru
+tqdm
+torchvision
+tabulate
+
+# verified versions
+# pycocotools corresponds to https://github.com/ppwwyyxx/cocoapi
+# pycocotools
+
+# paddleocr
+paddleocr
+paddlepaddle
+
+thop
+
+opencv-python
+Pillow
+pypiwin32
+pywin32
+pytweening
+matplotlib
+keyboard
+scipy
+py7zr
+d3dshot
+
+PyAutoGUI
+PyQt5
+pywebio
+pydirectinput
+
+# pycocotools NO PYCOCOTOOLS WHEN AUTOINSTALL!

@@ -1,0 +1,123 @@
+[
+  {
+    "content": "宝箱",
+    "hiddenFlag": 0,
+    "iconTag": "icon_宝箱",
+    "isFinal": true,
+    "name": "宝箱品质",
+    "parentId": 9,
+    "sortIndex": 14,
+    "typeId": 10,
+    "version": 1
+  },
+  {
+    "content": "宝箱",
+    "hiddenFlag": 0,
+    "iconTag": "icon_宝箱",
+    "isFinal": true,
+    "name": "获取方式",
+    "parentId": 9,
+    "sortIndex": 13,
+    "typeId": 11,
+    "version": 1
+  },
+  {
+    "content": "宝箱",
+    "hiddenFlag": 0,
+    "iconTag": "",
+    "isFinal": false,
+    "name": "宝箱",
+    "parentId": -1,
+    "sortIndex": 12,
+    "typeId": 9,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_见闻",
+    "isFinal": true,
+    "name": "见闻",
+    "parentId": -1,
+    "sortIndex": 11,
+    "typeId": 2,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_特产",
+    "isFinal": true,
+    "name": "特产",
+    "parentId": -1,
+    "sortIndex": 9,
+    "typeId": 3,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_矿物",
+    "isFinal": true,
+    "name": "矿物",
+    "parentId": -1,
+    "sortIndex": 8,
+    "typeId": 4,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_怪物",
+    "isFinal": true,
+    "name": "怪物",
+    "parentId": -1,
+    "sortIndex": 7,
+    "typeId": 5,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_食材",
+    "isFinal": true,
+    "name": "食材",
+    "parentId": -1,
+    "sortIndex": 6,
+    "typeId": 6,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_炼金",
+    "isFinal": true,
+    "name": "炼金",
+    "parentId": -1,
+    "sortIndex": 5,
+    "typeId": 7,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_家园",
+    "isFinal": true,
+    "name": "家园",
+    "parentId": -1,
+    "sortIndex": 4,
+    "typeId": 8,
+    "version": 1
+  },
+  {
+    "content": "{{item.name}}",
+    "hiddenFlag": 0,
+    "iconTag": "icon_活动",
+    "isFinal": true,
+    "name": "活动",
+    "parentId": -1,
+    "sortIndex": 3,
+    "typeId": 1,
+    "version": 1
+  }
+]

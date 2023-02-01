@@ -1,0 +1,12 @@
+{
+  "ChromelessWindow": false,
+  "DEBUG": false,
+  "corr_degree": 0.95,
+  "device_paddle": "cpu",
+  "device_torch": "auto",
+  "version": "v0.3.0",
+  "check_import": false,
+  "lang":"$locale$",
+  "cloud_genshin": false,
+  "capture_mode":"fast"
+}
