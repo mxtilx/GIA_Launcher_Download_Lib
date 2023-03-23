@@ -14,7 +14,11 @@
 1. 输入以下命令以完成源码和依赖的下载:
 
    ```shell
-   git clone https://github.com/infstellar/genshin_impact_assistant.git&cd genshin_impact_assistant&python setup.py install
+   git clone https://github.com/infstellar/genshin_impact_assistant.git&cd genshin_impact_assistant&python setup.py install&git submodule init&git submodule update
+   ```
+   Windows Powershell
+   ```shell
+   git clone https://github.com/infstellar/genshin_impact_assistant.git;cd genshin_impact_assistant;python setup.py install;git submodule init;git submodule update
    ```
 
 2. 输入以下命令运行程序:
@@ -23,15 +27,15 @@
    python genshin_assistant.py
    ```
 
-## 更新
+~~（推荐使用VsCode，这样你的运行和调试就会有几个快捷运行方式，肥肠好用！还有变量着色哦(doge)）~~
 
-提供两种方法更新:
+## 更新
 
 - 使用setup.py更新:
    ```shell
-   python setup.py update
+   python setup.py update&git submodule update
    ```
-- 使用git pull更新:
-   ```shell
-   git pull
+   Windows Powershell
+    ```shell
+   python setup.py update;git submodule init;git submodule update
    ```

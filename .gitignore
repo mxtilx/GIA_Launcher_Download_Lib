@@ -178,8 +178,6 @@ installer_config_cn.json
 installer_config.json
 .idea/.gitignore
 /config/settings/auto_domain.json
-.vscode/launch.json
-.vscode/settings.json
 config/settings/auto_collector.json
 source/cvAutoTrack_7.3.3/CVAUTOTRACK.dll
 config/timer/*.txt
@@ -196,9 +194,30 @@ translation/locale/zh_CN/LC_MESSAGES/zh_CN.pot
 changelog_option.js
 CHANGELOG.md
 node_modules/*
-assets/inference/zh_CN/*
-assets/inference/en_US/*
+assets/inference/*
 .vscode/*.sql
 source/git_downloader.py
 cvAutoTrack_Cache.xml
 source/test239.py
+source/test240.py
+out/*
+assets/dm/*
+config/settings/damo.json
+config/settings/dm.json
+
+
+config/collection_path/*
+!config/collection_path/.gitkeep
+
+# Mission groups
+config/mission_groups/*.json
+!config/mission_groups/AutoCollectorMission.json
+!config/mission_groups/SakuraBloomMissionGroup.json
+!config/mission_groups/Default.json
+
+# test file
+source/test/test242.py
+source/test/test251.py
+source/test/test600.py
+test1.py
+testt.py

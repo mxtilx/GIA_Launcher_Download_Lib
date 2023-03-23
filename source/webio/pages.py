@@ -1,6 +1,6 @@
 from source.util import *
 from pywebio import *
-from webio.util import *
+from source.webio.util import *
 
 import hashlib
 import json
@@ -12,8 +12,10 @@ import time
 from source import listening, webio
 from source.webio import manager
 from source.webio.page_manager import Page
-import flow_state
-import collector_lib
+from common import flow_state
+from source.funclib import collector_lib
+from source.common import timer_module
+
 
 
 # from source.webio.log_handler import webio_poster
@@ -23,8 +25,11 @@ class MainPage(Page):
     def __init__(self):
         super().__init__()
         self.log_list = []
+        self.log_history = []
         self.log_list_lock = threading.Lock()
         self.ui_statement = -1
+        self.refresh_flow_info_timer = timer_module.Timer()
+        self.ui_mission_select = ""
 
     # todo:多语言支持
 
@@ -41,47 +46,47 @@ class MainPage(Page):
             try:
                 pin.pin['isSessionExist']
             except SessionNotFoundException:
-                logger.info(_("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
+                logger.info(t2t("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
                 return
             except SessionClosedException:
-                logger.info(_("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
+                logger.info(t2t("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
                 return
             if pin.pin['FlowMode'] != listening.current_flow:  # 比较变更是否被应用
                 listening.current_flow = pin.pin['FlowMode']  # 应用变更
                 self.log_list_lock.acquire()
-                output.put_text(_("正在导入模块, 可能需要一些时间。"), scope='LogArea').style(
+                output.put_text(t2t("正在导入模块, 可能需要一些时间。"), scope='LogArea').style(
                     f'color: black; font_size: 20px')
-                output.put_text(_("在导入完成前，请不要切换页面。"), scope='LogArea').style(
+                output.put_text(t2t("在导入完成前，请不要切换页面。"), scope='LogArea').style(
                     f'color: black; font_size: 20px')
                 self.log_list_lock.release()
                 listening.call_you_import_module()
+            if pin.pin["MissionSelect"] != self.ui_mission_select:
+                self.ui_mission_select = pin.pin["MissionSelect"]
+                output.clear_scope("SCOPEMissionIntroduction")
+                output.put_text(self._get_mission_groups_dict()["introduction"][GLOBAL_LANG],scope="SCOPEMissionIntroduction")
+            
             self.log_list_lock.acquire()
             for text, color in self.log_list:
                 if text == "$$end$$":
                     output.put_text("", scope='LogArea')
                 else:
                     output.put_text(text, scope='LogArea', inline=True).style(f'color: {color}; font_size: 20px')
+            
             self.log_list.clear()
             self.log_list_lock.release()
 
-            if flow_state.current_statement != self.ui_statement:
-                self.ui_statement = flow_state.current_statement
-                output.clear(scope="StateArea")
-                f = False
-                for i in self.ui_statement:
-                    t = self.ui_statement[i]
-                    if t == 0:
-                        continue
-                    else:
-                        output.put_text(flow_state.get_statement_code_name(self.ui_statement[i]), scope="StateArea")
-                        f = True
-                if not f:
-                    output.put_text(flow_state.get_statement_code_name(0), scope="StateArea")
+            if self.refresh_flow_info_timer.get_diff_time() >= 0.2:
+                self.refresh_flow_info_timer.reset()
+                if listening.TASK_MANAGER.get_task_statement() != self.ui_statement:
+                    self.ui_statement = listening.TASK_MANAGER.get_task_statement()
+                    output.clear(scope="StateArea")
+                    # if isinstance(self.ui_statement, list):
+                    #     for i in self.ui_statement:
+                    #         output.put_text(f'{i["name"]}: {i["statement"]}: {i["rfc"]}', scope="StateArea")
+                    # elif isinstance(self.ui_statement, str):
+                    output.put_text(f'{self.ui_statement}', scope="StateArea")
 
             time.sleep(0.1)
-
-    
-        
     
     def _load(self):
         # 标题
@@ -92,33 +97,58 @@ class MainPage(Page):
             
             output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope),
             # 获得链接按钮
-            output.put_button(label=_("Get IP address"), onclick=self.on_click_ip_address, scope=self.main_scope)
+            output.put_button(label=t2t("Get IP address"), onclick=self.on_click_ip_address, scope=self.main_scope)
 
         ], scope=self.main_scope)
 
         output.put_row([  # 横列
             output.put_column([  # 左竖列
-                output.put_markdown(_('## Options')),  # 左竖列标题
+                output.put_markdown('## '+t2t("Task List")),
+                output.put_markdown(t2t("Can only be activated from the button")),
 
+                pin.put_checkbox(name="task_list", options=[
+                    {
+                        "label":t2t("Domain Task"),
+                        "value":"DomainTask"
+                    },
+                    {
+                        "label":t2t("Mission"),
+                        "value":"MissionTask"
+                    }
+                ]),
+
+                output.put_row([output.put_text(t2t('启动/停止Task')), None, output.put_scope('Button_StartStop')],size='40% 10px 60%'),
+                
+                output.put_markdown(t2t('## Statement')),
+
+                output.put_row([output.put_text(t2t('任务状态')), None, output.put_scope('StateArea')],size='40% 10px 60%'),
+
+                output.put_markdown(t2t('## Mission')),  # 左竖列标题
+
+                #Mission select
+                output.put_row([  
+                    output.put_text(t2t('Mission Group')),
+                    output.put_column([
+                        pin.put_select("MissionSelect",self._get_mission_groups_config()),
+                        output.put_scope("SCOPEMissionIntroduction")
+                        ])
+                ]),
+                
+                output.put_markdown(t2t('## Function')),  # 左竖列标题
+                output.put_markdown(t2t("Can only be activated from the hotkey \'[\'")),
                 output.put_row([  # FlowMode
-                    output.put_text(_('FlowMode')),
+                    output.put_text(t2t('FlowMode')),
                     pin.put_select(('FlowMode'), [
-                        {'label': _('Idle'), 'value': listening.FLOW_IDLE},
-                        {'label': _('AutoCombat'), 'value': listening.FLOW_COMBAT},
-                        {'label': _('AutoDomain'), 'value': listening.FLOW_DOMAIN},
-                        {'label': _('AutoCollector'), 'value': listening.FLOW_COLLECTOR}
-                    ])]),
-                # Button_StartStop
-                output.put_row([output.put_text(_('启动/停止')), output.put_scope('Button_StartStop')]),
-
-                output.put_markdown(_('## Statement')),
-
-                output.put_row([output.put_text(_('当前状态')), output.put_scope('StateArea')])
-
+                        {'label': t2t('Idle'), 'value': listening.FLOW_IDLE},
+                        {'label': t2t('AutoCombat'), 'value': listening.FLOW_COMBAT},
+                        # {'label': t2t('AutoDomain'), 'value': listening.FLOW_DOMAIN},
+                        {'label': t2t('AutoCollector'), 'value': listening.FLOW_COLLECTOR}
+                    ])])
+                
             ]), None,
             output.put_scope('Log')
 
-        ], scope=self.main_scope, size='30% 10px 70%')
+        ], scope=self.main_scope, size='40% 10px 60%')
 
         # PickUpButton
         output.put_button(label=str(listening.FEAT_PICKUP), onclick=self.on_click_pickup, scope='Button_PickUp')
@@ -127,26 +157,40 @@ class MainPage(Page):
                           scope='Button_StartStop')
 
         # Log
-        output.put_markdown(_('## Log'), scope='Log')
+        output.put_markdown(t2t('## Log'), scope='Log')
         output.put_scrollable(output.put_scope('LogArea'), height=600, keep_bottom=True, scope='Log')
         '''self.main_pin_change_thread = threading.Thread(target=self._main_pin_change_thread, daemon=False)
         self.main_pin_change_thread.start()'''
 
+    def _get_mission_groups_config(self):
+        jsons = load_json_from_folder(f"{CONFIG_PATH}\\mission_groups")
+        r = [i["label"] for i in jsons]
+        return r
+
+    def _get_mission_groups_dict(self):
+        return load_json(str(pin.pin["MissionSelect"]),default_path=f"{CONFIG_PATH}\\mission_groups")
+    
     def on_click_pickup(self):
         output.clear('Button_PickUp')
         listening.FEAT_PICKUP = not listening.FEAT_PICKUP
         output.put_button(label=str(listening.FEAT_PICKUP), onclick=self.on_click_pickup, scope='Button_PickUp')
-
+    
     def on_click_startstop(self):
         output.clear('Button_StartStop')
-        listening.startstop()
-        output.put_button(label=str(listening.startstop_flag), onclick=self.on_click_startstop,
+        # listening.MISSION_MANAGER.set_mission_list(list(pin.pin["MissionSelect"]))
+        listening.TASK_MANAGER.set_tasklist(pin.pin["task_list"])
+        listening.TASK_MANAGER.start_stop_tasklist()
+        cj = load_json()
+        cj["mission_group"] = pin.pin["MissionSelect"]
+        save_json(cj)
+        time.sleep(0.2)
+        output.put_button(label=str(listening.TASK_MANAGER.start_tasklist_flag), onclick=self.on_click_startstop,
                           scope='Button_StartStop')
 
     def on_click_ip_address(self):
         LAN_ip = f"{socket.gethostbyname(socket.gethostname())}{session.info.server_host[session.info.server_host.index(':'):]}"
-        WAN_ip = _("Not Enabled")
-        output_text = _('LAN IP') + " : " + LAN_ip + '\n' + _("WAN IP") + ' : ' + WAN_ip
+        WAN_ip = t2t("Not Enabled")
+        output_text = t2t('LAN IP') + " : " + LAN_ip + '\n' + t2t("WAN IP") + ' : ' + WAN_ip
         output.popup(f'ip address', output_text, size=output.PopupSize.SMALL)
 
     def logout(self, text: str, color='black'):
@@ -160,7 +204,7 @@ class MainPage(Page):
 
 
 class ConfigPage(Page):
-    def __init__(self):
+    def __init__(self, config_file_name):
         super().__init__()
 
         # self.main_scope = "SettingPage"
@@ -168,6 +212,7 @@ class ConfigPage(Page):
         self.exit_popup = None
         self.last_file = None
         self.file_name = ''
+        self.config_file_name = config_file_name
 
         self.config_files = []
         self.config_files_name = []
@@ -188,13 +233,13 @@ class ConfigPage(Page):
         self.last_file = None
 
         # 标题
-        output.put_markdown(_('# Config'), scope=self.main_scope)
+        output.put_markdown(t2t('# Config'), scope=self.main_scope)
 
         # 页面切换按钮
         output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
 
         # 配置页
-        output.put_markdown(_('## config:'), scope=self.main_scope)
+        output.put_markdown(t2t('## config:'), scope=self.main_scope)
 
         output.put_scope("select_scope", scope=self.main_scope)
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope")
@@ -208,22 +253,21 @@ class ConfigPage(Page):
 
     def _config_file2lableAfile(self, l1):
         replace_dict = {
-            "auto_aim.json": _("auto_aim.json"),
-            "auto_collector.json": _("auto_collector.json"),
-            "auto_combat.json": _("auto_combat.json"),
-            "auto_domain.json": _("auto_domain.json"),
-            "auto_pickup.json": _("auto_pickup.json"),
-            "auto_pickup_default_blacklist.json": _("auto_pickup_default_blacklist.json"),
-            "config.json": _("config.json"),
-            "keymap.json": _("keymap.json"),
-            "character.json": _("character.json"),
-            "character_dist.json": _("character_dist.json"),
-            "team.json": _("team.json"),
-            "team_example_2.json": _("team_example_2.json"),
-            "collected.json": _("collected.json"),
-            "collection_blacklist.json": _("collection_blacklist.json"),
-            "collection_log.json": _("collection_log.json"),
-            "auto_collector.json": _("auto_collector.json")
+            "auto_aim.json": t2t("auto_aim.json"),
+            "auto_collector.json": t2t("auto_collector.json"),
+            "auto_combat.json": t2t("auto_combat.json"),
+            "auto_domain.json": t2t("auto_domain.json"),
+            "auto_pickup.json": t2t("auto_pickup.json"),
+            "config.json": t2t("config.json"),
+            "keymap.json": t2t("keymap.json"),
+            "character.json": t2t("character.json"),
+            "character_dist.json": t2t("character_dist.json"),
+            "team.json": t2t("team.json"),
+            "team_example_2.json": t2t("team_example_2.json"),
+            "collected.json": t2t("collected.json"),
+            "collection_blacklist.json": t2t("collection_blacklist.json"),
+            "collection_log.json": t2t("collection_log.json"),
+            "auto_collector.json": t2t("auto_collector.json")
         }
         
         for i in range(len(l1)):
@@ -247,7 +291,7 @@ class ConfigPage(Page):
             try:
                 pin.pin['isSessionExist']
             except SessionNotFoundException:
-                logger.info(_("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
+                logger.info(t2t("未找到会话，可能由于窗口关闭。请刷新页面重试。"))
                 return
                 
             if pin.pin['file'] != self.last_file:  # 当下拉框被更改时
@@ -277,13 +321,13 @@ class ConfigPage(Page):
 
         # with open(os.path.join(root_path, "config", "settings", "config.json"), 'r', encoding='utf8') as f:
         #     lang = json.load(f)["lang"]
-        doc_name = f'{name}.{global_lang}.jsondoc'
+        doc_name = f'config\\json_doc\\{self.config_file_name}.{GLOBAL_LANG}.jsondoc'
 
         if os.path.exists(doc_name):
             with open(doc_name, 'r', encoding='utf8') as f:
                 doc = json.load(f)
-        elif os.path.exists(f'{name}.en_US.jsondoc'):
-            with open(f'{name}.en_US.jsondoc', 'r', encoding='utf8') as f:
+        elif os.path.exists(f'{doc_name}.en_US.jsondoc'):
+            with open(f'{doc_name}.en_US.jsondoc', 'r', encoding='utf8') as f:
                 doc = json.load(f)
         else:
             doc = {}
@@ -299,7 +343,7 @@ class ConfigPage(Page):
 
         json.dump(self.get_json(j), open(self.file_name, 'w', encoding='utf8'), ensure_ascii=False, indent=4)
         # output.put_text('saved!', scope='now')
-        output.toast(_('saved!'))
+        output.toast(t2t('saved!'))
 
     # 
     def get_json(self, j: dict, add_name=''):
@@ -341,8 +385,8 @@ class ConfigPage(Page):
             self.exit_popup = True
             if not is_json_equal(json.dumps(self.get_json(j)), json.dumps(j)):
                 self.exit_popup = False
-                output.popup(_('Do you need to save changes?'), [
-                    output.put_buttons([(_('No'), 'No'), (_('Yes'), 'Yes')], onclick=self.popup_button)
+                output.popup(t2t('Do you need to save changes?'), [
+                    output.put_buttons([(t2t('No'), 'No'), (t2t('Yes'), 'Yes')], onclick=self.popup_button)
                 ])
             while not self.exit_popup:
                 time.sleep(0.1)
@@ -373,7 +417,7 @@ class ConfigPage(Page):
             doc_special = doc_special.split('#')
             if doc_special[0] == "$FILE_IN_FOLDER$":
                 
-                json_dict = load_jsons_from_folder(os.path.join(root_path, doc_special[1]), black_file=["character","character_dist",""])
+                json_dict = load_json_from_folder(os.path.join(ROOT_PATH, doc_special[1]), black_file=["character","character_dist",""])
                 sl = []
                 for i in json_dict:
                     sl.append({"label": i["label"], "value": i["label"]})
@@ -458,6 +502,7 @@ class ConfigPage(Page):
             doc_now_data = {}
             doc_items = None
             doc_special = None
+            doc_annotation = None
             if k in doc:
                 # 判断doc的类型
                 if type(doc[k]) == dict:
@@ -469,6 +514,8 @@ class ConfigPage(Page):
                         doc_items = doc[k]['select_items']
                     if 'special_index' in doc[k]:
                         doc_special = doc[k]['special_index']
+                    if "annotation" in doc[k]:
+                        doc_annotation = doc[k]['annotation']
                 if type(doc[k]) == str:
                     doc_now = doc[k]
             # 取显示名称
@@ -476,6 +523,8 @@ class ConfigPage(Page):
 
             k_sha1 = hashlib.sha1(k.encode('utf8')).hexdigest()
             component_name = '{}-{}'.format(add_name, k_sha1)
+            
+            
             if type(v) == str or v is None:
                 self._show_str(doc_items, component_name, display_name, scope_name, v, doc_special)
             elif type(v) == int:
@@ -488,23 +537,25 @@ class ConfigPage(Page):
                 self._show_dict(level, component_name, display_name, scope_name, doc, v, doc_special)
             elif type(v) == list:
                 self._show_list(level, display_name, scope_name, component_name, doc, v, doc_special)
-
+            if doc_annotation != None:
+                    output.put_text(doc_annotation, scope=scope_name)
+                    output.put_text("\n", scope=scope_name).style("font-size: 1px")
 
 class SettingPage(ConfigPage):
     def __init__(self):
-        super().__init__()
+        super().__init__(config_file_name = "config")
 
     def _load(self):
         self.last_file = None
 
         # 标题
-        output.put_markdown(_('# Setting'), scope=self.main_scope)
+        output.put_markdown(t2t('# Setting'), scope=self.main_scope)
 
         # 页面切换按钮
         output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
 
         # 配置页
-        output.put_markdown(_('## config:'), scope=self.main_scope)
+        output.put_markdown(t2t('## config:'), scope=self.main_scope)
         output.put_scope("select_scope", scope=self.main_scope)
 
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope", value="config\\settings\\config.json")
@@ -512,13 +563,15 @@ class SettingPage(ConfigPage):
     def _load_config_files(self):
         for root, dirs, files in os.walk('config\\settings'):
             for f in files:
+                if f[:f.index('.')] in ["auto_combat", "auto_collector", "auto_pickup_default_blacklist"]:
+                    continue
                 if f[f.index('.') + 1:] == "json":
                     self.config_files.append({"label": f, "value": os.path.join(root, f)})
 
 
 class CombatSettingPage(ConfigPage):
     def __init__(self):
-        super().__init__()
+        super().__init__(config_file_name = "auto_combat")
 
     def _load_config_files(self):
         self.config_files = []
@@ -532,45 +585,45 @@ class CombatSettingPage(ConfigPage):
         self.last_file = None
 
         # 标题
-        output.put_markdown(_('# CombatSetting'), scope=self.main_scope)
+        output.put_markdown(t2t('# CombatSetting'), scope=self.main_scope)
 
         # 页面切换按钮
         output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
 
         # 添加team.json
-        output.put_markdown(_('# Add team'), scope=self.main_scope)
+        output.put_markdown(t2t('# Add team'), scope=self.main_scope)
 
         # 添加team.json按钮
         output.put_row([
-            output.put_button(_("Add team"), onclick=self.onclick_add_teamjson, scope=self.main_scope),
+            output.put_button(t2t("Add team"), onclick=self.onclick_add_teamjson, scope=self.main_scope),
             None,
-            output.put_button(_("Add team with characters"), onclick=self.onclick_add_teamjson_withcharacters,
+            output.put_button(t2t("Add team with characters"), onclick=self.onclick_add_teamjson_withcharacters,
                               scope=self.main_scope)],
             scope=self.main_scope, size="10% 10px 20%")
 
         # 配置页
-        output.put_markdown(_('## config:'), scope=self.main_scope)
+        output.put_markdown(t2t('## config:'), scope=self.main_scope)
         output.put_scope("select_scope", scope=self.main_scope)
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope", value="config\\settings\\auto_combat.json")
 
     def onclick_add_teamjson(self):
         n = input.input('team name')
-        shutil.copy(os.path.join(root_path, "config\\tactic\\team.uijsontemplate"),
-                    os.path.join(root_path, "config\\tactic", n + '.json'))
+        shutil.copy(os.path.join(ROOT_PATH, "config\\tactic\\team.uijsontemplate"),
+                    os.path.join(ROOT_PATH, "config\\tactic", n + '.json'))
         self._reload_select()
 
     def onclick_add_teamjson_withcharacters(self):
         n = input.input('team name')
-        shutil.copy(os.path.join(root_path, "config\\tactic\\team_with_characters.uijsontemplate"),
-                    os.path.join(root_path, "config\\tactic", n + '.json'))
+        shutil.copy(os.path.join(ROOT_PATH, "config\\tactic\\team_with_characters.uijsontemplate"),
+                    os.path.join(ROOT_PATH, "config\\tactic", n + '.json'))
         self._reload_select()
         pass
 
 
 class CollectorSettingPage(ConfigPage):
     def __init__(self):
-        super().__init__()
-        self.collection_names = load_json("ITEM_NAME.json", "assets\\POI_JSON_API\\$lang$")
+        super().__init__(config_file_name = "auto_collector")
+        self.collection_names = load_json("ITEM_NAME.json", f"assets\\POI_JSON_API\\{GLOBAL_LANG}")
 
     def _load_config_files(self):
         self.config_files = []
@@ -589,13 +642,13 @@ class CollectorSettingPage(ConfigPage):
         self.last_file = None
 
         # 标题
-        output.put_markdown('# ' + _('CollectorSetting'), scope=self.main_scope)
+        output.put_markdown('# ' + t2t('CollectorSetting'), scope=self.main_scope)
 
         # 页面切换按钮
         output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
 
         # 配置页
-        output.put_markdown(_('## config:'), scope=self.main_scope)
+        output.put_markdown(t2t('## config:'), scope=self.main_scope)
         output.put_scope("select_scope", scope=self.main_scope)
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope", value="config\\settings\\auto_collector.json")
     
@@ -656,7 +709,7 @@ class CollectorSettingPage(ConfigPage):
                     ctime = v[iii]["time"][:v[iii]["time"].index('.')]
                     show_list.append( [v[iii]["error_code"], v[iii]["id"], v[iii]["picked item"], ctime, 
                                  output.put_buttons([
-                                     (_("Add to blacklist"), f"$AddToBlackList$#{display_name}#{v[iii]['id']}"),
+                                     (t2t("Add to blacklist"), f"$AddToBlackList$#{display_name}#{v[iii]['id']}"),
                                      # (_("Add to collected"), f"$AddToCollected$#{display_name}#{v[iii]['id']}")
                                      ],
                                  onclick=self._on_click_collectionlog, small=True)])
@@ -664,12 +717,12 @@ class CollectorSettingPage(ConfigPage):
                 b1,b2,b3,b4 = collector_lib.col_succ_times_from_log(display_name, day=7)
                 c1,c2,c3,c4 = collector_lib.col_succ_times_from_log(display_name, day=15)
                 d1,d2,d3,d4 = collector_lib.col_succ_times_from_log(display_name, day=900)
-                output.put_collapse(_("展开/收起"), [
+                output.put_collapse(t2t("展开/收起"), [
                     
-                    output.put_text(f"{_('Within')} 1   {_('day(s)')} {_('success rate')}:{a1} {_('total num')}:{a2} {_('success num')}:{a3} {_('fail num')}:{a4}"),
-                    output.put_text(f"{_('Within')} 7   {_('day(s)')} {_('success rate')}:{b1} {_('total num')}:{b2} {_('success num')}:{b3} {_('fail num')}:{b4}"),
-                    output.put_text(f"{_('Within')} 15  {_('day(s)')} {_('success rate')}:{c1} {_('total num')}:{c2} {_('success num')}:{c3} {_('fail num')}:{c4}"),
-                    output.put_text(f"{_('Within')} 900 {_('day(s)')} {_('success rate')}:{d1} {_('total num')}:{d2} {_('success num')}:{d3} {_('fail num')}:{d4}"),
+                    output.put_text(f"{t2t('Within')} 1   {t2t('day(s)')} {t2t('success rate')}:{a1} {t2t('total num')}:{a2} {t2t('success num')}:{a3} {t2t('fail num')}:{a4}"),
+                    output.put_text(f"{t2t('Within')} 7   {t2t('day(s)')} {t2t('success rate')}:{b1} {t2t('total num')}:{b2} {t2t('success num')}:{b3} {t2t('fail num')}:{b4}"),
+                    output.put_text(f"{t2t('Within')} 15  {t2t('day(s)')} {t2t('success rate')}:{c1} {t2t('total num')}:{c2} {t2t('success num')}:{c3} {t2t('fail num')}:{c4}"),
+                    output.put_text(f"{t2t('Within')} 900 {t2t('day(s)')} {t2t('success rate')}:{d1} {t2t('total num')}:{d2} {t2t('success num')}:{d3} {t2t('fail num')}:{d4}"),
                     output.put_table(show_list, header=["error_code", "id", "picked item", "time", "buttons"])
                 ], scope=scope_name)
                 
@@ -699,7 +752,7 @@ class CollectorSettingPage(ConfigPage):
                 output.put_row([
                     pin.put_textarea(component_name, label=display_name, value=list2format_list_text(v)),
                     None,
-                    output.put_button(_("clean list"), onclick=lambda:self._reset_list_textarea(component_name))
+                    output.put_button(t2t("clean list"), onclick=lambda:self._reset_list_textarea(component_name))
                     ]
                 , scope=scope_name,size="85% 5% 10%")
             elif "collection_log.json" in self.file_name:
@@ -711,7 +764,7 @@ class CollectorSettingPage(ConfigPage):
     def _onchange_collection_name(self, x):
         if x in self.collection_names:
             output.clear_scope("PREDICT_AND_VERIFY_01_scope")
-            output.put_text(_("Verified!"), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: green; font_size: 20px')
+            output.put_text(t2t("Verified!"), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: green; font_size: 20px')
             return
         else:
             f1 = False
@@ -720,17 +773,17 @@ class CollectorSettingPage(ConfigPage):
                 if x in i:
                     f1 = True
                     output.clear_scope("PREDICT_AND_VERIFY_01_scope")
-                    output.put_text(_("Waiting..."), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: black; font_size: 20px')
+                    output.put_text(t2t("Waiting..."), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: black; font_size: 20px')
                     if len(sl)<=15:
                         sl.append(i)
             
         if f1:
-            output.put_text(_("You may want to enter: "), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: black; font_size: 20px')
+            output.put_text(t2t("You may want to enter: "), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: black; font_size: 20px')
             for i in sl:
                 output.put_text(i, scope="PREDICT_AND_VERIFY_01_scope").style(f'color: black; font_size: 12px; font-style:italic')
         else:
             output.clear_scope("PREDICT_AND_VERIFY_01_scope")
-            output.put_text(_("Not a valid name"), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: red; font_size: 20px')
+            output.put_text(t2t("Not a valid name"), scope="PREDICT_AND_VERIFY_01_scope").style(f'color: red; font_size: 20px')
     
     def _show_str(self, doc_items, component_name, display_name, scope_name, v, doc_special):
         if doc_items:

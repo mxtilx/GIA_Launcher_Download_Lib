@@ -9,6 +9,7 @@ GIA提供了自动安装/更新器。
 ## 下载
 
 [GIA Launcher v0.6](https://github.com/infstellar/genshin_impact_assistant/releases/download/v0.6.0-beta.542/GIA_Launcher_v0.6.0.7z)
+注意：如果你之前下载了v0.3版本的启动器，需要全部删除(toolkit文件夹可不删除，跳过重复安装依赖)所有文件后再启动新的启动器。
 
 ## 使用方式
 
@@ -22,16 +23,16 @@ GIA提供了自动安装/更新器。
 
 具体配置：
 
-| 项目                  | 内容                                                                                                                                          |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| RequirementsFile    | requirements.txt文件位置                                                                                                                        |
-| InstallDependencies | 是否安装依赖文件，默认为true                                                                                                                            |
-| PypiMirror          | Pypi镜像网站，国内用户需要设置为 `https://pypi.tuna.tsinghua.edu.cn/simple` 或其他国内镜像源。                                                                     |
+| 项目                  | 内容                                    |
+|---------------------|-----------------------------|
+| RequirementsFile    | requirements.txt文件位置                  |
+| InstallDependencies | 是否安装依赖文件，默认为true                      |
+| PypiMirror          | Pypi镜像网站，国内用户需要设置为 `https://pypi.tuna.tsinghua.edu.cn/simple` 或其他国内镜像源。                  |
 | Repository          | 仓库地址。默认为 `https://github.com/infstellar/genshin_impact_assistant` ，国内用户可设置为 `https://gitee.com/infstellar/genshin_impact_assistant` 加速访问速度。 |
-| GitProxy            | 开关Git SSL验证。默认为false                                                                                                                        |
-| KeepLocalChanges    | 保持本地文件更改。默认为false                                                                                                                           |
-| AutoUpdate          | 自动更新。默认为true                                                                                                                                |
-| Branch              | 代码下载的分支。有以下分支可供选择：                                                                                                                          |
+| GitProxy            | 开关Git SSL验证。默认为false                  |
+| KeepLocalChanges    | 保持本地文件更改。默认为false                     |
+| AutoUpdate          | 自动更新。默认为true                          |
+| Branch              | 代码下载的分支。有以下分支可供选择：                    |
 
 | Branch       | 内容         |
 |--------------|------------|
@@ -50,6 +51,7 @@ GIA provides an automatic installer/updater.
 ## Download
 
 [GIA Launcher v0.6](https://github.com/infstellar/genshin_impact_assistant/releases/download/v0.6.0-beta.542/GIA_Launcher_v0.6.0.7z)
+Note: If you have previously downloaded the v0.3 launcher, you will need to delete all files (but not the toolkit folder, to skip duplicate installation dependencies) before launching the new launcher.
 
 ## How to use
 

@@ -31,7 +31,7 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 补档 <https://www.youtube.com/watch?v=ZieBDx6Go4A> v0.2.0的演示视频，可能部分过期
 
-## 功能及其启动方式
+## 功能介绍
 
 ### 1. [自动战斗辅助](./doc/combat_assi.md)
 
@@ -45,8 +45,8 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 1. 在config中设置挑战秘境的次数与其他设置,详见[config设置](./doc/config.md).
 2. 手动选择队伍,配置队伍,进入秘境.
-3. 进入秘境后,在GUI中将FlowMode切换到AutoDomain，等待模块导入
-4. 按下`[`键启动/停止功能。可在`keymap.json`中更改。
+3. 进入秘境后,在GUI TaskList中选中DomainTask，点击启动任务
+4. 等待导入完成后切换到原神
 
 - 注意阅读[domain_assi.md](./doc/domain_assi.md)中的注意事项.
 
@@ -56,11 +56,9 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 演示视频：<https://www.bilibili.com/video/BV163411Q7fD>
 
-<strong>注:测试中功能</strong>
+- 在GUI中将Mission Group切换到AutoCollectorMission.json
 
-- 在GUI中将FlowMode切换到AutoCollector，等待模块导入
-
-- 按下`[`键启动/停止功能。可在`keymap.json`中更改。
+- 选中Task List -> Mission，启动Task
 
 - 注意阅读[collector_assi.md](./doc/collector_assi.md)中的注意事项.
 
@@ -84,7 +82,7 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 - 原神需要以1080p窗口化运行(全屏也可以),设置抗锯齿为SMAA,中或以上特效.
 
-- 窗口焦点应在原神窗口上。 如果切换焦点窗口，程序会暂停所有键鼠操作并等待。
+- 窗口焦点应在原神窗口上。如果切换焦点窗口，程序会暂停所有键鼠操作并等待。
 
 ### config配置
 
@@ -96,29 +94,33 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 可以在GUI或直接从文件中修改。
 
-更多其他配置项，参见[config设置](./doc/config.md).
+更多其他配置项，参见GUI内的设置介绍。
 
-### GUI使用方法
+### GUI使用
 
 #### main窗口
 
 - 点击main按钮进入
 
-- FlowMode：选择当前启用的功能
+- Task List：选择要执行的任务，只能从GUI里启动
+
+- FlowMode：选择当前启用的功能，只能按快捷键启动
+
+- Mission: 选择要启动的任务组，然后在Task List选中Mission，启动Task List
 
 - Log：输出日志
 
-#### setting窗口
+#### 设置页面
 
-- 点击setting按钮进入
+- 点击按钮进入
 
-- 在下拉列表中选择对应的config，进行配置。
+- 在下拉列表中选择对应的项目，进行配置。
 
 远程操作等更多GUI使用方法，参考[GUI使用](./doc/gui.md)
 
-### config设置
+### 自动战斗，自动采集设置窗口
 
-参考[config设置](./doc/config.md).
+- 点击对应按钮进入，按照提示操作
 
 ## 错误报告
 
@@ -127,10 +129,6 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 反馈错误前，请务必确认您已经阅读文档和[FAQ](doc/FAQ.md)中的已知问题与解决方案。
 
 反馈错误时，请一并提交 Logs 文件夹中的日志文件。
-
-## 更新路线图
-
-[路线图](update_note.md)
 
 ## 常见问题 FAQ
 
@@ -147,12 +145,15 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 ### 开源库
 
 #### 特别感谢
+- [Alas](https://github.com/LmeSzinc/AzurLaneAutoScript)
 
-- [原神-基于图像算法的坐标定位 GenshinImpact AutoTrack DLL](https://github.com/GengGode/GenshinImpact_AutoTrack_DLL)
+- [原神-基于图像算法的坐标定位 GenshinImpact AutoTrack DLL](https://github.com/GengGode/cvAutoTrack)
+
+原地址：https://github.com/GengGode/GenshinImpact_AutoTrack_DLL
 
 - [空荧酒馆原神地图 kongying-tavern/yuan-shen-map](https://github.com/kongying-tavern/yuan-shen-map)
 
-- [Alas 参考了自动安装和代码实现](https://github.com/LmeSzinc/AzurLaneAutoScript)
+- [原神英語・中国語辞典 xicri/genshin-dictionary](https://github.com/xicri/genshin-dictionary)
 
 #### 开源库调用
 
@@ -165,7 +166,7 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 - [GIS 参考了自动战斗脚本的格式](https://github.com/phonowell/genshin-impact-script)
 
-### 贡献/参与者
+### 其他贡献/参与者
 
 - 数据集标注,测试: [nɡ.](https://space.bilibili.com/396023811)
 
