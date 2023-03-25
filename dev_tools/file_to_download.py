@@ -33,7 +33,6 @@ def del_files():
 
     for fileName in os.listdir(dirPath):
         if fileName != exceptFolder:
-            print(f"del: {fileName}")
             filePath = os.path.join(dirPath, fileName)
             if os.path.isfile(filePath):
                 os.remove(filePath) # 删除文件
