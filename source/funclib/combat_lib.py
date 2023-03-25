@@ -78,7 +78,6 @@ def get_chara_list(team_name='team.json'):
         team_item.setdefault("E_short_cd_time", None)
         team_item.setdefault("E_long_cd_time", None)
         team_item.setdefault("Elast_time", None)
-        team_item.setdefault("Ecd_float_time", None)
         team_item.setdefault("n", None)
         team_item.setdefault("trigger", None)
         team_item.setdefault("Epress_time", None)
@@ -99,7 +98,6 @@ def get_chara_list(team_name='team.json'):
         cE_short_cd_time = get_param(team_item, "E_short_cd_time", autofill_flag, chara_name=cname)
         cE_long_cd_time = get_param(team_item, "E_long_cd_time", autofill_flag, chara_name=cname)
         cElast_time = get_param(team_item, "Elast_time", autofill_flag, chara_name=cname)
-        cEcd_float_time = get_param(team_item, "Ecd_float_time", autofill_flag, chara_name=cname)
         cn = get_param(team_item, "n", autofill_flag, chara_name=cname)
         try:
             c_tactic_group = team_item["tactic_group"]
@@ -112,16 +110,12 @@ def get_chara_list(team_name='team.json'):
         cQlast_time = get_param(team_item, "Qlast_time", autofill_flag, chara_name=cname)
         cQcd_time = get_param(team_item, "Qcd_time", autofill_flag, chara_name=cname)
         c_vision = get_param(team_item, "vision", autofill_flag, chara_name=cname)
-        
-        
-        if cEcd_float_time > 0:
-            logger.info(t2t("角色 ") + cname + t2t(" 的Ecd_float_time大于0，请确定该角色不是多段e技能角色。"))
     
         chara_list.append(
             character.Character(
                 name=cname, position=c_position, n=cn, priority=c_priority,
                 E_short_cd_time=cE_short_cd_time, E_long_cd_time=cE_long_cd_time, Elast_time=cElast_time,
-                Ecd_float_time=cEcd_float_time, tactic_group=c_tactic_group, trigger=c_trigger,
+                tactic_group=c_tactic_group, trigger=c_trigger,
                 Epress_time=cEpress_time, Qlast_time=cQlast_time, Qcd_time=cQcd_time, vision = c_vision
             )
         )
@@ -153,7 +147,7 @@ def unconventionality_situation_detection(itt: interaction_core.InteractionBGD,
 
     return situation_code
 
-def get_character_busy(itt: interaction_core.InteractionBGD, stop_func, print_log = True):
+def is_character_busy(stop_func, print_log = True):
     cap = itt.capture(jpgmode=2)
     # cap = itt.png2jpg(cap, channel='ui')
     t1 = 0
@@ -184,7 +178,7 @@ def get_character_busy(itt: interaction_core.InteractionBGD, stop_func, print_lo
 def chara_waiting(itt:interaction_core.InteractionBGD, stop_func, mode=0, max_times = 1000):
     unconventionality_situation_detection(itt)
     i=0
-    while get_character_busy(itt, stop_func) and (not stop_func()):
+    while is_character_busy(stop_func) and (not stop_func()):
         i+=1
         if stop_func():
             logger.debug('chara_waiting stop')
@@ -215,6 +209,36 @@ def get_current_chara_num(itt: interaction_core.InteractionBGD, stop_func = defa
         
     logger.warning(t2t("获得当前角色编号失败"))
     return 0
+
+def get_enemy_arrow_direction():
+    red_num = 250
+    blue_num = 90
+    green_num = 90
+    float_num = 10
+    im_src = itt.capture()
+    im_src = itt.png2jpg(im_src, channel='ui', alpha_num=150)
+    im_src[950:1080, :, :] = 0
+    im_src[0:50, :, :] = 0
+    im_src[:, 1650:1920, :] = 0
+    # img_manager.qshow(imsrc)
+
+    '''可以用圆形遮挡优化'''
+    mask = np.zeros_like(im_src[:,:,0])
+    hh, ww = im_src.shape[:2]
+    xc = hh // 2
+    yc = ww // 2
+    radius1 = 275
+    radius2 = 300
+    cv2.circle(mask, (xc,yc), radius1, (255,255,255), -1)
+    cv2.circle(mask, (xc,yc), radius2, (0,0,0), -1)
+    # mask = cv2.subtract(mask2, mask1)
+    res1 = cv2.bitwise_and(im_src,im_src,mask=mask)
+    rgb_lower = np.array([250+float_num,90+float_num,90+float_num])
+    rgb_upper = np.array([250-float_num,90-float_num,90-float_num])
+    mask2 = cv2.inRange(res1, rgb_lower, rgb_upper)
+    imres = cv2.bitwise_and(mask2, im_src)
+    img_manager.qshow(imres)
+    
 
 def combat_statement_detection():
     # return: ret[0]: blood bar; ret[1]: enemy arrow
@@ -444,9 +468,9 @@ CSDL.start()
 if __name__ == '__main__':
     # get_chara_list()
     # print()
-    set_party_setup("Lisa")
+    # set_party_setup("Lisa")
     while 1:
         time.sleep(0.5)
-        print(get_team_chara_names_in_party_setup())
+        get_enemy_arrow_direction()
         # print(get_character_busy(itt, default_stop_func))
         # time.sleep(0.2)
