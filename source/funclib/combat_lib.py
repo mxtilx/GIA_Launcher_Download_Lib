@@ -10,7 +10,7 @@ from source.api.pdocr_light import ocr_light
 from source.api.pdocr_complete import ocr
 from source.ui.ui import ui_control
 from source.ui import page as UIPage
-from source.common.lang_data import translate_character
+from source.common.lang_data import translate_character_auto
 
 """
 战斗相关常用函数库。
@@ -92,7 +92,10 @@ def get_chara_list(team_name='team.json'):
         team_item = team[team_name]
         autofill_flag = False
         # autofill_flag = team_item["autofill"]
-        cname = get_param(team_item, "name", autofill_flag, chara_name="", )
+        cname = get_param(team_item, "name", autofill_flag, chara_name="")
+        c = translate_character_auto(cname)
+        if c != None:
+            cname = c
         c_position = get_param(team_item, "position", autofill_flag, chara_name=cname, value_when_empty='')
         c_priority = get_param(team_item, "priority", autofill_flag, chara_name=cname)
         cE_short_cd_time = get_param(team_item, "E_short_cd_time", autofill_flag, chara_name=cname)
@@ -186,8 +189,9 @@ def is_character_busy(stop_func, print_log = True):
             logger.trace(f"waiting: character busy: t1{t1} t2{t2}")
         return True
 
-def chara_waiting(itt:interaction_core.InteractionBGD, stop_func, mode=0, max_times = 1000):
-    unconventionality_situation_detection(itt)
+def chara_waiting(itt:interaction_core.InteractionBGD, stop_func, mode=0, max_times = 1000, is_usd=True):
+    if is_usd:
+        unconventionality_situation_detection(itt)
     i=0
     while is_character_busy(stop_func) and (not stop_func()):
         i+=1
@@ -396,7 +400,7 @@ def get_characters_name():
     for i in [asset.CharacterName1,asset.CharacterName2,asset.CharacterName3,asset.CharacterName4]:
         img2=img.copy()
         t = ocr.get_all_texts(crop(img2,i.position), mode=1)
-        ret_list.append(translate_character(t, language=GLOBAL_LANG))
+        ret_list.append(translate_character_auto(t))
     return ret_list
 
 def get_team_chara_names_in_party_setup():
@@ -418,10 +422,10 @@ def set_party_setup(names):
             if isinstance(names, list):
                 if names[i] is None:
                     continue
-                if translate_character(curr_chara_list[i]) != translate_character(names[i]):
+                if translate_character_auto(curr_chara_list[i]) != translate_character_auto(names[i]):
                     return False
             elif isinstance(names, str):
-                if translate_character(curr_chara_list[i]) in translate_character(names):
+                if translate_character_auto(curr_chara_list[i]) in translate_character_auto(names):
                     return True
         if isinstance(names, list):
             return True

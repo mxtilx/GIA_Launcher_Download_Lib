@@ -32,7 +32,7 @@ ANGLE_NEGATIVE_XY = 3
 PROCESS_NAME = ["YuanShen.exe", "GenshinImpact.exe"]
 SCREEN_CENTER_X = 1920/2
 SCREEN_CENTER_Y = 1080/2
-GIA_VERSION = "v0.7.1.743"
+GIA_VERSION = "v0.7.1.753"
 
 # configure paths
 ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,11 +51,16 @@ from source.path_lib import *
 def load_json(json_name='config.json', default_path='config\\settings') -> dict:
     # if "$lang$" in default_path:
     #     default_path = default_path.replace("$lang$", GLOBAL_LANG)
+    all_path = os.path.join(ROOT_PATH, default_path, json_name)
     try:
-        return json.load(open(os.path.join(ROOT_PATH, default_path, json_name), 'r', encoding='utf-8'))
+        return json.load(open(all_path, 'r', encoding='utf-8'))
     except:
-        json.dump({}, open(os.path.join(ROOT_PATH, default_path, json_name), 'w', encoding='utf-8'))
-        return json.load(open(os.path.join(ROOT_PATH, default_path, json_name), 'r', encoding='utf-8'))
+        if DEBUG_MODE:
+            logger.critical(f"尝试访问{all_path}失败")
+            raise FileNotFoundError
+        else:
+            json.dump({}, open(all_path, 'w', encoding='utf-8'))
+            return json.load(open(all_path, 'r', encoding='utf-8'))
 try:
     config_json = load_json("config.json")
     DEBUG_MODE = config_json["DEBUG"] if "DEBUG" in config_json else False
@@ -619,30 +624,9 @@ def circle_mask(img,inner_r, outer_r):
 
 # Update for a program used before version v0.5.0.424
 if os.path.exists(os.path.join(ROOT_PATH, "config\\tastic")):
-    logger.info("检测到tastic文件夹。")
-    logger.info("版本v0.5.0.424后，tastic文件夹修正为tactic文件夹。")
-    time.sleep(1)
-    logger.warning("正在准备将tastic文件夹中的json文件迁移至tastic文件夹。")
-    time.sleep(1)
-    logger.warning("该操作可能有风险，您可以将config/tastic文件夹中的文件备份后再继续。")
-    time.sleep(1)
-    logger.warning("该操作将在15秒后开始。")
-    time.sleep(15)
-    for root, dirs, files in os.walk(os.path.join(ROOT_PATH, "config\\tastic")):
-        for f in files:
-            if f[f.index(".")+1:] == "json":
-                shutil.copy(os.path.join(ROOT_PATH, "config\\tastic", f), os.path.join(ROOT_PATH, "config\\tactic", f))
-    logger.warning("准备删除tastic文件夹。")
-    time.sleep(1)
-    logger.warning("该操作可能有风险，您可以将config/tastic文件夹中的文件备份后再继续。")
-    time.sleep(1)
-    logger.warning("该操作将在15秒后开始。")
-    time.sleep(15)
-    shutil.rmtree(os.path.join(ROOT_PATH, "config\\tastic"))
-    logger.info("操作完成。您可以手动删除残留的config/tactic/tastic.json文件。")
-    time.sleep(1)
-    # os.rename(os.path.join(root_path, "config\\tactic"), os.path.join(root_path, "config\\tactic"))
-# Over
+    logger.error("检测到tastic文件夹。")
+    logger.error("版本v0.5.0.424后，tastic文件夹修正为tactic文件夹。")
+    logger.error("请重新安装新版GIA。")
 
 
 if __name__ == '__main__':
