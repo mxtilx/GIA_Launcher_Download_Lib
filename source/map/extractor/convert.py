@@ -4,6 +4,9 @@ from source.device.alas.utils import point_in_area
 from source.util import IS_DEVICE_PC
 
 
+class UnknownPositionTypeError(Exception):
+    pass
+
 class MapConverter:
     """
     Convert coordinates among maps.
@@ -135,14 +138,14 @@ class MapConverter:
     
         return points
     
-    @classmethod
-    def convert_InGenshinMapPX_to_cvAutoTrack(cls, points, layer=LAYER_Teyvat) -> np.ndarray:
-        points = np.array(points)
+    # @classmethod
+    # def convert_InGenshinMapPX_to_cvAutoTrack(cls, points, layer=LAYER_Teyvat) -> np.ndarray:
+    #     points = np.array(points)
         
-        points = cls.convert_InGenshinMapPX_to_GIMAP(points, layer=layer)
-        points = cls.convert_GIMAP_to_cvAutoTrack(points)
+    #     points = cls.convert_InGenshinMapPX_to_GIMAP(points, layer=layer)
+    #     points = cls.convert_GIMAP_to_cvAutoTrack(points)
         
-        return points
+    #     return points
     
     @classmethod
     def convert_cvAutoTrack_to_InGenshinMapPX(cls, points, layer=LAYER_Teyvat) -> np.ndarray:
@@ -170,3 +173,48 @@ class MapConverter:
             points = points * 1.5
     
         return points
+
+    # @classmethod
+    # def convert_ANY_to_cvAutoTrack(cls,posi_obj:GenshinPosition) -> GenshinPosition:
+    #     if isinstance(posi_obj, GIMAPPosition):
+    #         return TianLiPosition(cls.convert_GIMAP_to_cvAutoTrack(posi_obj.position))
+    #     elif isinstance(posi_obj, TianLiPosition):
+    #         return posi_obj
+    #     elif isinstance(posi_obj, KongYingPosition):
+    #         return TianLiPosition(cls.convert_kongying_to_cvAutoTrack(posi_obj.position))
+    #     elif isinstance(posi_obj, list):
+    #         return TianLiPosition(posi_obj)
+    #     elif isinstance(posi_obj, np.ndarray):
+    #         return TianLiPosition(posi_obj)
+    #     else:
+    #         raise UnknownPositionTypeError
+        
+    # @classmethod
+    # def convert_ANY_to_GIMAP(cls,posi_obj:GenshinPosition) -> GenshinPosition:
+    #     if isinstance(posi_obj, GIMAPPosition):
+    #         return posi_obj
+    #     elif isinstance(posi_obj, TianLiPosition):
+    #         return GIMAPPosition(cls.convert_cvAutoTrack_to_GIMAP(posi_obj.position))
+    #     elif isinstance(posi_obj, KongYingPosition):
+    #         return GIMAPPosition(cls.convert_kongying_to_GIMAP(posi_obj.position))
+    #     elif isinstance(posi_obj, np.ndarray):
+    #         return GIMAPPosition(posi_obj)
+    #     elif isinstance(posi_obj, list):
+    #         return GIMAPPosition(posi_obj)
+    #     else:
+    #         raise UnknownPositionTypeError
+    
+    # @classmethod
+    # def convert_ANY_to_KongYing(cls,posi_obj:GenshinPosition) -> GenshinPosition:
+    #     if isinstance(posi_obj, KongYingPosition):
+    #         return posi_obj
+    #     elif isinstance(posi_obj, TianLiPosition):
+    #         return KongYingPosition(cls.convert_cvAutoTrack_to_kongying(posi_obj.position))
+    #     elif isinstance(posi_obj, GIMAPPosition):
+    #         return KongYingPosition(cls.convert_GIMAP_to_kongying(posi_obj.position))
+    #     elif isinstance(posi_obj, np.ndarray):
+    #         return KongYingPosition(posi_obj)
+    #     elif isinstance(posi_obj, list):
+    #         return KongYingPosition(posi_obj)
+    #     else:
+    #         raise UnknownPositionTypeError

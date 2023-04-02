@@ -30,9 +30,6 @@ class FlowTemplate():
         logger.warning(f"TIMEOUT: {self.flow_id}")
           
     def enter_flow(self):
-        if self.flow_timeout.istimeout():
-            self._before_timeout()
-            return self.next_flow_id
         if self.rfc == FC.INIT:
             self.flow_timeout.reset()
             self.state_init()
@@ -47,7 +44,9 @@ class FlowTemplate():
             self.rfc = FC.INIT
             logger.info(f"Flow Switch To: {self.next_flow_id}")
             return self.next_flow_id
-
+        if self.flow_timeout.istimeout():
+            self._before_timeout()
+            return self.next_flow_id
             
         return self.flow_id
 
@@ -118,7 +117,6 @@ class FlowController(base_threading.BaseThreading):
         self.flow_connector = flow_connector
         self.get_while_sleep = flow_connector.get_while_sleep
         self.flow_connector.checkup_stop_func = self.checkup_stop_func
-        
     
     def start_flow(self):
         self.continue_threading()

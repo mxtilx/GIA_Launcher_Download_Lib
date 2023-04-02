@@ -12,7 +12,8 @@ from source.common.timer_module import AdvanceTimer
 ERR_FAIL = "FAIL"
 class CharacterNotFound(Exception):
     pass
-    
+
+class MissionEnd(Exception):pass
 
 class MissionExecutor(BaseThreading):
     def __init__(self):
@@ -56,12 +57,13 @@ class MissionExecutor(BaseThreading):
         return self.exception_flag    
     
     def _handle_exception(self):
+        if self.checkup_stop_func():raise MissionEnd
         if self.exception_flag:
             logger.info(f"Handling exception: recover")
             # 跑到七天神像去回血
             tracker.reinit_smallmap()
             curr_posi = list(tracker.get_position())
-            target_posi = list(tracker.bigmap_tp(posi=curr_posi, tp_type=["Statue"]))
+            target_posi = list(tracker.bigmap_tp(posi=curr_posi, tp_type=["Statue"]).tianli)
             self.TMCF.reset()
             self.TMCF.set_parameter(MODE="AUTO",stop_rule=1,target_posi=target_posi,is_tp=False)
             self.TMCF.start_flow()
@@ -84,7 +86,7 @@ class MissionExecutor(BaseThreading):
         self.TMCF.set_parameter(MODE=MODE,stop_rule=stop_rule,target_posi=target_posi,path_dict=path_dict,to_next_posi_offset=to_next_posi_offset,special_keys_posi_offset=special_keys_posi_offset,reaction_to_enemy=reaction_to_enemy,is_tp=is_tp,is_reinit=is_reinit,is_precise_arrival=is_precise_arrival)
         self.TMCF.start_flow()
         while 1:
-            time.sleep(0.2)
+            time.sleep(0.6)
             if self.TMCF.pause_threading_flag:
                 break
             if self._is_exception():
@@ -163,7 +165,7 @@ class MissionExecutor(BaseThreading):
     
     def switch_character_to(self, name:str):
         r = combat_lib.get_characters_name()
-        curr_n = combat_lib.get_current_chara_num(itt)
+        curr_n = combat_lib.get_current_chara_num(self.checkup_stop_func)
         if name in r:
             if curr_n != r.index(name)+1:
                 itt.key_press(str(r.index(name)+1))
@@ -184,8 +186,12 @@ class MissionExecutor(BaseThreading):
         try:
             self.exec_mission()
         except Exception as e:
-            logger.error(f"ERROR in execute mission: {self.name} {e}")
-            logger.exception(e)
+            if isinstance(e, MissionEnd):
+                logger.info("Mission end by exception.")
+            else:
+                logger.error(f"ERROR in execute mission: {self.name} {e}")
+                logger.exception(e)
+        itt.key_up('w') # 让所有按键起飞
         self.pause_threading()
     
 if __name__ == '__main__':

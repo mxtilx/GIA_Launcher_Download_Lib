@@ -34,9 +34,10 @@ class BaseThreading(threading.Thread):
             self.pause_threading_flag = False
 
     def stop_threading(self):
+        logger.info(f"{self.name} stop.")
         self.stop_threading_flag = True
-        for i in self.sub_threading_list:
-            i.stop_threading()
+        self.pause_threading_flag = True
+        self._clean_sub_threading()
     
     def checkup_stop_threading(self):
         if self.stop_threading_flag:
@@ -46,11 +47,22 @@ class BaseThreading(threading.Thread):
         return not self.pause_threading_flag
 
     def checkup_stop_func(self):
+        pt = time.time()
+        def output_log(t):
+            if t<0.05:
+                pass
+            elif t<0.1:
+                logger.trace(f"checkup_stop_func spend to long: {t} {self.name}")
+            else:
+                logger.warning(f"checkup_stop_func spend to long: {t} {self.name}")
         if self.pause_threading_flag or self.stop_threading_flag:
+            output_log(time.time()-pt)
             return True
         for i in self.stop_func_list:
             if i():
+                output_log(time.time()-pt)
                 return True
+        output_log(time.time()-pt)
         return False
 
     def add_stop_func(self, x):
@@ -76,6 +88,12 @@ class BaseThreading(threading.Thread):
         self.sub_threading_list.append(threading_obj)
         logger.debug(f"sub threading {threading_obj.name} has been add.")
 
+    def _clean_sub_threading(self):
+        for thread_obj in self.sub_threading_list:
+            logger.debug(f"{self.name} stop {thread_obj.name}")
+            thread_obj.stop_threading()
+        self.sub_threading_list = []
+    
     def loop(self):
         pass
     

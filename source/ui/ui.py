@@ -51,6 +51,7 @@ class UI():
             destination (Page):
             confirm_wait:
         """
+        retry_timer = AdvanceTimer(3)
         self.switch_ui_lock.acquire()
         # Reset connection
         for page in self.ui_pages:
@@ -96,13 +97,18 @@ class UI():
                     continue
                 if page.is_current_page(itt):
                     logger.info(f'Page switch: {page} -> {page.parent}')
-                    button = page.links[page.parent]
-                    if isinstance(button,str):
-                        itt.key_press(button)
-                    elif isinstance(button,Button):
-                        itt.appear_then_click(button)
-                    clicked = True
-                    confirm_timer.reset()
+                    if retry_timer.reached():
+                        button = page.links[page.parent]
+                        if isinstance(button,str):
+                            itt.key_press(button)
+                        elif isinstance(button,Button):
+                            itt.appear_then_click(button)
+                        clicked = True
+                        confirm_timer.reset()
+                        retry_timer.reset()
+                    else:
+                        itt.delay(0.2) # wait
+                        break
                 # if self.appear(page.check_button, offset=offset, interval=5):
                 #     logger.info(f'Page switch: {page} -> {page.parent}')
                 #     button = page.links[page.parent]

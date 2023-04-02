@@ -127,8 +127,7 @@ def get_chara_list(team_name='team.json'):
         
     return chara_list
 
-def unconventionality_situation_detection(itt: interaction_core.InteractionBGD,
-                                           autoDispose=True, detect_type='abc', stop_func=lambda:False):
+def unconventionality_situation_detection(autoDispose=True, detect_type='abc', stop_func=lambda:False):
     # unconventionality situlation detection
     # situlation 1: coming_out_by_space
 
@@ -145,9 +144,11 @@ def unconventionality_situation_detection(itt: interaction_core.InteractionBGD,
             if stop_func:break
             situation_code = 2
             itt.key_down('w')
+            itt.key_down('left_shift')
             logger.debug('Unconventionality Situation: SWIMMING')
             if autoDispose:
                 time.sleep(5)
+            itt.key_up('left_shift')
             itt.key_up('w')
             time.sleep(0.1)
     if 'c' in detect_type:
@@ -156,19 +157,21 @@ def unconventionality_situation_detection(itt: interaction_core.InteractionBGD,
             situation_code = 3
             logger.debug('Unconventionality Situation: CLIMBING')
             if autoDispose:
+                itt.key_press('space')
+                itt.delay("animation")
+                itt.key_press('space')
+                itt.delay("animation")
                 itt.key_press('x')
             time.sleep(0.1)
 
     return situation_code
 
-def is_character_busy(stop_func, print_log = True):
+def is_character_busy(print_log = True):
     cap = itt.capture(jpgmode=2)
     # cap = itt.png2jpg(cap, channel='ui')
     t1 = 0
     t2 = 0
     for i in range(4):
-        if stop_func():
-            return 0
         p = posi_manager.chara_head_list_point[i]
         if cap[p[0], p[1]][0] > 0 and cap[p[0], p[1]][1] > 0 and cap[p[0], p[1]][2] > 0:
             t1 += 1
@@ -189,21 +192,26 @@ def is_character_busy(stop_func, print_log = True):
             logger.trace(f"waiting: character busy: t1{t1} t2{t2}")
         return True
 
-def chara_waiting(itt:interaction_core.InteractionBGD, stop_func, mode=0, max_times = 1000, is_usd=True):
+def chara_waiting(stop_func, max_times = 1000, is_usd=True):
     if is_usd:
-        unconventionality_situation_detection(itt)
+        unconventionality_situation_detection()
     i=0
-    while is_character_busy(stop_func) and (not stop_func()):
+    while is_character_busy():
         i+=1
-        if stop_func():
-            logger.debug('chara_waiting stop')
-            return 0
+        if i%3==0:
+            if stop_func():
+                logger.debug('chara_waiting stop: stop')
+                return 0
         # logger.debug('waiting')
-        itt.delay(0.1)
+        time.sleep(0.1)
         if i>=max_times:
+            logger.debug(f'chara_waiting stop: over max times{max_times}')
             break
+        if i>20 and i%5==0:
+            unconventionality_situation_detection()
+                
 
-def get_current_chara_num(itt: interaction_core.InteractionBGD, stop_func = default_stop_func, max_times = 1000):
+def get_current_chara_num(stop_func, max_times = 1000):
     """获得当前所选角色序号。
 
     Args:
@@ -212,7 +220,7 @@ def get_current_chara_num(itt: interaction_core.InteractionBGD, stop_func = defa
     Returns:
         int: character num.
     """
-    chara_waiting(itt, stop_func, max_times = max_times)
+    chara_waiting(stop_func, max_times = max_times)
     cap = itt.capture(jpgmode=2)
     for i in range(4):
         p = posi_manager.chara_num_list_point[i]
@@ -477,17 +485,17 @@ class CombatStatementDetectionLoop(BaseThreading):
             state = r[0] or r[1]
         if state != self.current_state:
             
-            if self.current_state == True: # 切换到无敌人慢一点, 4s
+            if self.current_state == True: # 切换到无敌人慢一点, 8s
                 self.state_counter += 1
-                self.while_sleep = 0.4
+                self.while_sleep = 0.8
             elif self.current_state == False: # 快速切换到遇敌
                 self.while_sleep = 0.02
                 self.state_counter += 1
         else:
             self.state_counter = 0
-            self.while_sleep = 0.4
+            self.while_sleep = 0.5
         if self.state_counter >= 10:
-            logger.debug('combat_statement_detection change state')
+            logger.debug(f'combat_statement_detection change state: {self.current_state}')
             # if self.current_state == False:
             #     only_arrow_timer.reset()
             self.state_counter = 0
