@@ -123,14 +123,17 @@ ConfigureTeam = Button()
 GoToFight = Button()
 SwitchTeamLeft = Button(threshold=0)
 SwitchTeamRight = Button(threshold=0)
-UIConfigureTeam = ImgIcon()
+UIConfigureTeam = ImgIcon(threshold=0.96)
 PartySetupCharaName1=posi_manager.PosiTemplate()
 PartySetupCharaName2=posi_manager.PosiTemplate()
 PartySetupCharaName3=posi_manager.PosiTemplate()
 PartySetupCharaName4=posi_manager.PosiTemplate()
-CommissionIcon = ImgIcon(path=fr"{ROOT_PATH}\assets\imgs\Windows\map\big_map\points\commission.jpg")
+BigmapCommissionIcon = ImgIcon(path=fr"{ROOT_PATH}\assets\imgs\Windows\map\big_map\points\commission.jpg", is_bbg=False)
 AreaSidebarCommissionName = PosiTemplate()
-SidebarIsCommissionExist = ImgIcon()
+SidebarIsCommissionExist = ImgIcon(threshold=0.97)
+CommissionIcon = ImgIcon()
+CommissionIconInCommission = ImgIcon(is_bbg=False)
+AreaAvailableReward = PosiTemplate()
 
 QTSX = TextTemplate(text=
 {
@@ -147,6 +150,10 @@ IncreasingDanger = TextTemplate(text={"zh_CN":"攀高危险", "en_US": "Increasi
 Emergency = TextTemplate(text={"zh_CN":"临危受命", "en_US": "Emergency"})
 IcyIssues = TextTemplate(text={"zh_CN":"冷冰冰的大麻烦", "en_US": "Icy Issues"})
 ForTheHarbingers = TextTemplate(text={"zh_CN":"为了执行官大人", "en_US": "For The Harbingers"})
+BigIceColdCrisis = TextTemplate(text={"zh_CN":"冰凉凉的大团危机", "en_US": "Big Ice-Cold Crisis"})
+SpreadingEvil = TextTemplate(text={"zh_CN":"邪恶的扩张", "en_US": "Spreading Evil"})
+BigPudgyProblem = TextTemplate(text={"zh_CN":"圆滚滚的大团骚乱", "en_US": "Big Pudgy Problem"})
+PudgyPyrotechnicians = TextTemplate(text={"zh_CN":"圆滚滚的易爆品", "en_US": "Pudgy Pyrotechnicians"})
 MapAreaMD = TextTemplate(text={
     "zh_CN":"蒙德"
 }, cap_area = SwitchMapArea.position)

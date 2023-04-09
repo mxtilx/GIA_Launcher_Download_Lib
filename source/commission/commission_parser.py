@@ -39,12 +39,12 @@ class CommissionParser():
             cap_posi = [220,240,1920-200,1080-150]
             img = itt.capture(jpgmode=0)
             img = crop(img, cap_posi)
-            img = recorp(img, [1920,1080,3],cap_posi)
-            positions = itt.match_multiple_img(img, template=asset.CommissionIcon.image)
+            img = recorp(img,cap_posi)
+            positions = itt.match_multiple_img(img, template=asset.BigmapCommissionIcon.image)
             if len(positions)>0:
                 curr_posi = genshin_map.get_bigmap_posi()
                 for i in positions:
-                    target_px_posi = np.array(list(i))
+                    target_px_posi = np.array(list(i))+np.array([8,8])
                     delta_posi = genshin_map.convert_InGenshinMapPX_to_GIMAP(target_px_posi-np.array([SCREEN_CENTER_X,SCREEN_CENTER_Y]))
                     target_gimap_posi = curr_posi.gimap + delta_posi
                     target_tianli_posi = GIMAPPosition(target_gimap_posi).tianli
@@ -55,6 +55,8 @@ class CommissionParser():
                     commission_positions.append(target_tianli_posi)
                     
                     itt.move_and_click(list(i))
+                    itt.delay("animation")
+                    itt.delay("animation")
                     itt.delay("animation")
                     com_type = self._detect_commission_type()
                     itt.delay("animation")
@@ -94,6 +96,7 @@ class CommissionParser():
                     return com_i.name
         
         logger.warning(f"Unknown commission type: {ocr_res}")
+        
         
         return None
         

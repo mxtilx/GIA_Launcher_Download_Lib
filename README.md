@@ -64,6 +64,11 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 
 其他设置参见[自动采集辅助介绍](./doc/collector_assi.md).
 
+### 4. [自动每日委托辅助](./doc/commission_assi.md)
+**正在早期测试，请谨慎开启并汇报遇到的错误。**
+
+详情参见[自动每日委托辅助介绍](./doc/commission_assi.md).
+
 ## 使用方法
 
 ### 快速安装
@@ -135,6 +140,10 @@ To没用过github的小伙伴: 描述文档中的蓝色文字是链接,可以打
 如果在使用时遇到问题，可以先看看FAQ：
 
 [FAQ](doc/FAQ.md)
+
+## 已知问题 Known Issues
+
+[Known issues](doc/known_issues.md)
 
 ## 性能需求
 

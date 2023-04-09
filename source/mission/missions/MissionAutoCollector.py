@@ -4,7 +4,7 @@ from source.interaction.interaction_core import itt
 from source.operator import pickup_operator
 from source.flow import teyvat_move_flow
 from source.interaction.minimap_tracker import tracker
-from source.controller import combat_loop
+from source.controller import combat_controller
 from source.common.base_threading import BaseThreading
 from source.funclib import collector_lib, generic_lib, combat_lib
 import numpy as np
@@ -33,7 +33,7 @@ class MissionAutoCollector(MissionExecutor):
         return ret
     
     def __init__(self):
-        super().__init__()
+        super().__init__(is_CFCF=True,is_PUO=True,is_TMCF=True)
         self.setName("MissionAutoCollector")
         
         collector_config = load_json("auto_collector.json")
@@ -143,7 +143,7 @@ class MissionAutoCollector(MissionExecutor):
         while 1:
             if self.checkup_stop_func():return
             self._set_target_position()
-            r = self.move_straight(self.collection_posi, is_tp = True)
+            r = self.move_straight(self.collection_posi, is_tp = True, is_precise_arrival=True)
             if r == ERR_FAIL:
                 self._add_logs("MOVE FAIL")
                 self._set_collected_id()

@@ -6,7 +6,7 @@ import time  # 8药删了，qq了
 import math
 import numpy as np
 import gettext
-from loguru import logger
+from source.logger import logger
 import cv2
 import win32gui, win32process, psutil
 import ctypes, pickle
@@ -33,7 +33,7 @@ ANGLE_NEGATIVE_XY = 3
 PROCESS_NAME = ["YuanShen.exe", "GenshinImpact.exe"]
 SCREEN_CENTER_X = 1920/2
 SCREEN_CENTER_Y = 1080/2
-GIA_VERSION = "v0.7.2.779"
+GIA_VERSION = "v0.7.3.810"
 
 # configure paths
 ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -365,7 +365,9 @@ def crop(image, area):
         image = cv2.copyMakeBorder(image, *border, borderType=cv2.BORDER_CONSTANT, value=(0, 0, 0))
     return image
 
-def recorp(image, size, area):
+def recorp(image, area, size=None):
+    if size is None:
+        size=[1920,1080,3]
     r = np.zeros((size[1], size[0], size[2]), dtype='uint8')
     r[area[1]:area[3], area[0]:area[2], :] = image
     return r
@@ -619,6 +621,23 @@ def circle_mask(img,inner_r, outer_r):
     masked_img = cv2.bitwise_and(img, mask)
     
     return masked_img
+
+def get_circle_points(x,y,  show_res = False):
+    points = []
+    for r in range(5, 30, 5):
+        n = int(2 * math.pi * r / 10)
+        for i in range(n):
+            angle = 2 * math.pi / n * i
+            px = x + r * math.cos(angle)
+            py = y + r * math.sin(angle)
+            if show_res:
+                import turtle
+                turtle.penup()
+                turtle.goto(px, py)
+                turtle.pendown()
+                turtle.dot(5)
+            points.append((px, py))
+    return points
 
 # Update for a program used before version v0.5.0.424
 if os.path.exists(os.path.join(ROOT_PATH, "config\\tastic")):

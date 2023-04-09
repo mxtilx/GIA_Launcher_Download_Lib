@@ -16,9 +16,9 @@ from source.common.lang_data import translate_character_auto
 战斗相关常用函数库。
 """
 
-global only_arrow_timer, characters, load_err_times
+global only_arrow_timer, load_err_times
 only_arrow_timer = timer_module.Timer()
-characters = load_json("character.json", default_path="config\\tactic")
+# characters = load_json("character.json", default_path="config\\tactic")
 load_err_times = 0
 
 def default_stop_func():
@@ -46,10 +46,8 @@ def get_param(team_item, para_name, auto_fill_flag, chara_name="", exception_mod
         elif exception_mode == CREATE_WHEN_NOTFOUND:
             pass
     else:
-        if not auto_fill_flag:
-            r = team_item[para_name]
-        else:
-            r = characters[chara_name]
+        r = team_item[para_name]
+
     
     if r == '' or r == None:
         if value_when_empty != None:
@@ -62,70 +60,9 @@ def get_param(team_item, para_name, auto_fill_flag, chara_name="", exception_mod
     logger.trace(f"character: {chara_name} para_name: {para_name} value: {r}")
     return r
 
-def get_chara_list(team_name='team.json'):
-    global load_err_times
-    load_err_times = 0
-    team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
-    dpath = "config\\tactic"
-    
-    team = load_json(team_name, default_path=dpath)
-    
-    for team_n in team:
-        team_item = team[team_n]
-        team_item.setdefault("name", None)
-        team_item.setdefault("position", None)
-        team_item.setdefault("priority", None)
-        team_item.setdefault("E_short_cd_time", None)
-        team_item.setdefault("E_long_cd_time", None)
-        team_item.setdefault("Elast_time", None)
-        team_item.setdefault("n", None)
-        team_item.setdefault("trigger", None)
-        team_item.setdefault("Epress_time", None)
-        team_item.setdefault("Qlast_time", None)
-        team_item.setdefault("Qcd_time", None)
-        team_item.setdefault("vision", None)
-    save_json(team, team_name, default_path=dpath)
-    
-    # characters = load_json("character.json", default_path=dpath)
-    chara_list = []
-    for team_name in team:
-        team_item = team[team_name]
-        autofill_flag = False
-        # autofill_flag = team_item["autofill"]
-        cname = get_param(team_item, "name", autofill_flag, chara_name="")
-        c = translate_character_auto(cname)
-        if c != None:
-            cname = c
-        c_position = get_param(team_item, "position", autofill_flag, chara_name=cname, value_when_empty='')
-        c_priority = get_param(team_item, "priority", autofill_flag, chara_name=cname)
-        cE_short_cd_time = get_param(team_item, "E_short_cd_time", autofill_flag, chara_name=cname)
-        cE_long_cd_time = get_param(team_item, "E_long_cd_time", autofill_flag, chara_name=cname)
-        cElast_time = get_param(team_item, "Elast_time", autofill_flag, chara_name=cname)
-        cn = get_param(team_item, "n", autofill_flag, chara_name=cname)
-        try:
-            c_tactic_group = team_item["tactic_group"]
-        except:
-            c_tactic_group = team_item["tastic_group"]
-            logger.warning(t2t("请将配对文件中的tastic_group更名为tactic_group. 已自动识别。"))
-            
-        c_trigger = get_param(team_item, "trigger", autofill_flag, chara_name=cname, value_when_empty="e_ready")
-        cEpress_time = get_param(team_item, "Epress_time", autofill_flag, chara_name=cname)
-        cQlast_time = get_param(team_item, "Qlast_time", autofill_flag, chara_name=cname)
-        cQcd_time = get_param(team_item, "Qcd_time", autofill_flag, chara_name=cname)
-        c_vision = get_param(team_item, "vision", autofill_flag, chara_name=cname)
-    
-        chara_list.append(
-            character.Character(
-                name=cname, position=c_position, n=cn, priority=c_priority,
-                E_short_cd_time=cE_short_cd_time, E_long_cd_time=cE_long_cd_time, Elast_time=cElast_time,
-                tactic_group=c_tactic_group, trigger=c_trigger,
-                Epress_time=cEpress_time, Qlast_time=cQlast_time, Qcd_time=cQcd_time, vision = c_vision
-            )
-        )
-    if load_err_times>0:
-        raise TacticKeyEmptyError(t2t("Character Key Empty Error"))
-        
-    return chara_list
+
+
+
 
 def unconventionality_situation_detection(autoDispose=True, detect_type='abc', stop_func=lambda:False):
     # unconventionality situlation detection
@@ -134,34 +71,44 @@ def unconventionality_situation_detection(autoDispose=True, detect_type='abc', s
     situation_code = -1
     if 'a' in detect_type:
         while itt.get_img_existence(asset.COMING_OUT_BY_SPACE):
-            if stop_func:break
+            if stop_func():break
             situation_code = 1
             itt.key_press('spacebar')
             logger.debug('Unconventionality Situation: COMING_OUT_BY_SPACE')
             time.sleep(0.1)
     if 'b' in detect_type:
-        while itt.get_img_existence(asset.motion_swimming):
-            if stop_func:break
-            situation_code = 2
+        if itt.get_img_existence(asset.motion_swimming):
             itt.key_down('w')
-            itt.key_down('left_shift')
-            logger.debug('Unconventionality Situation: SWIMMING')
-            if autoDispose:
-                time.sleep(5)
-            itt.key_up('left_shift')
+            # itt.key_down('left_shift')
+            while itt.get_img_existence(asset.motion_swimming):
+                if stop_func():
+                    # itt.key_up('left_shift')
+                    itt.key_up('w')
+                    break
+                situation_code = 2
+                if autoDispose:
+                    itt.key_down('left_shift')
+                    itt.delay(0.5)
+                    itt.key_up('left_shift')
+                logger.debug('Unconventionality Situation: SWIMMING')
+                time.sleep(0.1)
+            # itt.key_up('left_shift')
             itt.key_up('w')
-            time.sleep(0.1)
     if 'c' in detect_type:
         while itt.get_img_existence(asset.motion_climbing):
-            if stop_func:break
+            if stop_func():break
             situation_code = 3
             logger.debug('Unconventionality Situation: CLIMBING')
             if autoDispose:
                 itt.key_press('space')
-                itt.delay("animation")
+                itt.delay(1.2)
+                if not itt.get_img_existence(asset.motion_climbing):break
                 itt.key_press('space')
-                itt.delay("animation")
+                itt.delay(1.2)
+                if not itt.get_img_existence(asset.motion_climbing):break
                 itt.key_press('x')
+                itt.delay(1.2)
+                if not itt.get_img_existence(asset.motion_climbing):break
             time.sleep(0.1)
 
     return situation_code
@@ -180,17 +127,24 @@ def is_character_busy(print_log = True):
         # print(min(cap[p[0], p[1]]))
         if min(cap[p[0], p[1]]) > 248:
             t2 += 1
-    
+    cols = []
+    for i in range(4):
+        p = posi_manager.chara_num_list_point[i]
+        cols.append(max(cap[p[0], p[1]]))
+    del cols[cols.index(min(cols))]
     # elif t == 4:
     #     logger.debug("function: get_character_busy: t=4： 测试中功能，如果导致换人失败，反复输出 waiting 请上报。")
     #     return True
     
     if t1 >= 3 and t2 == 3:
         return False
-    else:
-        if print_log:
-            logger.trace(f"waiting: character busy: t1{t1} t2{t2}")
-        return True
+    if t1 >= 3 and np.std(cols)<=5:
+        if abs(max(cap[46,1846])-np.average(cols))<=5:
+            logger.warning_once(t2t("Located at the map boundary, the is_chara_busy function enables fuzzy recognition mode."))
+            return False
+    if print_log:
+        logger.trace(f"waiting: character busy: t1{t1} t2{t2}")
+    return True
 
 def chara_waiting(stop_func, max_times = 1000, is_usd=True):
     if is_usd:
@@ -235,7 +189,7 @@ def get_current_chara_num(stop_func, max_times = 1000):
 
 
     
-def get_arrow_img(img):
+def get_arrow_img(img, show_res=False):
     img = itt.png2jpg(img, channel='ui', alpha_num=150)
     red_num = 250
     blue_num = 90
@@ -280,7 +234,7 @@ def get_arrow_img(img):
     # arrow_img[im_src[:, :, 1] > green_num + float_num] = 0
     # arrow_img[im_src[:, :, 1] < green_num - float_num] = 0
 
-    if False:
+    if show_res:
         # cv2.imshow("mask",mask)
         cv2.imshow("2131231", arrow_img)
         cv2.waitKey(10)
@@ -320,7 +274,7 @@ def combat_statement_detection():
     
     im_src = itt.capture()
     orsrc = im_src.copy()
-    blood_bar_img = get_enemy_blood_bar_img(orsrc)
+    blood_bar_img = get_enemy_blood_bar_img(orsrc.copy())
     
     flag_is_blood_bar_exist = blood_bar_img.max() > 0
     
@@ -403,12 +357,20 @@ def is_character_healthy():
         return color_similar(col,target_col,threshold=20)
 
 def get_characters_name():
-    img = itt.capture(jpgmode=0)
+    cap = itt.capture(jpgmode=0)
+    # img = extract_white_letters(cap)
+    img = cap
     ret_list = []
     for i in [asset.CharacterName1,asset.CharacterName2,asset.CharacterName3,asset.CharacterName4]:
-        img2=img.copy()
-        t = ocr.get_all_texts(crop(img2,i.position), mode=1)
-        ret_list.append(translate_character_auto(t))
+        img2 = img.copy()
+        img3 = crop(img2,i.position)
+        texts = ocr.get_all_texts(img3)
+        succ=False
+        for t in texts:
+            if translate_character_auto(t) != None:
+                ret_list.append(translate_character_auto(t))
+                succ=True
+        if not succ:ret_list.append(None)
     return ret_list
 
 def get_team_chara_names_in_party_setup():
@@ -454,7 +416,92 @@ def set_party_setup(names):
         logger.error(f"CANNOT Set Party To: {names}")
         return False
     
+def get_curr_team_file():
+    if not (ui_control.verify_page(UIPage.page_main) or ui_control.verify_page(UIPage.page_domain)):
+        ui_control.ui_goto(UIPage.page_main)
+    curr_name_list = get_characters_name()
+    team_files = load_json_from_folder(fr"{CONFIG_PATH}\tactic",["character_dist","character"])
+    for i in team_files:
+        j = i["json"]
+        name_list = []
+        for ii in j:
+            name_list.append(translate_character_auto(j[ii]["name"]))
+        if name_list == curr_name_list:
+            return i["label"]
+    return False
+        
+def get_chara_list():
+    global load_err_times
+    load_err_times = 0
+    team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
+    auto_choose = DEBUG_MODE        
+    if auto_choose:
+        team_name = get_curr_team_file()
+        if not team_name:
+            logger.error(t2t("The strategy file for the current teaming is not found in the tactic folder: ")+str(get_characters_name()))
+            team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
+    else:
+        team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
+    logger.info(f"team file set as: {team_name}")
     
+    team = load_json(team_name, default_path=r"config/tactic")
+    
+    for team_n in team:
+        team_item = team[team_n]
+        team_item.setdefault("name", None)
+        team_item.setdefault("position", None)
+        team_item.setdefault("priority", None)
+        team_item.setdefault("E_short_cd_time", None)
+        team_item.setdefault("E_long_cd_time", None)
+        team_item.setdefault("Elast_time", None)
+        team_item.setdefault("n", None)
+        team_item.setdefault("trigger", None)
+        team_item.setdefault("Epress_time", None)
+        team_item.setdefault("Qlast_time", None)
+        team_item.setdefault("Qcd_time", None)
+        team_item.setdefault("vision", None)
+    save_json(team, team_name, default_path=r"config/tactic")
+    
+    # characters = load_json("character.json", default_path=dpath)
+    chara_list = []
+    for team_name in team:
+        team_item = team[team_name]
+        autofill_flag = False
+        # autofill_flag = team_item["autofill"]
+        cname = get_param(team_item, "name", autofill_flag, chara_name="")
+        c = translate_character_auto(cname)
+        if c != None:
+            cname = c
+        c_position = get_param(team_item, "position", autofill_flag, chara_name=cname, value_when_empty='')
+        c_priority = get_param(team_item, "priority", autofill_flag, chara_name=cname)
+        cE_short_cd_time = get_param(team_item, "E_short_cd_time", autofill_flag, chara_name=cname)
+        cE_long_cd_time = get_param(team_item, "E_long_cd_time", autofill_flag, chara_name=cname)
+        cElast_time = get_param(team_item, "Elast_time", autofill_flag, chara_name=cname)
+        cn = get_param(team_item, "n", autofill_flag, chara_name=cname)
+        try:
+            c_tactic_group = team_item["tactic_group"]
+        except:
+            c_tactic_group = team_item["tastic_group"]
+            logger.warning(t2t("请将配对文件中的tastic_group更名为tactic_group. 已自动识别。"))
+            
+        c_trigger = get_param(team_item, "trigger", autofill_flag, chara_name=cname, value_when_empty="e_ready")
+        cEpress_time = get_param(team_item, "Epress_time", autofill_flag, chara_name=cname)
+        cQlast_time = get_param(team_item, "Qlast_time", autofill_flag, chara_name=cname)
+        cQcd_time = get_param(team_item, "Qcd_time", autofill_flag, chara_name=cname)
+        c_vision = get_param(team_item, "vision", autofill_flag, chara_name=cname)
+    
+        chara_list.append(
+            character.Character(
+                name=cname, position=c_position, n=cn, priority=c_priority,
+                E_short_cd_time=cE_short_cd_time, E_long_cd_time=cE_long_cd_time, Elast_time=cElast_time,
+                tactic_group=c_tactic_group, trigger=c_trigger,
+                Epress_time=cEpress_time, Qlast_time=cQlast_time, Qcd_time=cQcd_time, vision = c_vision
+            )
+        )
+    if load_err_times>0:
+        raise TacticKeyEmptyError(t2t("Character Key Empty Error"))
+        
+    return chara_list
     
 class CombatStatementDetectionLoop(BaseThreading):
     def __init__(self):
@@ -484,18 +531,17 @@ class CombatStatementDetectionLoop(BaseThreading):
             r = combat_statement_detection()
             state = r[0] or r[1]
         if state != self.current_state:
-            
             if self.current_state == True: # 切换到无敌人慢一点, 8s
-                self.state_counter += 1
                 self.while_sleep = 0.8
             elif self.current_state == False: # 快速切换到遇敌
                 self.while_sleep = 0.02
-                self.state_counter += 1
+            
+            self.state_counter += 1
         else:
             self.state_counter = 0
             self.while_sleep = 0.5
         if self.state_counter >= 10:
-            logger.debug(f'combat_statement_detection change state: {self.current_state}')
+            logger.debug(f'combat_statement_detection change state: {self.current_state} -> {state} {r}')
             # if self.current_state == False:
             #     only_arrow_timer.reset()
             self.state_counter = 0
@@ -508,11 +554,13 @@ CSDL = CombatStatementDetectionLoop()
 CSDL.start()
 
 if __name__ == '__main__':
-    # get_chara_list()
-    # print()
+    # get_curr_team_file()
+    print(get_characters_name())
     # set_party_setup("Lisa")
     while 1:
         time.sleep(0.1)
-        combat_statement_detection()
+        # print(is_character_busy())
+        # print(unconventionality_situation_detection())
+        print(combat_statement_detection())
         # print(get_character_busy(itt, default_stop_func))
         # time.sleep(0.2)

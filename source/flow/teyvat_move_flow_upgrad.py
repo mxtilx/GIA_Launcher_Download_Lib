@@ -7,11 +7,10 @@ from source.controller import teyvat_move_controller
 from funclib.err_code_lib import ERR_PASS, ERR_STUCK
 from source.ui.ui import ui_control
 import source.ui.page as UIPage
-from source.interaction.minimap_tracker import tracker
+from source.map.map import genshin_map
 from source.flow.flow_template import FlowConnector, FlowController, FlowTemplate, EndFlowTemplate
 from source.flow import flow_state as ST
 from source.flow import flow_code as FC
-from source.map.map import genshin_map
 from source.ui.ui import ui_control
 import source.ui.page as UIPage
 
@@ -37,7 +36,8 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.tp_type = None
         self.ignore_space = True
         self.is_reinit = True
-        self.is_precise_arrival = True
+        self.is_precise_arrival = False
+        self.stop_offset = None
 
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -62,7 +62,8 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.tp_type = None
         self.ignore_space = True
         self.is_reinit = True
-        self.is_precise_arrival = True
+        self.is_precise_arrival = False
+        self.stop_offset = None
         
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -98,6 +99,8 @@ class TeyvatMoveCommon():
         self.jump_timer1 = timer_module.Timer()
         self.jump_timer2 = timer_module.Timer()
         self.jump_timer3 = timer_module.Timer()
+        self.history_position = []
+        self.history_position_timer = timer_module.AdvanceTimer(limit=1)
 
     def switch_motion_state(self, jump=True):
         if itt.get_img_existence(asset.motion_climbing):
@@ -128,6 +131,16 @@ class TeyvatMoveCommon():
             if self.jump_timer3.get_diff_time() >= 0.3:
                 itt.key_press('spacebar')
                 self.jump_timer3.reset()
+                
+    def is_stuck(self, posi, threshold=30):
+        if self.history_position_timer.reached_and_reset():
+            self.history_position.append(posi)
+        if len(self.history_position) >= threshold:
+            if euclidean_distance(self.history_position[0], self.history_position[-1])<=10:
+                logger.warning(f"MOVE STUCK")
+                return True
+        return False
+                
     
     
 class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon):
@@ -136,8 +149,7 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon):
         TeyvatMoveCommon.__init__(self)
         self.upper = upper
         self.auto_move_timeout = timer_module.AdvanceTimer(limit=300)
-        self.history_position = []
-        self.history_position_timer = timer_module.AdvanceTimer(limit=1)
+        
 
     # def _calculate_next_priority_point(self, currentp, targetp):
     #     float_distance = 35
@@ -163,12 +175,12 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon):
     #     return closest_pp
 
     def state_before(self):
-        tracker.reinit_smallmap()
+        genshin_map.reinit_smallmap()
         itt.key_down('w')
         self.auto_move_timeout.reset()
         self.history_position_timer.reset()
         self.history_position = []
-        self.upper.while_sleep = 0.1
+        self.upper.while_sleep = 0
         self._next_rfc()
     def state_after(self):
         self.upper.while_sleep = 1
@@ -177,39 +189,52 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon):
     def state_in(self):
         self.switch_motion_state()
         
-        self.current_posi = tracker.get_position()
+        self.current_posi = genshin_map.get_position()
         p1 = self.upper.target_posi
-        if self.history_position_timer.reached_and_reset():
-            self.history_position.append(self.current_posi)
-        if len(self.history_position) >= 30:
-            if euclidean_distance(self.history_position[0], self.history_position[-1])<=10:
-                logger.warning(f"MOVE STUCK")
-                self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
-                self._set_rfc(FC.END)
+        
+        if self.is_stuck(self.current_posi):
+            self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
+            self._set_rfc(FC.END)
+        
         # print(p1)
         movement.change_view_to_posi(p1, self.upper.checkup_stop_func)
-            
-        # if len(tracker.history_posi) >= 29:
-        #     p1 = tracker.history_posi[0][1:]
-        #     p2 = tracker.history_posi[-1][1:]
+
+        
+        # if len(genshin_map.history_posi) >= 29:
+        #     p1 = genshin_map.history_posi[0][1:]
+        #     p2 = genshin_map.history_posi[-1][1:]
         #     if euclidean_distance(p1,p2)<=30:
         #         logger.warning("检测到移动卡住，正在退出")
         #         self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
         #         self._next_rfc()
         
         if self.upper.stop_rule == 0:
-            if euclidean_distance(self.upper.target_posi, tracker.get_position())<=10:
+            if self.upper.is_precise_arrival:
+                threshold=1
+            else:
+                threshold=6
+            if euclidean_distance(self.upper.target_posi, genshin_map.get_position())<=threshold:
                 logger.info(t2t("已到达目的地附近，本次导航结束。"))
                 itt.key_up('w')
                 self._set_nfid(ST.END_TEYVAT_MOVE_PASS)
                 self._next_rfc()
         elif self.upper.stop_rule == 1:
-            if generic_lib.f_recognition():
-                self._set_nfid(ST.END_TEYVAT_MOVE_PASS)
-                self._next_rfc()
-                logger.info(t2t("已到达F附近，本次导航结束。"))
-                itt.key_up('w')
-            
+            if self.upper.stop_offset is None:
+                threshold = 25
+            else:
+                threshold = self.upper.stop_offset
+            if euclidean_distance(self.upper.target_posi, genshin_map.get_position())<=threshold:
+                if generic_lib.f_recognition():
+                    self._set_nfid(ST.END_TEYVAT_MOVE_PASS)
+                    self._next_rfc()
+                    logger.info(t2t("已到达F附近，本次导航结束。"))
+                    itt.key_up('w')
+    def state_after(self):
+        self.switch_motion_state(jump=False)
+        if self.motion_state == IN_FLY:
+            logger.info(f"landing")
+            itt.left_click()
+        self._next_rfc()
         
         
 
@@ -244,7 +269,7 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
 
     
     def CalculateTheDistanceBetweenTheAngleExtensionLineAndTheTarget(self, curr,target):
-        θ = tracker.get_rotation()
+        θ = genshin_map.get_rotation()
         if θ<0:
             θ+=360
         θ-=90
@@ -283,7 +308,7 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
         self.end_times = 0
         # itt.key_down('w')
         if self.upper.is_reinit:
-            tracker.reinit_smallmap()
+            genshin_map.reinit_smallmap()
         self.upper.while_sleep = 0
         self._next_rfc()
     
@@ -321,7 +346,8 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
         # 更新BP和CP
         while 1: 
             target_posi = self.curr_breaks[self.curr_break_point_index]
-            curr_posi = tracker.get_position()
+            curr_posi = genshin_map.get_position()
+                    
             # 刷新当前position index
             self._refresh_curr_posi_index(list(curr_posi))
             special_key = self.curr_path[self.curr_path_index]["special_key"]
@@ -371,6 +397,13 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
                     return
             else:
                 break
+        
+        if self.is_stuck(curr_posi, threshold=16):
+            itt.key_press('spacebar')
+        if self.is_stuck(curr_posi, threshold=30):
+            self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
+            self._set_rfc(FC.END)
+        
         if self.ready_to_end:
             self.end_times += 1
             logger.debug(f"ready to end: {self.end_times} {offset}")
@@ -380,7 +413,7 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
             self._set_rfc(FC.END)
         logger.debug(f"next break position distance: {euclidean_distance(target_posi, curr_posi)}")
         # delta_distance = self.CalculateTheDistanceBetweenTheAngleExtensionLineAndTheTarget(curr_posi,target_posi)
-        delta_degree = abs(movement.calculate_delta_angle(tracker.get_rotation(),movement.calculate_posi2degree(target_posi)))
+        delta_degree = abs(movement.calculate_delta_angle(genshin_map.get_rotation(),movement.calculate_posi2degree(target_posi)))
         if delta_degree >= 20:
             itt.key_up('w')
             movement.change_view_to_posi(target_posi, stop_func = self.upper.checkup_stop_func)
@@ -467,7 +500,8 @@ class TeyvatMoveFlowController(FlowController):
                       reaction_to_enemy:str = None,
                       tp_type:list = None,
                       is_reinit:bool = None,
-                      is_precise_arrival:bool = None):
+                      is_precise_arrival:bool = None,
+                      stop_offset = None):
         if MODE != None:
             self.flow_connector.MODE = MODE
         if stop_rule != None:
@@ -490,7 +524,8 @@ class TeyvatMoveFlowController(FlowController):
             self.flow_connector.is_reinit = is_reinit
         if is_precise_arrival != None:
             self.flow_connector.is_precise_arrival = is_precise_arrival
-        
+        if stop_offset != None:
+            self.flow_connector.stop_offset = stop_offset
 
         
 if __name__ == '__main__':

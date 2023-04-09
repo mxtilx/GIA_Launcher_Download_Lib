@@ -91,7 +91,11 @@ class InteractionBGD:
         else:
             from source.interaction.capture import EmulatorCapture
             self.capture_obj = EmulatorCapture()
-
+            
+        self.key_status={'w':False}
+        self.key_freeze={}
+        
+        
         # if handle != 0:
         #     static_lib.HANDLE = handle
         #     logger.debug(f"handle: {static_lib.HANDLE}")
@@ -142,7 +146,7 @@ class InteractionBGD:
         return ret
 
     def match_multiple_img(self, img, template, is_gray=False, is_show_res: bool = False, ret_mode=IMG_POINT,
-                           threshold=0.98):
+                           threshold=0.98, ignore_close=False):
         """多图片识别
 
         Args:
@@ -168,7 +172,15 @@ class InteractionBGD:
         
         # Sort coordinates of matched pixels by their similarity score in descending order
         matched_coordinates = sorted(zip(*loc[::-1]), key=lambda x: res[x[1], x[0]], reverse=True)
-        
+        if ignore_close:
+            ret_coordinates = []
+            for i in matched_coordinates:
+                if len(ret_coordinates) == 0:
+                    ret_coordinates.append(i)
+                    continue
+                if min(euclidean_distance_plist(i, ret_coordinates))>=15:
+                    ret_coordinates.append(i)
+            return ret_coordinates
         # for pt in zip(*loc[::-1]):  # 遍历位置，zip把两个列表依次参数打包
         #     right_bottom = (pt[0] + w, pt[1] + h)  # 右下角位置
         #     if ret_mode == IMG_RECT:
@@ -544,7 +556,10 @@ class InteractionBGD:
             comment (str, optional): 日志注释. Defaults to ''.
         """
         if x  == "animation":
-            time.sleep(0.2)
+            time.sleep(0.3)
+            return
+        if x  == "2animation":
+            time.sleep(0.6)
             return
         upper_func_name = inspect.getframeinfo(inspect.currentframe().f_back)[2]
         a = random.randint(-10, 10)
@@ -665,6 +680,7 @@ class InteractionBGD:
         if key == 'w':
             static_lib.W_KEYDOWN = True
         self.itt_exec.key_down(key)
+        self.key_status[key]=True
         self.operation_lock.release()
         
         # if is_log:
@@ -683,6 +699,7 @@ class InteractionBGD:
         if key == 'w':
             static_lib.W_KEYDOWN = False
         self.itt_exec.key_up(key)
+        self.key_status[key]=False
         self.operation_lock.release()
         
         # if is_log:
@@ -698,6 +715,7 @@ class InteractionBGD:
         self.operation_lock.acquire()
         # print('lock!')
         self.itt_exec.key_press(key)
+        self.key_status[key]=False
         self.operation_lock.release()
         
         # logger.debug("keyPress " + key + ' |function name: ' + inspect.getframeinfo(inspect.currentframe().f_back)[2])
@@ -744,7 +762,20 @@ class InteractionBGD:
         # print('lock!')
         self.itt_exec.drag(origin_xy, targe_xy, isChromelessWindow=self.isChromelessWindow)
         self.operation_lock.release()
+        
+    def freeze_key(self, key, operate="down"):
+        self.key_freeze[key] = self.key_status[key]
+        if operate=="down":
+            itt.key_down(key)
+        else:
+            itt.key_up(key)
     
+    def unfreeze_key(self, key):
+        operate = self.key_freeze[key]
+        if operate:
+            itt.key_down(key)
+        else:
+            itt.key_up(key)
 def itt_test(itt: InteractionBGD):
     pass
 

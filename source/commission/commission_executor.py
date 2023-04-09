@@ -10,7 +10,6 @@ class CommissionExecutor(TaskTemplate, CommissionParser):
             
         self._set_and_save_and_load_commission_dicts()
         
-        
     def loop(self):
         for i in self.commission_dicts:
             co = get_commission_object(i["type"], i["position"])
@@ -26,9 +25,10 @@ class CommissionExecutor(TaskTemplate, CommissionParser):
                 if self.checkup_stop_func():return
                 if co.pause_threading_flag: break
             self._clean_sub_threading()
-            j = load_json(json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
-            j[self.commission_dicts.index(i)]["done"]=True
-            save_json(j ,json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
+            if co.is_commission_succ:
+                j = load_json(json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
+                j[self.commission_dicts.index(i)]["done"]=True
+                save_json(j ,json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
         self.pause_threading()
 
 if __name__ == '__main__':
