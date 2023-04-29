@@ -15,6 +15,7 @@ from source.webio.page_manager import Page
 from source.funclib import collector_lib
 from source.common import timer_module
 from source.webio.update_notice import upd_message
+from source.config.cvars import *
 
 
 
@@ -30,6 +31,7 @@ class MainPage(Page):
         self.ui_statement = -1
         self.refresh_flow_info_timer = timer_module.Timer()
         self.ui_mission_select = ""
+        self.is_task_start = False
 
     # todo:多语言支持
 
@@ -88,6 +90,13 @@ class MainPage(Page):
                     # elif isinstance(self.ui_statement, str):
                     output.put_text(f'{self.ui_statement}', scope="StateArea")
 
+                if listening.TASK_MANAGER.start_tasklist_flag != self.is_task_start:
+                    self.is_task_start = listening.TASK_MANAGER.start_tasklist_flag
+                    output.clear('Button_StartStop')
+                    output.put_button(label=str(listening.TASK_MANAGER.start_tasklist_flag), onclick=self.on_click_startstop,
+                          scope='Button_StartStop')
+
+            
             time.sleep(0.1)
     
     def _load(self):
@@ -102,31 +111,29 @@ class MainPage(Page):
             output.put_button(label=t2t("Get IP address"), onclick=self.on_click_ip_address, scope=self.main_scope)
 
         ], scope=self.main_scope)
-        if not DEBUG_MODE:
-            task_options = [{"label":t2t("Domain Task"),"value":"DomainTask"},{"label":t2t("Mission"),"value":"MissionTask"}]
-        else:
-            task_options = [
-                    {
-                        "label":t2t("Domain Task"),
-                        "value":"DomainTask"
-                    },
-                    {
-                        "label":t2t("Daily Commission"),
-                        "value":"CommissionTask"
-                    },
-                    {
-                        "label":t2t("Claim Reward"),
-                        "value":"ClaimRewardTask"
-                    },
-                    {
-                        "label":t2t("Ley Line Outcrop"),
-                        "value":"LeyLineOutcropTask"
-                    },
-                    {
-                        "label":t2t("Mission"),
-                        "value":"MissionTask"
-                    }
-                ]
+
+        task_options = [
+                {
+                    "label":t2t("Domain Task"),
+                    "value":"DomainTask"
+                },
+                {
+                    "label":t2t("Daily Commission"),
+                    "value":"CommissionTask"
+                },
+                {
+                    "label":t2t("Claim Reward"),
+                    "value":"ClaimRewardTask"
+                },
+                {
+                    "label":t2t("Ley Line Outcrop"),
+                    "value":"LeyLineOutcropTask"
+                },
+                {
+                    "label":t2t("Mission"),
+                    "value":"MissionTask"
+                }
+            ]
         output.put_row([  # 横列
             output.put_column([  # 左竖列
                 output.put_markdown('## '+t2t("Task List")),
@@ -210,6 +217,8 @@ class MainPage(Page):
             cj = load_json()
             cj["mission_group"] = pin.pin["MissionSelect"]
             save_json(cj)
+            GIAconfig.update()
+
         time.sleep(0.2)
         output.put_button(label=str(listening.TASK_MANAGER.start_tasklist_flag), onclick=self.on_click_startstop,
                           scope='Button_StartStop')
@@ -284,21 +293,15 @@ class ConfigPage(Page):
 
     def _config_file2lableAfile(self, l1):
         replace_dict = {
-            "auto_aim.json": t2t("auto_aim.json"),
-            "auto_collector.json": t2t("auto_collector.json"),
-            "auto_combat.json": t2t("auto_combat.json"),
-            "auto_domain.json": t2t("auto_domain.json"),
-            "auto_pickup.json": t2t("auto_pickup.json"),
-            "config.json": t2t("config.json"),
-            "keymap.json": t2t("keymap.json"),
-            "character.json": t2t("character.json"),
-            "character_dist.json": t2t("character_dist.json"),
-            "team.json": t2t("team.json"),
-            "team_example_2.json": t2t("team_example_2.json"),
+            "Combat.json": t2t("Combat.json"),
+            "Domain.json": t2t("Domain.json"),
+            "General.json": t2t("General.json"),
+            "Keymap.json": t2t("Keymap.json"),
             "collected.json": t2t("collected.json"),
             "collection_blacklist.json": t2t("collection_blacklist.json"),
             "collection_log.json": t2t("collection_log.json"),
-            "auto_collector.json": t2t("auto_collector.json")
+            "Collector.json": t2t("Collector.json"),
+            "LeyLineOutcrop": t2t("LeyLineOutcrop.json")
         }
         
         for i in range(len(l1)):
@@ -377,14 +380,20 @@ class ConfigPage(Page):
 
         # with open(os.path.join(root_path, "config", "settings", "config.json"), 'r', encoding='utf8') as f:
         #     lang = json.load(f)["lang"]
-        doc_name = f'config\\json_doc\\{self.config_file_name}.{GLOBAL_LANG}.jsondoc'
+        doc_name = f'config\\json_doc\\{self.config_file_name}.yaml'
+        lang_doc_name = f'config\\json_doc\\{self.config_file_name}.{GLOBAL_LANG}.yaml'
 
         if os.path.exists(doc_name):
             with open(doc_name, 'r', encoding='utf8') as f:
-                doc = json.load(f)
-        elif os.path.exists(f'{doc_name}.en_US.jsondoc'):
-            with open(f'{doc_name}.en_US.jsondoc', 'r', encoding='utf8') as f:
-                doc = json.load(f)
+                doc = yaml.load(f, Loader=yaml.FullLoader)
+            if os.path.exists(lang_doc_name):
+                with open(lang_doc_name, 'r', encoding='utf8') as f:
+                    doc_addi = yaml.load(f, Loader=yaml.FullLoader)
+                for k1 in doc_addi:
+                    for k2 in doc_addi[k1]:
+                        if k1 not in doc:
+                            doc[k1] = doc_addi[k1]
+                        doc[k1][k2] = doc_addi[k1][k2]
         else:
             doc = {}
         self.put_json(j, doc, 'now', level=3)  # 载入json
@@ -400,6 +409,7 @@ class ConfigPage(Page):
         json.dump(self.get_json(j), open(self.file_name, 'w', encoding='utf8'), ensure_ascii=False, indent=4)
         # output.put_text('saved!', scope='now')
         output.toast(t2t('saved!'))
+        GIAconfig.update()
 
     # 
     def get_json(self, j: dict, add_name=''):
@@ -607,7 +617,7 @@ class ConfigPage(Page):
 
 class SettingPage(ConfigPage):
     def __init__(self):
-        super().__init__(config_file_name = "config")
+        super().__init__(config_file_name = CONFIGNAME_GENERAL)
 
     def _load(self):
         self.last_file = None
@@ -625,17 +635,19 @@ class SettingPage(ConfigPage):
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope", value="config\\settings\\config.json")
 
     def _load_config_files(self):
-        for root, dirs, files in os.walk('config\\settings'):
-            for f in files:
-                if f[:f.index('.')] in ["auto_combat", "auto_collector", "auto_pickup_default_blacklist"]:
-                    continue
-                if f[f.index('.') + 1:] == "json":
-                    self.config_files.append({"label": f, "value": os.path.join(root, f)})
-
+        # for root, dirs, files in os.walk('config\\settings'):
+        #     for f in files:
+        #         if f[:f.index('.')] in ["auto_combat", "auto_collector", "auto_pickup_default_blacklist"]:
+        #             continue
+        #         if f[f.index('.') + 1:] == "json":
+        #             self.config_files.append({"label": f, "value": os.path.join(root, f)})
+        for i in [CONFIGNAME_GENERAL, CONFIGNAME_DOMAIN, CONFIGNAME_KEYMAP, CONFIGNAME_LEY_LINE_OUTCROP]:
+            self.config_files.append({"label": f"{i}.json", "value": os.path.join(fr"{CONFIG_PATH_SETTING}", f"{i}.json")})
+        
 
 class CombatSettingPage(ConfigPage):
     def __init__(self):
-        super().__init__(config_file_name = "auto_combat")
+        super().__init__(config_file_name = CONFIGNAME_COMBAT)
         from source.common.lang_data import get_all_characters_name
         self.character_names = get_all_characters_name()
         self.input_verify={
@@ -675,7 +687,7 @@ class CombatSettingPage(ConfigPage):
             for f in files:
                 if f[f.index('.') + 1:] == "json":
                     self.config_files.append({"label": f, "value": os.path.join(root, f)})
-        self.config_files.append({"label": "auto_combat.json", "value": "config\\settings\\auto_combat.json"})
+        self.config_files.append({"label": f"{CONFIGNAME_COMBAT}.json", "value": fr"config/settings/{CONFIGNAME_COMBAT}.json"})
 
     def _load(self):
         self.last_file = None
@@ -716,7 +728,7 @@ class CombatSettingPage(ConfigPage):
 
 class CollectorSettingPage(ConfigPage):
     def __init__(self):
-        super().__init__(config_file_name = "auto_collector")
+        super().__init__(config_file_name = CONFIGNAME_COLLECTOR)
         self.collection_names = load_json("ITEM_NAME.json", f"assets\\POI_JSON_API\\{GLOBAL_LANG}")
 
     def _load_config_files(self):
@@ -725,7 +737,7 @@ class CollectorSettingPage(ConfigPage):
             for f in files:
                 if f[f.index('.') + 1:] == "json":
                     self.config_files.append({"label": f, "value": os.path.join(root, f)})
-        self.config_files.append({"label": "auto_collector.json", "value": os.path.join("config\\settings\\auto_collector.json")})
+        self.config_files.append({"label": f"{CONFIGNAME_COLLECTOR}.json", "value": os.path.join(fr"config/settings/{CONFIGNAME_COLLECTOR}.json")})
 
     # 重置列表
     @staticmethod

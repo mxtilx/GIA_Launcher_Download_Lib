@@ -26,20 +26,19 @@ class AimOperator(BaseThreading):
         self.setName('AimOperator')
         self.itt = itt
         self.loop_timer = Timer()
-        auto_aim_json = load_json("auto_aim.json")
-        self.fps = 1 / auto_aim_json["fps"]
+        # self.fps = 1 / auto_aim_json["fps"]
         self.fps = 5
-        self.max_number_of_enemy_loops = auto_aim_json["max_number_of_enemy_loops"]
-        self.auto_distance = auto_aim_json["auto_distance"]
+        # self.max_number_of_enemy_loops = auto_aim_json["max_number_of_enemy_loops"]
         self.auto_distance = False
-        self.auto_move = auto_aim_json["auto_move"]
+        # self.auto_move = auto_aim_json["auto_move"]
         self.enemy_loops = 0
         self.enemy_flag = True
-        self.reset_time = auto_aim_json["reset_time"]
+        # self.reset_time = auto_aim_json["reset_time"]
         # self.left_timer = Timer()
         # self.reset_timer = Timer()
         self.kdwe_timer = Timer()
-        self.circle_search_timer = AdvanceTimer(10,count=1)
+        self.circle_search_timer = AdvanceTimer(4,count=3).start() # call 3 times and continue 4 sec.
+        self.keep_distance_timer = AdvanceTimer(3,count=3).start()
         self.corr_rate = 1
         self.sco_blocking_request = ThreadBlockingRequest()
 
@@ -85,10 +84,9 @@ class AimOperator(BaseThreading):
                     if self.checkup_stop_func():continue
                     if r: # 找到了，退出
                         self.enemy_flag = True
-                        self.circle_search_timer.reset()
                     else: # 没找到，根据红色箭头移动寻找
                         if self.checkup_stop_func():continue
-                        self.sco_blocking_request.send_request() # 向SCO申请暂停Tactic执行
+                        self.sco_blocking_request.send_request('_moving_find_enemy') # 向SCO申请暂停Tactic执行
                         if True: # set to False when debug this module
                             print(self.sco_blocking_request.waiting_until_reply(stop_func=self.checkup_stop_func, timeout=60))
                         r = self._moving_find_enemy()
@@ -101,11 +99,14 @@ class AimOperator(BaseThreading):
                 else:
                     if self._is_enemy_too_far(): # 敌人是否太远
                         if self.checkup_stop_func():continue
-                        self.sco_blocking_request.send_request()
-                        if True: # set to False when debug this module
-                            print(self.sco_blocking_request.waiting_until_reply(stop_func=self.checkup_stop_func, timeout=60))
-                        self._keep_distance_with_enemy()
-                        self.sco_blocking_request.recovery_request() # 解除申请
+                        if self.keep_distance_timer.reached_and_reset():
+                            self.sco_blocking_request.send_request('_keep_distance_with_enemy')
+                            if True: # set to False when debug this module
+                                print(self.sco_blocking_request.waiting_until_reply(stop_func=self.checkup_stop_func, timeout=60))
+                            self._keep_distance_with_enemy()
+                            self.sco_blocking_request.recovery_request() # 解除申请
+                    else:
+                        self.keep_distance_timer.reset()
             
             # ret = self.auto_aim() # 自动瞄准
             # if ret is None:
@@ -144,11 +145,11 @@ class AimOperator(BaseThreading):
     
     def _circle_find_enemy(self):
         if self.circle_search_timer.reached_and_reset():
+            logger.debug(f"circle_search_timer reached, skip")
+            return False
+        else:
             movement.reset_view() # 重置视角
             logger.debug(f" finding_enemy ")
-        else:
-            logger.debug(f"circle_search_timer does not reached, skip")
-            return False
         # while self.enemy_loops < self.max_number_of_enemy_loops: # 当搜索敌人次数小于最大限制次数时，开始搜索
         for i in range(15):
             if i%4==0:
@@ -161,7 +162,9 @@ class AimOperator(BaseThreading):
             if len(ret_points) != 0:
                 # self._reset_enemy_loops()
                 if self._is_blood_bar_exist():
+                    self.circle_search_timer.reset()
                     return True
+                
 
             # self.enemy_loops += 1
         return False
@@ -215,6 +218,7 @@ class AimOperator(BaseThreading):
             logger.debug(f"no enemy exist, break")
             return False
         while 1:
+            # move view to blood bar exist or arrow no exist, where is the enemy located.
             if self.checkup_stop_func():return
             movement.cview(20)
             # itt.delay(0.1)
@@ -223,13 +227,18 @@ class AimOperator(BaseThreading):
                 break
         
         itt.key_down('w')
-        move_timer = AdvanceTimer(15)
+        move_timer = AdvanceTimer(15).start()
+        move_timer.start()
+        combat_lib.CSDL.freeze_state()
         while 1:
+            time.sleep(0.1)
             if self.checkup_stop_func():
                 itt.key_up('w')
+                combat_lib.CSDL.unfreeze_state()
                 return
             if move_timer.reached():
                 itt.key_up('w')
+                combat_lib.CSDL.unfreeze_state()
                 logger.debug(f"_moving_find_enemy timeout")
                 return False
             if combat_lib.combat_statement_detection()[0]:
@@ -240,17 +249,21 @@ class AimOperator(BaseThreading):
                     r = self._keep_distance_with_enemy()
                     if r:
                         itt.key_up('w')
+                        combat_lib.CSDL.unfreeze_state()
                         return True
                     else:
                         logger.info(f"_moving_find_enemy: refind enemy: 2")
                         itt.key_up('w')
+                        combat_lib.CSDL.unfreeze_state()
                         return self._moving_find_enemy()
                 else:
                     itt.key_down('w')
             if combat_lib.combat_statement_detection()[1]:
                 itt.key_up('w')
                 logger.info(f"_moving_find_enemy: refind enemy")
+                combat_lib.CSDL.unfreeze_state()
                 return self._moving_find_enemy()
+        combat_lib.CSDL.unfreeze_state()
         return True    
         
                 
@@ -313,24 +326,24 @@ class AimOperator(BaseThreading):
         #     return px
             # print()
 
-    def finding_enemy(self):
-        if self.enemy_loops < self.max_number_of_enemy_loops:
-            movement.reset_view() # 重置视角
-            logger.debug(f" finding_enemy ")
-        while self.enemy_loops < self.max_number_of_enemy_loops: # 当搜索敌人次数小于最大限制次数时，开始搜索
-            if self.checkup_stop_func():
-                return 0
-            self.itt.move_to(150, 0, relative=True)
-            ret_points = self.get_enemy_feature()
-            if ret_points is None:
-                return False
-            if len(ret_points) != 0:
-                self._reset_enemy_loops()
-                return True
+    # def finding_enemy(self):
+    #     if self.enemy_loops < self.max_number_of_enemy_loops:
+    #         movement.reset_view() # 重置视角
+    #         logger.debug(f" finding_enemy ")
+    #     while self.enemy_loops < self.max_number_of_enemy_loops: # 当搜索敌人次数小于最大限制次数时，开始搜索
+    #         if self.checkup_stop_func():
+    #             return 0
+    #         self.itt.move_to(150, 0, relative=True)
+    #         ret_points = self.get_enemy_feature()
+    #         if ret_points is None:
+    #             return False
+    #         if len(ret_points) != 0:
+    #             self._reset_enemy_loops()
+    #             return True
 
-            self.enemy_loops += 1
+    #         self.enemy_loops += 1
 
-            # time.sleep(0.1)
+    #         # time.sleep(0.1)
 
     def _reset_enemy_loops(self):
         self.enemy_loops = 0
@@ -351,6 +364,7 @@ class AimOperator(BaseThreading):
             if px < target_px:
                 itt.key_down('w')
                 while 1:
+                    time.sleep(0.05)
                     if self.checkup_stop_func(): 
                         itt.key_up('w')
                         return False

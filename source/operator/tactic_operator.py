@@ -10,8 +10,8 @@ from source.manager import posi_manager, asset
 from source.path_lib import *
 
 E_STRICT_MODE = True  # may cause more performance overhead
-DETERMINING_WEIGHT = load_json(JSONNAME_CONFIG, CONFIG_PATH_SETTING)["determining_strict_weight"]
-USING_ALPHA_CHANNEL = load_json(JSONNAME_CONFIG, CONFIG_PATH_SETTING)["using_alpha_channel"]
+DETERMINING_WEIGHT = GIAconfig.General_DeterminingStrictWeight
+USING_ALPHA_CHANNEL = GIAconfig.General_UsingAlphaChannel
 
 def stop_func_example():  # True:stop;False:continue
     return False
@@ -34,7 +34,7 @@ class TacticOperator(BaseThreading):
         self.formered_tactic = None
         self.tactic_group = None
         self.character = None
-        self.tactic_exec_timer = AdvanceTimer(0.4)
+        self.tactic_exec_timer = AdvanceTimer(0.4).start()
 
     def pause_threading(self):
         if self.pause_threading_flag != True:
@@ -65,14 +65,16 @@ class TacticOperator(BaseThreading):
                 return
 
             if self.pause_threading_flag:
-                if self.pause_timer.get_diff_time()>=1:
+                if self.pause_timer.get_diff_time()<=4:
                     time.sleep(0.02)
-                elif self.pause_timer.get_diff_time()>=3:
+                elif self.pause_timer.get_diff_time()<=8:
+                    time.sleep(0.05)
+                elif self.pause_timer.get_diff_time()<=20:
                     time.sleep(0.1)
-                elif self.pause_timer.get_diff_time()>=10:
-                    time.sleep(0.25)
+                elif self.pause_timer.get_diff_time()<=60:
+                    time.sleep(0.2)
                 else:
-                    time.sleep(1)
+                    time.sleep(0.4)
                 continue
             self.pause_timer.reset()
             if self.checkup_stop_func():
@@ -82,6 +84,7 @@ class TacticOperator(BaseThreading):
             # print('5')
 
             if (self.formered_tactic is None or len(self.formered_tactic) == 0):
+                logger.trace(f"no valid tactic, skip")
                 self.pause_threading()
             if not self.pause_threading_flag:
                 logger.debug(f"exec tactic start")
@@ -159,7 +162,7 @@ class TacticOperator(BaseThreading):
         
         situation_code = -1
 
-        while self.itt.get_img_existence(asset.COMING_OUT_BY_SPACE):
+        while self.itt.get_img_existence(asset.IconCombatComingOutBySpace):
             if self.checkup_stop_func():
                 return 0
             if self.pause_tactic_flag:
@@ -295,7 +298,7 @@ class TacticOperator(BaseThreading):
             return 0
         self.chara_waiting(mode=1)
         self.itt.left_down()
-        self.itt.delay(2.5)
+        self.itt.delay(self.character.long_attack_time)
         self.itt.left_up()
 
     def do_jump(self):
@@ -409,7 +412,7 @@ class TacticOperator(BaseThreading):
         tas = tactic[4:]
         tas = tas.split(':')
         if is_ready:
-            tas[0].replace('.', ',')
+            tas[0] = tas[0].replace('.', ',')
             while (not self.character.is_E_pass()) and (not self.checkup_stop_func()):
                 if self.checkup_stop_func():
                     return 0
@@ -418,7 +421,7 @@ class TacticOperator(BaseThreading):
                 self.unconventionality_situation_detection()
                 self.execute_tactic([tas[0]])
         else:
-            tas[1].replace('.', ',')
+            tas[1] = tas[1].replace('.', ',')
             self.execute_tactic([tas[1]])
 
     def estimate_lock_q_ready(self, tactic):  # #@q?

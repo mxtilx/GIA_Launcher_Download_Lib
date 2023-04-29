@@ -17,8 +17,8 @@ class PickupOperator(BaseThreading):
         super().__init__()
         self.setName("PickupOperator")
         self.itt = itt
-        self.pickup_blacklist = load_json("auto_pickup.json")["blacklist"]
-        self.pickup_blacklist += load_json("auto_pickup_default_blacklist.json")["blacklist"]
+        self.pickup_blacklist = GIAconfig.Collector_PickupBlacklist
+        self.pickup_blacklist += load_json("auto_pickup_default_blacklist.json", default_path=fr"{ASSETS_PATH}")["blacklist"]
         self.pickup_blacklist = list(set(self.pickup_blacklist))
         self.pickup_item_list = []
         self.flicker_timer = timer_module.Timer(diff_start_time=1)
@@ -137,9 +137,9 @@ class PickupOperator(BaseThreading):
         return self.last_err_code
     
     def get_pickup_item_names(self, extra_white = False)->list:
-        ret = self.itt.get_img_position(asset.F_BUTTON)
-        y1 = asset.F_BUTTON.cap_posi[1]
-        x1 = asset.F_BUTTON.cap_posi[0]
+        ret = self.itt.get_img_position(asset.IconGeneralFButton)
+        y1 = asset.IconGeneralFButton.cap_posi[1]
+        x1 = asset.IconGeneralFButton.cap_posi[0]
         cap = self.itt.capture()
         cap = crop(cap, [x1 + ret[0] + 53, y1 + ret[1] - 20, x1 + ret[0] + 361,  y1 + ret[1] + 54])
         # img_manager.qshow(cap)
@@ -156,11 +156,11 @@ class PickupOperator(BaseThreading):
         ret = generic_lib.f_recognition()
         if ret:
             time.sleep(0.05)
-            ret = self.itt.get_img_position(asset.F_BUTTON)
+            ret = self.itt.get_img_position(asset.IconGeneralFButton)
             if ret == False:
                 return 0
-            y1 = asset.F_BUTTON.cap_posi[1]
-            x1 = asset.F_BUTTON.cap_posi[0]
+            y1 = asset.IconGeneralFButton.cap_posi[1]
+            x1 = asset.IconGeneralFButton.cap_posi[0]
             if static_lib.W_KEYDOWN:
                 flag1 = True
                 self.itt.key_up('w')

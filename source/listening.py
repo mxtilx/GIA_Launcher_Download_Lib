@@ -10,7 +10,7 @@ from source.mission import mission_manager
 combat_flag = False
 collector_flag = False
 startstop_flag = False
-TASK_MANAGER = task_manager.TaskManager()
+TASK_MANAGER = task_manager.TASK_MANAGER
 TASK_MANAGER.setDaemon(True)
 # TASK_MANAGER.pause_threading()
 TASK_MANAGER.start()
@@ -35,7 +35,6 @@ FLOW型功能：同时只能启动一个，空闲时为FLOW_IDLE
 FEAT型功能：可以启动多个，用bool值控制
 """
 
-keymap_json = load_json("keymap.json")
 global icm
 icm = False
 def call_you_import_module():
@@ -62,9 +61,9 @@ def import_current_module():
             elif current_flow == FLOW_COMBAT:
                 # logger.info("正在导入 FLOW_COMBAT 模块，可能需要一些时间。")
                 from source.flow import alpha_loop
-            elif current_flow == FLOW_COLLECTOR:
-                # logger.info("正在导入 FLOW_COLLECTOR 模块，可能需要一些时间。")
-                from source.flow import collector_flow
+            # elif current_flow == FLOW_COLLECTOR:
+            #     # logger.info("正在导入 FLOW_COLLECTOR 模块，可能需要一些时间。")
+            #     from source.flow import collector_flow
         except Exception as e:
             logger.critical(f"IMPORT ERROR: current_flow: {current_flow}")
             logger.exception(e)
@@ -76,11 +75,13 @@ def switch_combat_loop():
         logger.info(t2t('正在停止自动战斗'))
         t1.stop_threading()
     else:
-        from source.flow import alpha_loop
+        from source.controller.combat_controller import CombatController
         logger.info(t2t('启动自动战斗'))
-        t1 = alpha_loop.AlphaLoop()
+        t1 = CombatController()
         t1.setDaemon(True)
         t1.start()
+        time.sleep(1)
+        t1.continue_threading()
     combat_flag = not combat_flag
 
 def switch_collector_loop():
@@ -117,8 +118,8 @@ def startstop():
         startstop_flag = not startstop_flag
         switch_collector_loop()
 
-if keymap_json["startstop"] != "":
-    keyboard.add_hotkey(keymap_json["startstop"], startstop)
+if GIAconfig.Keymap_StartStop != "":
+    keyboard.add_hotkey(GIAconfig.Keymap_StartStop, startstop)
 # keyboard.add_hotkey(load_json("keymap.json", f"{CONFIG_PATH_SETTING}")["task"], TASK_MANAGER.start_stop_tasklist)
 
 @logger.catch

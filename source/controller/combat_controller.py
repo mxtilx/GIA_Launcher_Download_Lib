@@ -29,14 +29,11 @@ def stop_func_example():  # True:stop;False:continue
 class CombatController(AdvanceThreading):
     def __init__(self, chara_list=None):
         super().__init__()
-        if chara_list is None:
-            chara_list = combat_lib.get_chara_list()
         self.setName('CombatController')
 
-        self.chara_list = chara_list
-        self.pause_threading_flag = False
+        self.pause_threading_flag = True
 
-        self.sco = SwitchCharacterOperator(self.chara_list)
+        self.sco = SwitchCharacterOperator()
         self._add_sub_threading(self.sco)
         self.sco.pause_threading()
 
@@ -47,12 +44,12 @@ class CombatController(AdvanceThreading):
     
     def loop(self):
         if self.is_check_died:
-            if itt.get_img_existence(asset.character_died):
+            if itt.get_img_existence(asset.IconCombatCharacterDied):
                 logger.info(t2t('有人嘎了，停止自动战斗'))
                 self.last_err_code = CHARACTER_DIED
                 while 1:
                     time.sleep(0.5)
-                    r = itt.appear_then_click(asset.button_ui_cancel)
+                    r = itt.appear_then_click(asset.ButtonUICancel)
                     if r:
                         break
                 self.pause_threading()

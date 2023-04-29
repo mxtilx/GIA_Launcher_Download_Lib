@@ -4,13 +4,14 @@ from source.util import *
 from source.funclib import generic_lib
 from source.map.map import genshin_map
 from source.manager import asset
+from source.common.timer_module import Timer
 
 itt = itt
 AHEAD = 0
 LEFT = 1
 RIGHT = 2
 BACK = 3
-CORRECT_DEGREE = config_json["corr_degree"]
+CORRECT_DEGREE = GIAconfig.General_CorrDegree
 HORIZONTAL = 1
 VERTICALLY = 2
 VERTICALLY_AND_HORIZONTAL = 3
@@ -39,6 +40,19 @@ def move(direction, distance=1):
             itt.key_down('s')
             itt.delay(0.1 * distance)
             itt.key_up('s')
+jump_timer1 = Timer()
+jump_timer2 = Timer()
+def jump_timer_reset():
+    jump_timer1.reset()
+
+def jump_in_loop(jump_dt:float=2):
+    if jump_timer1.get_diff_time() >= jump_dt:
+        jump_timer1.reset()
+        jump_timer2.reset()
+        itt.key_press('spacebar')
+    if jump_timer2.get_diff_time() >= 0.3 and jump_timer2.get_diff_time()<=2: # double jump
+        itt.key_press('spacebar')
+        jump_timer2.start_time -= 2
 
 def angle2movex(angle):
     cvn = maxmin(angle*10,500,-500) # 10: magic num, test from test246.py
@@ -66,7 +80,7 @@ def move_view_p(x, y):
 def reset_view():
     if IS_DEVICE_PC:
         itt.middle_click()
-        time.sleep(1)
+        itt.delay(0.4)
 
 def calculate_delta_angle(cangle,tangle):
     dangle = cangle - tangle
@@ -200,16 +214,16 @@ def f():
     return False
     
 def get_current_motion_state() -> str:
-    if itt.get_img_existence(asset.motion_climbing):
+    if itt.get_img_existence(asset.IconGeneralMotionClimbing):
         return CLIMBING
-    elif itt.get_img_existence(asset.motion_flying):
+    elif itt.get_img_existence(asset.IconGeneralMotionFlying):
         return FLYING
-    elif itt.get_img_existence(asset.motion_swimming):
+    elif itt.get_img_existence(asset.IconGeneralMotionSwimming):
         return SWIMMING
     else:
         return WALKING
 
-def move_to_posi_LoopMode(target_posi, stop_func):
+def move_to_posi_LoopMode(target_posi, stop_func, threshold = 6):
     """移动到指定坐标。适合用于while循环的模式。
 
     Args:
@@ -223,14 +237,15 @@ def move_to_posi_LoopMode(target_posi, stop_func):
         itt.key_down('w')
     else:
         change_view_to_posi(target_posi, stop_func = stop_func, max_loop=4, offset=2, print_log = False)
+    return euclidean_distance(genshin_map.get_position(), target_posi) <= threshold
 
 # view_to_angle(-90)
 if __name__ == '__main__':
     while 1:
         time.sleep(0.05)
         cap = itt.capture(jpgmode=0)
-        ban_posi=asset.CommissionIcon.cap_posi
+        ban_posi=asset.IconCommissionCommissionIcon.cap_posi
         cap[ban_posi[1]:ban_posi[3],ban_posi[0]:ban_posi[2]]=0
-        print(view_to_imgicon(cap, asset.CommissionIconInCommission))
+        print(view_to_imgicon(cap, asset.IconCommissionInCommission))
     # cview(-90, VERTICALLY)
     move_to_position([71, -2205])

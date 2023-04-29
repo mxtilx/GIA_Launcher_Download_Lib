@@ -28,11 +28,11 @@ class CollectorFlow(BaseThreading):
     def __init__(self):
         super().__init__()
         self.setName("CollectorFlow")
-        collector_config = load_json("auto_collector.json")
-        self.collector_name = collector_config["collection_name"]
-        if collector_config["collection_type"] == "COLLECTION":
+        # collector_config = load_json("auto_collector.json")
+        self.collector_name = GIAconfig.Collector_CollectionName
+        if GIAconfig.Collector_CollectionType == "COLLECTION":
             self.collector_type = COLLECTION
-        elif collector_config["collection_type"] == "ENEMY":
+        elif GIAconfig.Collector_CollectionType == "ENEMY":
             self.collector_type = ENEMY
         self.collector_blacklist_id = load_json("collection_blacklist.json", default_path="config\\auto_collector")
         self.collected_id = load_json("collected.json", default_path="config\\auto_collector")
@@ -76,8 +76,7 @@ class CollectorFlow(BaseThreading):
         self.puo.set_search_mode(1)
         
         
-        chara_list = combat_lib.get_chara_list()
-        self.cct = combat_controller.CombatController(chara_list)
+        self.cct = combat_controller.CombatController()
         self.cct.is_check_died = True
         self.cct.setDaemon(True)
         self.cct.add_stop_func(self.checkup_stop_func)
@@ -230,10 +229,10 @@ class CollectorFlow(BaseThreading):
                     time.sleep(1)
                     if self.checkup_stop_threading():
                         break
-                    ret = self.itt.appear_then_click(asset.button_all_character_died)
+                    ret = self.itt.appear_then_click(asset.ButtonGeneralAllCharacterDied)
                     
-                    if self.itt.get_img_existence(asset.ui_main_win) and not self.itt.get_img_existence(
-                            asset.button_all_character_died):
+                    if self.itt.get_img_existence(asset.IconUIEmergencyFood) and not self.itt.get_img_existence(
+                            asset.ButtonGeneralAllCharacterDied):
                         break
                 
                 self.current_state = ST.AFTER_PICKUP_COLLECTOR
@@ -263,7 +262,7 @@ class CollectorFlow(BaseThreading):
                 logger.info(t2t("重置完成。准备进行下一次采集"))
                 self.cct.reset_err_code()
             
-            if self.itt.get_img_existence(asset.button_all_character_died):
+            if self.itt.get_img_existence(asset.ButtonGeneralAllCharacterDied):
                 self.last_err_code = ALL_CHARACTER_DIED
                 logger.warning("ALL_CHARACTER_DIED")
                 self.stop_all()

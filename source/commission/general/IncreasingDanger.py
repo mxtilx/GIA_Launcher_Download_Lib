@@ -14,9 +14,9 @@ class IncreasingDangerGeneral(CommissionTemplate):
     
     def _aim_to_commission_icon(self):
         cap = itt.capture(jpgmode=0)
-        ban_posi=asset.CommissionIcon.cap_posi
+        ban_posi=asset.IconCommissionCommissionIcon.cap_posi
         cap[ban_posi[1]:ban_posi[3],ban_posi[0]:ban_posi[2]]=0
-        r = movement.view_to_imgicon(cap, asset.CommissionIconInCommission)
+        r = movement.view_to_imgicon(cap, asset.IconCommissionInCommission)
         if not r:
             return False
         if r<=15:
@@ -41,14 +41,18 @@ class IncreasingDangerGeneral(CommissionTemplate):
         return False
     
     def exec_mission(self):
-        attack_timer = AdvanceTimer(0.3)
+        attack_timer = AdvanceTimer(0.3).start()
         r = self.move_straight(self.commission_position, is_tp=True)
         if r == ERR_FAIL:return
         self.start_combat(mode="Shield")
+        reset_view_timer = AdvanceTimer(20)
         while 1:
             if self.checkup_stop_func():
                 self.stop_combat()
                 return
+            if reset_view_timer.reached_and_reset():
+                movement.reset_view()
+            movement.jump_in_loop(6)
             if self._aim_to_commission_icon():
                 if attack_timer.reached_and_reset():itt.left_click()
             if self.is_commission_complete():

@@ -33,6 +33,8 @@ class CommissionParser():
         self.commission_dicts = []
         commission_positions = []
         ui_control.ensure_page(UIPages.page_bigmap)
+        genshin_map.get_bigmap_posi()
+        genshin_map._switch_to_area("Mondstadt")
         for posi in self.TRAVERSE_MONDSTADT_POSITION:
             genshin_map.get_bigmap_posi()
             genshin_map._move_bigmap(posi.tianli, force_center = True)
@@ -40,7 +42,7 @@ class CommissionParser():
             img = itt.capture(jpgmode=0)
             img = crop(img, cap_posi)
             img = recorp(img,cap_posi)
-            positions = itt.match_multiple_img(img, template=asset.BigmapCommissionIcon.image)
+            positions = itt.match_multiple_img(img, template=asset.IconBigmapCommission.image)
             if len(positions)>0:
                 curr_posi = genshin_map.get_bigmap_posi()
                 for i in positions:
@@ -69,23 +71,32 @@ class CommissionParser():
                             "position":list(target_tianli_posi),
                             "done":False
                         })
+                        logger.info(f"commission has been added: {self.commission_dicts[-1]}")
         return self.commission_dicts
     
-    def _set_and_save_and_load_commission_dicts(self):
+    def _set_and_save_and_load_commission_dicts(self) -> bool:
         g4t = Genshin400Timer()
         if g4t.is_new_day():
             logger.info(f"new genshin day, traverse mondstant commissions")
             self.traverse_mondstant()
             save_json(self.commission_dicts, json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
             g4t.set_today()
+            return True
         else:
             self.commission_dicts = load_json(json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
+            for i in self.commission_dicts:
+                if i["done"] != True:
+                    return False
+            logger.info(f"commission dicts all have been done. researching.")
+            self.traverse_mondstant()
+            save_json(self.commission_dicts, json_name="commission_dict.json", default_path=rf"{CONFIG_PATH}\commission")
+            return True
     def _detect_commission_type(self)->str:
         img = itt.capture(jpgmode=0)
-        img_choose = crop(img.copy(), asset.BigmapChooseArea.position)
-        img_sidebar = crop(img.copy(), asset.AreaSidebarCommissionName.position)
+        img_choose = crop(img.copy(), asset.AreaBigmapChoose.position)
+        img_sidebar = crop(img.copy(), asset.AreaBigmapSidebarCommissionName.position)
         
-        if itt.get_img_existence(asset.SidebarIsCommissionExist, cap = img_sidebar):
+        if itt.get_img_existence(asset.IconBigmapSidebarIsCommissionExist, cap = img_sidebar):
             ocr_res = ocr.get_all_texts(img_sidebar)
         else:
             ocr_res = ocr.get_all_texts(img_choose)

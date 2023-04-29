@@ -13,7 +13,8 @@ class Capture():
         self.fps_timer = timer_module.Timer(diff_start_time=1)
         self.capture_cache_lock = threading.Lock()
         self.capture_times = 0
-        self.cap_per_sec = timer_module.CyclicCounter(limit=3)
+        self.cap_per_sec = timer_module.CyclicCounter(limit=3).start()
+        self.last_cap_times = 0
 
     def _get_capture(self) -> np.ndarray:
         """
@@ -36,7 +37,15 @@ class Capture():
         if DEBUG_MODE:
             r = self.cap_per_sec.count_times()
             if r:
-                logger.trace(f"capps: {r/3}")
+                if r != self.last_cap_times:
+                    logger.trace(f"capps: {r/3}")
+                    self.last_cap_times = r
+                elif r >= 10*3:
+                    logger.trace(f"capps: {r/3}")
+                elif r >= 20*3:
+                    logger.debug(f"capps: {r/3}")
+                elif r >= 40*3:
+                    logger.info(f"capps: {r/3}")
         self._capture(is_next_img)
         self.capture_cache_lock.acquire()
         cp = self.capture_cache.copy()
@@ -163,7 +172,21 @@ class EmulatorCapture(Capture):
     
     def _get_capture(self):
         pass
+
+class CustomCapture(Capture):
+    def __init__(self):
+        super().__init__()
+        self.curr_cap = np.zeros_like((1080,1920,3), dtype="uint8")
     
+    def _check_shape(self, img):
+        return True
+
+    def _get_capture(self) -> np.ndarray:
+        return self.curr_cap
+
+    def set_cap(self, img):
+        self.curr_cap = img
+
 if __name__ == '__main__':
     wc = WindowsCapture()
     # wc._get_screen_scale_factor()

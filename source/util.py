@@ -1,149 +1,73 @@
-import json
-import os
-import shutil
-import sys
-import time  # 8药删了，qq了
-import math
+
+import time, math, shutil, sys, os, json
+import win32gui, win32process, psutil, ctypes, pickle, traceback
 import numpy as np
-import gettext
-from source.logger import logger
-import cv2
-import win32gui, win32process, psutil
-import ctypes, pickle
+import cv2, yaml
 from PIL import Image, ImageDraw, ImageFont
-import traceback
-
-time.time()  # 防自动删除
-global GLOBAL_LANG, GLOBAL_DEVICE
-GLOBAL_LANG = "$locale$" # $locale$, zh_CN, en_US
-DESKTOP_CN = "Desktop_CN"
-DESKTOP_EN = "Desktop_EN"
-MOBILE_CN = "Mobile_CN"
-MOBILE_EN = "Mobile_EN"
-DEVICE = DESKTOP_CN
-INTERACTION_DESKTOP = "Desktop"
-INTERACTION_EMULATOR = "Emulator"
-INTERACTION_DESKTOP_BACKGROUND = "DesktopBackground"
-INTERACTION_MODE = INTERACTION_DESKTOP # Normal, Adb, Dm
-BBG = 100001
-ANGLE_NORMAL = 0
-ANGLE_NEGATIVE_Y = 1
-ANGLE_NEGATIVE_X = 2
-ANGLE_NEGATIVE_XY = 3
-PROCESS_NAME = ["YuanShen.exe", "GenshinImpact.exe"]
-SCREEN_CENTER_X = 1920/2
-SCREEN_CENTER_Y = 1080/2
-GIA_VERSION = "v0.7.3.810"
-
-# configure paths
+from collections import OrderedDict
 ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCE_PATH = ROOT_PATH + '\\source'
 ASSETS_PATH = ROOT_PATH + '\\assets'
-if sys.path[0] != ROOT_PATH:
-    sys.path.insert(0, ROOT_PATH)
-if sys.path[1] != SOURCE_PATH:
-    sys.path.insert(1, SOURCE_PATH)
+if sys.path[0] != ROOT_PATH:   sys.path.insert(0, ROOT_PATH)
+if sys.path[1] != SOURCE_PATH: sys.path.insert(1, SOURCE_PATH)
+from source.logger import logger
+from source.config.config import GIAconfig
+from source.i18n import t2t, GLOBAL_LANG
 from source.path_lib import *
-# configure paths over
+from source.cvars import *
 
+time
+yaml
+shutil
+pickle
+traceback
 
+DEBUG_MODE = GIAconfig.General_DEBUG
+INTERACTION_MODE = GIAconfig.General_InteractionMode
+IS_DEVICE_PC = True
 
 # load config file
-def load_json(json_name='config.json', default_path='config\\settings', auto_create = False) -> dict:
+def load_json(json_name='General.json', default_path='config\\settings', auto_create = False) -> dict:
     # if "$lang$" in default_path:
     #     default_path = default_path.replace("$lang$", GLOBAL_LANG)
     all_path = os.path.join(ROOT_PATH, default_path, json_name)
     try:
-        return json.load(open(all_path, 'r', encoding='utf-8'))
+        return json.load(open(all_path, 'r', encoding='utf-8'), object_pairs_hook=OrderedDict)
     except:
         if not auto_create:
             logger.critical(f"尝试访问{all_path}失败")
-            # raise FileNotFoundError
+            raise FileNotFoundError(all_path)
         else:
             json.dump({}, open(all_path, 'w', encoding='utf-8'))
             return json.load(open(all_path, 'r', encoding='utf-8'))
-try:
-    config_json = load_json("config.json")
-    DEBUG_MODE = config_json["DEBUG"] if "DEBUG" in config_json else False
-    GLOBAL_LANG = config_json["lang"]
-except:
-    logger.error("config文件导入失败，可能由于初次安装。跳过导入。 ERROR_IMPORT_CONFIG_001")
-    DEBUG_MODE = False
-    GLOBAL_LANG = "$locale$"
+        
 
-try:
-    INTERACTION_MODE = load_json("config.json", CONFIG_PATH_SETTING)["interaction_mode"]
-    if INTERACTION_MODE not in [INTERACTION_EMULATOR, INTERACTION_DESKTOP_BACKGROUND, INTERACTION_DESKTOP]:
-        logger.warning("UNKNOWN INTERACTION MODE. SET TO \'Desktop\' Default.")
-        INTERACTION_MODE = INTERACTION_DESKTOP
-except:
-    logger.error("config文件导入失败，可能由于初次安装。跳过导入。 ERROR_IMPORT_CONFIG_002")
-    INTERACTION_MODE = INTERACTION_DESKTOP
-IS_DEVICE_PC = (INTERACTION_MODE == INTERACTION_DESKTOP_BACKGROUND)or(INTERACTION_MODE == INTERACTION_DESKTOP)
+
+# try:
+#     if INTERACTION_MODE not in [INTERACTION_EMULATOR, INTERACTION_DESKTOP_BACKGROUND, INTERACTION_DESKTOP]:
+#         logger.warning("UNKNOWN INTERACTION MODE. SET TO \'Desktop\' Default.")
+#         INTERACTION_MODE = INTERACTION_DESKTOP
+# except:
+#     logger.error("config文件导入失败，可能由于初次安装。跳过导入。 ERROR_IMPORT_CONFIG_002")
+#     INTERACTION_MODE = INTERACTION_DESKTOP
+# IS_DEVICE_PC = (INTERACTION_MODE == INTERACTION_DESKTOP_BACKGROUND)or(INTERACTION_MODE == INTERACTION_DESKTOP)
 # load config file over
 
-
-
-# configure loguru
-logger.remove(handler_id=None)
-logger.add(os.path.join(ROOT_PATH, os.path.join(ROOT_PATH, 'Logs', "{time:YYYY-MM-DD}.log")), level="TRACE", backtrace=True, retention='15 days')
-if DEBUG_MODE:
-    logger.add(sys.stdout, level="TRACE", backtrace=True)
-else:
-    logger.add(sys.stdout, level="INFO", backtrace=True)
-
-
-def hr(title, level=3):
-    title = str(title).upper()
-    if level == 1:
-        logger.info('=' * 20 + ' ' + title + ' ' + '=' * 20)
-    if level == 2:
-        logger.info('-' * 20 + ' ' + title + ' ' + '-' * 20)
-    if level == 3:
-        logger.info('<' * 3 + ' ' + title + ' ' + '>' * 3)
-    if level == 0:
-        middle = '|' + ' ' * 20 + title + ' ' * 20 + '|'
-        border = '+' + '-' * (len(middle) - 2) + '+'
-        logger.info(border)
-        logger.info(middle)
-        logger.info(border)
-
-
-def attr(name, text):
-    logger.info('[%s] %s' % (str(name), str(text)))
-
-
-def attr_align(name, text, front='', align=22):
-    name = str(name).rjust(align)
-    if front:
-        name = front + name[len(front):]
-    logger.info('%s: %s' % (name, str(text)))
-
-
-logger.hr = hr
-logger.attr = attr
-logger.attr_align = attr_align
-# configurate loguru over
-
-
-
 # load translation module
-def get_local_lang():
-    import locale
-    lang = locale.getdefaultlocale()[0]
-    logger.debug(f"locale: {locale.getdefaultlocale()}")
-    if lang in ["zh_CN", "zh_SG", "zh_MO", "zh_HK", "zh_TW"]:
-        return "zh_CN"
-    else:
-        return "en_US"
+# def get_local_lang():
+#     import locale
+#     lang = locale.getdefaultlocale()[0]
+#     logger.debug(f"locale: {locale.getdefaultlocale()}")
+#     if lang in ["zh_CN", "zh_SG", "zh_MO", "zh_HK", "zh_TW"]:
+#         return "zh_CN"
+#     else:
+#         return "en_US"
 
-if GLOBAL_LANG == "$locale$":
-    GLOBAL_LANG = get_local_lang()
-    GLOBAL_LANG = "zh_CN"
-    logger.info(f"language set as: {GLOBAL_LANG}")
-l10n = gettext.translation(GLOBAL_LANG, localedir=os.path.join(ROOT_PATH, r"translation/locale"), languages=[GLOBAL_LANG])
-l10n.install()
-t2t = l10n.gettext
+# if GLOBAL_LANG == "$locale$":
+#     GLOBAL_LANG = get_local_lang()
+#     GLOBAL_LANG = "zh_CN"
+logger.info(f"language set as: {GLOBAL_LANG}")
+
 # load translation module over
 
 
@@ -218,11 +142,6 @@ def is_json_equal(j1: str, j2: str) -> bool:
     except:
         return False
 
-def add_logger_to_GUI(cb_func):
-    logger.add(cb_func, level="INFO", backtrace=True, colorize=True)
-
-
-
 def is_int(x):
     try:
         int(x)
@@ -230,8 +149,6 @@ def is_int(x):
         return False
     else:
         return True
-
-
 
 def points_angle(p1, p2, coordinate=ANGLE_NORMAL):
     # p1: current point
@@ -255,7 +172,7 @@ def points_angle(p1, p2, coordinate=ANGLE_NORMAL):
         degree -= 360
     return degree
 
-def save_json(x, json_name='config.json', default_path='config\\settings', sort_keys=True, auto_create=False):
+def save_json(x, json_name='General.json', default_path='config\\settings', sort_keys=True, auto_create=False):
     if not os.path.exists(default_path):
         logger.error(f"CANNOT FIND PATH: {default_path}")
     if sort_keys:
@@ -264,10 +181,6 @@ def save_json(x, json_name='config.json', default_path='config\\settings', sort_
     else:
         json.dump(x, open(os.path.join(default_path, json_name), 'w', encoding='utf-8'),
               ensure_ascii=False)
-
-def refresh_config():
-    global config_json
-    config_json = load_json("config.json")
 
 def euclidean_distance(p1, p2):
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
@@ -285,17 +198,17 @@ def manhattan_distance(p1, p2):
 def manhattan_distance_plist(p1, p2) -> np.ndarray:
     return abs(p1[0]-p2[:,0]) + abs(p1[1]-p2[:,1])
 
-def quick_euclidean_distance_plist(p1, p2, max_points_num = 50)-> np.ndarray:
+def quick_euclidean_distance_plist(p1, plist, max_points_num = 50)-> np.ndarray:
     if not isinstance(p1, np.ndarray):
         p1 = np.array(p1)
-    if not isinstance(p2, np.ndarray):
-        p2 = np.array(p2)
+    if not isinstance(plist, np.ndarray):
+        plist = np.array(plist)
     # 计算当前点到所有优先点的曼哈顿距离
-    md = manhattan_distance_plist(p1, p2)
+    md = manhattan_distance_plist(p1, plist)
     nearly_pp_arg = np.argsort(md)
     # 计算当前点到距离最近的50个优先点的欧拉距离
     cache_num = min(max_points_num, len(nearly_pp_arg))
-    nearly_pp = p2[nearly_pp_arg[:cache_num]]
+    nearly_pp = plist[nearly_pp_arg[:cache_num]]
     ed = euclidean_distance_plist(p1, nearly_pp)
 
     return ed
@@ -308,7 +221,7 @@ def quick_euclidean_distance_plist(p1, p2, max_points_num = 50)-> np.ndarray:
     
 
 
-    return np.sqrt((p1[0] - p2[:,0]) ** 2 + (p1[1] - p2[:,1]) ** 2)
+    return np.sqrt((p1[0] - plist[:,0]) ** 2 + (p1[1] - plist[:,1]) ** 2)
 
 
 
@@ -623,31 +536,28 @@ def circle_mask(img,inner_r, outer_r):
     return masked_img
 
 def get_circle_points(x,y,  show_res = False):
+    if show_res:
+        import turtle
+        turtle.speed(0)
     points = []
-    for r in range(5, 30, 5):
-        n = int(2 * math.pi * r / 10)
+    for r in range(5, 5*6, 5):
+        n = int(2 * math.pi * r / (5))
         for i in range(n):
             angle = 2 * math.pi / n * i
             px = x + r * math.cos(angle)
             py = y + r * math.sin(angle)
             if show_res:
-                import turtle
                 turtle.penup()
                 turtle.goto(px, py)
                 turtle.pendown()
-                turtle.dot(5)
+                turtle.dot(2)
             points.append((px, py))
     return points
-
-# Update for a program used before version v0.5.0.424
-if os.path.exists(os.path.join(ROOT_PATH, "config\\tastic")):
-    logger.error("检测到tastic文件夹。")
-    logger.error("版本v0.5.0.424后，tastic文件夹修正为tactic文件夹。")
-    logger.error("请重新安装新版GIA。")
 
 
 if __name__ == '__main__':
     # a = load_jsons_from_folder(os.path.join(root_path, "config\\tactic"))
-    print(get_active_window_process_name())
+    print(load_json("team_example_1.json", fr"{CONFIG_PATH}/tactic"))
+    print()
     pass
     # load_jsons_from_floder((root_path, "config\\tactic"))

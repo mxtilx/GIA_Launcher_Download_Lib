@@ -9,6 +9,8 @@ from source.manager import posi_manager as PosiM, asset
 from source.interaction.interaction_core import itt
 from source.api import yolox_api
 from source.flow import flow_state as ST
+from source.assets.domain import *
+from source.common.timer_module import AdvanceTimer
 
 class DomainFlowConnector(FlowConnector):
     """
@@ -17,25 +19,22 @@ class DomainFlowConnector(FlowConnector):
     def __init__(self):
         super().__init__()
         self.checkup_stop_func = None
-        chara_list = combat_lib.get_chara_list()
-        self.combat_loop = combat_controller.CombatController(chara_list)
+        self.combat_loop = combat_controller.CombatController()
         
         self.lockOnFlag = 0
         self.move_timer = timer_module.Timer()
         self.ahead_timer = timer_module.Timer()
-        domain_json = load_json("auto_domain.json")
-        self.isLiYue = domain_json["isLiYueDomain"]
-        self.resin_mode = domain_json["resin"]
-        self.fast_mode = domain_json["fast_mode"]
+        self.isLiYue = GIAconfig.Domain_IsObscuredDomain
+        self.resin_mode = GIAconfig.Domain_Resin
+        self.fast_mode = GIAconfig.Domain_FastMove
     
     def reset(self):
         self.lockOnFlag = 0
         self.move_timer = timer_module.Timer()
         self.ahead_timer = timer_module.Timer()
-        domain_json = load_json("auto_domain.json")
-        self.isLiYue = domain_json["isLiYueDomain"]
-        self.resin_mode = domain_json["resin"]
-        self.fast_mode = domain_json["fast_mode"]
+        self.isLiYue = GIAconfig.Domain_IsObscuredDomain
+        self.resin_mode = GIAconfig.Domain_Resin
+        self.fast_mode = GIAconfig.Domain_FastMove
     
 class MoveToChallenge(FlowTemplate):
     """
@@ -51,18 +50,18 @@ class MoveToChallenge(FlowTemplate):
         """
         logger.info(t2t('正在开始挑战秘境'))
         movement.reset_view()
-        if itt.get_text_existence(asset.LEYLINEDISORDER):
+        if itt.get_text_existence(asset.LEY_LINE_DISORDER):
             self._next_rfc()
-        if itt.get_img_existence(asset.IN_DOMAIN):
+        if itt.get_img_existence(asset.IconUIInDomain):
             self._next_rfc()
         
         self.rfc = 1
     
     def state_before(self):
         while 1:
-            if itt.get_img_existence(asset.IN_DOMAIN):
+            if itt.get_img_existence(asset.IconUIInDomain):
                 break
-            if itt.get_text_existence(asset.LEYLINEDISORDER):
+            if itt.get_text_existence(asset.LEY_LINE_DISORDER):
                 itt.move_and_click([PosiM.posi_domain['CLLD'][0], PosiM.posi_domain['CLLD'][1]], delay=1)
         time.sleep(0.5)
         movement.reset_view()
@@ -88,6 +87,7 @@ class Challenge(FlowTemplate):
     def __init__(self, upper:DomainFlowConnector):
         super().__init__(upper, flow_id=ST.INIT_CHALLENGE, next_flow_id=ST.INIT_FINGING_TREE)
         self.upper = upper
+        self.text_detect_timer = AdvanceTimer(4).start()
         
     def state_init(self):
         logger.info(t2t('正在开始战斗'))
@@ -95,15 +95,19 @@ class Challenge(FlowTemplate):
         itt.key_press('f')
         time.sleep(0.1)
         
-        self.upper.while_sleep = 2
+        self.upper.while_sleep = 1
         
         self._next_rfc()
     
     def state_in(self):
-        if itt.get_text_existence(asset.LEAVINGIN):
+        if itt.get_img_existence(IconGeneralChallengeSuccess):
             self.rfc = FC.AFTER
-        else:
-            self.rfc = FC.IN
+            return
+        if self.text_detect_timer.reached_and_reset():
+            if itt.get_text_existence(asset.LEAVING_IN):
+                self.rfc = FC.AFTER
+                return
+        self.rfc = FC.IN
     
     def state_after(self):
         
@@ -178,7 +182,7 @@ class FindingTree(FlowTemplate):
 
                 else:  # maybe can't look at tree
                     logger.debug('can not find tree. moving back.')
-                    movement.move(movement.BACK, distance=2)
+                    movement.move(movement.BACK, distance=4)
         else:
             self._next_rfc()
 
@@ -217,10 +221,10 @@ class AttainReward(FlowTemplate):
             self._next_rfc()
 
     def state_in(self):
-        if self.upper.resin_mode == '40':
-            itt.appear_then_click(asset.USE_20X2RESIN_DOUBLE_CHOICES)
-        elif self.upper.resin_mode == '20':
-            itt.appear_then_click(asset.USE_20RESIN_DOUBLE_CHOICES)
+        if str(self.upper.resin_mode) == '40':
+            itt.appear_then_click(asset.ButtonGeneralUseCondensedResin)
+        elif str(self.upper.resin_mode) == '20':
+            itt.appear_then_click(asset.ButtonGeneralUseOriginResin)
 
         if itt.get_text_existence(asset.domain_obtain):
             self._next_rfc()

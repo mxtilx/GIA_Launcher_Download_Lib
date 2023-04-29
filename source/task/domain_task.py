@@ -23,12 +23,12 @@ class DomainTask(TaskTemplate):
         self._add_sub_threading(self.dfc)
         self._add_sub_threading(self.TMFCF)
         
-        self.domain_name = load_json("auto_domain.json",f"{CONFIG_PATH_SETTING}")["domain_name"]
-        self.domain_stage_name = load_json("auto_domain.json",f"{CONFIG_PATH_SETTING}")["domain_stage_name"]
+        self.domain_name = GIAconfig.Domain_DomainName
+        self.domain_stage_name = GIAconfig.Domain_DomainStageName
         self.domain_posi = load_items_position(self.domain_name,mode=1, ret_mode=1)[0]
         self.TMFCF.set_parameter(stop_rule = 1, MODE = "AUTO", target_posi = self.domain_posi, is_tp=True, tp_type=["Domain"])
         self.TMFCF.set_target_posi(self.domain_posi)
-        self.last_domain_times = int(load_json("auto_domain.json",f"{CONFIG_PATH_SETTING}")["domain_times"])
+        self.last_domain_times = int(GIAconfig.Domain_ChallengeTimes)
 
         logger.info(f"domain_name: {self.domain_name} domain_stage_name {self.domain_stage_name} domain times {self.last_domain_times}")
     
@@ -52,13 +52,13 @@ class DomainTask(TaskTemplate):
             itt.key_press('f')
             if not f_recognition():
                 break
-        while not itt.get_img_existence(asset.solo_challenge):
+        while not itt.get_img_existence(asset.ButtonDomainSoloChallenge):
             if self.checkup_stop_func():return
             itt.delay("animation")
         itt.delay(1,comment="genshin animation")
         from source.api.pdocr_complete import ocr
         from source.api.pdocr_api import SHAPE_MATCHING, ACCURATE_MATCHING
-        cap_area = asset.switch_domain_area.position
+        cap_area = asset.AreaDomainSwitchChallenge.position
         itt.delay(1,comment="genshin animation")
         p1 = ocr.get_text_position(itt.capture(jpgmode=0, posi=cap_area), self.domain_stage_name,
                                    cap_posi_leftup=cap_area[:2],
@@ -79,14 +79,14 @@ class DomainTask(TaskTemplate):
             if self.checkup_stop_func():return
             time.sleep(0.2)
 
-            itt.appear_then_click(asset.solo_challenge)
+            itt.appear_then_click(asset.ButtonDomainSoloChallenge)
             
-            itt.appear_then_click(asset.start_challenge)
+            itt.appear_then_click(asset.ButtonDomainStartChallenge)
 
-            if itt.get_img_existence(asset.IN_DOMAIN):
+            if itt.get_img_existence(asset.IconUIInDomain):
                 break
             if ctimer.istimeout():
-                if itt.get_text_existence(asset.LEYLINEDISORDER):
+                if itt.get_text_existence(asset.LEY_LINE_DISORDER):
                     break
     
     def _end_domain(self):
@@ -120,9 +120,9 @@ class DomainTask(TaskTemplate):
 
     def _check_state(self):
         
-        if itt.get_img_existence(asset.IN_DOMAIN) or itt.get_text_existence(asset.LEYLINEDISORDER):
+        if itt.get_img_existence(asset.IconUIInDomain) or itt.get_text_existence(asset.LEY_LINE_DISORDER):
             self.flow_mode = TI.DT_IN_DOMAIN
-        elif itt.get_img_existence(asset.ui_main_win):
+        elif itt.get_img_existence(asset.IconUIEmergencyFood):
             self.flow_mode = TI.DT_MOVE_TO_DOMAIN
         else:
             logger.info(t2t("Unknown UI page"))

@@ -13,7 +13,7 @@ class ClaimRewardMission(MissionExecutor, Talk):
         
     def get_available_reward(self):
         ui_control.ensure_page(UIPage.page_bigmap)
-        cap = itt.capture(jpgmode=0, posi=asset.AreaAvailableReward.position)
+        cap = itt.capture(jpgmode=0, posi=asset.AreaClaimRewardAvailableReward.position)
         img = extract_white_letters(cap)
         res = ocr.get_all_texts(img)
         rewards = []
@@ -29,8 +29,8 @@ class ClaimRewardMission(MissionExecutor, Talk):
         def reset_character():
             while 1:
                 cap = itt.capture(jpgmode=0)
-                complete_posi = itt.match_multiple_img(cap, ExpeditionComplete.image, ignore_close=True)
-                complete_posi += itt.match_multiple_img(cap, ExpeditionComplete2.image, ignore_close=True)
+                complete_posi = itt.match_multiple_img(cap, IconExpeditionComplete.image, ignore_close=True)
+                complete_posi += itt.match_multiple_img(cap, IconExpeditionComplete2.image, ignore_close=True)
                 if len(complete_posi)==0:
                     return
                 chara_head_posi = np.array(complete_posi)+np.array([80,80])
@@ -48,11 +48,12 @@ class ClaimRewardMission(MissionExecutor, Talk):
                         cp = ButtonExpeditionFirstCharacter.click_position()
                         itt.move_and_click([cp[0],cp[1]+i])
                         itt.delay("2animation")
-                        if itt.get_img_existence(ExpeditionIcon):
+                        if itt.get_img_existence(IconClaimRewardExpedition):
                             break
                         i+=80
         for area in [ButtonExpeditionMD, ButtonExpeditionLY, ButtonExpeditionDQ, ButtonExpeditionXM]:   
-            itt.appear_then_click(area)
+            r = itt.appear_then_click(area)
+            if not r: continue
             itt.delay("2animation")
             reset_character()
 

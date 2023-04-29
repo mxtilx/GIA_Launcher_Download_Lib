@@ -15,13 +15,16 @@ class Talk():
     def _delay6(self):
         itt.delay(0.6)
     
+    def talk_wait(self, x):
+        itt.delay(x)
+    
     def talk_skip(self, stop_func):
         while 1:
             time.sleep(0.1)
             if stop_func():return
             itt.move_and_click(ButtonTalkSkip.click_position())
             # itt.move_to(-120,0,relative=True)
-            if itt.get_img_existence(asset.ui_main_win): return True
+            if itt.get_img_existence(asset.IconUIEmergencyFood): return True
             
     def talk_switch(self, textobj:asset.TextTemplate):
         cap = itt.capture(posi=AreaTalkSelects.position, jpgmode=0)
@@ -71,7 +74,7 @@ class Talk():
             return True
     
     def exit_talk(self):
-        esc_timer = AdvanceTimer(2)
+        esc_timer = AdvanceTimer(2).start()
         while 1:
             if ui_control.verify_page(UIPage.page_main): return True
             itt.move_and_click(ButtonTalkSkip.click_position())

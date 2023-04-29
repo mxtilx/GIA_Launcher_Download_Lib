@@ -74,7 +74,7 @@ class InteractionBGD:
         self.DEFAULT_DELAY_TIME = 0.05
         self.DEBUG_MODE = False
         self.CONSOLE_ONLY = False
-        self.isChromelessWindow = config_json["ChromelessWindow"]
+        self.isBorderlessWindow = GIAconfig.General_BorderlessWindow
         self.itt_exec = None
         self.capture_obj = None
         self.operation_lock = threading.Lock()
@@ -134,7 +134,9 @@ class InteractionBGD:
         # img_manager.qshow(ret)
         if posi is not None:
             ret = crop(ret, posi)
-        if jpgmode == 0:
+        if ret.shape[2]==3:
+            pass
+        elif jpgmode == 0:
             ret = ret[:, :, :3]
         elif jpgmode == 1:
             ret = self.png2jpg(ret, bgcolor='black', channel='bg')
@@ -731,7 +733,7 @@ class InteractionBGD:
         """
         self.operation_lock.acquire()
         # print('lock!')
-        self.itt_exec.move_to(int(x), int(y), relative=relative, isChromelessWindow=self.isChromelessWindow)
+        self.itt_exec.move_to(int(x), int(y), relative=relative, isBorderlessWindow=self.isBorderlessWindow)
         self.operation_lock.release()
 
     # @staticmethod
@@ -746,7 +748,7 @@ class InteractionBGD:
         x = int(position[0])
         y = int(position[1])
         
-        self.itt_exec.move_to(int(x), int(y), relative=False, isChromelessWindow=self.isChromelessWindow)
+        self.itt_exec.move_to(int(x), int(y), relative=False, isBorderlessWindow=self.isBorderlessWindow)
         time.sleep(delay)
         
         if type == 'left':
@@ -760,7 +762,7 @@ class InteractionBGD:
     def drag(self, origin_xy:list, targe_xy:list):
         self.operation_lock.acquire()
         # print('lock!')
-        self.itt_exec.drag(origin_xy, targe_xy, isChromelessWindow=self.isChromelessWindow)
+        self.itt_exec.drag(origin_xy, targe_xy, isBorderlessWindow=self.isBorderlessWindow)
         self.operation_lock.release()
         
     def freeze_key(self, key, operate="down"):
@@ -789,7 +791,7 @@ if __name__ == '__main__':
     rootpath = "D:\\Program Data\\vscode\\GIA\\genshin_impact_assistant\\dist\\imgs"
     # ib.similar_img_pixel(cv2.imread(rootpath+"\\yunjin_q.png"),cv2.imread(rootpath+"\\zhongli_q.png"))
     from source.manager import asset
-    itt.appear_then_click(asset.ButtonEgg, is_log=True)
+    itt.appear_then_click(asset.ButtonFoodEgg, is_log=True)
     # print(win32api.GetCursorPos())
     # win32api.mouse_event(win32con.MOUSEEVENTF_MOVE, 150, 150)
     # print(win32api.GetCursorPos())

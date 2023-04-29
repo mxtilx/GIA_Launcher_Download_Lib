@@ -38,13 +38,15 @@ RAISE_WHEN_NOTFOUND = 1
 
 def get_param(team_item, para_name, auto_fill_flag, chara_name="", exception_mode = RAISE_WHEN_NOTFOUND, value_when_empty = None):
     global load_err_times
+    r = None
     if para_name not in team_item:
-        if exception_mode == RAISE_WHEN_NOTFOUND:
-            logger.error(f"{t2t('Tactic ERROR: INDEX NOT FOUND')}")
-            logger.error(f"{t2t('parameter name')}: {para_name}; {t2t('character name')}: {chara_name}")
-            raise TacticKeyNotFoundError(f"Key: {para_name}")
-        elif exception_mode == CREATE_WHEN_NOTFOUND:
-            pass
+        if value_when_empty is None:
+            if exception_mode == RAISE_WHEN_NOTFOUND:
+                logger.error(f"{t2t('Tactic ERROR: INDEX NOT FOUND')}")
+                logger.error(f"{t2t('parameter name')}: {para_name}; {t2t('character name')}: {chara_name}")
+                raise TacticKeyNotFoundError(f"Key: {para_name}")
+            elif exception_mode == CREATE_WHEN_NOTFOUND:
+                pass
     else:
         r = team_item[para_name]
 
@@ -70,17 +72,17 @@ def unconventionality_situation_detection(autoDispose=True, detect_type='abc', s
 
     situation_code = -1
     if 'a' in detect_type:
-        while itt.get_img_existence(asset.COMING_OUT_BY_SPACE):
+        while itt.get_img_existence(asset.IconCombatComingOutBySpace):
             if stop_func():break
             situation_code = 1
             itt.key_press('spacebar')
             logger.debug('Unconventionality Situation: COMING_OUT_BY_SPACE')
             time.sleep(0.1)
     if 'b' in detect_type:
-        if itt.get_img_existence(asset.motion_swimming):
+        if itt.get_img_existence(asset.IconGeneralMotionSwimming):
             itt.key_down('w')
             # itt.key_down('left_shift')
-            while itt.get_img_existence(asset.motion_swimming):
+            while itt.get_img_existence(asset.IconGeneralMotionSwimming):
                 if stop_func():
                     # itt.key_up('left_shift')
                     itt.key_up('w')
@@ -95,20 +97,20 @@ def unconventionality_situation_detection(autoDispose=True, detect_type='abc', s
             # itt.key_up('left_shift')
             itt.key_up('w')
     if 'c' in detect_type:
-        while itt.get_img_existence(asset.motion_climbing):
+        while itt.get_img_existence(asset.IconGeneralMotionClimbing):
             if stop_func():break
             situation_code = 3
             logger.debug('Unconventionality Situation: CLIMBING')
             if autoDispose:
                 itt.key_press('space')
                 itt.delay(1.2)
-                if not itt.get_img_existence(asset.motion_climbing):break
+                if not itt.get_img_existence(asset.IconGeneralMotionClimbing):break
                 itt.key_press('space')
                 itt.delay(1.2)
-                if not itt.get_img_existence(asset.motion_climbing):break
+                if not itt.get_img_existence(asset.IconGeneralMotionClimbing):break
                 itt.key_press('x')
                 itt.delay(1.2)
-                if not itt.get_img_existence(asset.motion_climbing):break
+                if not itt.get_img_existence(asset.IconGeneralMotionClimbing):break
             time.sleep(0.1)
 
     return situation_code
@@ -318,7 +320,7 @@ def combat_statement_detection():
     return ret
 
 def get_chara_blood():
-    img = itt.capture(jpgmode=0,posi=asset.BloodBar.position)
+    img = itt.capture(jpgmode=0,posi=asset.AreaCombatBloodBar.position)
     img = extract_white_letters(img, threshold=251)
     t = ocr_light.get_all_texts(img)
     t2 = ','.join(str(i) for i in t).replace(',','')
@@ -356,27 +358,39 @@ def is_character_healthy():
         target_col = [35,215,150]
         return color_similar(col,target_col,threshold=20)
 
-def get_characters_name():
-    cap = itt.capture(jpgmode=0)
-    # img = extract_white_letters(cap)
-    img = cap
-    ret_list = []
-    for i in [asset.CharacterName1,asset.CharacterName2,asset.CharacterName3,asset.CharacterName4]:
-        img2 = img.copy()
-        img3 = crop(img2,i.position)
-        texts = ocr.get_all_texts(img3)
-        succ=False
-        for t in texts:
-            if translate_character_auto(t) != None:
-                ret_list.append(translate_character_auto(t))
-                succ=True
-        if not succ:ret_list.append(None)
+def get_characters_name(max_retry = 10):
+    retry_times = 0
+    for retry_times in range(max_retry):
+        cap = itt.capture(jpgmode=0)
+        # img = extract_white_letters(cap)
+        img = cap
+        ret_list = []
+        for i in [asset.AreaCombatCharacterName1,asset.AreaCombatCharacterName2,asset.AreaCombatCharacterName3,asset.AreaCombatCharacterName4]:
+            img2 = img.copy()
+            img3 = crop(img2,i.position)
+            texts = ocr.get_all_texts(img3)
+            succ=False
+            for t in texts:
+                if translate_character_auto(t) != None:
+                    ret_list.append(translate_character_auto(t))
+                    succ=True
+            if not succ:
+                if retry_times<max_retry-1:
+                    logger.warning(f"get characters name fail, retry {retry_times}")
+                    itt.move_to(200,0,relative=True)
+                    itt.delay(1)
+                    break
+                else:
+                    ret_list.append(None)
+        if len(ret_list)==4:
+            return ret_list
     return ret_list
 
 def get_team_chara_names_in_party_setup():
     ui_control.ensure_page(UIPage.page_configure_team)
     text_list = []
-    for i in [asset.PartySetupCharaName1,asset.PartySetupCharaName2,asset.PartySetupCharaName3,asset.PartySetupCharaName4]:
+    for i in [asset.AreaCombatPartySetupCharaName1,asset.AreaCombatPartySetupCharaName2,
+              asset.AreaCombatPartySetupCharaName3,asset.AreaCombatPartySetupCharaName4]:
         img = itt.capture(jpgmode=0, posi=i.position)
         img2 = extract_white_letters(img)
         text = ocr.get_all_texts(img2)
@@ -404,11 +418,11 @@ def set_party_setup(names):
     def switch_select():
         for i in range(5):
             if is_accord(): return True
-            itt.appear_then_click(asset.SwitchTeamLeft)
+            itt.appear_then_click(asset.ButtonCombatSwitchTeamLeft)
             itt.delay("animation")
         return False
     if switch_select():
-        itt.appear_then_click(asset.GoToFight)
+        itt.appear_then_click(asset.CombatButtonGoToFight)
         itt.delay("animation")
         ui_control.ui_goto(UIPage.page_main)
         return True
@@ -417,6 +431,11 @@ def set_party_setup(names):
         return False
     
 def get_curr_team_file():
+    """获得与当前角色列表一致的队伍文件
+
+    Returns:
+        _type_: _description_
+    """
     if not (ui_control.verify_page(UIPage.page_main) or ui_control.verify_page(UIPage.page_domain)):
         ui_control.ui_goto(UIPage.page_main)
     curr_name_list = get_characters_name()
@@ -429,22 +448,71 @@ def get_curr_team_file():
         if name_list == curr_name_list:
             return i["label"]
     return False
+
+class CharacterNameNotInCharacterParametersError(Exception):pass
+def generate_teamfile_automatic():
+    if not (ui_control.verify_page(UIPage.page_main) or ui_control.verify_page(UIPage.page_domain)):
+        ui_control.ui_goto(UIPage.page_main)
+    POSITION2PRIORITY = {
+        "Main":2000,
+        "Shield":1000,
+        "Recovery":1500,
+        "Support":3000
+        
+    }
+    INDEX2ORDINAL_NUMERAL = {
+        0:"first",
+        1:"second",
+        2:"third",
+        3:"forth",
+    }
+    team_file = {}
+    curr_name_list = get_characters_name()
+    chara_para = load_json("characters_parameters.json", default_path=fr"{ASSETS_PATH}/characters_data")
+    for name in curr_name_list:
+        if name in chara_para:
+            ordinal_numeral = INDEX2ORDINAL_NUMERAL[curr_name_list.index(name)]
+            team_file[ordinal_numeral] = chara_para[name]
+            team_file[ordinal_numeral]["priority"] = POSITION2PRIORITY[team_file[ordinal_numeral]["position"]]+curr_name_list.index(name)
+            team_file[ordinal_numeral]["name"] = name
+            team_file[ordinal_numeral]["n"] = curr_name_list.index(name)+1
+        else:
+            raise CharacterNameNotInCharacterParametersError(name)
+    return team_file
         
 def get_chara_list():
+    """获得一个由4个Character对象组合的列表，用于自动战斗。
+
+    Raises:
+        TacticKeyEmptyError: _description_
+
+    Returns:
+        _type_: _description_
+    """
     global load_err_times
     load_err_times = 0
-    team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
-    auto_choose = DEBUG_MODE        
+    team_name = GIAconfig.Combat_TeamFile
+    # 决定team file
+    auto_choose = GIAconfig.Combat_AdaptiveTeamSetup        
     if auto_choose:
+        # 自动选择1：查找有没有符合要求的队伍文件
         team_name = get_curr_team_file()
         if not team_name:
-            logger.error(t2t("The strategy file for the current teaming is not found in the tactic folder: ")+str(get_characters_name()))
-            team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
+            logger.info(t2t("The strategy file for the current teaming is not found in the tactic folder: ")+str(get_characters_name()))
+            # team_name = GIAconfig.Combat_TeamFile
+            # 自动选择2：尝试根据当前队伍创建
+            try:
+                team = generate_teamfile_automatic()
+            except CharacterNameNotInCharacterParametersError as e:
+                logger.info(f"CharacterNameNotInCharacterParametersError: {e}")
+        else:
+            team = load_json(team_name, default_path=r"config/tactic")    
     else:
-        team_name = load_json("auto_combat.json",CONFIG_PATH_SETTING)["teamfile"]
-    logger.info(f"team file set as: {team_name}")
+        team = load_json(GIAconfig.Combat_TeamFile, default_path=r"config/tactic")
+    names = [team[k]['name'] for k in team]
+    logger.info(f"team file set as: {names}")
     
-    team = load_json(team_name, default_path=r"config/tactic")
+    
     
     for team_n in team:
         team_item = team[team_n]
@@ -460,7 +528,7 @@ def get_chara_list():
         team_item.setdefault("Qlast_time", None)
         team_item.setdefault("Qcd_time", None)
         team_item.setdefault("vision", None)
-    save_json(team, team_name, default_path=r"config/tactic")
+    # save_json(team, team_name, default_path=r"config/tactic")
     
     # characters = load_json("character.json", default_path=dpath)
     chara_list = []
@@ -489,13 +557,15 @@ def get_chara_list():
         cQlast_time = get_param(team_item, "Qlast_time", autofill_flag, chara_name=cname)
         cQcd_time = get_param(team_item, "Qcd_time", autofill_flag, chara_name=cname)
         c_vision = get_param(team_item, "vision", autofill_flag, chara_name=cname)
+        c_long_attack_time = get_param(team_item, "long_attack_time", autofill_flag, chara_name=cname, value_when_empty=2.5)
     
         chara_list.append(
             character.Character(
                 name=cname, position=c_position, n=cn, priority=c_priority,
                 E_short_cd_time=cE_short_cd_time, E_long_cd_time=cE_long_cd_time, Elast_time=cElast_time,
                 tactic_group=c_tactic_group, trigger=c_trigger,
-                Epress_time=cEpress_time, Qlast_time=cQlast_time, Qcd_time=cQcd_time, vision = c_vision
+                Epress_time=cEpress_time, Qlast_time=cQlast_time, Qcd_time=cQcd_time, vision = c_vision,
+                long_attack_time = c_long_attack_time
             )
         )
     if load_err_times>0:
@@ -512,18 +582,33 @@ class CombatStatementDetectionLoop(BaseThreading):
         self.state_counter = 0
         self.while_sleep = 0.4
         self.is_low_health = False
+        self.is_freeze_state = False
+        self._is_init = False
+    
+    def freeze_state(self):
+        logger.info(f"CSDL freeze state")
+        self.is_freeze_state = True
+    
+    def unfreeze_state(self):
+        logger.info(f"CSDL unfreeze state")
+        self.is_freeze_state = False
     
     def get_combat_state(self):
         return self.current_state
     
     def loop(self):
+        if not self._is_init:
+            time.sleep(2)
+            self._is_init = True
         r = is_character_healthy()
         if r != None:
             self.is_low_health = not r
- 
-        if only_arrow_timer.get_diff_time()>=30:
+
+        if self.is_freeze_state:
+            return
+        if only_arrow_timer.get_diff_time()>=150:
             if self.current_state == True:
-                logger.debug("only arrow but blood bar is not exist over 30s, ready to exit combat mode.")
+                logger.debug("only arrow but blood bar is not exist over 150, ready to exit combat mode.")
             r = combat_statement_detection()
             state = r[0] or r[1]
             state = False
@@ -555,12 +640,14 @@ CSDL.start()
 
 if __name__ == '__main__':
     # get_curr_team_file()
-    print(get_characters_name())
+    a = get_chara_list()
+    print()
     # set_party_setup("Lisa")
     while 1:
-        time.sleep(0.1)
+        time.sleep(1)
+        print(get_characters_name())
         # print(is_character_busy())
         # print(unconventionality_situation_detection())
-        print(combat_statement_detection())
+        # print(combat_statement_detection())
         # print(get_character_busy(itt, default_stop_func))
         # time.sleep(0.2)

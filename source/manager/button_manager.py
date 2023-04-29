@@ -13,10 +13,8 @@ def get_cap_posi(path, black_offset):
 
 class Button(ImgIcon):
     def __init__(self, path=None, name=None, black_offset=15, is_bbg = True , threshold=0.9,offset = 0, win_page = "all", win_text = None, print_log = LOG_NONE, cap_posi=None, click_offset=None):
-        if path is None:
-            (filename, line_number, function_name, text) = traceback.extract_stack()[-2]
-            img_name = text[:text.find('=')].strip()
-            path = search_path(img_name)
+        if name is None:
+            name = get_name(traceback.extract_stack()[-2])
         super().__init__(path=path, name=name, jpgmode = 0, is_bbg = is_bbg,
                          threshold=threshold, win_page=win_page, win_text=win_text, print_log=print_log, cap_posi=cap_posi, offset = offset)
         if click_offset is None:
@@ -38,8 +36,8 @@ class Button(ImgIcon):
         # ___, self.image_binary = cv2.threshold(image_gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
         if self.is_bbg:
             self.center_point = [self.bbg_posi[0]+self.image.shape[1]/2, self.bbg_posi[1]+self.image.shape[0]/2]
-        self.click_retry_timer = AdvanceTimer(3)
-        self.click_fail_timer = AdvanceTimer(1,60) # 60 retry max, 180 sec max 
+        self.click_retry_timer = AdvanceTimer(3).start()
+        self.click_fail_timer = AdvanceTimer(1,60).start() # 60 retry max, 180 sec max 
         self.click_fail_timer.reset()
     
     

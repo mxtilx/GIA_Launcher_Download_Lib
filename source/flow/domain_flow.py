@@ -18,16 +18,13 @@ class DomainFlow(BaseThreading):
         # self.current_state = ST.IN_MOVETO_TREE
 
         self.itt = itt
-        chara_list = combat_lib.get_chara_list()
-        self.combat_loop = combat_controller.CombatController(chara_list)
+        self.combat_loop = combat_controller.CombatController()
         self.combat_loop.setDaemon(True)
 
         self.combat_loop.pause_threading()
         self.combat_loop.start()
 
-        domain_json = load_json("auto_domain.json")
-
-        domain_times = domain_json["domain_times"]
+        # domain_times = domain_json["domain_times"]
         if domain_times == 0:
             x = input(t2t("请输入秘境次数"))
             # x.replace(']','')
@@ -35,10 +32,10 @@ class DomainFlow(BaseThreading):
         self.lockOnFlag = 0
         self.move_num = 2.5
 
-        refresh_config()
-        self.isLiYue = domain_json["isLiYueDomain"]
-        self.resin_mode = domain_json["resin"]
-        self.fast_mode = domain_json["fast_mode"]
+        # refresh_config()
+        # self.isLiYue = domain_json["isLiYueDomain"]
+        # self.resin_mode = domain_json["resin"]
+        # self.fast_mode = domain_json["fast_mode"]
         self.move_timer = timer_module.Timer()
         self.ahead_timer = timer_module.Timer()
         self.fast_move_timer = timer_module.Timer()
@@ -95,7 +92,7 @@ class DomainFlow(BaseThreading):
             return False
 
     def _Trigger_AFTER_CHALLENGE(self, cap=None):
-        if self.itt.get_text_existence(asset.LEAVINGIN):
+        if self.itt.get_text_existence(asset.LEAVING_IN):
             return True
         else:
             return False
@@ -115,9 +112,9 @@ class DomainFlow(BaseThreading):
             if self.checkup_stop_func():
                 return 0
 
-            if self.itt.get_text_existence(asset.LEYLINEDISORDER):
+            if self.itt.get_text_existence(asset.LEY_LINE_DISORDER):
                 break
-            if self.itt.get_img_existence(asset.IN_DOMAIN):
+            if self.itt.get_img_existence(asset.IconUIInDomain):
                 break
             time.sleep(1)
             # cap=self.itt.capture(jpgmode=2)
@@ -126,7 +123,7 @@ class DomainFlow(BaseThreading):
             return 0
 
         cap = self.itt.capture(jpgmode=2)
-        if self.itt.get_text_existence(asset.LEYLINEDISORDER):
+        if self.itt.get_text_existence(asset.LEY_LINE_DISORDER):
             self.itt.move_and_click([PosiM.posi_domain['CLLD'][0], PosiM.posi_domain['CLLD'][1]], delay=1)
             # time.sleep(1)
 
@@ -188,9 +185,9 @@ class DomainFlow(BaseThreading):
 
         while 1:
             if self.resin_mode == '40':
-                self.itt.appear_then_click(asset.USE_20X2RESIN_DOUBLE_CHOICES)
+                self.itt.appear_then_click(asset.ButtonGeneralUseCondensedResin)
             elif self.resin_mode == '20':
-                self.itt.appear_then_click(asset.USE_20RESIN_DOUBLE_CHOICES)
+                self.itt.appear_then_click(asset.ButtonGeneralUseOriginResin)
 
             if self.itt.get_text_existence(asset.domain_obtain):
                 break
@@ -392,10 +389,10 @@ class DomainFlow(BaseThreading):
             return False
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    # domain_times=configjson["domain_times"]
-    dfc = DomainFlow()
-    dfc.start()
-    while 1:
-        time.sleep(1)
+#     # domain_times=configjson["domain_times"]
+#     dfc = DomainFlow()
+#     dfc.start()
+#     while 1:
+#         time.sleep(1)

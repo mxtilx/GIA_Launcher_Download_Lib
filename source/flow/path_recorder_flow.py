@@ -1,6 +1,5 @@
 from source.util import *
 import keyboard
-from pynput.keyboard import Listener, KeyCode, Key
 from source.flow.flow_template import FlowController, FlowTemplate, FlowConnector, EndFlowTemplate
 import source.flow.flow_code as FC, source.flow.flow_state as ST
 from source.interaction.minimap_tracker import tracker
@@ -11,6 +10,8 @@ from source.funclib.err_code_lib import *
 from source.manager import posi_manager as PosiM, asset
 from source.interaction.interaction_core import itt
 import pytz, datetime
+from source.ui.ui import ui_control
+from source.ui import page as UIPage
 
 
 class PathRecorderConnector(FlowConnector):
@@ -30,8 +31,7 @@ class PathRecorderConnector(FlowConnector):
         }
 
         self.min_distance = 1
-        self.listener = self.listener = Listener(on_press=self._add_key_to_dict)
-        self.set_hotkey()
+        # self.set_hotkey()
         self.path_name = ""
         self.last_direction = 999
         '''
@@ -53,39 +53,39 @@ class PathRecorderConnector(FlowConnector):
 
         '''
 
-    def set_hotkey(self):
-        self.listener.start()
+    # def set_hotkey(self):
+    #     self.listener.start()
 
-    def unset_hotkey(self):
-        self.listener.stop()
-        pass
+    # def unset_hotkey(self):
+    #     self.listener.stop()
+    #     pass
 
-    def _add_key_to_dict(self, key):
-        if key == KeyCode.from_char('f'):
-            key = 'f'
-        elif key == Key.space:
-            key = 'space'
-        elif key == KeyCode.from_char('x'):
-            key = 'x'
-        elif key == Key.shift:
-            key = 'shift'
-        elif key == KeyCode.from_char('e'):
-            key = 'e'
-        else:
-            return
-        curr_posi = tracker.get_position()
-        self.collection_path_dict["position_list"].append(
-            {
-                "position":list(curr_posi),
-                "motion":None,
-                "id":len(self.collection_path_dict["position_list"])+1,
-                "special_key":key
-            }
-        )
-        # self.collection_path_dict["all_position"].append(curr_posi)
-        logger.info(t2t("special key added:")+
-                    str(key)
-                    )
+    # def _add_key_to_dict(self, key):
+    #     if key == KeyCode.from_char('f'):
+    #         key = 'f'
+    #     elif key == Key.space:
+    #         key = 'space'
+    #     elif key == KeyCode.from_char('x'):
+    #         key = 'x'
+    #     elif key == Key.shift:
+    #         key = 'shift'
+    #     elif key == KeyCode.from_char('e'):
+    #         key = 'e'
+    #     else:
+    #         return
+    #     curr_posi = tracker.get_position()
+    #     self.collection_path_dict["position_list"].append(
+    #         {
+    #             "position":list(curr_posi),
+    #             "motion":None,
+    #             "id":len(self.collection_path_dict["position_list"])+1,
+    #             "special_key":key
+    #         }
+    #     )
+    #     # self.collection_path_dict["all_position"].append(curr_posi)
+    #     logger.info(t2t("special key added:")+
+    #                 str(key)
+    #                 )
 
 
 class PathRecorderCore(FlowTemplate):
@@ -160,7 +160,8 @@ class PathRecorderCore(FlowTemplate):
             logger.warning(f"break position too close")
     
     def state_in(self):
-
+        if not ui_control.verify_page(UIPage.page_main):
+            return super().state_in()
         all_posi = self.get_all_position(self.upper.collection_path_dict)
         curr_posi = tracker.get_position()
         curr_direction = tracker.get_direction()
