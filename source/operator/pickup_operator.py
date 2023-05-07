@@ -26,7 +26,7 @@ class PickupOperator(BaseThreading):
         self.reset_time = 120
         self.collector_loops = 0
         self.collector_flag = True
-        self.max_number_of_collector_loops = 100
+        self.max_number_of_collector_loops = 35
         self.pickup_timer = timer_module.Timer()
         self.pickup_fail_timeout = timer_module.TimeoutTimer(65)
         self.night_timer = timer_module.FileTimer("night_timer")
@@ -106,7 +106,7 @@ class PickupOperator(BaseThreading):
                 
                 if self.target_posi:
                     self.cview_toward_target()
-                if self.flicker_timer.get_diff_time() >= 2:
+                if self.flicker_timer.get_diff_time() >= 1.8:
                     logger.debug("searching flicker")
                     self.collector_flag = False
                     self.finding_collector()
@@ -152,7 +152,6 @@ class PickupOperator(BaseThreading):
         return res
     
     def pickup_recognize(self):
-        flag1 = False
         ret = generic_lib.f_recognition()
         if ret:
             time.sleep(0.05)
@@ -161,9 +160,7 @@ class PickupOperator(BaseThreading):
                 return 0
             y1 = asset.IconGeneralFButton.cap_posi[1]
             x1 = asset.IconGeneralFButton.cap_posi[0]
-            if static_lib.W_KEYDOWN:
-                flag1 = True
-                self.itt.key_up('w')
+            itt.freeze_key('w', operate='up')
             time.sleep(0.1)
             cap = self.itt.capture()
             cap = crop(cap, [x1 + ret[0] + 53, y1 + ret[1] - 20, x1 + ret[0] + 361,  y1 + ret[1] + 54])
@@ -185,11 +182,9 @@ class PickupOperator(BaseThreading):
                         if str(text) in self.target_name:
                             logger.info(t2t("已找到：") + self.target_name)
                             self.pickup_succ = True
-                        if flag1:
-                            self.itt.key_down('w')
+                        itt.unfreeze_key('w')
                         return True
-        if flag1:
-            self.itt.key_down('w')
+            itt.unfreeze_key('w')
         return False
 
     def reset_pickup_item_list(self):
@@ -240,15 +235,15 @@ class PickupOperator(BaseThreading):
         if len(ret_points) == 0: # type: ignore
             if self.flicker_timer.get_diff_time() < 2:
                 # print('23')
-                if static_lib.W_KEYDOWN:
+                if itt.key_status['w']==True:
                     self.itt.key_up('w')
-                    time.sleep(0.2)
+                    time.sleep(0.1)
             return 0
         else:
             self.flicker_timer.reset()
             self.reset_collector_loops()
 
-            if not static_lib.W_KEYDOWN:
+            if itt.key_status['w']==False:
                 self.itt.key_down('w')
 
         for point in ret_points:
@@ -279,7 +274,7 @@ class PickupOperator(BaseThreading):
         while self.collector_loops < self.max_number_of_collector_loops:
             if self.checkup_stop_func():
                 return 0
-            self.itt.move_to(50, 0, relative=True)
+            self.itt.move_to(200, 0, relative=True)
             ret_points = self.find_collector()
             if len(ret_points) != 0:  # type: ignore
                 self.reset_collector_loops()

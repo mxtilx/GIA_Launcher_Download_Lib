@@ -1,10 +1,11 @@
-# 自动每日委托
-**该功能正在测试且并不完备**
+# Automatic Daily Commission
 
-自动搜索并执行位于**蒙德**的每日委托。目前仅可执行部分仅需要战斗的委托。
+
+Automatically search and execute daily commissions located in **Mondstadt**. Currently only some commissions that require only combat can be executed.
 
 ## How to use
 
-在设置中启用DEBUG模式，重启GIA，在主菜单选择Daily commission。
+
+Select Daily Commission in the main menu.
 
 

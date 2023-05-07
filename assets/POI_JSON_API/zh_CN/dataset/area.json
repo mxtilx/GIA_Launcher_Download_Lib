@@ -202,5 +202,17 @@
     "parentId": 18,
     "sortIndex": -11,
     "version": 2
+  },
+  {
+    "areaId": 23,
+    "code": "A:XM:DESERT3",
+    "content": "苍漠囿土",
+    "hiddenFlag": 0,
+    "iconTag": "",
+    "isFinal": true,
+    "name": "苍漠囿土",
+    "parentId": 18,
+    "sortIndex": -12,
+    "version": 5
   }
 ]

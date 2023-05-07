@@ -19,7 +19,7 @@ class IncreasingDangerGeneral(CommissionTemplate):
         r = movement.view_to_imgicon(cap, asset.IconCommissionInCommission)
         if not r:
             return False
-        if r<=15:
+        if r<=30:
             dist_cap = itt.capture([SCREEN_CENTER_X-80,SCREEN_CENTER_Y-100,SCREEN_CENTER_X+80,SCREEN_CENTER_Y+40],jpgmode=0)
             dist_cap = extract_white_letters(dist_cap, threshold=90)
             # is_num, dist = ocr.is_img_num_plus(dist_cap)
@@ -41,7 +41,7 @@ class IncreasingDangerGeneral(CommissionTemplate):
         return False
     
     def exec_mission(self):
-        attack_timer = AdvanceTimer(0.3).start()
+        attack_timer = AdvanceTimer(0.1).start()
         r = self.move_straight(self.commission_position, is_tp=True)
         if r == ERR_FAIL:return
         self.start_combat(mode="Shield")

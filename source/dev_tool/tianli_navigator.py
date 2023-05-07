@@ -11,21 +11,17 @@ class GenshinNavigationPoint():
         self.id = id
         self.position = position
         self.links = []
+    
+    def __str__(self):
+        return f"GNP: {self.id}"
 
 class TianliNavigator(astar.AStar, MapConverter):
     NAVIGATION_POINTS = {}
-    GIMAP_RAWIMG = cv2.imread(fr"F:/GIMAP.png")
-    
     def __init__(self) -> None:
         super().__init__()
         self.navigation_dict = load_json("tianli_navigation_points_test.json", default_path=fr"{ASSETS_PATH}")
         self._build_navigation_points()
         # self.GIMAP_IMG = cv2.cvtColor(self.GIMAP_RAWIMG, cv2.COLOR_BGRA2RGB)
-        plt.title("title")
-        plt.ion()
-        self.fig, self.axe = plt.subplots(1, 1)
-        self.axe.invert_yaxis()
-        self.history_dict = {}
         
 
     def _build_navigation_points(self):
@@ -72,28 +68,47 @@ class TianliNavigator(astar.AStar, MapConverter):
         return node.links
 
 class TianLiNavigatorDev(TianliNavigator):
+    GIMAP_RAWIMG = cv2.imread(fr"F:/GIMAP.png")
     def __init__(self) -> None:
         super().__init__()
+        plt.title("title")
+        plt.ion()
+        self.fig, self.axe = plt.subplots(1, 1)
+        self.axe.invert_yaxis()
+        self.history_dict = {}
+        self.scatter_s = 50
+        self.head_width = 4
+        self.head_length = 6
+        self.fig.canvas.mpl_connect('button_press_event', self._on_press)
+        self.last_press_x = 0
+        self.last_press_y = 0
 
     def _scatter(self, position, convert=False):
         if convert:
             position = self.convert_cvAutoTrack_to_GIMAP(position)
-        plt.scatter(position[0],position[1],c='r',s=50)
+        plt.scatter(position[0],position[1],c='r',s=self.scatter_s)
 
     def _arrow(self, p_start, pend, convert=False):
         if convert:
             p_start = self.convert_cvAutoTrack_to_GIMAP(p_start)
             pend = self.convert_cvAutoTrack_to_GIMAP(pend)
-        plt.arrow(p_start[0], p_start[1], pend[0]-p_start[0], pend[1]-p_start[1], width=0.3,head_width=2,head_length=2,fc='b')
+        plt.arrow(p_start[0], p_start[1], pend[0]-p_start[0], pend[1]-p_start[1], width=0.3,head_width=self.head_width,head_length=self.head_length,fc='b')
 
+    def _on_press(self, event):
+        print("you pressed" ,event.button, event.xdata, event.ydata)
+        self.last_press_x = event.xdata
+        self.last_press_y = event.ydata
+    
     def draw_navigation_in_gimap(self, refresh = True):
         # if refresh:
         #     self.fig.canvas.draw()
         if refresh:
             xlim, ylim = plt.xlim(), plt.ylim()
             plt.clf()
+        logger.debug(f"reshow GIMAP")
         plt.imshow(cv2.cvtColor(self.GIMAP_RAWIMG,cv2.COLOR_BGRA2RGB))
         # print(xlim, ylim)
+        logger.debug(f"drawing points and links")
         for k in self.NAVIGATION_POINTS.items():
             self._scatter(k[1].position, convert=True)
             for link_node in k[1].links:
@@ -101,28 +116,43 @@ class TianLiNavigatorDev(TianliNavigator):
                 self._arrow(k[1].position, link_node.position, convert=True)
             plt.annotate(str(k[0]), xy=tuple(self.convert_cvAutoTrack_to_GIMAP(k[1].position)))
             # print(k[1].position, link_node.position)
+        logger.debug('drawing')
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
+        logger.debug(f"refreshing")
         if refresh:
             print(xlim, ylim)
             plt.xlim(xlim)
             plt.ylim(ylim)
 
+    def _get_latest_id(self)->str:
+        return str(max([int(i[0]) for i in self.navigation_dict.items()])+1)
+    
     def exec_command(self,x:str):
         """
         exec command when using
         """
-        
+        redraw = True
         for command in x.split(';'):
             cmd = command.split(' ')
-            if cmd[0]!='undo':
-                self.history_dict = self.navigation_dict
+            if cmd[0]=='undo': # save as files in the future, python like memory address too much...
+                self.navigation_dict = self.history_dict.copy()
+                logger.info('undo succ')
+            else:
+                self.history_dict = self.navigation_dict.copy()
             if cmd[0]=='del':
-                self.del_point(cmd[1])
+                if '~' in cmd[1]:
+                    start = int(cmd[1].split('~')[0])
+                    end = int(cmd[1].split('~')[1])
+                    for i in range(start, end):
+                        self.del_point(str(i))
+                else:
+                    self.del_point(cmd[1])
             elif cmd[0]=='link':
+                logger.info(f"link {cmd[1]} -> {cmd[2]}")
                 self.link_points(cmd[1], cmd[2])
             elif cmd[0]=='add':
-                kid = str(max([int(i[0]) for i in self.navigation_dict.items()])+1)
+                kid = self._get_latest_id()
                 upper_link = ''
                 full_link = ''
                 for c in cmd:
@@ -131,23 +161,64 @@ class TianLiNavigatorDev(TianliNavigator):
                             upper_link = c.split('=')[1]
                         elif 'fl' == c.split('=')[0]:
                             full_link = c.split('=')[1]
-                logger.info(f"posi {cmd[1]} kid {kid} upper_link {upper_link} full_link {full_link}")
-                self.add_point(list(map(float, cmd[1].split(','))), kid, upper_link=upper_link, full_link=full_link)
-            elif cmd[0]=='move':
+                            if full_link == '' or full_link == " ":
+                                full_link = str(int(kid)-1)
+                        elif 'redraw' == c.split('=')[0]:
+                            redraw = bool(int(c.split('=')[1]))
+                            logger.info(f"redraw: {redraw}")
+                posi = cmd[1]
+                if posi in ['a', 'auto', '.']:
+                    posi = f"{self.last_press_x},{self.last_press_y}"
+                logger.info(f"posi {posi} kid {kid} upper_link {upper_link} full_link {full_link}")
+                self.add_point(list(map(float, posi.split(','))), kid, upper_link=upper_link, full_link=full_link)
+            elif cmd[0]=='move': # move `x`,`y`
                 self.move_point(cmd[1], list(map(float, cmd[2].split(','))))
-            elif cmd[0]=='save':
+            elif cmd[0]=='save': # save
                 self.save()
+                redraw = False
                 logger.info('saved')
-            elif cmd[0]=='undo':
-                self.navigation_dict = self.history_dict
-                logger.info('undo succ')
-        self.draw_navigation_in_gimap()
+            elif cmd[0]=='size': # size `x`,`y`,`z`
+                self.scatter_s, self.head_width, self.head_length = list(map(int,cmd[1].split(',')))
+            elif cmd[0]=='import': # import `tmf path id`
+                self.analyze_path(cmd[1])
+            elif cmd[0]=='flink': # flink `a` `b`
+                logger.info(f"link {cmd[1]} <-> {cmd[2]}")
+                self.link_points(cmd[1], cmd[2])
+                self.link_points(cmd[2], cmd[1])
+            elif cmd[0]=='relink': # relink `a`~`b`
+                # 删除a,b间所有id相邻的点，仅保留a,b并将a,b重新全连接。
+                logger.info(f"relink {cmd[1]}")
+                start = int(cmd[1].split('~')[0])
+                end = int(cmd[1].split('~')[1])
+                for i in range(start+1, end):
+                    self.del_point(str(i))
+                self.link_points(str(start), str(end))
+                self.link_points(str(end), str(start))
+                
+        if redraw:
+            self._build_navigation_points()
+            self.draw_navigation_in_gimap()
 
+    def get_path_file(self, path_file_name:str):
+        return load_json(path_file_name+".json","assets\\TeyvatMovePath")
+    
     def analyze_path(self, filename):
         """
         add navigation positions by TeyvatMovePath
         """
-        pass
+        path_json = self.get_path_file(filename)
+        upper_link = None
+        for i in path_json["break_position"]:
+            posi = self.convert_cvAutoTrack_to_GIMAP(i)
+            curr_id = self._get_latest_id()
+            if upper_link != None:
+                full_link = upper_link
+            else:
+                full_link = ''
+            logger.info(f"add: {posi} {curr_id} {full_link}")
+            self.add_point(list(posi), curr_id, upper_link='', full_link=full_link)
+            upper_link = curr_id
+            
     
     def del_point(self, x):
         """
@@ -156,16 +227,15 @@ class TianLiNavigatorDev(TianliNavigator):
 
         for i in self.navigation_dict.items():
             if x in i[1]['links']:
-                logger.trace(f"del {i[0]} {i[1]['links']}.pop{i[1]['links'].index(x)}")
+                logger.info(f"del {i[0]} {i[1]['links']}.pop{i[1]['links'].index(x)}")
                 i[1]['links'].pop(i[1]['links'].index(x))
 
         # for i in self.navigation_dict.items():
         #     if x in [i.id for i in i[1].links]:
         #         i[1].links.pop(i[1].links.index(self.NAVIGATION_POINTS[x]))
-        logger.trace(f"pop {x}")
+        logger.info(f"pop {x}")
         self.navigation_dict.pop(x)
         # self.NAVIGATION_POINTS.pop(x)
-        self._build_navigation_points()
 
     def link_points(self, x, y):
         self.navigation_dict[x]['links'].append(y)
@@ -189,7 +259,6 @@ class TianLiNavigatorDev(TianliNavigator):
             for upper_id in full_link.split(','):
                 self.navigation_dict[upper_id]['links'].append(id)
                 self.navigation_dict[id]['links'].append(upper_id)
-        self._build_navigation_points()
         # self.NAVIGATION_POINTS[id]=GenshinNavigationPoint(id=id, position=posi)
 
     def save(self):
@@ -204,10 +273,14 @@ class TianLiNavigatorDev(TianliNavigator):
     def run(self):
         self.draw_navigation_in_gimap(refresh=False)
         while 1:
-            self.exec_command(input("command:"))
+            try:
+                self.exec_command(input("command:"))
+            except Exception as e:
+                logger.exception(e)
 
 if __name__ == '__main__':
     tlnd = TianLiNavigatorDev()
+    # print(list(tlnd.astar(tlnd.NAVIGATION_POINTS['14'], tlnd.NAVIGATION_POINTS['16'])))
     tlnd.run()
     # print([f"{i.id}" for i in tn.astar(tn.NAVIGATION_POINTS['1'], tn.NAVIGATION_POINTS['5'])])
     print()

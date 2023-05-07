@@ -16,10 +16,10 @@ import source.ui.page as UIPage
 from source.dev_tool.tianli_navigator import TianliNavigator
 
 
-IN_MOVE = 0
-IN_FLY = 1
-IN_WATER = 2
-IN_CLIMB = 3
+IN_MOVE = movement.WALKING
+IN_FLY = movement.FLYING
+IN_WATER = movement.SWIMMING
+IN_CLIMB = movement.CLIMBING
 
 class TeyvatMoveFlowConnector(FlowConnector):
     def __init__(self):
@@ -39,7 +39,7 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.is_reinit = True
         self.is_precise_arrival = False
         self.stop_offset = None
-        self.is_tianli_navigation = False
+        self.is_tianli_navigation = True
 
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -66,7 +66,7 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.is_reinit = True
         self.is_precise_arrival = False
         self.stop_offset = None
-        self.is_tianli_navigation = False
+        self.is_tianli_navigation = True
         
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -99,35 +99,29 @@ class TeyvatTeleport(FlowTemplate):
 class TeyvatMoveCommon():
     def __init__(self):
         self.motion_state = IN_MOVE
-        self.jump_timer1 = timer_module.Timer()
-        self.jump_timer2 = timer_module.Timer()
+        self.jil = movement.JumpInLoop(2)
         self.jump_timer3 = timer_module.Timer()
         self.history_position = []
         self.history_position_timer = timer_module.AdvanceTimer(limit=1).start()
 
     def switch_motion_state(self, jump=True):
-        if itt.get_img_existence(asset.IconGeneralMotionClimbing):
-            self.motion_state = IN_CLIMB
-        elif itt.get_img_existence(asset.IconGeneralMotionFlying):
-            self.motion_state = IN_FLY
-        elif itt.get_img_existence(asset.IconGeneralMotionSwimming):
-            self.motion_state = IN_WATER
-        else:
-            self.motion_state = IN_MOVE
+        self.motion_state = movement.get_current_motion_state()
+        # if itt.get_img_existence(asset.IconGeneralMotionClimbing):
+        #     self.motion_state = IN_CLIMB
+        # elif itt.get_img_existence(asset.IconGeneralMotionFlying):
+        #     self.motion_state = IN_FLY
+        # elif itt.get_img_existence(asset.IconGeneralMotionSwimming):
+        #     self.motion_state = IN_WATER
+        # else:
+        #     self.motion_state = IN_MOVE
         if self.motion_state == IN_CLIMB:
             jump_dt = 20
         elif self.motion_state == IN_MOVE:
-            jump_dt = 2
+            jump_dt = 1.6
         else:
             jump_dt = 99999
         if jump:
-            if self.jump_timer1.get_diff_time() >= jump_dt:
-                self.jump_timer1.reset()
-                self.jump_timer2.reset()
-                itt.key_press('spacebar')
-            if self.jump_timer2.get_diff_time() >= 0.3 and self.jump_timer2.get_diff_time()<=2: # double jump
-                itt.key_press('spacebar')
-                self.jump_timer2.start_time -= 2
+            self.jil.jump_in_loop(jump_dt=jump_dt)
     
     def try_fly(self):
         if self.motion_state == IN_MOVE:
@@ -135,11 +129,11 @@ class TeyvatMoveCommon():
                 itt.key_press('spacebar')
                 self.jump_timer3.reset()
                 
-    def is_stuck(self, posi, threshold=30):
+    def is_stuck(self, posi, threshold=40):
         if self.history_position_timer.reached_and_reset():
             self.history_position.append(posi)
         if len(self.history_position) >= threshold:
-            if euclidean_distance(self.history_position[0], self.history_position[-1])<=10:
+            if euclidean_distance(self.history_position[-threshold+1], self.history_position[-1])<=10:
                 logger.warning(f"MOVE STUCK")
                 return True
         return False
@@ -147,27 +141,30 @@ class TeyvatMoveCommon():
 class Navigation(TianliNavigator):
     def __init__(self, start, end) -> None:
         super().__init__()
-        self.start_p = start
-        self.end_p = end    
+        # 千万不要对这里的列表的顺序进行修改！！！
         self._curr_posi = [0,0]
-        self.all_navigation_posi = [p[1].position for p in self.NAVIGATION_POINTS.items()]
+        self.all_navigation_posi = [p[1].position for p in self.NAVIGATION_POINTS.items()] # READ ONLY
         self.navigation_path = []
-        self._init_path()
+        self.init_path(start, end)
 
     def _get_closest_node(self, position, threshold=150):
         plist = quick_euclidean_distance_plist(position, self.all_navigation_posi)
-        for i in self.NAVIGATION_POINTS.items():
-            if euclidean_distance(plist[0], i[1].position) <= 1:
-                if euclidean_distance(plist[0], position) > threshold:
-                    return None
-                else:
-                    return i[1]
+        min_index = np.argmin(plist)
+        if euclidean_distance(self.all_navigation_posi[min_index], position) > threshold:
+            return None
+        else:
+            return list(self.NAVIGATION_POINTS.items())[min_index][1]
 
-    def _init_path(self):
-        start_node = self._get_closest_node(self.start_p)
-        end_node = self._get_closest_node(self.end_p)
+    def init_path(self, start, end):
+        start_node = self._get_closest_node(start)
+        end_node = self._get_closest_node(end)
         if start_node != None and end_node != None:
-            self.navigation_path = self.astar(start_node,end_node)
+            self.navigation_path = list(self.astar(start_node,end_node))
+            if len(self.navigation_path) == 0:
+                logger.info(f"未找到路径")
+                self.navigation_path = None
+            else:
+                logger.info(f"navigation_path: {list(map(str, self.navigation_path))}")
         else:
             logger.info(f"不在服务区")
             self.navigation_path = None
@@ -175,18 +172,34 @@ class Navigation(TianliNavigator):
     def set_curr_posi(self, posi):
         self._curr_posi = posi
 
-    def get_navigation_positions(self):
+    def get_navigation_positions(self, end_p):
         if self.navigation_path is None:
-            return [self.end_p]
+            return [end_p]
         else:
-            return [self.NAVIGATION_POINTS[i].position for i in self.navigation_path]
+            return [i.position for i in self.navigation_path]
 
+    def get_navigation_info(self, i):
+        if self.navigation_path is None: return None
+        if i >= len(self.navigation_path):
+            return f""
+        return f"{self.navigation_path[i]}"
 
-class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon): # , Navigation
+    def print_TLPS_info(self, i, cp, speak=False):
+        if self.navigation_path is None: return None
+        r = self.get_navigation_info(i)
+        if r != '':
+            output_id = r
+            output_distance = euclidean_distance(cp, self.navigation_path[i].position)
+            output_remaining_navigation = f"{i+1} in {len(self.navigation_path)}"
+            # logger.info(f"TianLi Positioning System")
+            logger.info(f"Moving to Navigation {output_id}")
+            logger.info(f"Distance: {output_distance}")
+            logger.info(f"Remaining navigation: {output_remaining_navigation}")
+class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon, Navigation):
     def __init__(self, upper: TeyvatMoveFlowConnector):
         FlowTemplate.__init__(self, upper, flow_id=ST.INIT_TEYVAT_MOVE, next_flow_id=ST.END_TEYVAT_MOVE_PASS)
         TeyvatMoveCommon.__init__(self)
-        # Navigation.__init__(self, genshin_map.get_position(), self.upper.target_posi)
+        Navigation.__init__(self, genshin_map.get_position(), self.upper.target_posi)
         self.upper = upper
         self.auto_move_timeout = timer_module.AdvanceTimer(limit=300).start()
         self.in_flag = False
@@ -223,10 +236,14 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon): # , Navigation
         self.history_position = []
         self.upper.while_sleep = 0
         self.in_flag = False
-
+        self.current_posi = genshin_map.get_position()
         if self.upper.is_tianli_navigation:
-            self.posi_list = self.get_navigation_positions()
-            self.posi_list.append([self.upper.target_posi])
+            self.init_path(self.current_posi, self.upper.target_posi)
+            self.posi_list = self.get_navigation_positions(self.upper.target_posi)
+            self.posi_list.append(self.upper.target_posi)
+            if euclidean_distance(self.posi_list[0], self.upper.target_posi)>euclidean_distance(self.current_posi, self.upper.target_posi):
+                logger.info(f"the distance to target is closer than TLPS, give up using TLPS.")
+                self.posi_list = [self.upper.target_posi]
         else:
             self.posi_list = [self.upper.target_posi]
         
@@ -234,10 +251,14 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon): # , Navigation
     
 
     def state_in(self):
-        self.switch_motion_state()
-        
         self.current_posi = genshin_map.get_position()
-        p1 = self.upper.target_posi
+        if euclidean_distance(self.current_posi, self.upper.target_posi) <= 8:
+            self.switch_motion_state(jump=False)
+        else:
+            self.switch_motion_state(jump=True)
+        
+        
+        # p1 = self.upper.target_posi
         
         if self.is_stuck(self.current_posi):
             self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
@@ -247,6 +268,8 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon): # , Navigation
         if movement.move_to_posi_LoopMode(self.posi_list[self.posi_index], self.upper.checkup_stop_func):
             self.posi_index += 1
             self.posi_index = min(len(self.posi_list)-1, self.posi_index)
+            if self.upper.is_tianli_navigation:
+                self.print_TLPS_info(self.posi_index, self.current_posi)
         # movement.change_view_to_posi(p1, self.upper.checkup_stop_func)
         if not self.in_flag:
             itt.key_down('w')
@@ -582,19 +605,20 @@ class TeyvatMoveFlowController(FlowController):
 
         
 if __name__ == '__main__':
-    genshin_map.reinit_smallmap()
-    while 1:
-        time.sleep(0.2)
+    # genshin_map.reinit_smallmap()
+    # while 1:
+    #     time.sleep(0.2)
         
-        tx, ty = genshin_map.get_position()
-        degree = generic_lib.points_angle([tx, ty], [2083, -4844], coordinate=generic_lib.NEGATIVE_Y)
-        movement.change_view_to_angle(degree, lambda:False)
+    #     tx, ty = genshin_map.get_position()
+    #     degree = generic_lib.points_angle([tx, ty], [2083, -4844], coordinate=generic_lib.NEGATIVE_Y)
+    #     movement.change_view_to_angle(degree, lambda:False)
     
     TMFC = TeyvatMoveFlowController()
     # TMFC.set_parameter(MODE="PATH",path_dict=load_json("te167910590161.json","assets\\TeyvatMovePath"), is_tp=True)
-    TMFC.set_parameter(MODE="AUTO", target_posi=[2083.714642000002,-4844.328552], is_tp=False)
-    TMFC.start()
+    TMFC.set_parameter(MODE="AUTO", target_posi=[2032,-4879], is_tp=False)
     TMFC.start_flow()
+    TMFC.start()
+    
     while 1:
         time.sleep(1)
     

@@ -1,6 +1,30 @@
 [
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
+    "hiddenFlag": 0,
+    "id": 21000,
+    "itemList": [
+      {
+        "count": 1,
+        "iconTag": "晶核",
+        "itemId": 813
+      },
+      {
+        "count": 1,
+        "iconTag": "珊蝴蝶",
+        "itemId": 1776
+      }
+    ],
+    "markerCreatorId": 1,
+    "markerTitle": "晶核",
+    "picture": "",
+    "position": "4499.584084392055,2004.3338162583586",
+    "refreshTime": 0,
+    "version": 1,
+    "videoPath": ""
+  },
+  {
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21001,
     "itemList": [
@@ -24,7 +48,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21002,
     "itemList": [
@@ -48,7 +72,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21003,
     "itemList": [
@@ -72,7 +96,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21004,
     "itemList": [
@@ -96,7 +120,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21005,
     "itemList": [
@@ -120,7 +144,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21006,
     "itemList": [
@@ -144,7 +168,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21007,
     "itemList": [
@@ -244,7 +268,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21012,
     "itemList": [
@@ -1351,7 +1375,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21070,
     "itemList": [
@@ -1375,7 +1399,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21071,
     "itemList": [
@@ -1494,7 +1518,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21077,
     "itemList": [
@@ -1518,7 +1542,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【珊蝴蝶】\n捕捉后获得1个【晶核】",
+    "content": "此处有1只【珊瑚蝶】\n捕捉后获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 21078,
     "itemList": [
@@ -1605,12 +1629,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 776
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹守卫者",
     "picture": "",
     "position": "5386.1663656155415,5308.2452266074215",
     "refreshTime": -1,
@@ -1689,7 +1713,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       }
     ],
@@ -1846,18 +1870,18 @@
     "videoPath": ""
   },
   {
-    "content": "潦草的笔记（不可收集）",
+    "content": "（不可收集）\n此处有\n《潦草的笔记》\n\n(因为洞穴潮湿的环境而发皱的纸条，上面写着可以识别的文字。)\n「这一次与海祇选出的勇者同行，发现了深海龙蜥居然都在这里活动了。」\n但是珊瑚宫的文员让我们放过它们。毕竟海祇民一直往月浴渊投入作为祭品的食物，其实就是在供养它们」\n「他还说，它们已经对人类无法造成威胁了，把渊下宫还给它们吧。」",
     "hiddenFlag": 0,
     "id": 21094,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
-        "itemId": 647
+        "iconTag": "文本",
+        "itemId": 2068
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "书籍",
+    "markerTitle": "文本",
     "picture": "",
     "position": "-1137,3493",
     "refreshTime": 0,
@@ -2926,13 +2950,13 @@
     "videoPath": ""
   },
   {
-    "content": "《愚人众行动日志 · 其四》（不可收集）\n读完全部【4个】可以完成成就【「舍我其谁！」】",
+    "content": "（不可收集）\n此处【营地中】有\n《愚人众行动日志 · 其四》\n\n注：读完全部【4个】可达成成就【「舍我其谁！」】\n\n「⋯发生了不明原因的爆炸，理论上能够清除深渊污染的『摩科什装置』完全过载被毁⋯」\n「⋯主碎片上的污黑物质又开始再生了，需要总结之前的教训⋯」\n「⋯对准主碎片的恰当受力点，进行一次或多次重击，即可令晶石上的黑色物质退去⋯」\n「⋯侦察队在不同位置发现有人影活动，不知人类还是什么生物⋯或许它们就是令那些黑色物质蔓延的真凶⋯」",
     "hiddenFlag": 0,
     "id": 21149,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -3384,7 +3408,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处找到【岚姐】接取委托（2.6新增）\n完成后可获得：【沐宁的纸条×1】，以进行后续任务",
+    "content": "（2.6版本新增）\n冒险等阶达到【28】，并完成魔神任务【第一章 第三幕「迫近的客星」】后，在此处找到【岚姐】接取委托\n也可在「璃月港 绯云坡」与【阿旭】对话接取\n完成后可获得：【沐宁的纸条×1】，以进行后续任务",
     "hiddenFlag": 0,
     "id": 21172,
     "itemList": [
@@ -3395,7 +3419,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "【层岩巨渊探游记】层岩巨渊寻访记",
+    "markerTitle": "【层岩巨渊深游记】层岩巨渊寻访记",
     "picture": "",
     "position": "242.6678758868993,51.16825692375096",
     "refreshTime": 0,
@@ -3414,7 +3438,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "【层岩巨渊探游记】巧瞒七星解磐键",
+    "markerTitle": "【层岩巨渊深游记】巧瞒七星解磐键",
     "picture": "",
     "position": "-1448.1667531142589,193.2917022351594",
     "refreshTime": 0,
@@ -3471,7 +3495,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "【层岩巨渊探游记】方入巨渊初探勘",
+    "markerTitle": "【层岩巨渊深游记】方入巨渊初探勘",
     "picture": "",
     "position": "-1933.331065418431,102.00986159196145",
     "refreshTime": 0,
@@ -4161,7 +4185,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 834
       }
     ],
@@ -4231,13 +4255,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 829
+        "iconTag": "击倒怪物",
+        "itemId": 831
       },
       {
         "count": 1,
-        "iconTag": "击倒怪物",
-        "itemId": 831
+        "iconTag": "普通宝箱",
+        "itemId": 829
       }
     ],
     "markerCreatorId": 1,
@@ -4991,7 +5015,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -5606,7 +5630,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -6661,7 +6685,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 955
       }
     ],
@@ -6866,7 +6890,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 957
       }
     ],
@@ -7351,7 +7375,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 957
       }
     ],
@@ -7376,7 +7400,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 955
       }
     ],
@@ -7471,7 +7495,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 957
       }
     ],
@@ -7756,7 +7780,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -8266,7 +8290,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       },
       {
@@ -8346,7 +8370,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 955
       }
     ],
@@ -8746,7 +8770,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -8771,7 +8795,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -8926,7 +8950,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       },
       {
@@ -9063,6 +9087,11 @@
         "count": 1,
         "iconTag": "钓鱼点",
         "itemId": 974
+      },
+      {
+        "count": 1,
+        "iconTag": "炮豚",
+        "itemId": 1780
       }
     ],
     "markerCreatorId": 3,
@@ -9070,7 +9099,7 @@
     "picture": "",
     "pictureCreatorId": 3,
     "position": "1759.8881803744707,-131.1069991560007",
-    "refreshTime": 259200000,
+    "refreshTime": 86400000,
     "version": 1,
     "videoPath": ""
   },
@@ -9398,13 +9427,13 @@
     "videoPath": ""
   },
   {
-    "content": "《愚人众行动日志 · 其三》（不可收集）\n读完全部【4个】可以完成成就【「舍我其谁！」】",
+    "content": "（不可收集）\n此处【铁锅旁】有\n《愚人众行动日志 · 其三》\n\n注：读完全部【4个】可达成成就【「舍我其谁！」】\n\n「⋯技术士官波格丹娜发现那些黑色的泥状物仍然在不断增生，我们需要加速行动了⋯」\n「⋯层岩巨渊地下的异变在缓慢加速，为了阻止情况进一步恶化，我们需要尽快将『摩科什装置』运抵底部组装⋯」\n「⋯安东中士报告说有一个女人一直在跟踪我们，有布下陷阱和警报装置的必要⋯」",
     "hiddenFlag": 0,
     "id": 21441,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -9614,7 +9643,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       }
     ],
@@ -9734,7 +9763,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 834
       }
     ],
@@ -9759,7 +9788,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 834
       }
     ],
@@ -9809,7 +9838,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 834
       }
     ],
@@ -9966,6 +9995,7 @@
     "content": "这是一个在【谷底】跟随仙灵出现的【普通宝箱】\n内有【2原石、3岩之印】",
     "hiddenFlag": 0,
     "id": 21465,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -9979,6 +10009,7 @@
       }
     ],
     "markerCreatorId": 1,
+    "markerExtraContent": "{\"underground\":{\"is_underground\":true,\"model_id\":\"basic\",\"region_name\":\"\",\"region_levels\":[]}}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/700_37.jpg",
     "pictureCreatorId": 1,
@@ -10059,7 +10090,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       },
       {
@@ -10905,19 +10936,19 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个在【下方】送回仙灵后出现的【普通宝箱】\n内有【2原石、3岩之印】\n【灯台】在需要【奇特的岩柱】共振击碎【奇特的岩石】内",
+    "content": "这是一个在【下方】送回仙灵后出现的【普通宝箱】\n内有【2原石、3岩之印】\n【仙灵之庭】在需要【奇特的岩柱】共振击碎【奇特的岩石】内",
     "hiddenFlag": 0,
     "id": 21509,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 829
+        "iconTag": "指引仙灵",
+        "itemId": 837
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 837
+        "iconTag": "普通宝箱",
+        "itemId": 829
       }
     ],
     "markerCreatorId": 1,
@@ -11055,7 +11086,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       },
       {
@@ -11080,7 +11111,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       },
       {
@@ -11110,7 +11141,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       }
     ],
@@ -11391,26 +11422,26 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【深渊底部】的【罗涅忒「贬谪骑士」】\n首次击败后掉落【渊青宝珠】",
+    "content": "此处【深渊底部】有一位【罗涅忒「贬谪骑士」】\n\n注：首次击败后掉落【渊青宝珠】",
     "hiddenFlag": 0,
     "id": 21531,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "黯色空壳·旗令",
-        "itemId": 998
+        "iconTag": "渊青宝珠",
+        "itemId": 1891
       },
       {
         "count": 1,
-        "iconTag": "渊青宝珠",
-        "itemId": 1891
+        "iconTag": "黯色空壳·旗令",
+        "itemId": 998
       }
     ],
     "markerCreatorId": 1,
     "markerTitle": "黯色空壳",
     "picture": "",
     "position": "2201.1452770163887,1435.8053895692574",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -12289,7 +12320,7 @@
     "videoPath": ""
   },
   {
-    "content": "调查调查【地下】此处【石堆】可能获得【10000/15000/20000摩拉】",
+    "content": "调查【地下】此处【石堆】可能获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 21572,
     "itemList": [
@@ -12710,7 +12741,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 828
       },
       {
@@ -13103,8 +13134,8 @@
     ],
     "markerCreatorId": 1,
     "markerTitle": "连队消失在深岩",
-    "picture": "https://yuanshen.site/comment_png/799_11.jpg",
-    "pictureCreatorId": 1,
+    "picture": "",
+    "pictureCreatorId": 7,
     "position": "2943.6679582575343,-948.6755578521497",
     "refreshTime": 0,
     "version": 1,
@@ -13130,7 +13161,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【哈尔塔甫「少年」】\n首次击败后掉落【渊青宝珠】",
+    "content": "此处有一位【哈尔塔甫「少年」】\n\n注：首次击败后掉落【渊青宝珠】",
     "hiddenFlag": 0,
     "id": 21612,
     "itemList": [
@@ -13150,7 +13181,7 @@
     "picture": "https://yuanshen.site/comment_png/801_2.jpg",
     "pictureCreatorId": 1,
     "position": "923.6669971952679,-1008.3288318568138",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -13175,13 +13206,13 @@
     "videoPath": ""
   },
   {
-    "content": "《愚人众行动日志 · 其二》（不可收集）\n读完全部【4个】可以完成成就【「舍我其谁！」】",
+    "content": "（不可收集）\n此处【木箱上】有\n《愚人众行动日志 · 其二》\n\n注：读完全部【4个】可达成成就【「舍我其谁！」】\n\n「⋯声波捕获器一直在嘎嘎乱响， 响得就像安东中士的老祖母在打呼噜⋯没办法正常使用⋯」\n「⋯不如就叫它『巴布什卡机器』算了，可能是因为晶石本身的辐射，以及那些黑色物质的影响⋯」\n「⋯没有备件修复『巴布什卡』，只能拆卸⋯抱歉了，老奶奶。暂在此地扎营，以备补给之需。」\n「⋯似乎有人在不远处的高地观察我们，看到了不自然的闪光。是望远镜（甚至火枪的瞄准镜）？需要尽快转移⋯」",
     "hiddenFlag": 0,
     "id": 21614,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -13324,10 +13355,10 @@
         "itemId": 873
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "琉璃袋",
     "picture": "",
-    "position": "-1750.9906120274968,381.99961827403695",
+    "position": "-1749.8331004371357,378.8344942709555",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -13347,25 +13378,6 @@
     "markerTitle": "琉璃袋",
     "picture": "",
     "position": "-1732.934000495243,388.37343005820094",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "这是一个【琉璃袋】",
-    "hiddenFlag": 0,
-    "id": 21623,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "琉璃袋",
-        "itemId": 873
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "琉璃袋",
-    "picture": "",
-    "position": "-1736.9347815544709,390.37269844004095",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -13706,7 +13718,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【埃德格托「破静默戒者」】\n首次击败后掉落【渊青宝珠】",
+    "content": "此处有一位【埃德格托「破静默戒者」】\n\n注：首次击败后掉落【渊青宝珠】",
     "hiddenFlag": 0,
     "id": 21640,
     "itemList": [
@@ -13725,12 +13737,12 @@
     "markerTitle": "黯色空壳",
     "picture": "",
     "position": "2090.749707102789,-1322.499268381839",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个【黯色空壳 · 旗令】",
+    "content": "此处有一位【黯色空壳 · 旗令】",
     "hiddenFlag": 0,
     "id": 21641,
     "itemList": [
@@ -13797,10 +13809,30 @@
     "videoPath": ""
   },
   {
-    "content": "【钓点 - 无名遗迹】可钓到\n\n果酿饵：【花鳉】\n赤糜饵：【斗棘鱼】【赤魔王(昼)】\n蠕虫假饵：【流纹褐鲽鱼】\n飞蝇假饵：【苦炮鲀】",
+    "content": "【钓点 - 无名遗迹】\n由上方锚点旁瀑布下方洞口进入\n可钓到：\n果酿饵：【花鳉】\n赤糜饵：【斗棘鱼】【赤魔王(昼)】\n蠕虫假饵：【流纹褐鲽鱼】\n飞蝇假饵：【苦炮鲀】",
     "hiddenFlag": 0,
     "id": 21644,
     "itemList": [
+      {
+        "count": 1,
+        "iconTag": "赤魔王",
+        "itemId": 1783
+      },
+      {
+        "count": 1,
+        "iconTag": "苦炮鲀",
+        "itemId": 1781
+      },
+      {
+        "count": 1,
+        "iconTag": "斗棘鱼",
+        "itemId": 1784
+      },
+      {
+        "count": 1,
+        "iconTag": "花鳉",
+        "itemId": 1785
+      },
       {
         "count": 1,
         "iconTag": "钓鱼点",
@@ -13812,7 +13844,7 @@
     "picture": "",
     "pictureCreatorId": 3,
     "position": "2043.0048816201743,-1203.5018290454018",
-    "refreshTime": 259200000,
+    "refreshTime": 86400000,
     "version": 1,
     "videoPath": ""
   },
@@ -14919,7 +14951,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【高处遗迹内】的【黯色空壳 · 旗令】",
+    "content": "此处【高处遗迹内】有一位【黯色空壳 · 旗令】",
     "hiddenFlag": 0,
     "id": 21701,
     "itemList": [
@@ -14959,19 +14991,19 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【高处遗迹内】的【布利维夫「荒芜的护卫」】\n首次击败后掉落【渊青宝珠】",
+    "content": "在此处【高处遗迹内】有【布利维夫「荒芜的护卫」】\n首次击败后掉落【渊青宝珠】",
     "hiddenFlag": 0,
     "id": 21703,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "黯色空壳·旗令",
-        "itemId": 998
+        "iconTag": "渊青宝珠",
+        "itemId": 1891
       },
       {
         "count": 1,
-        "iconTag": "渊青宝珠",
-        "itemId": 1891
+        "iconTag": "黯色空壳·旗令",
+        "itemId": 998
       }
     ],
     "markerCreatorId": 1,
@@ -14979,7 +15011,7 @@
     "picture": "https://yuanshen.site/comment_png/801_7.jpg",
     "pictureCreatorId": 1,
     "position": "3353.052428600672,1369.7066516239793",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -15131,7 +15163,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【冰】【岩龙蜥】",
+    "content": "此处有一个【冰】【岩龙蜥】",
     "hiddenFlag": 0,
     "id": 21711,
     "itemList": [
@@ -15235,13 +15267,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "渊青宝珠",
-        "itemId": 1891
+        "iconTag": "黯色空壳·旗令",
+        "itemId": 998
       },
       {
         "count": 1,
-        "iconTag": "黯色空壳·旗令",
-        "itemId": 998
+        "iconTag": "渊青宝珠",
+        "itemId": 1891
       }
     ],
     "markerCreatorId": 1,
@@ -15249,7 +15281,7 @@
     "picture": "https://yuanshen.site/comment_png/801_8.jpg",
     "pictureCreatorId": 1,
     "position": "1615,-505.9978051455182",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -15483,44 +15515,6 @@
     "videoPath": ""
   },
   {
-    "content": "【最高处】此处有【1株】清心",
-    "hiddenFlag": 0,
-    "id": 21729,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 874
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "清心",
-    "picture": "",
-    "position": "-2148.0000976324036,213.41642787834917",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "【最高处】此处有【1株】清心",
-    "hiddenFlag": 0,
-    "id": 21730,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 874
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "清心",
-    "picture": "",
-    "position": "-2150.98711252274,215.00657693684298",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
     "content": "此处有【1株】清心",
     "hiddenFlag": 0,
     "id": 21731,
@@ -15730,7 +15724,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "-1663.4502074742218,-399.08322156577833",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -15754,7 +15748,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "-1663.4875518685553,-395.1476344368466",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -15832,10 +15826,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2033.083252608904,-85.33366357392151",
+    "position": "-2030.083198069539,-64.33559169819637",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -15851,10 +15845,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2031.0830573440971,-82.29178606082587",
+    "position": "-2029.4997071027894,-57.59235916618309",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -16189,25 +16183,6 @@
     "markerTitle": "清心",
     "picture": "",
     "position": "-1835.2509763240348,165.16659552968213",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "【顶部】此处有【1株】清心",
-    "hiddenFlag": 0,
-    "id": 21763,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 874
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "清心",
-    "picture": "",
-    "position": "-1782.4696363225157,253.92775270663242",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -16632,18 +16607,23 @@
         "count": 1,
         "iconTag": "骗骗花",
         "itemId": 894
+      },
+      {
+        "count": 1,
+        "iconTag": "薄荷",
+        "itemId": 923
       }
     ],
     "markerCreatorId": 1,
     "markerTitle": "骗骗花",
     "picture": "",
     "position": "-1769.916696667173,341.8333968437146",
-    "refreshTime": -1,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个【较高处】的【琉璃袋】",
+    "content": "此处【较高处】有一个【琉璃袋】",
     "hiddenFlag": 0,
     "id": 21786,
     "itemList": [
@@ -16681,7 +16661,7 @@
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心",
+    "content": "【顶部】此处有【1株】清心\n\n注：完成世界任务【岩巅大侠往事】、【失踪的矿工】后，并在附近与【老何、唐无仇】对话后出现",
     "hiddenFlag": 0,
     "id": 21788,
     "itemList": [
@@ -16691,16 +16671,16 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2217.9631925838858,99.7417387892774",
+    "position": "-2215.583701493325,218.8341822682196",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心",
+    "content": "【顶部】此处有【1株】清心\n\n注：完成世界任务【岩巅大侠往事】、【失踪的矿工】后，并在附近与【老何、唐无仇】对话后出现",
     "hiddenFlag": 0,
     "id": 21789,
     "itemList": [
@@ -16710,35 +16690,16 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2217.463094951482,70.75234725260816",
+    "position": "-2216.833588599153,221.16764778108973",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心",
-    "hiddenFlag": 0,
-    "id": 21790,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 874
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "清心",
-    "picture": "",
-    "position": "-2218.5,37",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "【顶部】此处有【1株】清心",
+    "content": "此处【稍低处山崖上】有【1株】清心",
     "hiddenFlag": 0,
     "id": 21791,
     "itemList": [
@@ -16748,16 +16709,16 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2224.666606665654,147.16714424330257",
+    "position": "-2222.749609470386,234.5513809225813",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心",
+    "content": "此处【稍低处山崖上】有【1株】清心",
     "hiddenFlag": 0,
     "id": 21792,
     "itemList": [
@@ -16767,10 +16728,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2220.6665914038854,157.33541642026012",
+    "position": "-2225.750976324035,234.7216497962736",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -16786,10 +16747,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2217.9861926457907,221.76627087747147",
+    "position": "-2212.750195264807,227.91746477615834",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -16805,10 +16766,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2216.333498597634,224.74963419092",
+    "position": "-2214.9999023675964,227.08419753259386",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -16839,13 +16800,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "黯色空壳·旗令",
-        "itemId": 998
+        "iconTag": "渊青宝珠",
+        "itemId": 1891
       },
       {
         "count": 1,
-        "iconTag": "渊青宝珠",
-        "itemId": 1891
+        "iconTag": "黯色空壳·旗令",
+        "itemId": 998
       }
     ],
     "markerCreatorId": 1,
@@ -16853,7 +16814,7 @@
     "picture": "https://yuanshen.site/comment_png/801_9.jpg",
     "pictureCreatorId": 1,
     "position": "322.0003905296139,386.66863798603845",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -16894,7 +16855,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 955
       }
     ],
@@ -16919,7 +16880,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 955
       }
     ],
@@ -17860,7 +17821,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "1630.7508786916314,-3251.0863233163573",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -17884,7 +17845,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "1642.8337991257285,-3260.6678834880668",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -17908,7 +17869,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "1649.666786668692,-3263.250914522701",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -17932,7 +17893,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "1649.500488162017,-3253.4187980107677",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -17956,7 +17917,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "2403.998242616737,-4217.000731618161",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -17980,7 +17941,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "2394.1644740145457,-4208.167510052383",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18004,7 +17965,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "2405.0371460986307,-4207.089973780559",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18203,12 +18164,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹守卫",
-        "itemId": 1002
+        "iconTag": "遗迹重机",
+        "itemId": 2094
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹重机",
     "picture": "https://yuanshen.site/comment_png/840_1.jpg",
     "pictureCreatorId": 1,
     "position": "2303.1684464195514,-763.00036580908",
@@ -18277,7 +18238,7 @@
     "picture": "https://yuanshen.site/comment_png/801_10.jpg",
     "pictureCreatorId": 1,
     "position": "2256,278",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -18489,12 +18450,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹守卫",
-        "itemId": 1002
+        "iconTag": "遗迹重机",
+        "itemId": 2094
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹重机",
     "picture": "https://yuanshen.site/comment_png/840_2.jpg",
     "pictureCreatorId": 1,
     "position": "3058,1514",
@@ -18623,13 +18584,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "黯色空壳·旗令",
-        "itemId": 998
+        "iconTag": "渊青宝珠",
+        "itemId": 1891
       },
       {
         "count": 1,
-        "iconTag": "渊青宝珠",
-        "itemId": 1891
+        "iconTag": "黯色空壳·旗令",
+        "itemId": 998
       }
     ],
     "markerCreatorId": 1,
@@ -18637,27 +18598,29 @@
     "picture": "https://yuanshen.site/comment_png/801_11.jpg",
     "pictureCreatorId": 1,
     "position": "1684.33047962401,489.3423667927873",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个送回【破坏此处磐键】后出现的仙灵后出现的 【普通宝箱】 \n内有【2原石、3岩之印】",
+    "content": "这是一个【地下】送回【破坏此处磐键】后出现的仙灵后出现的 【普通宝箱】 \n内有【2原石、3岩之印】",
     "hiddenFlag": 0,
     "id": 21884,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 829
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 837
+      },
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 829
       }
     ],
     "markerCreatorId": 1,
+    "markerExtraContent": "{\"underground\":{\"is_underground\":true,\"model_id\":\"basic\",\"region_name\":\"\",\"region_levels\":[]}}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/700_100.jpg",
     "pictureCreatorId": 1,
@@ -18667,7 +18630,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【火】【岩龙蜥】",
+    "content": "此处有一个【火】【岩龙蜥】",
     "hiddenFlag": 0,
     "id": 21885,
     "itemList": [
@@ -18726,7 +18689,7 @@
     "picture": "https://yuanshen.site/comment_png/801_12.jpg",
     "pictureCreatorId": 1,
     "position": "788.6683793106849,-2294.3390745110637",
-    "refreshTime": 0,
+    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -19204,7 +19167,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -20051,13 +20014,13 @@
     "videoPath": ""
   },
   {
-    "content": "《愚人众行动日志 · 其一》（不可收集）\n读完全部【4个】可以完成成就【「舍我其谁！」】",
+    "content": "（不可收集）\n此处【木箱上】有\n《愚人众行动日志 · 其一》\n\n注：读完全部【4个】可达成成就【「舍我其谁！」】\n\n「⋯璃月人留下了他们的工程用大炮，有维护的痕迹，看来他们仍然没有放弃重开矿坑的打算⋯」\n「⋯侦查了晶石碎片所在的空间，为后续人员扫清道路，回到此地待命⋯」\n「⋯声波捕获器出现的了反应⋯在矿坑的更深处传来了更大的搏动⋯宏大但喑哑⋯」\n「⋯根据取样分析，晶石的年龄或许比层岩巨渊更为古老。但在附近并未发现成体系的古文明痕迹⋯」",
     "hiddenFlag": 0,
     "id": 21952,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -20077,12 +20040,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 890
+        "iconTag": "丘丘王",
+        "itemId": 2090
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "丘丘岩盔王",
+    "markerTitle": "丘丘王",
     "picture": "https://yuanshen.site/comment_png/709_1.jpg",
     "pictureCreatorId": 1,
     "position": "-1647.7078857421875,531.6086427543842",
@@ -20151,13 +20114,13 @@
     "videoPath": ""
   },
   {
-    "content": "《层岩巨渊矿产报告》（不可收集）\n读完全部【3本】（1地上2地下）矿产相关书籍的断章后，可完成成就【《层岩巨渊矿产志》】",
+    "content": "（不可收集）\n此处木箱上有\n《层岩巨渊矿产报告》\n\n注：读完全部【3本（1地上2地下）】矿产相关书籍的断章后\n可达成成就【《层岩巨渊矿产志》】\n\n「⋯『流明石』之增生区域仍在扩大，似呈蔓延之势。流明晶石本身无毒无害，但其形成过程中却会吸收附近高价值矿石，加以转变⋯」\n「⋯按此增生势头，此种矿藏必将剧烈贬值，间以影响其他矿石产量。谨请辉山厅速速派遣专业人员研究其性质功用，以供长远之计⋯」",
     "hiddenFlag": 0,
     "id": 21957,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -20191,7 +20154,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【大型丘丘人】",
+    "content": "这是一个【火斧丘丘暴徒】",
     "hiddenFlag": 0,
     "id": 21959,
     "itemList": [
@@ -20202,7 +20165,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "https://yuanshen.site/comment_png/746_1.jpg",
     "pictureCreatorId": 1,
     "position": "-2163.248779296875,281.66536797675053",
@@ -20311,13 +20274,13 @@
     "videoPath": ""
   },
   {
-    "content": "《层岩巨渊矿产图鉴》（不可收集）\n读完全部【3本】（1地上2地下）矿产相关书籍的断章后，可完成成就【《层岩巨渊矿产志》】",
+    "content": "（不可收集）\n此处有\n《层岩巨渊矿产图鉴》\n\n注：读完全部【3本（1地上2地下）】矿产相关书籍的断章后\n可达成成就【《层岩巨渊矿产志》】\n\n「⋯在巨渊深处漫长悠久的元素反应影响下， 地表砂土亦呈奇妙的紫红色⋯」\n「⋯从中采取提炼而出的『琉璃晶砂』，亦拥有似乎并非来自此世的华美光泽⋯」\n「⋯璃月之瓷器因而为贵，全赖层岩巨渊之民提炼『琉璃晶砂』之传统⋯」",
     "hiddenFlag": 0,
     "id": 21965,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 855
       }
     ],
@@ -20331,13 +20294,13 @@
     "videoPath": ""
   },
   {
-    "content": "《层岩巨渊「灵石]调查书》（不可收集）\n读完全部【3本】（1地上2地下）矿产相关书籍的断章后，可完成成就【《层岩巨渊矿产志》】",
+    "content": "（不可收集）\n此处【营地旁】\n《层岩巨渊「灵石」调查书》\n\n注：读完全部【3本（1地上2地下）】矿产相关书籍的断章后\n可达成成就【《层岩巨渊矿产志》】\n\n「⋯矿工传说中的『灵石』、『愿望石』等，乃是出自层岩巨渊深处岩厅的神秘晶矿⋯」\n「⋯取样表明其成分与提瓦特大陆上大部分矿产存在明显区别，且似有缓慢改变周边物质构造之趋势。或许与层岩巨渊古老传说中坠落的『天星』有关⋯」\n「⋯又抑或，传说中深遁巨渊的『天星』正在更深处，等待人们发掘？⋯」",
     "hiddenFlag": 0,
     "id": 21966,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -20351,7 +20314,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【火】【岩龙蜥】",
+    "content": "此处有一个【火】【岩龙蜥】",
     "hiddenFlag": 0,
     "id": 21967,
     "itemList": [
@@ -20370,18 +20333,18 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【幼岩龙蜥】",
+    "content": "此处有一个【幼岩龙蜥】",
     "hiddenFlag": 0,
     "id": 21968,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1018
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2092
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "岩龙蜥",
+    "markerTitle": "幼岩龙蜥",
     "picture": "",
     "position": "3140.2171344653543,-910.3716620256291",
     "refreshTime": -1,
@@ -20400,7 +20363,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 950
       }
     ],
@@ -24009,13 +23972,13 @@
     "videoPath": ""
   },
   {
-    "content": "《尼古拉下士的信》（不可收集）\n完成世界任务【他乡迷失客 · 觅迹】后【次日】可在此【黯色空壳 · 破阵】旁找到\n（卡塔琳娜曾格外珍惜的那封信，信纸上一点「火水」的气味弥留不散）",
+    "content": "（不可收集）\n完成世界任务【他乡迷失客 · 觅迹】后\n【现实时间 次日】可在此【黯色空壳 · 破阵】旁有\n《尼古拉下士的信》\n\n卡塔琳娜曾格外珍惜的那封信，信纸上一点「火水」的气味弥留不散\n\n致亲爱的姐姐卡佳：\n\n听大尉说你最近要被调来这里加入我们的部队了。一想到我们终于能够团聚，真不知该如何表达我有多么高兴！\n出发前你交给我的巴拉莱卡琴我还一直随身带在身边。修修补补，换掉了之前我们不小心弄坏的琴码，现在琴声顺畅了许多。\n不过事先声明：这把琴归我保管，我可不会再还给你了。老姐你笨手笨脚的，再把这上年纪的老伙伴弄坏的话，我可没心思再修一遍了！\n对了，我又学了两首新曲子，等你来报到，我就在篝火前给你露两手。就像很久以前那样，我们在炉火前弹琴唱歌，讲些笑话，期待着女皇陛下在新的一-年为「壁炉之家」的兄弟姐妹们赐下新的礼物⋯\n只不过这次呀，我们都已经不再是无忧无虑的孩子了，都背负上了更大的责任，更深的思虑。\n\n为了这次相聚，大尉给我们特批了半天的假期，就请老姐你带上酒和甜点，让我们尽情叙旧吧。我有好多故事等着要给你讲呢，我相信在你驻扎的地方一定也发生了许多有趣的故事吧！\n顺便一提，如果见面发现我又胖了，老姐你可不要取笑我！而且我也会关注你有没有发胖的！\n\n热切期待着此次相聚，\n尼古拉·雪奈茨维奇",
     "hiddenFlag": 0,
     "id": 22155,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -24386,13 +24349,13 @@
     "videoPath": ""
   },
   {
-    "content": "《志琼的信》、【琉璃寒晶】\n完成世界任务【勇气的余晖 · 谨记微芒】后\n可在【较高位】此处找到，并完成成就【勇气的余晖】",
+    "content": "完成世界任务【勇气的余晖 · 谨记微芒】后\n此处【较高处 营地中】有\n《志琼的信》、【琉璃寒晶】\n\n阅读完可达成成就【勇气的余晖】\n\n（一位年轻冒险家留下的信，带着一点点苦涩的清心气味。）\n\n 致勘探队的各位：\n\n此次不辞而别，实在抱歉。\n志琼感谢勘探队的各位前辈一直以来的关照，但这次恐怕没有办法同大家一起并肩工作了。\n\n瑾武姐，请不要为我的离去生气伤心。相信你曾照顾过不少不争气却不甘心屈服于命运的年轻冒险家了，而我只是其中一个笨蛋而已。希望我的任性不要令你头疼，希望我的离别留给你的只有美好的回忆。如果我曾拥有过家人的话，那么你就是我最亲密的家人…我有太多太多的故事没来得及和你分享，硕果仅存的就只有地图上那些并不高明的地名了。只可惜就连地名，我也没能来得及多加斟酌、查询典故，给你和大家留下更好听的名字。\n不论如何，感谢你一直以来的保护与照顾。但比起永远被长辈照料，我更喜欢自己孤身一人亲身体验一段真正的旅途。\n\n海迪夫先生，请原谅我的任性。我能够理解你有你自己的考虑，或许正如你所说，层岩巨渊之底的秘密确是并非普通人所能探寻的超凡之物。或许正因如此，没有「神之眼」的我才会这样举步维艰…\n但我依然忍不住任性地猜测，假如莱纳德、斯坦利或罗尔德，这些大名鼎鼎的凡人探险家曾看见我所见到的盛景，曾与我共同漫步在深邃阴暗的古老岩石厅堂，目睹黑紫色泥潭如岩浆涌流、剔透的湛蓝晶石悬浮空际，古老残破的石碑记载着旧日的地图，以及其它许许多多难以言喻的奇迹的话…他们这些伟大的冒险家是会为保全生命望难而退，还是说，如愚鲁的我一般，即使不顾卑下平凡的生命，也要探求深邃难测的天地之道呢？\n作为学者、与我同为凡人的海迪夫先生你，当遇到这样的境况时，又会如何抉择呢？\n\n克里托夫，我之前的不信任与一切任性之举，希望请你不要介怀。我并不讨厌你，虽然你来自盗宝团这种非法组织，平时也总是贼眉鼠眼、鬼鬼祟祟的一副讨人厌模样，为大家配制饮料的时候不太注意卫生，对瑾武姐没大没小的，在矿下也不在乎总务厅的安全规定，百般警告都不太爱听…尽管你有这样那样的毛病，但那都不重要。作为朋友，我很遗憾没能更早认识你。\n\n至于沐宁兄，很抱歉我不会再回来复命了。感谢你一直为我奔走争取总务司的正式职位，如果不是你的话，我恐怕连层岩巨渊的大门口也进不来。或许等我走后，总务司的正式许可终于要下来了吧。请你替我保留吧，假如还有机会回来，我一定会请你一顿的。可不要忘了！\n\n（旅行者）前辈，感谢旅途中一直以来的陪伴，感谢你的教导，感谢你在险境中的搭救，对于这一切，我没齿难忘，并深深内疚于无力相报的现实。能够操使元素力量冒险旅行的你是神的宠儿，但我仍然想要知道，尽管或许我永远也无法知道了…你如何看待我们这些凡人？\n\n在英雄与夜叉随岩王帝君征战的遥远时代中，在神灵断岩作山、投石成海的古老年代里，渺小一如我们的凡人，未曾获得神的注视与认可的我们，究竟是怎样的存在呢？平凡的爱恨，平凡的幸福与苦难，平凡的成就，平凡人共同构成的纠葛与牵绊…如此种种，确实是神灵不屑一观的景象吗？古老的神之所在，凡人无法解释的景观，真的是平凡的勇气也无法克服的禁地吗？\n\n如今帝君已然逝去，如此多嘴可能有所不敬…\n但与那些因偶然的怀有神恩的受选者相比，我们这些神明视线之外的凡人偶然而生，却一如既往用心保留的梦想，不愿因困穷而碌碌终生的小小愿望，以及忙忙碌碌的人生…一言以蔽之，不甘被遗忘的心情，以及为不被遗忘而拼命做出的微小努力，或是怀着平凡的勇气而每天都在坚持的劳苦工作…难道是全无意义的举动吗？\n将自己悬吊在万仞高崖之上作业的采药人、视地动倾覆的危险如日常茶饭的矿工，为数层楼高的巨舰敲下每一颗钉子的工人…假若他们的努力被视为碌碌、被众人遗忘也是常态的话，难道诸神对于人们愿望与尊严高下的区分竟如此荒唐吗？\n\n怀着这样的问题，我追随着前辈你，挑战着层岩巨渊深处的未知与危险，挑战着自己身为凡人的极限。不敢自夸「征服」或「探索」，至少我希望能够将层岩巨渊收入我所绘制与编校的地图之中，给我所踏足过的地点、给层岩巨渊地下变幻多端的景观留下属于凡人的名字，属于我的名字。\n愚钝如我，相信只有这样，才能激励同我一样的后来者，告诉他们，一个不被神明遴选的凡人究竟能走多远的路，留下怎样的篇章。\n\n前辈，请不要担心我不辞而别。我的旅途还远没有结束。等到歇息告一段落，我就要继续向深处前进了。感谢前辈为我打开的前路，我将顺着层岩巨渊深处的通路继续冒险，直到再也走不动为止。\n勘探队的各位，祝你们好运。\n希望在并不遥远的将来，我们仍会在旅途中相遇。",
     "hiddenFlag": 0,
     "id": 22174,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
@@ -24406,18 +24369,18 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【幼岩龙蜥】",
+    "content": "此处有一个【幼岩龙蜥】",
     "hiddenFlag": 0,
     "id": 22175,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1018
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2092
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "岩龙蜥",
+    "markerTitle": "幼岩龙蜥",
     "picture": "",
     "position": "3032,-908",
     "refreshTime": -1,
@@ -28503,7 +28466,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "火斧丘丘暴徒",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "1645.5,-240.5",
     "refreshTime": -1,
@@ -29279,10 +29242,10 @@
         "itemId": 876
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "夜泊石",
     "picture": "",
-    "position": "-2118.729985357285,222.93982440628315",
+    "position": "-2114.749218940772,226.49871966821865",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -29440,7 +29403,7 @@
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心\n完成世界任务【岩颠大侠往事】、【失踪的矿工】后出现",
+    "content": "【顶部】此处有【1株】清心\n\n注：完成世界任务【岩巅大侠往事】、【失踪的矿工】后出现",
     "hiddenFlag": 0,
     "id": 22427,
     "itemList": [
@@ -29450,16 +29413,16 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2222.1250976324036,217.58376265279458",
+    "position": "-2223.833393334346,214.75091452270135",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心\n完成世界任务【岩颠大侠往事】、【失踪的矿工】后出现",
+    "content": "【顶部】此处有【1株】清心\n\n注：完成世界任务【岩巅大侠往事】、【失踪的矿工】后出现",
     "hiddenFlag": 0,
     "id": 22428,
     "itemList": [
@@ -29469,16 +29432,16 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2225.167188644633,223.24972564318978",
+    "position": "-2225.583393334346,222.08376265279458",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【顶部】此处有【1株】清心\n完成世界任务【岩颠大侠往事】、【失踪的矿工】后出现",
+    "content": "【顶部】此处有【1株】清心\n\n注：完成世界任务【岩颠大侠往事】、【失踪的矿工】后出现",
     "hiddenFlag": 0,
     "id": 22429,
     "itemList": [
@@ -29488,10 +29451,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2222.2387722735994,228.96895195430625",
+    "position": "-2223.0834909667497,227.50054871362045",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -29522,12 +29485,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 904
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2087
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "岩龙蜥",
+    "markerTitle": "幼岩龙蜥",
     "picture": "",
     "position": "-1851.167282461594,-103.0007316181609",
     "refreshTime": -1,
@@ -29541,12 +29504,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 904
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2087
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "岩龙蜥",
+    "markerTitle": "幼岩龙蜥",
     "picture": "",
     "position": "-1847.4999023675964,-97.83412464857338",
     "refreshTime": -1,
@@ -30116,7 +30079,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "-1411.9195508995272,-153.600597497094",
     "refreshTime": -1,
@@ -30200,7 +30163,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个接近出现的【火】岩龙蜥",
+    "content": "(一次性)\n这是一个接近仙灵之庭出现的【火】岩龙蜥",
     "hiddenFlag": 0,
     "id": 22467,
     "itemList": [
@@ -30214,7 +30177,7 @@
     "markerTitle": "岩龙蜥",
     "picture": "",
     "position": "-1735.1376922124532,149.53639800349447",
-    "refreshTime": -1,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -31056,20 +31019,21 @@
     "videoPath": ""
   },
   {
-    "content": "《没写完的补给日志》（不可收集，需做完世界任务【巧瞒七星解磐键】 后出现）",
+    "content": "（不可收集）\n完成世界任务【巧瞒七星解磐键】 后\n此处有\n《没写完的补给日志》\n\n「⋯已经与盗宝团的『二哥』谈妥，将以剩余军费、多余军用物资与之交易食物及生活必需品⋯」\n「⋯盗宝团状况多多，据说盗宝鼬失窃（？）。矿下同僚还需稍安勿躁，静待物资运达⋯」\n「⋯发生了一场地震，引起盗宝团大恐慌，今天的食物也没能成功运抵地下⋯」\n「⋯似乎有人解开了『七星阵法』，需要进一步观察局势⋯」\n「⋯盗宝团的联络员克里托夫失踪了，不得不暂停运送物资⋯」",
     "hiddenFlag": 0,
     "id": 22511,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 855
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "书籍",
-    "picture": "",
-    "position": "-1769.1609439862516,89.84198573049889",
+    "picture": "https://yuanshen.site/comment_png/1681973927857.jpg",
+    "pictureCreatorId": 7,
+    "position": "-1771.7504881620175,83.08088817946282",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -31205,7 +31169,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "-1292.2448712679206,-264.0168577241102",
     "refreshTime": -1,
@@ -31743,19 +31707,20 @@
     "videoPath": ""
   },
   {
-    "content": "《神秘的信笺》\n【空中】颠倒古城内用【9颗渊青宝珠】开启大门后可查看",
+    "content": "（不可收集）\n于【空中】颠倒古城内用【9颗渊青宝珠】开启大门后可查看《神秘的信笺》\n\n(一张发黄的信纸，其上记录着文字不明的语句，大部分内容已经被不明的物质污损。)\n\n注：每个玩家污染的内容不同，需与其他玩家对比得到完整内容。\n\n注：点位图像则是完整信件，经原学家翻译后可得以下诗文：\n\n即使我是守卫坎瑞亚的钢铁机器，\n即使我快如闪电或是带着里拉琴的巴巴托斯，\n即使我乘着珀加索斯在天空飞驰，\n即使我是Morphe的闪电般的雪白双骥——\n再加上所有翅膀，所有能飞的东西，\n再召集所有迅疾的风汇聚于此，\n把它们套上缀绳送给我，我的朋友（阴性），\n疲惫仍会钻进我骨髓的每个角落，\n倦怠的感觉仍会将我吞没，当我\n追寻着你，朋友，追寻着你的踪迹。\n天空崩毁，\n谎言降下。 ",
     "hiddenFlag": 0,
     "id": 22544,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 969
       }
     ],
     "markerCreatorId": 1,
     "markerTitle": "书籍",
-    "picture": "",
+    "picture": "https://yuanshen.site/comment_png/1676375515949.jpg",
+    "pictureCreatorId": 32,
     "position": "2573.747266292703,531.6956468451544",
     "refreshTime": 0,
     "version": 1,
@@ -31921,7 +31886,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹守卫者",
     "picture": "",
     "position": "2306.53387844401,33.922448474967496",
     "refreshTime": -1,
@@ -32043,13 +32008,13 @@
     "videoPath": ""
   },
   {
-    "content": "《拆封的书信》（不可收集）",
+    "content": "（不可收集）\n此处有\n《拆封的书信》\n\n「⋯请别怪我不会说客气话，老爷子您岁数也大了，眼神、腿脚都不复从前了，就请不要跟我们这些年轻人一起爬上爬下受累了⋯」\n「⋯最近行情不太好，我们几个管事的凑了些摩拉留给您，应该足够金盆洗手了。您这手艺活儿，在璃月港里找一个正经工作，也不用愁没钱养老⋯」\n「⋯请不要担心我们，小伙子们都长大了，我们都能独当一面了。我们的心意，还请老爷子您收下⋯」\n「赵铁牛，敬启。」",
     "hiddenFlag": 0,
     "id": 22559,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 855
       }
     ],
@@ -32062,13 +32027,13 @@
     "videoPath": ""
   },
   {
-    "content": "《赵铁牛的账本》（不可收集）",
+    "content": "（不可收集）\n此处有\n《赵铁牛的账本》\n\n      (上面密密麻麻记录了许多开支数据，看起来近些时候层岩巨渊的盗宝团陷入了入不敷出的窘境。)\n   (其中⌈玉器作坊⌋是亏损大头，从三个月前起，往此处运送的所有矿石都如烟般消失在了数据报表中，似乎从未被转化成收益。)\n   (最后一页没有任何数据，只画着一头潦草的壮牛，在愤怒地喷着鼻息，把一朵甜甜花踩得支离破碎。）\n\n",
     "hiddenFlag": 0,
     "id": 22560,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
+        "iconTag": "文本",
         "itemId": 855
       }
     ],
@@ -32708,10 +32673,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-1771,466",
+    "position": "-1772.8337014933252,466.1665955296821",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -32727,10 +32692,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-1757,460.5",
+    "position": "-1760.6673724631132,477.327170462745",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -32746,10 +32711,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-1763.5,468",
+    "position": "-1774.8355565089914,469.1662297206012",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -33078,7 +33043,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一块【石珀】",
+    "content": "此处【上方】有一块【石珀】",
     "hiddenFlag": 0,
     "id": 22612,
     "itemList": [
@@ -33088,10 +33053,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-1618.9999023675964,-170.50190862981617",
+    "position": "-1620.000195264807,-167.83431899301922",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -33202,16 +33167,16 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-2031.5,359.5",
+    "position": "-2028.832822801694,355.16824167054347",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有【底部】一块【石珀】",
+    "content": "此处有【底部】有一块【石珀】",
     "hiddenFlag": 0,
     "id": 22619,
     "itemList": [
@@ -33221,16 +33186,16 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-2005.5,343",
+    "position": "-2017.168965105106,351.33026458672066",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有【底部】一块【石珀】",
+    "content": "此处有【底部】有一块【石珀】",
     "hiddenFlag": 0,
     "id": 22620,
     "itemList": [
@@ -33240,10 +33205,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-1992,372.5",
+    "position": "-2011.0037100313325,363.5032922817227",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -33373,10 +33338,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-2139.5,39.5",
+    "position": "-2141.6670948276715,39.00018290454045",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -33392,10 +33357,10 @@
         "itemId": 875
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "石珀",
     "picture": "",
-    "position": "-2129.5,33.5",
+    "position": "-2139.335263611781,33.66661078288871",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -34570,10 +34535,10 @@
         "itemId": 876
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "夜泊石",
     "picture": "",
-    "position": "-1767,-133.5",
+    "position": "-1778.3355565089914,-135.66586391152123",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -34589,10 +34554,10 @@
         "itemId": 876
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "夜泊石",
     "picture": "",
-    "position": "-1775,-133",
+    "position": "-1784.5018550156663,-134.66604681606168",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -34608,10 +34573,10 @@
         "itemId": 876
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "夜泊石",
     "picture": "",
-    "position": "-1790,-151",
+    "position": "-1793.7502928972106,-129.08266522555368",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -35405,8 +35370,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679302844501.jpg",
+    "pictureCreatorId": 119,
     "position": "1092.2400109713071,-4042.2827426182594",
     "refreshTime": 0,
     "version": 1,
@@ -35430,15 +35395,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679302612749.jpg",
+    "pictureCreatorId": 119,
     "position": "1079.5708506013943,-4185.835265033431",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个【指引仙灵】\n送回【2个】后出现【珍贵宝箱】",
+    "content": "此处【山崖上 小灯草旁】有一个【指引仙灵】\n送回【2个】后出现【珍贵宝箱】",
     "hiddenFlag": 0,
     "id": 22735,
     "itemList": [
@@ -35455,8 +35420,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679302945902.jpg",
+    "pictureCreatorId": 119,
     "position": "1009.0001952648072,-4097.334563542456",
     "refreshTime": 0,
     "version": 1,
@@ -35480,8 +35445,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679303026950.jpg",
+    "pictureCreatorId": 119,
     "position": "1039.0003905296144,-3959.6672665068536",
     "refreshTime": 0,
     "version": 1,
@@ -35505,8 +35470,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1680849475063.jpg",
+    "pictureCreatorId": 119,
     "position": "2579.4866380533986,-2713.815145939311",
     "refreshTime": 0,
     "version": 1,
@@ -35519,44 +35484,44 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "其他宝箱",
-        "itemId": 1426
+        "iconTag": "指引仙灵",
+        "itemId": 15
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 15
+        "iconTag": "其他宝箱",
+        "itemId": 1426
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1680849874649.jpg",
+    "pictureCreatorId": 119,
     "position": "2556.3333933343465,-2638.6661684772685",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【较高处】有一个【指引仙灵】\n送回【3个】后出现【珍贵宝箱】",
+    "content": "此处【柱子上 较高处】有一个【指引仙灵】\n送回【3个】后出现【珍贵宝箱】",
     "hiddenFlag": 0,
     "id": 22739,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "其他宝箱",
-        "itemId": 1426
+        "iconTag": "指引仙灵",
+        "itemId": 15
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 15
+        "iconTag": "其他宝箱",
+        "itemId": 1426
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1680849677386.jpg",
+    "pictureCreatorId": 119,
     "position": "2503.1384198554915,-2692.140528706473",
     "refreshTime": 0,
     "version": 1,
@@ -35580,8 +35545,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1675328146809.jpg",
+    "pictureCreatorId": 119,
     "position": "3271.699981689453,-2911.099566973235",
     "refreshTime": 0,
     "version": 1,
@@ -35605,15 +35570,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1675328212694.jpg",
+    "pictureCreatorId": 119,
     "position": "3367.9132855948437,-3000.231680426441",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【小尖涯上】有一个【指引仙灵】\n送回【3个】后出现【风场】可借助其到达【马斯克礁】的传送门（需补图）",
+    "content": "此处【小尖崖上】有一个【指引仙灵】\n送回【3个】后出现【风场】可借助其到达【马斯克礁】的传送门",
     "hiddenFlag": 0,
     "id": 22742,
     "itemList": [
@@ -35630,8 +35595,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1675328074142.jpg",
+    "pictureCreatorId": 119,
     "position": "3284.8970786158643,-2846.1753149077203",
     "refreshTime": 0,
     "version": 1,
@@ -35655,8 +35620,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679303438152.jpg",
+    "pictureCreatorId": 119,
     "position": "2880.2377485951665,-2662.0300700500716",
     "refreshTime": 0,
     "version": 1,
@@ -35680,8 +35645,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679303483023.jpg",
+    "pictureCreatorId": 119,
     "position": "2846.6666066656544,-2586.6661684772685",
     "refreshTime": 0,
     "version": 1,
@@ -35763,7 +35728,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【击破石堆】便可送回一个【指引仙灵】\n送回【4个】后解锁【塞西莉亚苗圃】",
+    "content": "此处【击破石堆】便可送回一个【指引仙灵】\n送回【4个】并激活解锁的【风元素方碑】后解锁【塞西莉亚苗圃】",
     "hiddenFlag": 0,
     "id": 22748,
     "itemList": [
@@ -35780,15 +35745,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1678440083746.jpg",
+    "pictureCreatorId": 119,
     "position": "879.5048778047321,-3839.88852328442",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有一个【指引仙灵】\n送回【4个】后解锁【塞西莉亚苗圃】",
+    "content": "此处有一个【指引仙灵】\n送回【4个】并激活解锁的【风元素方碑】后解锁【塞西莉亚苗圃】",
     "hiddenFlag": 0,
     "id": 22749,
     "itemList": [
@@ -35805,15 +35770,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1678440292887.jpg",
+    "pictureCreatorId": 119,
     "position": "887.03701794269,-3874.8554261045792",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【狂风屏障内】有一个【指引仙灵】\n送回【4个】后解锁【塞西莉亚苗圃】",
+    "content": "此处【狂风屏障内】有一个【指引仙灵】\n送回【4个】并激活解锁的【风元素方碑】后解锁【塞西莉亚苗圃】",
     "hiddenFlag": 0,
     "id": 22750,
     "itemList": [
@@ -35830,15 +35795,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1678440136141.jpg",
+    "pictureCreatorId": 119,
     "position": "874.53460765614,-3792.82541329591",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【击破巨石】后出现一个【指引仙灵】\n送回【4个】后解锁【塞西莉亚苗圃】",
+    "content": "此处【击破巨石】后出现一个【指引仙灵】\n送回【4个】并激活解锁的【风元素方碑】后解锁【塞西莉亚苗圃】",
     "hiddenFlag": 0,
     "id": 22751,
     "itemList": [
@@ -35855,15 +35820,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1678440388022.jpg",
+    "pictureCreatorId": 119,
     "position": "809.5219154436872,-3889.860916252507",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处上方有一个【指引仙灵】（需补图）\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】",
+    "content": "此处上方有一个【指引仙灵】\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】",
     "hiddenFlag": 0,
     "id": 22752,
     "itemList": [
@@ -35880,15 +35845,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "璃月宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1680596142901.jpg",
+    "pictureCreatorId": 119,
     "position": "-647.5001952648072,-612.0155468859148",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个【降下水位】后，在【遗迹底部】的【指引仙灵】\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】",
+    "content": "这是一个【降下水位】后，在【遗迹底部】的【指引仙灵】\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】\n\n注：完成门口处的限时挑战【在60秒内击败所有敌人】可开启大门",
     "hiddenFlag": 0,
     "id": 22753,
     "itemList": [
@@ -35913,7 +35878,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【降下水位】后，在【遗迹底部】的【指引仙灵】（需补图）\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】",
+    "content": "这是一个【降下水位】后，在【遗迹底部】的【指引仙灵】\n送回【3个】后解锁湖中屏障，方可开启【华丽宝箱】",
     "hiddenFlag": 0,
     "id": 22754,
     "itemList": [
@@ -35930,8 +35895,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "璃月宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1680596923501.jpg",
+    "pictureCreatorId": 119,
     "position": "-657.5833521490285,-615.125",
     "refreshTime": 0,
     "version": 1,
@@ -36042,8 +36007,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681919403296.jpg",
+    "pictureCreatorId": 10,
     "position": "4212.198907729439,3771.710089660688",
     "refreshTime": 0,
     "version": 1,
@@ -36056,44 +36021,44 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "指引仙灵",
+        "itemId": 307
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 307
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681919679038.jpg",
+    "pictureCreatorId": 10,
     "position": "4041.4206957802735,3760.0525224151716",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【折断桅杆】上有一个【指引仙灵】\n送回【3个】后解锁【珍贵宝箱】",
+    "content": "此处【尾部甲板】上有一个【指引仙灵】\n送回【3个】后解锁【珍贵宝箱】",
     "hiddenFlag": 0,
     "id": 22761,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "指引仙灵",
+        "itemId": 307
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 307
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681919653064.jpg",
+    "pictureCreatorId": 119,
     "position": "4051.3444334268243,3845.6669081291784",
     "refreshTime": 0,
     "version": 1,
@@ -36106,26 +36071,26 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "指引仙灵",
+        "itemId": 307
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 307
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681919904321.jpg",
+    "pictureCreatorId": 119,
     "position": "4585.554283616339,4240.105776850067",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "这是一个于【白夜】解除屏障才后送回的【指引仙灵】\n送回【2个】可解锁【精致宝箱】",
+    "content": "于【白夜】\n【解除屏障后】在此处可送回的【指引仙灵】\n送回【2个】可解锁【精致宝箱】",
     "hiddenFlag": 0,
     "id": 22763,
     "itemList": [
@@ -36150,7 +36115,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个于【常夜】解除屏障后才可送回的【指引仙灵】\n送回【2个】可解锁【精致宝箱】",
+    "content": "于【常夜】\n【解除屏障后】才可送回此处【指引仙灵】\n送回【2个】可解锁【精致宝箱】",
     "hiddenFlag": 0,
     "id": 22764,
     "itemList": [
@@ -36175,25 +36140,25 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【指引仙灵】\n送回【2个】后并击败怪物可出现【珍贵宝箱】",
+    "content": "此处【顶部】有一个【指引仙灵】\n送回【2个】后并击败怪物可出现【珍贵宝箱】",
     "hiddenFlag": 0,
     "id": 22765,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "指引仙灵",
+        "itemId": 307
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 307
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681919936664.jpg",
+    "pictureCreatorId": 119,
     "position": "4552.2808030233,4166.522509606502",
     "refreshTime": 0,
     "version": 1,
@@ -36206,19 +36171,19 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
+        "iconTag": "雷灵",
+        "itemId": 518
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 518
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "https://yuanshen.site/comment_png/404_177.jpg",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682087389366.jpg",
+    "pictureCreatorId": 119,
     "position": "4506.25,7338.25",
     "refreshTime": 0,
     "version": 1,
@@ -36242,8 +36207,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682087260901.jpg",
+    "pictureCreatorId": 119,
     "position": "4548.5,7500.5",
     "refreshTime": 0,
     "version": 1,
@@ -36256,44 +36221,44 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
+        "iconTag": "雷灵",
+        "itemId": 518
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 518
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682087298331.jpg",
+    "pictureCreatorId": 119,
     "position": "4505,7414.5",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有一个【雷灵】\n送回附近【3个】雷灵后，并完成【电气传导】解密可出现【珍贵宝箱】",
+    "content": "此处【瀑布上方】有一个【雷灵】\n送回附近【3个】雷灵后，并完成【电气传导】解密可出现【珍贵宝箱】",
     "hiddenFlag": 0,
     "id": 22769,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681918410494.jpg",
+    "pictureCreatorId": 119,
     "position": "3547.09667134122,4099.463566754375",
     "refreshTime": 0,
     "version": 1,
@@ -36317,8 +36282,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682087344408.jpg",
+    "pictureCreatorId": 119,
     "position": "4606,7401",
     "refreshTime": 0,
     "version": 1,
@@ -36331,19 +36296,19 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681918360785.jpg",
+    "pictureCreatorId": 119,
     "position": "3550.566945305255,4238.46355149",
     "refreshTime": 0,
     "version": 1,
@@ -36356,13 +36321,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
@@ -36437,7 +36402,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【魔神残骸下牙上】有一个【雷灵】\n送回【2个】后可开启通往【地下】的铁门",
+    "content": "此处【魔神残骸下牙上】有一个【雷灵】\n送回【2个】后可开启通往【地下】的铁门\n\n注：该雷灵不计入【雷灵成就数】\n注：铁门开关开启顺序：面对【西南侧墙壁】， 以【左上】开始逆时针计数【1、4、2、3】顺序开启机关",
     "hiddenFlag": 0,
     "id": 22776,
     "itemList": [
@@ -36447,15 +36412,15 @@
         "itemId": 1418
       },
       {
-        "count": 1,
+        "count": 0,
         "iconTag": "雷灵",
         "itemId": 310
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681916963634.jpg",
+    "pictureCreatorId": 119,
     "position": "3519.028362213213,4371.2207192110545",
     "refreshTime": 0,
     "version": 1,
@@ -36500,25 +36465,25 @@
     "videoPath": ""
   },
   {
-    "content": "此处【魔神残骸下牙上】有一个【雷灵】\n送回【2个】后可开启通往【地下】的铁门",
+    "content": "此处【魔神残骸下牙上】有一个【雷灵】\n送回【2个】后可开启通往【地下】的铁门\n\n注：该雷灵不计入【雷灵成就数】\n注：铁门开关开启顺序：面对【西南侧墙壁】， 以【左上】开始逆时针计数【1、4、2、3】顺序开启机关",
     "hiddenFlag": 0,
     "id": 22779,
     "itemList": [
       {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "count": 0,
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681916711206.jpg",
+    "pictureCreatorId": 119,
     "position": "3540.4668155599375,4389.489522967706",
     "refreshTime": 0,
     "version": 1,
@@ -36639,7 +36604,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处完成【限时挑战】出现的【雷灵】\n送回【3个】后可激活【雷樱旁枝】进入屏障开启【华丽的宝箱】",
+    "content": "在此处完成【限时挑战】出现的【雷灵】\n送回【3个】后可激活【雷樱枝条】进入屏障开启【华丽的宝箱】",
     "hiddenFlag": 0,
     "id": 22786,
     "itemList": [
@@ -36656,8 +36621,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681918206386.jpg",
+    "pictureCreatorId": 119,
     "position": "4462.8752440810085,3740.6667289403413",
     "refreshTime": 0,
     "version": 1,
@@ -36721,25 +36686,25 @@
     "videoPath": ""
   },
   {
-    "content": "在此处完成【雷立方体解密】出现1个【雷灵】\n送回【3个】后可激活【雷樱旁枝】进入屏障开启【华丽的宝箱】",
+    "content": "在此处完成【雷立方体解密】出现1个【雷灵】\n送回【3个】后可激活【雷樱枝条】进入屏障开启【华丽的宝箱】",
     "hiddenFlag": 0,
     "id": 22790,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681740968187.jpg",
+    "pictureCreatorId": 119,
     "position": "4521.001562118456,3673.6691270849115",
     "refreshTime": 0,
     "version": 1,
@@ -36960,25 +36925,25 @@
     "videoPath": ""
   },
   {
-    "content": "在此处完成【雷霆探针解密】出现1个【雷灵】\n送回【3个】后可激活【雷樱旁枝】进入屏障开启【华丽的宝箱】",
+    "content": "在此处完成【雷霆探针解密】出现1个【雷灵】\n送回【3个】后可激活【雷樱枝条】进入屏障开启【华丽的宝箱】",
     "hiddenFlag": 0,
     "id": 22802,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1418
+        "iconTag": "雷灵",
+        "itemId": 310
       },
       {
         "count": 1,
-        "iconTag": "雷灵",
-        "itemId": 310
+        "iconTag": "无",
+        "itemId": 1418
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1681740749314.jpg",
+    "pictureCreatorId": 119,
     "position": "4603.478798506675,3722.639918717963",
     "refreshTime": 0,
     "version": 1,
@@ -37307,7 +37272,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处中部清除黑泥后出现【水】深渊法师\n",
+    "content": "此处【中部清除黑泥后】出现一个【水】深渊法师\n",
     "hiddenFlag": 0,
     "id": 22819,
     "itemList": [
@@ -37545,22 +37510,24 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【地下遗迹内】的雷灵，送回以完成地上的继电石解密。",
+    "content": "此处有一个【地下遗迹内】的雷灵\n送回以完成地上的继电石解密。",
     "hiddenFlag": 0,
     "id": 22831,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1425
-      },
       {
         "count": 1,
         "iconTag": "雷灵",
         "itemId": 410
+      },
+      {
+        "count": 1,
+        "iconTag": "无",
+        "itemId": 1425
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"inazuma_underground\": true}",
     "markerTitle": "宝箱",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37627,7 +37594,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【较低处】雷石旁有一个仙灵\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
+    "content": "在此处【较低处】雷石旁有一个仙灵（需补图）\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
     "hiddenFlag": 0,
     "id": 22835,
     "itemList": [
@@ -37652,19 +37619,19 @@
     "videoPath": ""
   },
   {
-    "content": "此处【稍高处】有一个仙灵\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
+    "content": "此处【稍高处】有一个仙灵（需补图）\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
     "hiddenFlag": 0,
     "id": 22836,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
+        "iconTag": "指引仙灵",
+        "itemId": 516
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 516
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
@@ -37696,22 +37663,24 @@
     "videoPath": ""
   },
   {
-    "content": "此处【较低洞口处】有一个仙灵\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
+    "content": "此处【较低洞口处】有一个仙灵（需补图）\n送回【3个】仙灵可出现【精致宝箱】并降下水位",
     "hiddenFlag": 0,
     "id": 22838,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 516
+      },
+      {
+        "count": 1,
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"inazuma_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37724,22 +37693,24 @@
     "content": "此处【地下遗迹内 断柱上】有一个仙灵\n送回【3个】仙灵出现的【精致宝箱】",
     "hiddenFlag": 0,
     "id": 22839,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 516
+      },
+      {
+        "count": 1,
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"inazuma_underground\":true}",
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682085606302.jpg",
+    "pictureCreatorId": 119,
     "position": "4111.833994390536,7099.166549751504",
     "refreshTime": 0,
     "version": 1,
@@ -37749,22 +37720,24 @@
     "content": "此处【地下遗迹密室内】有一个仙灵\n送回【3个】仙灵出现的【精致宝箱】",
     "hiddenFlag": 0,
     "id": 22840,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1428
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 516
+      },
+      {
+        "count": 1,
+        "iconTag": "无",
+        "itemId": 1428
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"inazuma_underground\":true}",
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682085986987.jpg",
+    "pictureCreatorId": 119,
     "position": "4123.583295701943,7161.500366009861",
     "refreshTime": 0,
     "version": 1,
@@ -37774,6 +37747,7 @@
     "content": "在此处【击破巨岩】出现的仙灵\n送回【3个】仙灵出现的【精致宝箱】",
     "hiddenFlag": 0,
     "id": 22841,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37787,9 +37761,10 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"inazuma_underground\":true}",
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682086101630.jpg",
+    "pictureCreatorId": 119,
     "position": "4165,7068.665085712057",
     "refreshTime": 0,
     "version": 1,
@@ -38111,12 +38086,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 888
+        "iconTag": "遗迹重机",
+        "itemId": 2089
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹重机",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-1967.5,367",
@@ -38131,12 +38106,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 888
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹守卫者",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-1958.5,366",
@@ -38649,10 +38624,10 @@
         "itemId": 873
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "琉璃袋",
     "picture": "",
-    "position": "-1937.5,-8.5",
+    "position": "-1939.8337686021914,-5.501097427240893",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -38872,7 +38847,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【1株】清心",
+    "content": "此处【山崖上】有【1株】清心",
     "hiddenFlag": 0,
     "id": 22898,
     "itemList": [
@@ -39029,7 +39004,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【遗迹守卫者】（一次性）\n\n注：进行世界任务【他乡迷失客】时，可与其触发战斗",
+    "content": "（一次性）\n此处有一个【遗迹守卫者】\n\n注：进行世界任务【他乡迷失客】时，可与其触发战斗",
     "hiddenFlag": 0,
     "id": 22906,
     "itemList": [
@@ -39040,7 +39015,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹守卫者",
     "picture": "",
     "position": "3255.8178179350944,1607.060330569706",
     "refreshTime": 0,
@@ -39048,18 +39023,18 @@
     "videoPath": ""
   },
   {
-    "content": "此处【遗迹中】有一个【遗迹重机】（一次性）\n 于世界任务【黑翳渐浓隐凶险】过程中，借助【指引仙灵】可进入遗迹中",
+    "content": "（一次性）\n此处【遗迹中】有一个【遗迹重机】\n \n注：进行世界任务【黑翳渐浓隐凶险】时，借助【指引仙灵】可进入遗迹中",
     "hiddenFlag": 0,
     "id": 22907,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹守卫",
-        "itemId": 1002
+        "iconTag": "遗迹重机",
+        "itemId": 2094
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "遗迹人形",
+    "markerTitle": "遗迹重机",
     "picture": "",
     "position": "3098.7871613603993,1690.090709388237",
     "refreshTime": 0,
@@ -40059,11 +40034,11 @@
         "itemId": 1754
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 128,
     "markerTitle": "鳗肉",
     "picture": "https://yuanshen.site/comment_png/386_47.jpg",
     "pictureCreatorId": 1,
-    "position": "1714.6673318892636,4236.666687011719",
+    "position": "1715.4175829896885,4224.666736001802",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -40108,84 +40083,6 @@
     "picture": "",
     "position": "2887.5835062285178,-4492.906476848117",
     "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "完成世界任务【月浴之渊】后，在山洞中此处角落【击碎巨岩】后，开启【珍贵宝箱】获得摆设图纸：\n【军势钲鼓-「破阵余响」（4星）】、\n【「恒诰之龛」（3星）】",
-    "hiddenFlag": 0,
-    "id": 22959,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "图纸获取方法",
-        "itemId": 432
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "摆设图纸",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "1950.04189193198,4206.541603156285",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "神樱树达到【50级】后，在【御舆源一郎】处可购买摆设图纸：\n【御伽木储粮推车（2星）】5雷之印（限购1）\n【御伽木简易工棚（2星）】5雷之印（限购1）\n【阵地篝火-「清曜」（2星）】5雷之印（限购1）\n【阵地拒马-「示边」（2星）】5雷之印（限购1）\n【朱木鸟居-「安复之道」（3星）】10雷之印（限购1）\n【枫木布面狸猫玩偶（3星）】10雷之印（限购1）\n【枫木布面白狐玩偶（3星）】10雷之印（限购1）\n【神社雕像-「清籁镇物」（3星）】10雷之印（限购1）\n【「中庭竹水鸣」（3星）】10雷之印（限购1）\n【宗传刀架-「两训则」（4星）】20雷之印（限购1）",
-    "hiddenFlag": 0,
-    "id": 22960,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "图纸获取方法",
-        "itemId": 325
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "摆设图纸",
-    "picture": "",
-    "position": "6505.770698069538,3343.979286060825",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "进行世界任务【清籁逐雷记 · 其四】时击败【雷音权现】后继续使用雷极穿梭到高空开启的【珍贵宝箱】获得摆设图纸：\n【「净绪之龛」（4星）】、\n【阵屋半钟-「轰雷之音」（3星）】",
-    "hiddenFlag": 0,
-    "id": 22961,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "图纸获取方法",
-        "itemId": 432
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "摆设图纸",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "6084.978407977062,5410.726542492723",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "这是一个在【最上方】的【丘丘岩盔王】",
-    "hiddenFlag": 0,
-    "id": 22962,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 890
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
-    "picture": "",
-    "position": "-1647.8568403729514,531.4724202991556",
-    "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
@@ -43660,10 +43557,10 @@
         "itemId": 874
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "清心",
     "picture": "",
-    "position": "-2091.943763735592,205.89731571588527",
+    "position": "-2092.3334085961146,205.8333892171113",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -43783,7 +43680,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "1047.2427187550556,4369.302105593984",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -46650,7 +46547,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -46722,7 +46619,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -47004,7 +46901,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 1056
       }
     ],
@@ -47356,7 +47253,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1061
       }
     ],
@@ -47468,7 +47365,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1061
       }
     ],
@@ -47496,7 +47393,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1061
       }
     ],
@@ -48339,7 +48236,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -48580,7 +48477,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 1056
       }
     ],
@@ -48608,7 +48505,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -48636,7 +48533,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 1056
       }
     ],
@@ -48771,7 +48668,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1066
       }
     ],
@@ -48799,7 +48696,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -48827,7 +48724,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -48855,7 +48752,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 1056
       }
     ],
@@ -48883,7 +48780,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -49074,7 +48971,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -50264,7 +50161,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -50297,7 +50194,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -50325,7 +50222,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -50871,7 +50768,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -51592,20 +51489,20 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，此处有一只丘丘【岩盔王】\n",
+    "content": "【初始形态】下，\n此处有一只丘丘【岩盔王】",
     "hiddenFlag": 0,
     "id": 23504,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 24,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"0-0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"0-0\"]}}",
+    "markerTitle": "丘丘王",
     "parentId": -1,
     "picture": "",
     "pictureCreatorId": 24,
@@ -51615,19 +51512,19 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，\n此处有一个【遗迹守卫者】\n",
+    "content": "【初始形态】下，\n此处有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23505,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"0-0\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"0-0\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -51846,7 +51743,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -52293,7 +52190,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -52746,7 +52643,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -52783,7 +52680,8 @@
     ],
     "markerCreatorId": 1,
     "markerTitle": "蒙德宝箱",
-    "picture": "",
+    "picture": "https://yuanshen.site/comment_png/1677342865102.jpg",
+    "pictureCreatorId": 149,
     "position": "2616,-3658",
     "refreshTime": 0,
     "version": 1,
@@ -53111,7 +53009,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1061
       }
     ],
@@ -53196,20 +53094,20 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，此处有一只丘丘【岩盔王】\n",
+    "content": "【初始形态】下，\n此处有一只丘丘【岩盔王】",
     "hiddenFlag": 0,
     "id": 23590,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ww\", \"island_state\": [\"0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ww\",\"island_state\":[\"0\"]}}",
+    "markerTitle": "丘丘王",
     "parentId": -1,
     "picture": "",
     "position": "952.7799243316686,-899.0459090395834",
@@ -53218,7 +53116,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，此处有一只【火斧】丘丘暴徒\n",
+    "content": "【初始形态】下，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23591,
     "isRelated": 0,
@@ -53230,8 +53128,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ww\", \"island_state\": [\"0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ww\",\"island_state\":[\"0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "971.1421588949124,-914.2576362645523",
@@ -53240,7 +53138,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，此处有一只【木盾】丘丘暴徒\n",
+    "content": "【初始形态】下，\n此处有一只【木盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23592,
     "isRelated": 0,
@@ -53252,8 +53150,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ww\", \"island_state\": [\"0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ww\",\"island_state\":[\"0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "969.2667927734001,-907.1352426542499",
@@ -53281,7 +53179,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始形态】下，此处有一只【火斧】丘丘暴徒\n",
+    "content": "【初始形态】下，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23594,
     "isRelated": 0,
@@ -53293,8 +53191,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ww\", \"island_state\": [\"0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ww\",\"island_state\":[\"0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1011.2901269178328,-709.2971893713639",
@@ -53464,7 +53362,7 @@
     "itemList": [
       {
         "count": 0,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -53480,6 +53378,28 @@
     "picture": "https://yuanshen.site/comment_png/1658230780641.jpg",
     "pictureCreatorId": 2,
     "position": "545.7499023675964,-749.8316201991865",
+    "refreshTime": 0,
+    "version": 0,
+    "videoPath": ""
+  },
+  {
+    "content": "【沉入水下】后，\n此处有一只【火斧】丘丘暴徒",
+    "hiddenFlag": 0,
+    "id": 23613,
+    "isRelated": 0,
+    "itemList": [
+      {
+        "count": 1,
+        "iconTag": "大型丘丘人",
+        "itemId": 1133
+      }
+    ],
+    "markerCreatorId": 1,
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ww\",\"island_state\":[\"1\"]}}",
+    "markerTitle": "丘丘暴徒",
+    "parentId": -1,
+    "picture": "",
+    "position": "993.75,-844.3001341678673",
     "refreshTime": 0,
     "version": 0,
     "videoPath": ""
@@ -53655,7 +53575,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "2170.1701214321793,-2316.0949948235175",
     "refreshTime": 0,
@@ -53669,12 +53589,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘王",
     "picture": "",
     "position": "2156.5282645808093,-2287.4676233916025",
     "refreshTime": 0,
@@ -53732,12 +53652,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘王",
     "picture": "",
     "position": "1898.54256772792,-3237.789544329451",
     "refreshTime": 0,
@@ -53757,7 +53677,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -53944,7 +53864,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "711.8936477890657,-3282.0325748777022",
     "refreshTime": 0,
@@ -54238,7 +54158,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒\n",
+    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23690,
     "isRelated": 0,
@@ -54250,8 +54170,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1852.02772760259,-1609.456353323977",
@@ -54260,7 +54180,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒\n",
+    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23691,
     "isRelated": 0,
@@ -54272,8 +54192,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1845.2764095651437,-1640.7177911321596",
@@ -54282,7 +54202,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒\n",
+    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23692,
     "isRelated": 0,
@@ -54294,8 +54214,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1821.521772025977,-1605.7049807869953",
@@ -54370,7 +54290,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒\n",
+    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23696,
     "isRelated": 0,
@@ -54382,8 +54302,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1922.4588891272479,-1496.4990849753458",
@@ -54392,7 +54312,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒\n",
+    "content": "左右两侧均为【磐固山石】时，\n此处有一只【岩盾】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23697,
     "isRelated": 0,
@@ -54404,8 +54324,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1929.8333521490285,-1530.75",
@@ -54701,19 +54621,19 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【优悠山石】时，\n此处有一个【遗迹守卫者】\n",
+    "content": "左右两侧均为【优悠山石】时，\n此处有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23711,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-1\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-1\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -54922,20 +54842,20 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【浮光山石】时，\n此处有一只丘丘【雷兜王】\n",
+    "content": "左右两侧均为【浮光山石】时，\n此处有一只丘丘【雷兜王】",
     "hiddenFlag": 0,
     "id": 23722,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"2-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"2-2\"]}}",
+    "markerTitle": "丘丘王",
     "parentId": -1,
     "picture": "",
     "position": "1928.3330180665007,-1291.4992679802763",
@@ -55726,20 +55646,20 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【浮光山石】、右侧【磐固山石】时，\n此处有一只幼岩龙蜥\n",
+    "content": "左侧【浮光山石】、右侧【磐固山石】时，\n此处有【1只】【幼岩龙蜥】",
     "hiddenFlag": 0,
     "id": 23758,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1147
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2098
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"2-3\"]}}",
-    "markerTitle": "岩龙蜥",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"2-3\"]}}",
+    "markerTitle": "幼岩龙蜥",
     "parentId": -1,
     "picture": "",
     "position": "1664.5294361696515,-1522.0257895401646",
@@ -55748,20 +55668,20 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【浮光山石】、右侧【磐固山石】时，\n此处有一只幼岩龙蜥\n",
+    "content": "左侧【浮光山石】、右侧【磐固山石】时，\n此处有【1只】【幼岩龙蜥】",
     "hiddenFlag": 0,
     "id": 23759,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1147
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2098
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"2-3\"]}}",
-    "markerTitle": "岩龙蜥",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"2-3\"]}}",
+    "markerTitle": "幼岩龙蜥",
     "parentId": -1,
     "picture": "",
     "position": "1695.5288015590286,-1567.28164248545",
@@ -55952,20 +55872,20 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】、右侧【浮光山石】时，\n此处有一只幼岩龙蜥\n",
+    "content": "左侧【磐固山石】、右侧【浮光山石】时，\n此处有【1只】【幼岩龙蜥】\n",
     "hiddenFlag": 0,
     "id": 23768,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1147
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2098
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-2\"]}}",
-    "markerTitle": "岩龙蜥",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-2\"]}}",
+    "markerTitle": "幼岩龙蜥",
     "parentId": -1,
     "picture": "",
     "position": "1908.2497071027892,-1635.24963419092",
@@ -55981,13 +55901,13 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 1147
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2098
       }
     ],
     "markerCreatorId": 1,
     "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-2\"]}}",
-    "markerTitle": "岩龙蜥",
+    "markerTitle": "幼岩龙蜥",
     "parentId": -1,
     "picture": "",
     "position": "1919.2810471043085,-1632.2895073806767",
@@ -56062,20 +55982,20 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】，右侧【浮光山石】时，\n此处有一只丘丘【岩盔王】\n",
+    "content": "左侧【磐固山石】，右侧【浮光山石】时，\n此处有一只丘丘【岩盔王】",
     "hiddenFlag": 0,
     "id": 23773,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1133
+        "iconTag": "丘丘王",
+        "itemId": 2099
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-2\"]}}",
+    "markerTitle": "丘丘王",
     "parentId": -1,
     "picture": "",
     "position": "1930.1979802216065,-1317.7207352735722",
@@ -56084,7 +56004,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒\n",
+    "content": "左侧【磐固山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23774,
     "isRelated": 0,
@@ -56096,8 +56016,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-2\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1895.6912435857657,-1313.722198509894",
@@ -56118,7 +56038,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1066
       }
     ],
@@ -56578,7 +56498,7 @@
       },
       {
         "count": 1,
-        "iconTag": "压感机关",
+        "iconTag": "「压感机关」",
         "itemId": 1056
       }
     ],
@@ -56732,7 +56652,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒\n",
+    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23801,
     "isRelated": 0,
@@ -56744,8 +56664,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-2\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1782.6862643331879,-1335.0501158440075",
@@ -56754,7 +56674,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒\n",
+    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23802,
     "isRelated": 0,
@@ -56766,8 +56686,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-2\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1787.0002928972108,-1317.5012803317813",
@@ -56776,7 +56696,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒\n",
+    "content": "左侧【优悠山石】，右侧【浮光山石】时，\n此处有一只【雷斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23803,
     "isRelated": 0,
@@ -56788,8 +56708,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-2\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-2\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1800.9171771983056,-1330.8335873748583",
@@ -56798,19 +56718,19 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】、右侧【浮光山石】时，\n此处有一个【遗迹守卫者】\n",
+    "content": "左侧【优悠山石】、右侧【浮光山石】时，\n此处有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23804,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-2\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-2\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -56821,19 +56741,19 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】、右侧【浮光山石】时，\n此处有一个【遗迹守卫者】\n",
+    "content": "左侧【优悠山石】、右侧【浮光山石】时，\n此处有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23805,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-2\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-2\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -57241,7 +57161,7 @@
     "videoPath": ""
   },
   {
-    "content": "左右两侧均为【优悠山石】时，\n此处【山顶】有一只【火斧】丘丘暴徒\n",
+    "content": "左右两侧均为【优悠山石】时，\n此处【山顶】有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23824,
     "isRelated": 0,
@@ -57253,8 +57173,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-1\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-1\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1903.5669758287922,-1546.5824899476174",
@@ -57770,19 +57690,19 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】、右侧【优悠山石】时，\n【顶部】此处有一个【遗迹守卫者】\n",
+    "content": "左侧【磐固山石】、右侧【优悠山石】时，\n此处【顶部】有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23848,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-1\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-1\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -57815,7 +57735,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】，右侧【优悠山石】时，\n此处有一只【火斧】丘丘暴徒\n",
+    "content": "左侧【磐固山石】，右侧【优悠山石】时，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23850,
     "isRelated": 0,
@@ -57827,8 +57747,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-1\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-1\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1594.0480351425158,-1322.099500069853",
@@ -57837,7 +57757,7 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【磐固山石】，右侧【优悠山石】时，\n此处有一只【火斧】丘丘暴徒\n",
+    "content": "左侧【磐固山石】，右侧【优悠山石】时，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 23851,
     "isRelated": 0,
@@ -57849,8 +57769,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"3-1\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"3-1\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1611.551452276637,-1296.109011105942",
@@ -57997,19 +57917,19 @@
     "videoPath": ""
   },
   {
-    "content": "左侧【优悠山石】、右侧【磐固山石】时，\n此处有一个【遗迹守卫者】\n",
+    "content": "左侧【优悠山石】、右侧【磐固山石】时，\n此处有一个【遗迹守卫者】",
     "hiddenFlag": 0,
     "id": 23858,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
+        "iconTag": "遗迹守卫",
         "itemId": 1131
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"1-3\"]}}",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"1-3\"]}}",
     "markerTitle": "遗迹守卫者",
     "parentId": -1,
     "picture": "",
@@ -58927,7 +58847,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "-510.4381986885928,-1427.389099011867",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -59976,25 +59896,6 @@
   {
     "content": "此处有一条【蓝鳍鲈鱼】",
     "hiddenFlag": 0,
-    "id": 23957,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "鱼肉",
-        "itemId": 196
-      }
-    ],
-    "markerCreatorId": 1,
-    "markerTitle": "鱼肉",
-    "picture": "",
-    "position": "-496.0831156989043,-3322.9994512863796",
-    "refreshTime": 43200000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此处有一条【蓝鳍鲈鱼】",
-    "hiddenFlag": 0,
     "id": 23958,
     "itemList": [
       {
@@ -60041,10 +59942,10 @@
         "itemId": 196
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "鱼肉",
     "picture": "",
-    "position": "-498.63320112189285,-3315.6233538591387",
+    "position": "-502.41740298665036,-3314.499633990138",
     "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
@@ -60297,7 +60198,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "-1112.7224676622168,-2779.044079994181",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -60321,7 +60222,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "-1110.7220771326029,-2774.045909039583",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -60788,33 +60689,6 @@
     "picture": "",
     "position": "139.5538839403921,-1593.011982154032",
     "refreshTime": -1,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "在【高空城堡中】\n进行世界任务【极夜幻想局 ·王女执剑记！】时，在此处完成演出【序幕】【上半场】出现的【普通宝箱】\n内有【2原石】\n注：需正确【协助演员登台】",
-    "hiddenFlag": 0,
-    "id": 24000,
-    "isRelated": 1,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1049
-      },
-      {
-        "count": 1,
-        "iconTag": "话剧表演",
-        "itemId": 1073
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ss\", \"island_state\": [\"3\"]}}",
-    "markerTitle": "宝箱",
-    "picture": "https://yuanshen.site/comment_png/1658210994021.jpg",
-    "pictureCreatorId": 7,
-    "position": "1586.333701493325,-3360.4172741390407",
-    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   }

@@ -1,5 +1,32 @@
 [
   {
+    "content": "在【高空城堡中】\n进行世界任务【极夜幻想局 ·王女执剑记！】时，在此处完成演出【序幕】【上半场】出现的【普通宝箱】\n内有【2原石】\n注：需正确【协助演员登台】",
+    "hiddenFlag": 0,
+    "id": 24000,
+    "isRelated": 1,
+    "itemList": [
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 1049
+      },
+      {
+        "count": 1,
+        "iconTag": "话剧表演",
+        "itemId": 1073
+      }
+    ],
+    "markerCreatorId": 7,
+    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ss\", \"island_state\": [\"3\"]}}",
+    "markerTitle": "宝箱",
+    "picture": "https://yuanshen.site/comment_png/1658210994021.jpg",
+    "pictureCreatorId": 7,
+    "position": "1586.333701493325,-3360.4172741390407",
+    "refreshTime": 0,
+    "version": 1,
+    "videoPath": ""
+  },
+  {
     "content": "在【高空城堡中】\n进行世界任务【极夜幻想局 ·王女执剑记！】时，在此处完成演出【序幕】【下半场】出现的【精致宝箱】\n内有【5原石】\n注：需正确【协助演员登台】",
     "hiddenFlag": 0,
     "id": 24001,
@@ -39,7 +66,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -309,7 +336,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -335,7 +362,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "NPC商店",
+    "markerTitle": "商店",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "200.7500976324036,17.75",
@@ -465,7 +492,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "164.5999984741211,-718.0739433442641",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -489,7 +516,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "158.9250030517578,-717.5754986012962",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -513,7 +540,7 @@
     "markerTitle": "禽肉",
     "picture": "",
     "position": "161.8499984741211,-723.1488854005229",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -2236,7 +2263,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       },
       {
@@ -2412,7 +2439,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始山石】时，\n此处有一只【火斧】丘丘暴徒\n",
+    "content": "【初始山石】时，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 24108,
     "isRelated": 0,
@@ -2424,8 +2451,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"0-0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"0-0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1787.75,-1609.2503659428312",
@@ -2654,7 +2681,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始山石】时，\n【顶部】此处有一只【火斧】丘丘暴徒\n",
+    "content": "【初始山石】时，\n此处【顶部】有一个【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 24119,
     "isRelated": 0,
@@ -2666,8 +2693,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"0-0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"0-0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1873,-1501.7230574590567",
@@ -2808,7 +2835,7 @@
     "videoPath": ""
   },
   {
-    "content": "【初始山石】时，\n此处有一只【火斧】丘丘暴徒\n",
+    "content": "【初始山石】时，\n此处有一只【火斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 24126,
     "isRelated": 0,
@@ -2820,8 +2847,8 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"bd\", \"island_state\": [\"0-0\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"bd\",\"island_state\":[\"0-0\"]}}",
+    "markerTitle": "丘丘暴徒",
     "parentId": -1,
     "picture": "",
     "position": "1671.7000045776367,-1393.2498170285844",
@@ -3135,7 +3162,7 @@
     "videoPath": ""
   },
   {
-    "content": "【金苹果群岛 布丁岛】\n沿着一定的脉络,散落在大陆上的奇怪装置。大陆上的人说这是古代的神秘物件,虽然不知道有什么用,但是早就习以为常了;对提瓦特大陆还很陌生的旅行者看它十分新鲜，但是好像能明白它的用法。",
+    "content": "【金苹果群岛 布丁岛】\n沿着一定的脉络,散落在大陆上的奇怪装置。大陆上的人说这是古代的神秘物件,虽然不知道有什么用,但是早就习以为常了;对提瓦特大陆还很陌生的旅行者看它十分新鲜，但是好像能明白它的用法。哎嘿",
     "hiddenFlag": 0,
     "id": 24143,
     "itemList": [
@@ -3546,10 +3573,10 @@
         "itemId": 386
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 128,
     "markerTitle": "甜甜花",
     "picture": "",
-    "position": "3729,4388",
+    "position": "3726.499511837983,4382.164423112963",
     "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
@@ -3603,10 +3630,10 @@
         "itemId": 388
       }
     ],
-    "markerCreatorId": 1,
+    "markerCreatorId": 7,
     "markerTitle": "薄荷",
     "picture": "",
-    "position": "3938,4283",
+    "position": "3935.9996094703856,4279.998901970415",
     "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
@@ -4442,8 +4469,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "璃月宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679836620598.jpg",
+    "pictureCreatorId": 119,
     "position": "-1393.1750183105469,-1030.7249283411757",
     "refreshTime": 0,
     "version": 1,
@@ -4613,7 +4640,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个需要【火元素反应击碎】获取的电气水晶",
+    "content": "此处【稍高处】有一个需要【火元素反应击碎】获取的电气水晶",
     "hiddenFlag": 0,
     "id": 24221,
     "itemList": [
@@ -5646,7 +5673,7 @@
       }
     ],
     "markerCreatorId": 1,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "position": "944.2000122070312,-2347.7997834866173",
     "refreshTime": -1,
@@ -5769,7 +5796,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【上方】激活【冰元素方碑】出现的【精致宝箱】\n内有【藏宝图】【无原石、阅历】\n注：进行凯亚传说任务【孔雀羽之章 第一幕 旅行者观察报告】时出现【冰元素方碑】",
+    "content": "在此处【上方】激活【冰元素方碑】出现的【精致宝箱】\n内有【藏宝图】【无原石、阅历】\n\n注：进行凯亚传说任务【孔雀羽之章 第一幕 旅行者观察报告】时出现【冰元素方碑】",
     "hiddenFlag": 0,
     "id": 24281,
     "itemList": [
@@ -5780,13 +5807,14 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 24
       }
     ],
     "markerCreatorId": 1,
     "markerTitle": "宝箱",
-    "picture": "",
+    "picture": "https://yuanshen.site/comment_png/1678467982872.jpg",
+    "pictureCreatorId": 119,
     "position": "1766.7500228881836,-3146.2299341487214",
     "refreshTime": 0,
     "version": 1,
@@ -5804,7 +5832,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 24
       }
     ],
@@ -5817,19 +5845,19 @@
     "videoPath": ""
   },
   {
-    "content": "送回此处仙灵出现的【精致宝箱】\n内有【5原石、无岩之印】\n\n注：该【宝箱】同时计入【雪山、璃月】宝箱数\n该【仙灵】计入璃月仙灵成就数。\n\n1.3版本前，曾计入雪山【温暖仙灵】成就数",
+    "content": "送回此处仙灵出现的【精致宝箱】\n内有【5原石、无岩之印】\n\n注：该【宝箱】同时计入【雪山、璃月】宝箱数\n该【仙灵】计入璃月仙灵成就数。",
     "hiddenFlag": 0,
     "id": 24284,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "精致宝箱",
-        "itemId": 122
+        "iconTag": "指引仙灵",
+        "itemId": 128
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 128
+        "iconTag": "精致宝箱",
+        "itemId": 122
       }
     ],
     "markerCreatorId": 7,
@@ -5853,7 +5881,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 24
       }
     ],
@@ -5877,7 +5905,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       }
     ],
@@ -5901,7 +5929,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       }
     ],
@@ -5920,7 +5948,7 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 301
       },
       {
@@ -6117,7 +6145,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 129
       }
     ],
@@ -6154,13 +6182,13 @@
     "videoPath": ""
   },
   {
-    "content": "（1.3版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
+    "content": "（2.4版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
     "hiddenFlag": 0,
     "id": 24298,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       },
       {
@@ -6178,13 +6206,13 @@
     "videoPath": ""
   },
   {
-    "content": "（1.3版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
+    "content": "（2.4版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
     "hiddenFlag": 0,
     "id": 24299,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       },
       {
@@ -6202,13 +6230,13 @@
     "videoPath": ""
   },
   {
-    "content": "（1.3版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
+    "content": "（2.4版本限定）\n进行版本活动【飞彩镌流年（海灯节）】【玲珑宵灯图三】后，在此处直接开启的【华丽宝箱】\n内有【10原石、5岩之印】",
     "hiddenFlag": 0,
     "id": 24300,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       },
       {
@@ -6309,7 +6337,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 132
       }
     ],
@@ -6695,9 +6723,10 @@
     "videoPath": ""
   },
   {
-    "content": "观察雪山区域【8个】石碑后，可开启机关进入此处【密室】中直接开启【珍贵宝箱】\n内有：【冒险阅历+500、60原石、摩拉×10000】【绯红玉髓】【武器图纸：雪葬之都的记忆】\n注：点燃密室内【4个】火盆后，出现武器【雪葬的银星】",
+    "content": "观察雪山区域【8个】石碑后，可开启机关进入此处【密室】中直接开启【珍贵宝箱】\n内有：【冒险阅历+500、60原石、摩拉×10000】【绯红玉髓】【武器图纸：雪葬之都的记忆】\n注：点燃密室内【4个】火盆后，出现武器【雪葬的星银】",
     "hiddenFlag": 0,
     "id": 24325,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -6706,11 +6735,12 @@
       }
     ],
     "markerCreatorId": 1,
+    "markerExtraContent": "{\"dragonspine_cave\": true}",
     "markerTitle": "石碑",
     "picture": "",
     "position": "1814.9999923706055,-2289.1850527573165",
     "refreshTime": 0,
-    "version": 2,
+    "version": 1,
     "videoPath": ""
   },
   {
@@ -6720,25 +6750,26 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "精致宝箱",
-        "itemId": 122
+        "iconTag": "特殊方式",
+        "itemId": 132
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
-        "itemId": 132
+        "iconTag": "精致宝箱",
+        "itemId": 122
       }
     ],
     "markerCreatorId": 1,
     "markerTitle": "宝箱",
-    "picture": "",
+    "picture": "https://yuanshen.site/comment_png/1679919377819.jpg",
+    "pictureCreatorId": 119,
     "position": "-776.5749931335449,-550.8107160286982",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "（1.3版本新增）\n完成世界任务【天遒宝迹】时，此处击败怪物解锁的【精致宝箱】\n内有【5原石、4岩之印】",
+    "content": "（1.3版本新增）\n完成世界任务【天遒宝迹】时，于此处挖掘并击败出现的怪物解锁的【精致宝箱】\n内有【5原石、4岩之印】",
     "hiddenFlag": 0,
     "id": 24327,
     "itemList": [
@@ -6755,15 +6786,15 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679919637199.jpg",
+    "pictureCreatorId": 119,
     "position": "-638.3500061035156,-554.3989845170217",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "（1.3版本新增）\n完成世界任务【天遒宝迹】时，在【树下】此处挖掘出现的【精致宝箱】（需补图）\n内有【5原石、4岩之印】",
+    "content": "（1.3版本新增）\n完成世界任务【天遒宝迹】时，在【树下】此处挖掘出现的【精致宝箱】\n内有【5原石、4岩之印】",
     "hiddenFlag": 0,
     "id": 24328,
     "itemList": [
@@ -6780,8 +6811,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "宝箱",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1679919769889.jpg",
+    "pictureCreatorId": 119,
     "position": "-619.1999969482422,-460.3998841125185",
     "refreshTime": 0,
     "version": 1,
@@ -6807,7 +6838,7 @@
     "videoPath": ""
   },
   {
-    "content": "（1.2版本新增）\n附近共有【3个】漂流瓶，拾取此处漂流瓶可获得奖励。\n可获得【冒险阅历+200、原石×30、摩拉×7928】、【某人的漂流瓶】\n并触发稻妻世界任务【广海的守望】",
+    "content": "此处有1个【漂流瓶】（附近共有【3个】漂流瓶）\n拾取后可获得【冒险阅历+200、原石×30、摩拉×7928】、【某人的漂流瓶】\n并触发稻妻世界任务【广海的守望】（2.0版本新增）\n\n\n【派蒙】\n欸，这个瓶子沉甸甸的，好像里面有什么东西…\n【漂流瓶】\n「我们的老朋友昨天来了，带来了坏消息…」\n「很久以来一直没有得到回应。或许他说的对，我应该接受现实。」\n「但天论如何。假如你还在东奔西走，假如你收到了这条信息，希望你能回应我。」\n「随信附上你的教章，以便到时候我会借它认出你。」\n[还记得『乌有亭』吗？我们会在那里相聚，酒钱也随信寄来了。」\n「如果收到这封信的您，并不是我所期待的人…」\n「也希望您留下这枚信物，或许您能帮助我寻得它的旧主,这些摩拉权作谢意。」",
     "hiddenFlag": 0,
     "id": 24331,
     "itemList": [
@@ -6815,6 +6846,11 @@
         "count": 1,
         "iconTag": "世界任务",
         "itemId": 1202
+      },
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2073
       },
       {
         "count": 1,
@@ -7687,7 +7723,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个大型丘丘人",
+    "content": "此处有一个【？斧】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 24413,
     "isRelated": 0,
@@ -7699,8 +7735,8 @@
       }
     ],
     "markerCreatorId": 28,
-    "markerExtraContent": "{\"2_8_island\": {\"island_name\": \"ss\", \"island_state\": [\"3\"]}}",
-    "markerTitle": "大型丘丘人",
+    "markerExtraContent": "{\"2_8_island\":{\"island_name\":\"ss\",\"island_state\":[\"3\"]}}",
+    "markerTitle": "丘丘暴徒",
     "picture": "https://yuanshen.site/comment_png/1658097789252.jpg",
     "pictureCreatorId": 28,
     "position": "1721.8658300565621,-3359.2850326688795",
@@ -7721,7 +7757,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -8161,7 +8197,7 @@
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
+        "iconTag": "特殊方式",
         "itemId": 1050
       }
     ],
@@ -8178,34 +8214,8 @@
   {
     "content": "这是一个测试内鬼物品",
     "hiddenFlag": 0,
-    "id": 24436,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "测试用圣遗物",
-        "itemId": 1238
-      }
-    ],
-    "markerCreatorId": 16,
-    "markerTitle": "自定义特产10",
-    "picture": "",
-    "pictureCreatorId": 16,
-    "position": "-450.5864013631908,1122",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "这是一个测试内鬼物品",
-    "hiddenFlag": 0,
     "id": 24437,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "测试用圣遗物",
-        "itemId": 1238
-      }
-    ],
+    "itemList": [],
     "markerCreatorId": 16,
     "markerTitle": "内鬼物品",
     "picture": "",
@@ -8219,13 +8229,7 @@
     "content": "这是一个测试物品",
     "hiddenFlag": 0,
     "id": 24438,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "测试用圣遗物",
-        "itemId": 1238
-      }
-    ],
+    "itemList": [],
     "markerCreatorId": 16,
     "markerTitle": "自定义特产10",
     "picture": "",
@@ -8879,7 +8883,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【使用草元素攻击藤蔓石使其升起】后，可收集的【散失的草神瞳】",
+    "content": "此处【使用草元素攻击藤蔓石使其升起】后，可收集的【散失的草神瞳】\n\n注：需先清理【死域】",
     "hiddenFlag": 0,
     "id": 24474,
     "itemList": [
@@ -8902,6 +8906,7 @@
     "content": "此处【地下 源水洞(A-B)内】树上有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 24475,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -8910,6 +8915,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1661689567393.jpg",
     "pictureCreatorId": 7,
@@ -9022,6 +9028,7 @@
     "content": "此处【平台下洞中】有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 24482,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -9030,6 +9037,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663924816426.jpg",
     "pictureCreatorId": 7,
@@ -9059,9 +9067,10 @@
     "videoPath": ""
   },
   {
-    "content": "在【茶茶洞(C-D）中】有一个【散失的草神瞳】\n\n注：需在地下降低【2次】水位并开启隐藏大门",
+    "content": "在【茶荼洞(C-D）中】有一个【散失的草神瞳】\n\n注：需在地下降低【2次】水位并开启隐藏大门",
     "hiddenFlag": 0,
     "id": 24484,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -9070,6 +9079,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662382458547.jpg",
     "pictureCreatorId": 7,
@@ -9271,7 +9281,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 茶茶洞内】激活【4个】【草元素方碑】解锁机关，\n触发机关【第2次】降下水位后，在此处解锁的【精致宝箱】\n内有【5原石、2草之印】\n\n注：封印屏障后的元素方碑需从侧面爬进去",
+    "content": "在此处【地下 茶荼洞内】激活【4个】【草元素方碑】解锁机关，\n触发机关【第2次】降下水位后，在此处解锁的【精致宝箱】\n内有【5原石、2草之印】\n\n注：封印屏障后的元素方碑需从侧面爬进去",
     "hiddenFlag": 0,
     "id": 24495,
     "isRelated": 0,
@@ -9288,7 +9298,7 @@
       }
     ],
     "markerCreatorId": 50,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661685540129.jpg",
     "pictureCreatorId": 50,
@@ -9404,7 +9414,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -9578,6 +9588,7 @@
     "content": "此处【地下洞底】有一个石堆，\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24511,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -9586,6 +9597,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664213713949.jpg",
     "pictureCreatorId": 7,
@@ -9622,9 +9634,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【垂直洞穴中】的石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 垂直洞穴中】的石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24513,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -9633,6 +9646,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664214700876.jpg",
     "pictureCreatorId": 7,
@@ -9960,7 +9974,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -10096,7 +10110,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": null}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663407457922.jpg",
     "pictureCreatorId": 7,
@@ -10264,6 +10278,7 @@
     "content": "此处【地下洞中 伽卢洞】小屋内有一个【散失的草神瞳】\n\n注：山洞入口在其东侧，【梦中】与【现实】均可进入。",
     "hiddenFlag": 0,
     "id": 24543,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -10272,6 +10287,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662005292579.jpg",
     "pictureCreatorId": 7,
@@ -10389,6 +10405,7 @@
     "content": "此处【地下 荼诃洞中】【稍高处】有一个【散失的草神瞳】\n\n注：需在地上西侧演奏【黯道的曲调】进入",
     "hiddenFlag": 0,
     "id": 24549,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -10397,6 +10414,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662952208630.jpg",
     "pictureCreatorId": 7,
@@ -10499,6 +10517,7 @@
     "content": "在【罗因洞（A-B）】入口处有一个【散失的草神瞳】\n\n注：完成世界任务【吉祥具书 · 罗因贾篇】时，习得【桓摩的曲调】，【演奏曲调并攻击】使【桓摩达】转动出现",
     "hiddenFlag": 0,
     "id": 24554,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -10507,6 +10526,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663933505328.jpg",
     "pictureCreatorId": 7,
@@ -10608,7 +10628,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662320367166.jpg",
     "pictureCreatorId": 7,
@@ -10808,7 +10828,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【使用雷元素攻击使藤蔓石活化】后，开启【蘑菇机关】显现另外【3个藤蔓石】，【使用草元素攻击】【箭头处蔓藤石使其升起】后，出现【普通宝箱】\n内有【2原石、1草之印】\n\n注：【3个】蔓藤石全部升起后，箭头涂鸦亮起",
+    "content": "在此处【使用雷元素攻击使草桩活化】后，开启【蘑菇机关】显现另外【3个】草桩，并使用草元素攻击【箭头处蔓藤石使其升起】后，出现【普通宝箱】\n内有【2原石、1草之印】\n\n注：【3个】蔓藤石全部升起后，箭头涂鸦亮起",
     "hiddenFlag": 0,
     "id": 24570,
     "itemList": [
@@ -10836,6 +10856,7 @@
     "content": "在【山洞中 稍低处】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【兽径的曲调】时，对【幽闭花】演奏【兽径的曲调】进入山体后可进入",
     "hiddenFlag": 0,
     "id": 24571,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -10844,6 +10865,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664101971158.jpg",
     "pictureCreatorId": 7,
@@ -10906,6 +10928,7 @@
     "content": "进行世界任务【兽径的曲调】时，\n对【幽闭花】演奏可进入此处【山洞内】【摧毁死域瘤】出现的【精致宝箱】\n内有【5原石、2草之印】\n\n",
     "hiddenFlag": 0,
     "id": 24574,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -10919,6 +10942,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661349461116.jpg",
     "pictureCreatorId": 7,
@@ -10978,13 +11002,7 @@
     "content": "这是一个测试物品",
     "hiddenFlag": 0,
     "id": 24577,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "测试用圣遗物",
-        "itemId": 1238
-      }
-    ],
+    "itemList": [],
     "markerCreatorId": 16,
     "markerTitle": "测试物品1",
     "picture": "",
@@ -11040,7 +11058,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处完成限时挑战【60秒内击败所有怪物】出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处完成限时挑战【80秒内击败所有怪物】出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24581,
     "itemList": [
@@ -11068,6 +11086,7 @@
     "content": "进行世界任务【通往黯道的曲调】时\n在【梦中洞】此处【摧毁死域瘤】出现的【精致宝箱】\n内有【5原石、2草之印】",
     "hiddenFlag": 0,
     "id": 24582,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -11081,6 +11100,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661346718854.jpg",
     "pictureCreatorId": 7,
@@ -11110,19 +11130,19 @@
     "videoPath": ""
   },
   {
-    "content": "进行世界任务【「林中树 第二章」梦中的苗圃 - 兰那罗的世界】时，\n在此处完成【幻梦挑战】出现的【珍贵宝箱】\n内有【10原石、3草之印】",
+    "content": "进行世界任务【「林中树 第二章」梦中的苗圃 - 兰那罗的世界】时，\n在此处完成【幻梦之门挑战】出现的【珍贵宝箱】\n内有【10原石、3草之印】",
     "hiddenFlag": 0,
     "id": 24584,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "珍贵宝箱",
-        "itemId": 1243
+        "iconTag": "幻梦之门",
+        "itemId": 1401
       },
       {
         "count": 1,
-        "iconTag": "幻梦之门",
-        "itemId": 1401
+        "iconTag": "珍贵宝箱",
+        "itemId": 1243
       }
     ],
     "markerCreatorId": 7,
@@ -11163,6 +11183,7 @@
     "content": "此处【桓那洞（A-B）内 较高处】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24587,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -11171,6 +11192,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664207025028.jpg",
     "pictureCreatorId": 7,
@@ -11183,6 +11205,7 @@
     "content": "此处【桓那洞（A-B）】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24588,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -11191,6 +11214,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663926219180.jpg",
     "pictureCreatorId": 7,
@@ -12246,6 +12270,7 @@
     "content": "此处【新芽洞】洞中有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 24639,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -12254,6 +12279,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662949521595.jpg",
     "pictureCreatorId": 7,
@@ -12440,7 +12466,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处击败【丘丘人】解锁的【珍贵宝箱】\n内有【10原石、3草之印】",
+    "content": "在此处清理【丘丘人营地】解锁的【珍贵宝箱】\n内有【10原石、3草之印】",
     "hiddenFlag": 0,
     "id": 24654,
     "itemList": [
@@ -12558,14 +12584,19 @@
         "count": 1,
         "iconTag": "青蛙",
         "itemId": 1353
+      },
+      {
+        "count": 1,
+        "iconTag": "青蛙",
+        "itemId": 2057
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 11,
     "markerTitle": "青蛙",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3313.870539432977,65.86015370403584",
-    "refreshTime": 86400000,
+    "position": "-3321.5,37.5",
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -12670,7 +12701,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 24665,
     "itemList": [
@@ -12690,7 +12721,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 24666,
     "itemList": [
@@ -12975,7 +13006,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 茶茶洞中】【携带草种子重击】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：完成该解密后，解锁秘境【童梦的切片】",
+    "content": "在【地下 茶荼洞中】【携带草种子重击】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：完成该解密后，解锁秘境【童梦的切片】",
     "hiddenFlag": 0,
     "id": 24679,
     "isRelated": 0,
@@ -12992,7 +13023,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661685775307.jpg",
     "pictureCreatorId": 7,
@@ -13462,7 +13493,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1朵【须弥蔷薇】",
+    "content": "此处有1朵【须弥蔷薇】\n\n注：【遍历苗圃】后出现",
     "hiddenFlag": 0,
     "id": 24701,
     "itemList": [
@@ -13482,7 +13513,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1朵【须弥蔷薇】",
+    "content": "此处有1朵【须弥蔷薇】\n\n注：【遍历苗圃】后出现",
     "hiddenFlag": 0,
     "id": 24702,
     "itemList": [
@@ -13522,7 +13553,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1朵【须弥蔷薇】",
+    "content": "此处有1朵【须弥蔷薇】\n\n注：【遍历苗圃】后出现",
     "hiddenFlag": 0,
     "id": 24704,
     "itemList": [
@@ -13567,7 +13598,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1朵【须弥蔷薇】",
+    "content": "此处有1朵【须弥蔷薇】\n\n注：【遍历苗圃】后出现",
     "hiddenFlag": 0,
     "id": 24706,
     "itemList": [
@@ -13587,7 +13618,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1朵【须弥蔷薇】",
+    "content": "此处有1朵【须弥蔷薇】\n\n注：【遍历苗圃】后出现",
     "hiddenFlag": 0,
     "id": 24707,
     "itemList": [
@@ -13803,7 +13834,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4576.832124113101,1029.1696608353295",
@@ -13823,7 +13854,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4583.1413839511215,1028.6271007406121",
@@ -13843,7 +13874,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4610.221201789334,950.9299022714495",
@@ -13927,6 +13958,7 @@
     "content": "此处【纳真洞(A-B)】中【较高处枯树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24723,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -13935,6 +13967,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664202742401.jpg",
     "pictureCreatorId": 7,
@@ -13944,24 +13977,24 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 纳真洞】内【携带草种子重击】3个「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【地下 纳真洞】内【携带草种子重击】3个「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【正法炬书 「星夜之章 」】时，使用【「苦舍桓」】修复并激活草元素方碑，打开此处山洞入口",
     "hiddenFlag": 0,
     "id": 24724,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
+        "iconTag": "织梦笼",
+        "itemId": 1375
       },
       {
         "count": 1,
-        "iconTag": "织梦笼",
-        "itemId": 1375
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663598059924.jpg",
     "pictureCreatorId": 7,
@@ -13971,24 +14004,24 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 纳真洞中】用【草元素攻击】3个【草桩】出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在【地下 纳真洞中】用【草元素攻击】3个【草桩】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【正法炬书 「星夜之章 」】时，使用【「苦舍桓」】修复并激活草元素方碑，打开此处山洞入口",
     "hiddenFlag": 0,
     "id": 24725,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
+        "iconTag": "特殊方式开启",
+        "itemId": 1250
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
-        "itemId": 1250
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663597831550.jpg",
     "pictureCreatorId": 7,
@@ -14001,6 +14034,7 @@
     "content": "此处【地下 纳真洞(A-B)中小屋内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24726,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -14009,6 +14043,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1662475435721.jpg",
     "pictureCreatorId": 7,
@@ -14076,7 +14111,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -14113,6 +14148,7 @@
     "content": "在【苏生洞(A-B)】【携带草种子攻击】击碎封印石头出现的石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24733,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -14121,6 +14157,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663598512304.jpg",
     "pictureCreatorId": 7,
@@ -14210,24 +14247,24 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下 苏生洞中】【底部】跟随【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需进行世界任务【正法炬书「星夜之章」】时，使用【「苦舍桓」】修复并激活元素方碑降低【2次】水位",
+    "content": "此处【地下 苏生洞中】【底部】跟随【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【正法炬书「星夜之章」】时，使用【「苦舍桓」】修复并激活元素方碑，降低【2次】水位后可见",
     "hiddenFlag": 0,
     "id": 24738,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
+        "iconTag": "指引仙灵",
+        "itemId": 1248
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 1248
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663598741994.jpg",
     "pictureCreatorId": 7,
@@ -14352,6 +14389,7 @@
     "content": "这是一个【苏生洞(A-B)】底部的石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【正法炬书】星夜之章 时，使用【「苦舍桓」】修复草元素方碑，并激活打开山洞入口",
     "hiddenFlag": 0,
     "id": 24744,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -14360,6 +14398,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663599582959.jpg",
     "pictureCreatorId": 7,
@@ -14380,7 +14419,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4809.910471086003,537.060757637063",
@@ -14449,7 +14488,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个山洞洞口，【正法炬书】星夜之章与兰纳真一起行动，\n此洞口简称【纳真洞。】",
+    "content": "这是一个山洞洞口，【正法炬书】星夜之章与兰纳真一起行动，\n此洞口简称【纳真洞】。",
     "hiddenFlag": 0,
     "id": 24750,
     "itemList": [
@@ -14584,7 +14623,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4784.915825606426,762.5861953224594",
-    "refreshTime": -1,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -14604,7 +14643,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4788.955674888817,757.5704568984011",
-    "refreshTime": -1,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -14794,7 +14833,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个在【营地后】的山洞\n可通往地下",
+    "content": "此处【营地后】有一个山洞洞口，可通向【西南侧地下】",
     "hiddenFlag": 0,
     "id": 24766,
     "itemList": [
@@ -14874,7 +14913,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个山洞洞口",
+    "content": "此处有一个山洞洞口，可通向【西侧】",
     "hiddenFlag": 0,
     "id": 24770,
     "itemList": [
@@ -15181,6 +15220,7 @@
     "content": "此处【迦鲁洞(C)中 路旁】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24784,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15189,6 +15229,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663928594846.jpg",
     "pictureCreatorId": 7,
@@ -15308,6 +15349,7 @@
     "content": "此处地下【迦鲁洞(C)中】击碎石墙后。窄道内有一个石堆\n调查后随机获得【10000/15000/20000摩拉】内有15000摩拉",
     "hiddenFlag": 0,
     "id": 24792,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15316,6 +15358,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663929533122.jpg",
     "pictureCreatorId": 7,
@@ -15328,6 +15371,7 @@
     "content": "此处【地下 迦鲁洞(C)】中有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【正法炬书「月升之章」】时，随任务进度进入",
     "hiddenFlag": 0,
     "id": 24794,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15336,6 +15380,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663928942766.jpg",
     "pictureCreatorId": 7,
@@ -15348,6 +15393,7 @@
     "content": "在【迦鲁洞(C)】此处【较高处枯树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 24795,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15356,6 +15402,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664204943331.jpg",
     "pictureCreatorId": 7,
@@ -15410,28 +15457,28 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下 迦鲁洞(C)中】击败遗迹机关后解锁的【精致宝箱】\n内有【5原石、2草之印】\n\n注：进行世界任务【正法炬书「月升之章」】时，随任务进度开启",
+    "content": "此处【地下 迦鲁洞(C)中】击败遗迹重机后解锁的【精致宝箱】\n内有【5原石、2草之印】\n\n注：进行世界任务【正法炬书「月升之章」】时，随任务进度开启",
     "hiddenFlag": 0,
     "id": 24798,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "精致宝箱",
-        "itemId": 1242
+        "iconTag": "击倒怪物",
+        "itemId": 1247
       },
       {
         "count": 1,
-        "iconTag": "击倒怪物",
-        "itemId": 1247
+        "iconTag": "精致宝箱",
+        "itemId": 1242
       }
     ],
-    "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerCreatorId": 33,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
-    "picture": "https://yuanshen.site/comment_png/1663929697992.jpg",
-    "pictureCreatorId": 7,
-    "position": "-3259.8338814963636,-991.1681815315078",
+    "picture": "https://yuanshen.site/comment_png/1678544980362.jpg",
+    "pictureCreatorId": 119,
+    "position": "-3259.6667546290955,-999.3302196826289",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -15448,7 +15495,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4031.687368813163,817.0266272174476",
@@ -15457,24 +15504,24 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【地下 迦鲁洞C内】跟随【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需进行世界任务【正法炬书】月升之章 时，随任务进度开启",
+    "content": "这是一个【地下 迦鲁洞内】跟随【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需进行世界任务【正法炬书】月升之章 时，随任务进度开启",
     "hiddenFlag": 0,
     "id": 24800,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
+        "iconTag": "指引仙灵",
+        "itemId": 1248
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 1248
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 50,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661670922604.jpg",
     "pictureCreatorId": 50,
@@ -15515,7 +15562,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3608.1889454930883,1367.4874970151805",
@@ -15560,7 +15607,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -15577,6 +15624,7 @@
     "content": "此处【底部 大巴扎】陶瓷瓶后有一个直接开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24807,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15590,6 +15638,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662645115831.jpg",
     "pictureCreatorId": 7,
@@ -15629,6 +15678,7 @@
     "content": "此处【底部 大巴扎】【毛毯店】后直接开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24809,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -15642,6 +15692,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662644939297.jpg",
     "pictureCreatorId": 7,
@@ -15667,12 +15718,12 @@
         "itemId": 1247
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 33,
     "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "奇馈宝箱",
     "picture": "https://yuanshen.site/comment_png/1663929051052.jpg",
     "pictureCreatorId": 7,
-    "position": "-3433.7504881620175,-872.3335873748583",
+    "position": "-3428.0012171870735,-887.4943771250491",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -15790,7 +15841,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3275.905912886576,-137.5003507454876",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -15878,7 +15929,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -15932,7 +15983,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个山洞洞口，进【行料理是自然的风味】与兰茶茶一起行动，此洞口简称茶茶洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
+    "content": "此处有一个山洞洞口，进行【料理是自然的风味】与兰茶荼一起行动，此洞口简称茶荼洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
     "hiddenFlag": 0,
     "id": 24822,
     "itemList": [
@@ -15943,7 +15994,7 @@
       }
     ],
     "markerCreatorId": 30,
-    "markerTitle": "茶茶洞(C)",
+    "markerTitle": "茶荼洞(C)",
     "picture": "",
     "pictureCreatorId": 30,
     "position": "-3978,-57",
@@ -15963,10 +16014,10 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2489.590084548425,1474.5652488489523",
+    "position": "-2491.66711008944,1473.9998169950686",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -15983,7 +16034,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2531.3175309495105,1487.2978294553059",
@@ -16003,7 +16054,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2540.8100382177727,1688.7487253735508",
@@ -16023,7 +16074,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2702.3795193806864,1622.4038805763275",
@@ -16043,7 +16094,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4532.166005609464,1621.3334502484959",
@@ -16052,7 +16103,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 茶茶洞内】较高处遗迹上击败盗宝团解锁的【奇馈宝箱】\n内有【图纸：「林居之人的酌定」】、【5原石】",
+    "content": "在此处【地下 茶荼洞内】较高处遗迹上击败盗宝团解锁的【奇馈宝箱】\n内有【图纸：「林居之人的酌定」】、【5原石】",
     "hiddenFlag": 0,
     "id": 24828,
     "isRelated": 0,
@@ -16069,7 +16120,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "奇馈宝箱",
     "picture": "https://yuanshen.site/comment_png/1662382663898.jpg",
     "pictureCreatorId": 7,
@@ -16079,7 +16130,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【2只】【雷】兽境幼兽",
+    "content": "【死域存在时】\n此处有【2只】【雷】兽境幼兽",
     "hiddenFlag": 0,
     "id": 24829,
     "itemList": [
@@ -16099,7 +16150,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【下方】有一个山洞洞口\n可向南侧进入山体此处有一个山洞洞口，进【行料理是自然的风味】与兰茶茶一起行动，此洞口简称茶茶洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
+    "content": "此处【下方】有一个山洞洞口\n可向南侧进入山体此处有一个山洞洞口，进行【料理是自然的风味】与兰茶荼一起行动，此洞口简称茶荼洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
     "hiddenFlag": 0,
     "id": 24830,
     "itemList": [
@@ -16110,7 +16161,7 @@
       }
     ],
     "markerCreatorId": 30,
-    "markerTitle": "茶茶洞(D)",
+    "markerTitle": "茶荼洞(D)",
     "picture": "",
     "pictureCreatorId": 30,
     "position": "-4071.223996579465,16.9114744844328",
@@ -16119,27 +16170,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下】有【1只】【雷】兽境幼兽",
-    "hiddenFlag": 0,
-    "id": 24831,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "兽境犬",
-        "itemId": 1324
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "兽境犬",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "-4462.666231397809,-260.16873054630105",
-    "refreshTime": -1,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此处有【2只】接近出现的【雷】兽境幼兽",
+    "content": "【死域存在时】\n此处有【2只】【雷】兽境幼兽",
     "hiddenFlag": 0,
     "id": 24832,
     "itemList": [
@@ -16290,7 +16321,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "自定义特产2",
+    "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3619.819184788743,-355.80235467461443",
@@ -16399,27 +16430,27 @@
     "videoPath": ""
   },
   {
-    "content": "（不可收集）\n此处【帐篷内】有\n《「法罗赫之子」的日志 · 其二》\n",
+    "content": "（不可收集）\n此处【帐篷内】有\n《「法罗赫之子」的日志 · 其二》\n\n「…不出所料，卢妮雅大姐的手气臭得惊人，够用几个月的赏钱都搭在里面」\n「…不夸张地说，我们都要三个人用一条裤腰带了，唉！被金鼠团的那群老千赶了出来，只好先来到这里扎营…」\n「…空气潮湿得很，维护武器用的油也要用完了，但卢妮雅大姐还是一副乐天的样子，说她闻到了大生意的味道」\n「…齐里还在哭哭啼啼的，他预定的镶金大斧泡了汤，阿汉格尔的干女儿大概也是没戏了，给了他两拳，终于不哭了…」",
     "hiddenFlag": 0,
     "id": 24846,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
-        "itemId": 1268
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "书籍",
+    "markerTitle": "文本",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3647.618312180361,-315.43977611335595",
+    "position": "-3648.0000976324036,-316.50036600986186",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "在此处【携带草种子重击】【4个】不断出现的「缚缡耶」解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【携带草种子重击】【4个】先后出现的「缚缡耶」解锁的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24847,
     "itemList": [
@@ -16560,7 +16591,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -16666,7 +16697,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 卡萨洞中】此处完成限时挑战【40秒内引爆6个炸药桶】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：去往地下，需演奏【黯淡的曲调】激活并进入传送门",
+    "content": "在【地下 卡萨洞中】此处完成限时挑战【40秒内引爆6个炸药桶】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：去往地下，需演奏【黯道的曲调】激活并进入传送门",
     "hiddenFlag": 0,
     "id": 24861,
     "isRelated": 0,
@@ -16682,20 +16713,21 @@
         "itemId": 1246
       }
     ],
-    "markerCreatorId": 50,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerCreatorId": 33,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661690109549.jpg",
     "pictureCreatorId": 50,
-    "position": "-3186.6658103446575,-1034.833831522732",
+    "position": "-3201.4969570323155,-1036.9992502833402",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "【地下】此处有一只【陆行水本真蕈】",
+    "content": "此处【地下】有一只【陆行水本真蕈】",
     "hiddenFlag": 0,
     "id": 24862,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -16704,6 +16736,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -16797,11 +16830,11 @@
         "itemId": 1627
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 11,
     "markerTitle": "青蛙",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-4273.92887539567,-310.00609050732055",
+    "position": "-4203.688996286706,-346.30303803300103",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -17415,9 +17448,10 @@
     "videoPath": ""
   },
   {
-    "content": "在【底部】击败怪物解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在【底部】击败怪物解锁的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需击杀河对岸的【射手丘丘人】",
     "hiddenFlag": 0,
     "id": 24897,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -17431,6 +17465,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662829537770.jpg",
     "pictureCreatorId": 7,
@@ -17440,7 +17475,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处击败镀金旅团解锁的【奇馈宝箱】\n内有【图纸：「渔采的择取机网」】、【5原石】",
+    "content": "于此处击败镀金旅团解锁的【奇馈宝箱】\n内有【图纸：「渔采的择取机网」】、【5原石】",
     "hiddenFlag": 0,
     "id": 24898,
     "itemList": [
@@ -17465,9 +17500,10 @@
     "videoPath": ""
   },
   {
-    "content": "在此处击败丘丘人解锁的【精致宝箱】\n内有【5原石、2草之印】",
+    "content": "在此处击败怪物解锁的【精致宝箱】\n内有【5原石、2草之印】",
     "hiddenFlag": 0,
     "id": 24899,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -17481,6 +17517,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662829335116.jpg",
     "pictureCreatorId": 7,
@@ -17668,6 +17705,11 @@
         "count": 1,
         "iconTag": "日落果",
         "itemId": 1336
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
@@ -17675,12 +17717,12 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2772.381947162416,-544.9642225360067",
-    "refreshTime": 86400000,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "在此处完成限时挑战【30秒开启宝箱】开启的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处完成限时挑战【30秒内开启宝箱】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24913,
     "itemList": [
@@ -17850,7 +17892,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处树丛上有【2颗】香辛果",
+    "content": "此处【顶部】【树丛上】有【2颗】香辛果",
     "hiddenFlag": 0,
     "id": 24920,
     "itemList": [
@@ -17901,7 +17943,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -17955,7 +17997,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【萃华树上】有【3个苹果】",
+    "content": "此处【萃华树上】有【3个】苹果",
     "hiddenFlag": 0,
     "id": 24925,
     "itemList": [
@@ -17963,19 +18005,24 @@
         "count": 1,
         "iconTag": "苹果",
         "itemId": 1337
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "苹果",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2320.547337295916,365.86866020645175",
-    "refreshTime": 86400000,
+    "position": "-2316.832627536887,363.4158100995937",
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "在此处【携带草种子重击】不断出现的【3个】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【携带草种子重击】先后出现的【3个】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24926,
     "itemList": [
@@ -18014,7 +18061,7 @@
     "markerTitle": "苹果",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2329.199475687873,361.8165130415582",
+    "position": "-2325.7493165731757,362.75036600986186",
     "refreshTime": 86400000,
     "version": 1,
     "videoPath": ""
@@ -18045,7 +18092,7 @@
     "videoPath": ""
   },
   {
-    "content": "点亮【4个】火炬解锁的【普通宝箱】 \n内有【2原石、1草之印】\n\n注：隐藏火炬需【携带草种子重击】岩石，并【使用雷元素攻击】出现的【三相种子】",
+    "content": "点亮此处【4个】火炬解锁的【普通宝箱】 \n内有【2原石、1草之印】\n\n注：隐藏火炬需【携带草种子重击】岩石，并【使用雷元素攻击】出现的【三相种子】",
     "hiddenFlag": 0,
     "id": 24929,
     "itemList": [
@@ -18056,7 +18103,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -18090,7 +18137,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2405.5191359510836,328.6478679841766",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18160,11 +18207,11 @@
         "itemId": 1627
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 11,
     "markerTitle": "青蛙",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2472.371842208655,297.72290000585144",
+    "position": "-2488.2479451281415,286.55753112895945",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -18210,7 +18257,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2577.8327251692904,236.16526108480048",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18235,7 +18282,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【四叶印旁】跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24938,
     "itemList": [
@@ -18388,6 +18435,7 @@
     "content": "此处【扎莱洞】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需演奏【通往黯道的曲调】解锁【传送机关】并进入",
     "hiddenFlag": 0,
     "id": 24945,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -18396,6 +18444,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663403554672.jpg",
     "pictureCreatorId": 7,
@@ -18416,7 +18465,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -18450,7 +18499,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 24948,
     "itemList": [
@@ -18559,7 +18608,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3074.401488904882,681.102482761311",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18584,7 +18633,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3075.95128143066,686.5517903954478",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -18636,7 +18685,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【携带草种子重击】击碎石头出现宝箱。\n使用草元素攻击附近【3个】藤蔓石使其升起，并击败出现的【蕈兽】可解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【携带草种子重击】击碎石头出现宝箱。\n使用草元素攻击附近【3个】草桩使其升起，并击败出现的【蕈兽】可解锁的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24956,
     "itemList": [
@@ -18661,7 +18710,7 @@
     "videoPath": ""
   },
   {
-    "content": "跟随此处【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "跟随此处仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24957,
     "itemList": [
@@ -19036,7 +19085,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处击败怪物解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【底部】击败怪物解锁的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24975,
     "itemList": [
@@ -19183,24 +19232,24 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 纳迦洞中】【摧毁死域瘤】出现的【【珍贵宝箱】 内有【10原石、3草之印】\n注：进行世界任务【正法炬书】终章 时，随任务进度开启",
+    "content": "在【地下 纳迦洞中】【摧毁死域瘤】出现的【珍贵宝箱】\n内有【10原石、3草之印】\n\n注：进行世界任务【正法炬书 终章】时，随任务进度开启",
     "hiddenFlag": 0,
     "id": 24983,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "珍贵宝箱",
-        "itemId": 1243
+        "iconTag": "死域",
+        "itemId": 1374
       },
       {
         "count": 1,
-        "iconTag": "死域",
-        "itemId": 1374
+        "iconTag": "珍贵宝箱",
+        "itemId": 1243
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662374856113.jpg",
     "pictureCreatorId": 7,
@@ -19257,7 +19306,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【潜在死域】【摧毁死域瘤】出现的【普通宝箱】（需补图）\n内有【2原石、1草之印】\n\n注：需使用【种子镜】（id：25359）发现",
+    "content": "在此处【潜在死域】【摧毁死域瘤】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需使用【种子镜】（id：25359）发现",
     "hiddenFlag": 0,
     "id": 24986,
     "itemList": [
@@ -19338,7 +19387,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -19530,6 +19579,7 @@
     "content": "跟随此处【地下 大梦洞口】的仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 24999,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -19543,6 +19593,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663832912880.jpg",
     "pictureCreatorId": 7,
@@ -19675,6 +19726,7 @@
     "content": "此处【地下 黯道洞(B)】中，【使用草元素攻击使树升起】后出现的石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：进行世界任务【通往黯道的曲调】时，可演奏进入",
     "hiddenFlag": 0,
     "id": 25008,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -19683,6 +19735,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664204038230.jpg",
     "pictureCreatorId": 7,
@@ -19706,7 +19759,7 @@
     "markerTitle": "突发委托",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-4262.612841237909,965.1471138182951",
+    "position": "-4262.732412515783,962.6703201033379",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -19755,6 +19808,7 @@
     "content": "此处【地下河道尽头】树丛上有【4颗】墩墩桃\n\n注：进行世界任务【新芽迸发的曲调】时，可进入",
     "hiddenFlag": 0,
     "id": 25012,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -19763,6 +19817,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "墩墩桃",
     "picture": "",
     "pictureCreatorId": 7,
@@ -19917,19 +19972,19 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】，在此处【击破水泡】概率出现的【奇馈宝箱】\n内有【图纸：「渔采的远售良方」】、【5原石】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】击破【水泡】随机概率出现的【奇馈宝箱】\n内有【图纸：「渔采的远售良方」】、【5原石】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（可在图纸、锻造界面搜索该名称查询是否拿过）",
     "hiddenFlag": 0,
     "id": 25020,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "奇馈宝箱",
-        "itemId": 1266
+        "iconTag": "特殊方式开启",
+        "itemId": 1250
       },
       {
         "count": 1,
-        "iconTag": "特殊方式开启",
-        "itemId": 1250
+        "iconTag": "奇馈宝箱",
+        "itemId": 1266
       }
     ],
     "markerCreatorId": 7,
@@ -20020,6 +20075,11 @@
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 1248
+      },
+      {
+        "count": 1,
+        "iconTag": "织梦笼",
+        "itemId": 1375
       }
     ],
     "markerCreatorId": 7,
@@ -20406,7 +20466,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662952371571.jpg",
     "pictureCreatorId": 7,
@@ -20539,6 +20599,7 @@
     "content": "此处【地下 梨迦洞(A-B)】内有一个【散失的草神瞳】\n\n注：进行世界任务【水天供书「忿怒的铁块」】时，随进度【降下水位】后进入",
     "hiddenFlag": 0,
     "id": 25047,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -20547,6 +20608,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663940565131.jpg",
     "pictureCreatorId": 7,
@@ -20556,7 +20618,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 梨迦洞中较高处】跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【地下 梨迦洞中 较高处】跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25048,
     "isRelated": 0,
@@ -20573,7 +20635,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662449104623.jpg",
     "pictureCreatorId": 7,
@@ -20839,9 +20901,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【源水洞(A-B)底部】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 源水洞(A-B)底部】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25060,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -20850,6 +20913,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664084546870.jpg",
     "pictureCreatorId": 7,
@@ -20967,9 +21031,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【源水洞(A-B)】【稍高处】【使用草元素攻击蔓藤石使其升起】出现的一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "在此处【地下源水洞(A-B)中 稍高处】【使用草元素攻击蔓藤石使其升起】出现的一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25065,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -20978,6 +21043,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664085521210.jpg",
     "pictureCreatorId": 7,
@@ -20987,9 +21053,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【源水洞(A-B)底部】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 源水洞(A-B)底部】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25066,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -20998,6 +21065,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664084221201.jpg",
     "pictureCreatorId": 7,
@@ -21064,6 +21132,7 @@
     "content": "在【地下 源水洞口（B）中】乘【弹弹菇】和风场来到【较高处小平台】携带草种子重击「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25069,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -21077,6 +21146,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663826076903.jpg",
     "pictureCreatorId": 7,
@@ -21476,7 +21546,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【携带草种子重击】陆【3个】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处【携带草种子重击】此处【3个】「缚缡耶」出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25087,
     "itemList": [
@@ -21576,7 +21646,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（若某次只开出晶蝶，代表拿过了）",
     "hiddenFlag": 0,
     "id": 25091,
     "itemList": [
@@ -21709,6 +21779,7 @@
     "content": "此处【树根底部树洞口】有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 25097,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -21717,6 +21788,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662814938156.jpg",
     "pictureCreatorId": 7,
@@ -21729,6 +21801,7 @@
     "content": "在此处【树根下洞内】【摧毁死域瘤】出现的【精致宝箱】\n内有【5原石、2草之印】\n\n注：南侧进入",
     "hiddenFlag": 0,
     "id": 25098,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -21742,6 +21815,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662815062866.jpg",
     "pictureCreatorId": 7,
@@ -21794,6 +21868,7 @@
     "content": "此处【地下 苏生洞(A-B)】中，【使用草元素攻击藤蔓石使其升起】后出现的石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【正法炬书「星夜之章」】时，使用【「苦舍桓」】修复草元素方碑，激活打开山洞入口进入",
     "hiddenFlag": 0,
     "id": 25101,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -21802,6 +21877,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663598970780.jpg",
     "pictureCreatorId": 7,
@@ -21831,7 +21907,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 迦鲁洞（C）中】有一个仙灵\n送回附近【2个仙灵】解开封印\n\n注：需进行世界任务【正法炬书「月升之章」】时，进入山洞",
+    "content": "在【地下 迦鲁洞（C）中】有一个仙灵\n送回附近【2个仙灵】解开封印\n\n注：进行世界任务【正法炬书「月升之章」】时，随任务进度进入",
     "hiddenFlag": 0,
     "id": 25103,
     "isRelated": 0,
@@ -21848,7 +21924,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661419165192.jpg",
     "pictureCreatorId": 7,
@@ -21858,7 +21934,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 迦鲁洞（C）中】有一个仙灵\n送回附近【2个仙灵】解开封印\n\n注：进行世界任务【正法炬书】月升之章 时，进入山洞",
+    "content": "在【地下 迦鲁洞（C）中】有一个仙灵\n送回附近【2个仙灵】解开封印\n\n注：需进行世界任务【正法炬书「月升之章」】时，随任务进度进入",
     "hiddenFlag": 0,
     "id": 25104,
     "isRelated": 0,
@@ -21875,7 +21951,7 @@
       }
     ],
     "markerCreatorId": 50,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661419179962.jpg",
     "pictureCreatorId": 50,
@@ -21991,12 +22067,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 1309
+        "iconTag": "遗迹重机",
+        "itemId": 2081
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹重机",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3265.4095923943714,-1005.8955041844492",
@@ -22216,7 +22292,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -22340,7 +22416,7 @@
     "videoPath": ""
   },
   {
-    "content": "跟随【仙灵】出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "跟随此处仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25126,
     "itemList": [
@@ -22368,6 +22444,7 @@
     "content": "【无郁稠林 - 无郁夷摩之地】\n\n注：需完成世界任务【正法炬书 「终章」】时，在此【地下洞中】摧毁死域瘤后可收集。\n\n森林的记忆与梦汇集之处，似乎拥有着自己的意识。",
     "hiddenFlag": 0,
     "id": 25127,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -22376,6 +22453,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "观景点",
     "picture": "https://yuanshen.site/comment_png/1662374048164.jpg",
     "pictureCreatorId": 7,
@@ -22463,6 +22541,7 @@
     "content": "此处【地下洞内】有一个【散失的草神瞳】\n\n注：需在西侧【演奏曲调】经【传送门】进入",
     "hiddenFlag": 0,
     "id": 25131,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -22471,6 +22550,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663829144504.jpg",
     "pictureCreatorId": 7,
@@ -22955,6 +23035,7 @@
     "content": "此处【地下 桓摩洞(A-B)】中，【较高处 零件空腔中】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25155,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -22963,6 +23044,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663731889060.jpg",
     "pictureCreatorId": 7,
@@ -22975,6 +23057,7 @@
     "content": "此处【地下 桓摩洞(A-B) 中】较高处零件上有一个【散失的草神瞳】\n\n注：可【使用雷元素活化】下方【弹弹菇】并借助其跳起",
     "hiddenFlag": 0,
     "id": 25156,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -22983,6 +23066,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663732031850.jpg",
     "pictureCreatorId": 7,
@@ -23168,24 +23252,24 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 非拉洞内】【稍低处遗迹内】有一个仙灵\n送回附近【2个仙灵】解开封印",
+    "content": "在此处【地下 非拉洞内】【稍低处遗迹内】有一个仙灵\n送回附近【2个】【仙灵】解开封印",
     "hiddenFlag": 0,
     "id": 25165,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "无",
-        "itemId": 1406
+        "iconTag": "指引仙灵",
+        "itemId": 1248
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 1248
+        "iconTag": "无",
+        "itemId": 1406
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663939215236.jpg",
     "pictureCreatorId": 7,
@@ -23252,6 +23336,7 @@
     "content": "在此处【地下 非拉洞(A-B) 中】降低【1次】水位后，较低处的【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 25168,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -23260,6 +23345,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662746749711.jpg",
     "pictureCreatorId": 7,
@@ -23353,6 +23439,7 @@
     "content": "进行世界任务【吉祥具书 · 罗因贾篇】时，获得解读完的【「终极无敌」的冒险手册】后触发\n在洞中此处【寻找可进入的洞】继续\n完成后可获得【冒险阅历+250、原石×30、大英雄的经验×3、摩拉×30000】、【阿麦塔机关的碎片 · 其三×1】",
     "hiddenFlag": 0,
     "id": 25172,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -23361,6 +23448,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "【吉祥具书】罗因贾篇 · 阴卷",
     "picture": "",
     "pictureCreatorId": 7,
@@ -23755,7 +23843,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2635.3261556149437,-1367.011676675782",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -23898,24 +23986,24 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下遗迹内】此处，跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【吉祥具书「吉祥具书 · 加扎里篇」】 时，可进入",
+    "content": "此处【地下 利遮洞内】，跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【吉祥具书「吉祥具书 · 加扎里篇」】 时，可进入",
     "hiddenFlag": 0,
     "id": 25199,
     "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
+        "iconTag": "指引仙灵",
+        "itemId": 1248
       },
       {
         "count": 1,
-        "iconTag": "指引仙灵",
-        "itemId": 1248
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663755857586.jpg",
     "pictureCreatorId": 7,
@@ -23925,9 +24013,10 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下】调查随机出现 1 个【1/2星】圣遗物\n【24 小时刷新】",
+    "content": "在此处【地下，迪弗旧窟内】调查随机出现 1 个【1/2星】圣遗物\n【24 小时刷新】",
     "hiddenFlag": 0,
     "id": 25200,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -23936,6 +24025,7 @@
       }
     ],
     "markerCreatorId": 52,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "迪弗旧窟 3",
     "picture": "",
     "pictureCreatorId": 52,
@@ -24080,7 +24170,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一只【牦牦驮兽】\n【兽肉×1、丘丘人面具】",
+    "content": "此处有一只【牦牦驮兽】\n【兽肉×3、丘丘人面具】",
     "hiddenFlag": 0,
     "id": 25207,
     "itemList": [
@@ -24094,7 +24184,7 @@
     "markerTitle": "兽肉",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2043.1665914038854,-1467.5256206903277",
+    "position": "-2051.964718012872,-1466.8312532672662",
     "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
@@ -24150,7 +24240,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一只【牦牦驮兽】\n【兽肉×1、鸦印】",
+    "content": "此处有一只【牦牦驮兽】\n【兽肉×4、盗宝团鸦印】",
     "hiddenFlag": 0,
     "id": 25210,
     "itemList": [
@@ -24226,8 +24316,8 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 185
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2091
       }
     ],
     "markerCreatorId": 7,
@@ -24246,8 +24336,8 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 185
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2091
       }
     ],
     "markerCreatorId": 7,
@@ -24346,8 +24436,8 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "岩龙蜥",
-        "itemId": 185
+        "iconTag": "幼岩龙蜥",
+        "itemId": 2091
       }
     ],
     "markerCreatorId": 7,
@@ -24416,7 +24506,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 127
       }
     ],
@@ -24555,7 +24645,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【山顶】完成限时挑战【25秒内开启宝箱】开启的【奇馈宝箱】\n内有【5原石】、【图纸：素净宝瓶 - 「古铜」】",
+    "content": "此处【山顶】完成限时挑战【25秒内开启宝箱】开启的【奇馈宝箱】\n内有【5原石】、【图纸：素浄宝瓶 - 「古铜」】",
     "hiddenFlag": 0,
     "id": 25228,
     "itemList": [
@@ -24580,7 +24670,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25230,
     "itemList": [
@@ -24991,7 +25081,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -25575,11 +25665,11 @@
         "itemId": 1292
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 119,
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2828.5813583156414,-428.07045689840106",
+    "position": "-2805.5,-428",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -25595,11 +25685,11 @@
         "itemId": 1292
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 119,
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2826.5809677860275,-412.06460074061215",
+    "position": "-2801.5,-407",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -25770,7 +25860,7 @@
     "videoPath": ""
   },
   {
-    "content": "跟随此处仙灵出现的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "跟随此处仙灵出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：此处【跳跳菇】会在【仙灵】归位后消失",
     "hiddenFlag": 0,
     "id": 25299,
     "itemList": [
@@ -25920,7 +26010,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4228.418281678281,-428.3706155138452",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -26140,7 +26230,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2572.32337289715,908.9855577838371",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -26840,7 +26930,7 @@
     "videoPath": ""
   },
   {
-    "content": "三乘种子",
+    "content": "此处有一个【三乘种子】",
     "hiddenFlag": 0,
     "id": 25353,
     "itemList": [
@@ -27037,8 +27127,8 @@
     ],
     "markerCreatorId": 15,
     "markerTitle": "树王圣体菇",
-    "picture": "",
-    "pictureCreatorId": 15,
+    "picture": "https://yuanshen.site/comment_png/1675239555161.jpg",
+    "pictureCreatorId": 122,
     "position": "-2602.4145716469493,-1246.926615022704",
     "refreshTime": 172800000,
     "version": 1,
@@ -28000,7 +28090,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处一个山洞洞口，进行任务【森林书 第二章】梦中的苗圃 - 新芽迸发的曲调获得新芽迸发的曲调，此洞口简称新芽洞。",
+    "content": "此处一个山洞洞口，可通往【西侧地下】\n\n进行任务【森林书 第二章 「梦中的苗圃 - 新芽迸发的曲调」】获得【新芽迸发的曲调】后进入，此洞口简称【新芽洞】",
     "hiddenFlag": 0,
     "id": 25407,
     "itemList": [
@@ -28158,6 +28248,7 @@
     "content": "此处【地下 善见洞中】稍高处平台，击败接近出现的【蕈兽】解锁的【普通宝箱】\n内有【2原石、1草之印】\n并解开洞穴间的藤曼\n\n注：由西侧【善见洞C】进入山洞",
     "hiddenFlag": 0,
     "id": 25414,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -28171,6 +28262,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662385214457.jpg",
     "pictureCreatorId": 7,
@@ -28180,7 +28272,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25415,
     "itemList": [
@@ -28345,6 +28437,7 @@
     "content": "在此处【地下 善见洞】打开木笼，放出并跟随仙灵出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：可解锁【草元素方碑】，激活后解开屏障",
     "hiddenFlag": 0,
     "id": 25422,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -28358,6 +28451,7 @@
       }
     ],
     "markerCreatorId": 50,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661684360320.jpg",
     "pictureCreatorId": 50,
@@ -28441,7 +28535,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下 茶茶洞中】降下【3次】水位，并【摧毁死域瘤】后出现的【华丽宝箱】\n内有【10原石、4草之印】\n\n注：需要击败【东侧 善见洞深处【石柱的封印】解锁的【遗迹重机】才能下降水位。\n【善见洞深处】西北角有元素方碑可解锁藤蔓来到此处",
+    "content": "在【地下 茶荼洞中】降下【3次】水位，并【摧毁死域瘤】后出现的【华丽宝箱】\n内有【10原石、4草之印】\n\n注：需要击败【东侧 善见洞深处【石柱的封印】解锁的【遗迹重机】才能下降水位。\n【善见洞深处】西北角有元素方碑可解锁藤蔓来到此处",
     "hiddenFlag": 0,
     "id": 25427,
     "isRelated": 0,
@@ -28458,7 +28552,7 @@
       }
     ],
     "markerCreatorId": 95,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662754856889.jpg",
     "pictureCreatorId": 95,
@@ -28685,8 +28779,8 @@
     ],
     "markerCreatorId": 98,
     "markerTitle": "树王圣体菇",
-    "picture": "",
-    "pictureCreatorId": 15,
+    "picture": "https://yuanshen.site/comment_png/1675239535176.jpg",
+    "pictureCreatorId": 122,
     "position": "-2630.75,-1265.5",
     "refreshTime": 172800000,
     "version": 1,
@@ -28725,8 +28819,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "树王圣体菇",
-    "picture": "",
-    "pictureCreatorId": 15,
+    "picture": "https://yuanshen.site/comment_png/1675239125703.jpg",
+    "pictureCreatorId": 122,
     "position": "-2633.75,-1332.249268381839",
     "refreshTime": 172800000,
     "version": 1,
@@ -28858,7 +28952,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2879.3926043561646,1438.0893064062848",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -28908,7 +29002,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3008.4060776278457,534.0735679822265",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -28958,7 +29052,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3285.092738365559,88.30932037047478",
-    "refreshTime": 0,
+    "refreshTime": 259200000,
     "version": 1,
     "videoPath": ""
   },
@@ -29043,7 +29137,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（若某次只开出晶蝶，代表拿过了）",
     "hiddenFlag": 0,
     "id": 25452,
     "itemList": [
@@ -29106,6 +29200,7 @@
     "content": "完成【水天供书】水天供书 后，\n在此处【地下洞内】触发\n完成后可获得【冒险阅历+250、原石×30、大英雄的经验×3、摩拉×30000】\n注：洞口在稍高处【西北侧】",
     "hiddenFlag": 0,
     "id": 25455,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29114,6 +29209,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "【水天供书】沉睡的根系",
     "picture": "",
     "pictureCreatorId": 7,
@@ -29283,9 +29379,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下洞底】有一只【丛林树蛙】\n注：进行世界任务【水天供书】忿怒的铁块 时，随进度【降下水位】",
+    "content": "此处【地下洞底】有一只【丛林树蛙】\n\n注：进行世界任务【水天供书「忿怒的铁块」】时，随进度【降下水位】后出现",
     "hiddenFlag": 0,
     "id": 25464,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29299,6 +29396,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "青蛙",
     "picture": "",
     "pictureCreatorId": 7,
@@ -29308,9 +29406,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下洞底】有一只【丛林树蛙】\n注：进行世界任务【水天供书】忿怒的铁块 时，随进度【降下水位】",
+    "content": "此处【地下洞底】有一只【丛林树蛙】\n\n注：进行世界任务【水天供书「忿怒的铁块」】时，随进度【降下水位】后出现",
     "hiddenFlag": 0,
     "id": 25465,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29324,6 +29423,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "青蛙",
     "picture": "",
     "pictureCreatorId": 7,
@@ -29508,7 +29608,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【携带草种子重击】不断出现的【4个】「缚缡耶」并击败出现的【3个】【冰霜骗骗花】出现的【奇馈宝箱】\n内有【图纸：素净宝瓶 - 「鞍褐」】、【5原石】",
+    "content": "在此处【携带草种子重击】不断出现的【4个】「缚缡耶」并击败出现的【3个】【冰霜骗骗花】出现的【奇馈宝箱】\n内有【图纸：素浄宝瓶 - 「鞍褐」】、【5原石】",
     "hiddenFlag": 0,
     "id": 25474,
     "itemList": [
@@ -29588,6 +29688,7 @@
     "content": "此处【地下洞底】机械零件顶部有\n【旋曜玉帛 · 其七十七】",
     "hiddenFlag": 0,
     "id": 25477,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29596,6 +29697,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "旋曜玉帛",
     "picture": "https://yuanshen.site/comment_png/1663337215800.jpg",
     "pictureCreatorId": 7,
@@ -29632,9 +29734,10 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【桓摩洞(A-B)】【携带草种子重击击碎石头】出现的一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "在此处【地下 桓摩洞(A-B)中】【携带草种子重击击碎石头】出现的一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25479,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29643,6 +29746,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663954303752.jpg",
     "pictureCreatorId": 7,
@@ -29679,9 +29783,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【桓摩洞(A-B)内较高处石头上】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 桓摩洞(A-B)内】【较高处石头上】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25481,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29690,6 +29795,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664100836916.jpg",
     "pictureCreatorId": 7,
@@ -29699,9 +29805,10 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【桓摩洞（A-B）底部】【携带草种子重击击碎石头】出现的石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "在此处【地下 桓摩洞（A-B）底部】【携带草种子重击击碎石头】出现的石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25482,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29710,6 +29817,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664100969606.jpg",
     "pictureCreatorId": 7,
@@ -29787,6 +29895,7 @@
     "content": "在【地下】降低【2次】水位后，此处【底部】击碎巨石后出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25489,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -29795,6 +29904,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664202068645.jpg",
     "pictureCreatorId": 7,
@@ -29843,7 +29953,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -30055,8 +30165,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "利遮洞(A)",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682787564090.jpg",
+    "pictureCreatorId": 119,
     "position": "-2756,1144",
     "refreshTime": 0,
     "version": 1,
@@ -30088,9 +30198,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下】树丛上有【4颗】墩墩桃\n注：需进行世界任务【水天供书 膏腴土地下的唤雨之曲】 时，随进度开启入口",
+    "content": "此处【地下】树丛上有【4颗】墩墩桃\n\n注：需进行世界任务【水天供书 膏腴土地下的唤雨之曲】 时，随进度开启入口",
     "hiddenFlag": 0,
     "id": 25507,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -30099,6 +30210,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "墩墩桃",
     "picture": "",
     "pictureCreatorId": 7,
@@ -30277,7 +30389,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25518,
     "itemList": [
@@ -30605,11 +30717,6 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "世界任务",
-        "itemId": 1260
-      },
-      {
-        "count": 1,
         "iconTag": "无",
         "itemId": 1406
       },
@@ -30617,6 +30724,11 @@
         "count": 1,
         "iconTag": "限时挑战",
         "itemId": 1246
+      },
+      {
+        "count": 1,
+        "iconTag": "世界任务",
+        "itemId": 1260
       }
     ],
     "markerCreatorId": 7,
@@ -30652,19 +30764,21 @@
     "content": "在此处【较低处 平台】直接开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25535,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
-      },
       {
         "count": 1,
         "iconTag": "直接开启",
         "itemId": 1249
+      },
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662643607751.jpg",
     "pictureCreatorId": 7,
@@ -30677,19 +30791,21 @@
     "content": "此处【底部】【摊位后方】 直接开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25536,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
-      },
       {
         "count": 1,
         "iconTag": "直接开启",
         "itemId": 1249
+      },
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662643490668.jpg",
     "pictureCreatorId": 7,
@@ -30944,7 +31060,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个山洞洞口，【正法炬书】星夜之章与兰纳真一起行动，此洞口简称纳真洞。",
+    "content": "这是一个山洞洞口，【正法炬书】星夜之章与兰纳真一起行动，此洞口简称纳真洞。\n\n注：在进行【正法炬书】星夜之章时，跟随任务指引使用【苦舍桓】修复【破碎的草元素方碑】并激活后，由山体内部打开",
     "hiddenFlag": 0,
     "id": 25548,
     "itemList": [
@@ -31110,7 +31226,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -31127,6 +31243,7 @@
     "content": "完成任务【「森林书 第二章」 无忧节】后\n在此处【高处】与【兰利遮】对话触发\n任务中获得【迦毗鸠师的论文】\n完成后可获得【冒险阅历+350、原石×40、大英雄的经验×3、摩拉×30000、精锻用魔矿×4】\n并达成成就【水与风的伙伴】\n\n注：【遇见动物】的顺序，即是方才【查看文字】的顺序",
     "hiddenFlag": 0,
     "id": 25556,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -31135,6 +31252,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "直到「桓那」痊愈",
     "picture": "",
     "pictureCreatorId": 7,
@@ -31156,12 +31274,12 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662466322743.jpg",
     "pictureCreatorId": 7,
@@ -31377,7 +31495,7 @@
       },
       {
         "count": 1,
-        "iconTag": "火炬封印",
+        "iconTag": "点亮火炬",
         "itemId": 1386
       }
     ],
@@ -31701,6 +31819,7 @@
     "content": "在此处【地下 大梦洞中】，对传送门演奏【黯道的曲调】进入隐藏区域【迷宫】。\n在【东】「桓摩达」中，进入其中直接开启的【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【直到「桓那」痊愈】时随流程进入。",
     "hiddenFlag": 0,
     "id": 25583,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -31714,6 +31833,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661742395342.jpg",
     "pictureCreatorId": 7,
@@ -31788,6 +31908,7 @@
     "content": "在【地下 善见洞内】较高蘑菇处【携带草种子重击】「缚缡耶」解锁的【奇馈宝箱】\n内有【图纸：「林居之人的孤念」】、【5原石】\n\n注：草种子在南侧【巨大枯树干内】【底部】",
     "hiddenFlag": 0,
     "id": 25589,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -31801,6 +31922,7 @@
       }
     ],
     "markerCreatorId": 95,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662384134900.jpg",
     "pictureCreatorId": 95,
@@ -31873,6 +31995,7 @@
     "content": "此处【地下洞穴中】有一朵月莲\n注：【从东南方洞穴进入】",
     "hiddenFlag": 0,
     "id": 25593,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -31881,6 +32004,7 @@
       }
     ],
     "markerCreatorId": 14,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 14,
@@ -32138,6 +32262,11 @@
         "count": 1,
         "iconTag": "日落果",
         "itemId": 1336
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
@@ -32145,7 +32274,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4726.500390529614,-331.7529280788949",
-    "refreshTime": 86400000,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -32313,6 +32442,7 @@
     "content": "在此处【地下洞中】有1只【草晶蝶】\n捕捉获得1个【晶核】",
     "hiddenFlag": 0,
     "id": 25616,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32321,6 +32451,7 @@
       }
     ],
     "markerCreatorId": 28,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "晶核",
     "picture": "",
     "pictureCreatorId": 28,
@@ -32333,6 +32464,7 @@
     "content": "此处【地下洞中】有【3个】伸缩岩蕈兽",
     "hiddenFlag": 0,
     "id": 25617,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32341,6 +32473,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32535,6 +32668,7 @@
     "content": "此处【地下洞底】有【2个】【旋转雷蕈兽】",
     "hiddenFlag": 0,
     "id": 25627,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32543,6 +32677,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32555,6 +32690,7 @@
     "content": "此处【地下洞底 遗迹重机旁】有一个石堆， 调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25628,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32563,6 +32699,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664215187839.jpg",
     "pictureCreatorId": 7,
@@ -32715,6 +32852,7 @@
     "content": "此处【地下底部】有【2个】伸缩岩蕈兽",
     "hiddenFlag": 0,
     "id": 25636,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32723,6 +32861,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32735,6 +32874,7 @@
     "content": "此处【地下底部】有【1个】伸缩风蕈兽",
     "hiddenFlag": 0,
     "id": 25637,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32743,6 +32883,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32755,6 +32896,7 @@
     "content": "此处【地下底部】有【3个】接近出现的【伸缩风蕈兽】",
     "hiddenFlag": 0,
     "id": 25638,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32763,6 +32905,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32775,6 +32918,7 @@
     "content": "此处【地下底部】有【3个】浮游水蕈兽",
     "hiddenFlag": 0,
     "id": 25639,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32783,6 +32927,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32795,6 +32940,7 @@
     "content": "此处【地下底部】有【1个】浮游水蕈兽",
     "hiddenFlag": 0,
     "id": 25640,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32803,6 +32949,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32815,6 +32962,7 @@
     "content": "此处【地下底部】有【2个】【浮游草蕈兽】",
     "hiddenFlag": 0,
     "id": 25641,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32823,6 +32971,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32897,6 +33046,7 @@
     "content": "此处【地下底部】有【2个】【旋转雷蕈兽】",
     "hiddenFlag": 0,
     "id": 25645,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32905,6 +33055,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -32974,9 +33125,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下底部】有【2个】【选装冰蕈兽】",
+    "content": "此处【地下底部】有【2个】【旋转冰蕈兽】",
     "hiddenFlag": 0,
     "id": 25649,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -32985,6 +33137,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -33077,6 +33230,7 @@
     "content": "此处【地下底部】有【3个】【伸缩火蕈兽】",
     "hiddenFlag": 0,
     "id": 25654,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -33085,6 +33239,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 7,
@@ -33722,6 +33877,7 @@
     "content": "此处【地下洞中 较高处墙边】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需由西侧【演奏曲调】解锁经传送门进入",
     "hiddenFlag": 0,
     "id": 25692,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -33730,6 +33886,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663758650820.jpg",
     "pictureCreatorId": 7,
@@ -33742,6 +33899,7 @@
     "content": "此处【地下稍高处墙边】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需由西侧【演奏曲调】进入传送门进入",
     "hiddenFlag": 0,
     "id": 25693,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -33750,6 +33908,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663758527792.jpg",
     "pictureCreatorId": 7,
@@ -33766,17 +33925,17 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "精致宝箱",
-        "itemId": 1242
+        "iconTag": "元素方碑·风",
+        "itemId": 1256
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
-        "itemId": 1256
+        "iconTag": "精致宝箱",
+        "itemId": 1242
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663758767604.jpg",
     "pictureCreatorId": 7,
@@ -33831,7 +33990,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25697,
     "itemList": [
@@ -33851,7 +34010,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25698,
     "itemList": [
@@ -33871,7 +34030,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25699,
     "itemList": [
@@ -33891,7 +34050,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25700,
     "itemList": [
@@ -33911,7 +34070,7 @@
     "videoPath": ""
   },
   {
-    "content": "遍历苗圃后撷取【桓斯弥利底】",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25701,
     "itemList": [
@@ -33956,7 +34115,7 @@
     "videoPath": ""
   },
   {
-    "content": "击败丘丘人解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在此处击败丘丘人解锁的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 25703,
     "itemList": [
@@ -34234,6 +34393,7 @@
     "content": "此处【地下 纳真洞(A-B)】中，【高处空树干中】有一个石堆。\n调查后随机获得【10000/15000/20000摩拉】\n\n注：建议【使用雷元素攻击激活】下方【弹弹菇】后跳起",
     "hiddenFlag": 0,
     "id": 25715,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -34242,6 +34402,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664202278643.jpg",
     "pictureCreatorId": 7,
@@ -34251,9 +34412,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下山洞中】【稍高处空树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 洞中】【稍高处空树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25716,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -34262,6 +34424,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664202428463.jpg",
     "pictureCreatorId": 7,
@@ -34274,6 +34437,7 @@
     "content": "此处【地下 纳真洞(A-B)】中，【高处枯树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：建议由【西北侧】较低处树干触发【众叶觉蕊】乘【四叶印】来到此处",
     "hiddenFlag": 0,
     "id": 25717,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -34282,6 +34446,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664202620694.jpg",
     "pictureCreatorId": 7,
@@ -34687,7 +34852,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -34701,7 +34866,7 @@
     "videoPath": ""
   },
   {
-    "content": "三乘种子",
+    "content": "此处有一个【三乘种子】",
     "hiddenFlag": 0,
     "id": 25736,
     "itemList": [
@@ -34822,7 +34987,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -34864,6 +35029,7 @@
     "content": "此处【高空中】有一个【散失的草神瞳】\n\n注：在下方【使用用雷元素攻击】激活【弹弹菇】，跳起并借助【四叶印】飞至此处",
     "hiddenFlag": 0,
     "id": 25743,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -34872,6 +35038,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":null}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663405892604.jpg",
     "pictureCreatorId": 7,
@@ -35334,6 +35501,11 @@
         "count": 1,
         "iconTag": "限时挑战",
         "itemId": 1246
+      },
+      {
+        "count": 1,
+        "iconTag": "羊皮卷",
+        "itemId": 1380
       }
     ],
     "markerCreatorId": 7,
@@ -35357,7 +35529,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -35724,6 +35896,7 @@
     "content": "此处【地下山洞内】【机械零件后】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25779,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -35732,6 +35905,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663679208080.jpg",
     "pictureCreatorId": 7,
@@ -35744,6 +35918,7 @@
     "content": "此处【地下山洞内】【携带草种子重击击碎石块】后，出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25780,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -35752,6 +35927,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663679095755.jpg",
     "pictureCreatorId": 7,
@@ -35761,7 +35937,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【山洞口】完成限时挑战【60秒击败所有敌人】出现的【奇馈宝箱】\n内有【图纸：素净宝瓶 - 「赭黄」】、【5原石】、【羊皮卷】\n\n【羊皮卷】根据获得顺序，获得\n【1】【启封的羊皮卷】\n【2】【引路的羊皮卷】\n【3】【低语的羊皮卷】",
+    "content": "在此处【山洞口】完成限时挑战【60秒击败所有敌人】出现的【奇馈宝箱】\n内有【图纸：素浄宝瓶 - 「赭黄」】、【5原石】、【羊皮卷】\n\n【羊皮卷】根据获得顺序，获得\n【1】【启封的羊皮卷】\n【2】【引路的羊皮卷】\n【3】【低语的羊皮卷】",
     "hiddenFlag": 0,
     "id": 25781,
     "itemList": [
@@ -35774,6 +35950,11 @@
         "count": 1,
         "iconTag": "限时挑战",
         "itemId": 1246
+      },
+      {
+        "count": 1,
+        "iconTag": "羊皮卷",
+        "itemId": 1380
       }
     ],
     "markerCreatorId": 7,
@@ -35891,7 +36072,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【地下 桓摩洞中】【携带草种子重击】【4个】「缚缡耶」解锁的【奇馈宝箱】\r\n内有【图纸：素净宝瓶 - 「陶棕」】、【5原石】\r\n\r\n注：有3个「缚缡耶」在零件空腔内",
+    "content": "在此处【地下 桓摩洞中】【携带草种子重击】【4个】「缚缡耶」解锁的【奇馈宝箱】\n内有【图纸：素浄宝瓶 - 「陶棕」】、【5原石】\n\n注：有3个「缚缡耶」在零件空腔内",
     "hiddenFlag": 0,
     "id": 25787,
     "isRelated": 0,
@@ -35908,7 +36089,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663337325576.jpg",
     "pictureCreatorId": 7,
@@ -35943,7 +36124,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【3个】【草元素方碑】【中间】同时解锁，并激活方碑出现【普通宝箱】\n内有【2原石、1草之印】\n\n注：元素方碑接近解锁",
+    "content": "在此处站在【3个】【草元素方碑】【中间】同时解锁，并激活方碑出现【普通宝箱】\n内有【2原石、1草之印】\n\n注：元素方碑接近解锁",
     "hiddenFlag": 0,
     "id": 25789,
     "itemList": [
@@ -35954,7 +36135,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -35980,17 +36161,18 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "劫波莲",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1676778770698.jpg",
+    "pictureCreatorId": 147,
     "position": "-4048.582807539925,20.416915761366",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处【茶茶洞(C-D)】较高处有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：借助四叶印移动到洞顶即可发现",
+    "content": "此处【茶荼洞(C-D)】较高处有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：借助四叶印移动到洞顶即可发现",
     "hiddenFlag": 0,
     "id": 25791,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -35999,6 +36181,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1662383030831.jpg",
     "pictureCreatorId": 7,
@@ -36068,7 +36251,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下山洞内 枝条上】有1朵【树王圣体菇】\n\n注：需降下2次水位",
+    "content": "此处【地下山洞内 枝条上】有1朵【树王圣体菇】\n\n注：需降下2次水位，【秘境上方】",
     "hiddenFlag": 0,
     "id": 25795,
     "isRelated": 0,
@@ -36080,7 +36263,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "树王圣体菇",
     "picture": "",
     "pictureCreatorId": 7,
@@ -36101,12 +36284,12 @@
         "itemId": 1289
       }
     ],
-    "markerCreatorId": 14,
+    "markerCreatorId": 7,
     "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "树王圣体菇",
     "picture": "",
     "pictureCreatorId": 14,
-    "position": "-3909.1128849223924,289.8166364447716",
+    "position": "-3910.3335885991532,290.08320631257084",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -36473,11 +36656,16 @@
     "videoPath": ""
   },
   {
-    "content": "获得「森林书」神秘的剪贴簿【5】后\n在此处【地下 纳真洞中】【树干底部】【挖掘】出现【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "获得「森林书」神秘的剪贴簿【5】后\n在此处【地下 纳真洞中】【树干底部】【挖掘】出现【普通宝箱】\n内有【2原石、1草之印】\n\n注：进行世界任务【正法炬书 「星夜之章 」】时，使用【「苦舍桓」】修复并激活草元素方碑，打开此处山洞入口",
     "hiddenFlag": 0,
     "id": 25819,
     "isRelated": 0,
     "itemList": [
+      {
+        "count": 1,
+        "iconTag": "「神秘的剪贴簿」",
+        "itemId": 1612
+      },
       {
         "count": 1,
         "iconTag": "普通宝箱",
@@ -36486,16 +36674,11 @@
       {
         "count": 1,
         "iconTag": "「神秘的剪贴簿」",
-        "itemId": 1612
-      },
-      {
-        "count": 1,
-        "iconTag": "「神秘的剪贴簿」",
         "itemId": 1447
       }
     ],
     "markerCreatorId": 95,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662320758247.jpg",
     "pictureCreatorId": 95,
@@ -36548,6 +36731,7 @@
     "content": "获得「森林书」神秘的剪贴簿【3】后\n在此处【地下 源水洞 内】枯树干内【挖掘】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n\n注：需进行世界任务【「水天供书」膏腴土地下的唤雨之曲】 时，随进度开启入口",
     "hiddenFlag": 0,
     "id": 25822,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -36566,6 +36750,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662319931124.jpg",
     "pictureCreatorId": 7,
@@ -36575,9 +36760,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【茶茶洞(C-D)】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【茶荼洞(C-D)】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 25823,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -36586,6 +36772,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1662382889086.jpg",
     "pictureCreatorId": 7,
@@ -36887,7 +37074,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个桓斯弥利底",
+    "content": "在此处【遍历苗圃】后可撷取【桓斯弥利底】\n\n注：撷取后，【游戏内时间次日】可生出【5朵须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 25839,
     "itemList": [
@@ -36997,7 +37184,7 @@
     "videoPath": ""
   },
   {
-    "content": "【须弥 茸蕈窟】（地下）\n\n注：需完成世界任务【「正法炬书」月升之章】后，再此来到洞内，乘【四叶印】飞至【洞内高处】，激活【4个】【草元素方碑】解锁",
+    "content": "【须弥 茸蕈窟】（地下）\n\n注：需完成世界任务【「正法炬书」月升之章】后，再次来到洞内，乘【四叶印】飞至【洞内高处】，激活【4个】【草元素方碑】解锁",
     "hiddenFlag": 0,
     "id": 25847,
     "isRelated": 0,
@@ -37009,11 +37196,11 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "传送锚点",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3379.7847781498776,-958.5578694392698",
+    "position": "-3377.2495118379825,-959.0001830049314",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -37022,6 +37209,7 @@
     "content": "此处【地下池中】有一朵【月莲】\n\n注：由【东北侧】山洞洞口进入",
     "hiddenFlag": 0,
     "id": 25848,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37030,6 +37218,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37042,6 +37231,7 @@
     "content": "此处【地下池中】有一朵【月莲】\n\n注：由【东北侧】山洞洞口进入",
     "hiddenFlag": 0,
     "id": 25849,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37050,6 +37240,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37062,6 +37253,7 @@
     "content": "此处【地下池中】有一朵【月莲】\n\n注：由【东北侧】山洞洞口进入",
     "hiddenFlag": 0,
     "id": 25850,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37070,6 +37262,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37079,9 +37272,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【山洞内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：须在【地上西侧】对传送门演奏【黯道的曲调】进入",
+    "content": "此处【地下 洞中】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：须在【地上西侧】对传送门演奏【黯道的曲调】进入",
     "hiddenFlag": 0,
     "id": 25851,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37090,6 +37284,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1662572125279.jpg",
     "pictureCreatorId": 86,
@@ -37122,6 +37317,7 @@
     "content": "【降下水位后】\n此处【山洞中】有1朵【树王圣体菇】",
     "hiddenFlag": 0,
     "id": 25853,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -37130,6 +37326,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "树王圣体菇",
     "picture": "",
     "pictureCreatorId": 7,
@@ -37583,7 +37780,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【接近】出现的【冰霜骗骗花】",
+    "content": "（一次性）\n于【现实中】\n接近此处出现的【冰霜骗骗花】，击败后解锁【普通宝箱】",
     "hiddenFlag": 0,
     "id": 25877,
     "itemList": [
@@ -37598,7 +37795,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4129.69903588538,-525.6946410083992",
-    "refreshTime": -1,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -38003,7 +38200,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -39180,10 +39377,15 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】",
+    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n\n注：激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】\n\n【代号「菲弗」的记录】\n「.2-.1.-1..1-2.1-1.2-.2.-」",
     "hiddenFlag": 0,
     "id": 25958,
     "itemList": [
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2067
+      },
       {
         "count": 1,
         "iconTag": "遗迹守卫",
@@ -39200,7 +39402,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】",
+    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n\n注：激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】\n\n代号「乌鲁兹」的记录\n「.1-..1.-.-.1-.2-.2-1.1-2-.-.3-...」",
     "hiddenFlag": 0,
     "id": 25959,
     "itemList": [
@@ -39208,19 +39410,24 @@
         "count": 1,
         "iconTag": "遗迹守卫",
         "itemId": 1378
+      },
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "毁损的遗迹守卫",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3094,1311",
+    "position": "-3090.8327251692904,1302.997071921105",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】",
+    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n\n注：激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】\n\n代号「特里萨兹」的记录\n「-..1-..1.-.3-...1-1.2-3-2-2.-..」",
     "hiddenFlag": 0,
     "id": 25960,
     "itemList": [
@@ -39228,6 +39435,11 @@
         "count": 1,
         "iconTag": "遗迹守卫",
         "itemId": 1378
+      },
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 7,
@@ -39240,7 +39452,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】",
+    "content": "此处【顶部】有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n\n注：激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】\n\n代号「莱德赫」的记录\n「1..1-....-..1.-2.-.」",
     "hiddenFlag": 0,
     "id": 25961,
     "itemList": [
@@ -39248,6 +39460,11 @@
         "count": 1,
         "iconTag": "遗迹守卫",
         "itemId": 1378
+      },
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 7,
@@ -39260,7 +39477,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】",
+    "content": "此处【顶部】有一个【毁损的遗迹守卫】\n\n需送回石头内的【遗迹侦察者】（见【宝箱 - 获取方式 - 遗迹侦察者】），并击败出现的遗迹机兵后，可装载【3个】能量块激活。\n\n注：激活全部【5个】【毁损的遗迹守卫】后。\n可达成成就：【以安弗塔斯之名】\n\n代号「安斯兹」的记录\n「1-1.2-....-..1.-2-....-.2-.1..-1.-」",
     "hiddenFlag": 0,
     "id": 25962,
     "itemList": [
@@ -39268,6 +39485,11 @@
         "count": 1,
         "iconTag": "遗迹守卫",
         "itemId": 1378
+      },
+      {
+        "count": 1,
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 7,
@@ -39727,7 +39949,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处调查【2甜甜花、2薄荷】，并击败出现的【4个】骗骗花后，解开屏障获得一个【散失的草神瞳】\n\n注：",
+    "content": "在此处调查【2甜甜花、2薄荷】，并击败出现的【4个】骗骗花后，解开屏障获得一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 25987,
     "itemList": [
@@ -40072,6 +40294,7 @@
     "content": "此处【地下深处枯树上空】有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 26001,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -40080,6 +40303,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "草神瞳",
     "picture": "https://yuanshen.site/comment_png/1662383963458.jpg",
     "pictureCreatorId": 7,
@@ -40348,7 +40572,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【蘑菇顶部】击败接近出现的风元素生命解锁的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "在【蘑菇顶部】击败接近出现的怪物解锁的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26016,
     "itemList": [
@@ -40373,7 +40597,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【蘑菇顶部【修复并激活】草元素方碑解锁的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需演奏【新生的曲调】修复元素方碑",
+    "content": "在此处【蘑菇顶部】【修复并激活】草元素方碑解锁的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需演奏【新生的曲调】修复元素方碑，或使用「苦舍桓」（仅在世界任务【正法炬书】期间持有）",
     "hiddenFlag": 0,
     "id": 26017,
     "itemList": [
@@ -40384,7 +40608,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -40575,7 +40799,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇×1】",
+    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇/松茸×1】",
     "hiddenFlag": 0,
     "id": 26028,
     "itemList": [
@@ -40600,7 +40824,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇×1】",
+    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇/松茸×1】",
     "hiddenFlag": 0,
     "id": 26029,
     "itemList": [
@@ -40625,7 +40849,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇×1】",
+    "content": "此处有1只【蕈猪】\n击杀后掉落【兽肉×2、蘑菇/松茸×1】",
     "hiddenFlag": 0,
     "id": 26030,
     "itemList": [
@@ -40650,7 +40874,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有1位【雷】萤术士",
+    "content": "此处有1位【雷】萤术士 伏击",
     "hiddenFlag": 0,
     "id": 26031,
     "itemList": [
@@ -40713,6 +40937,7 @@
     "content": "在此处【地下 纳迦洞中 稍高处】完成限时挑战【40秒内击败所有怪物】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需进行世界任务【正法炬书】终章 时，随任务进度开启",
     "hiddenFlag": 0,
     "id": 26035,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -40726,6 +40951,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662375614413.jpg",
     "pictureCreatorId": 7,
@@ -41217,6 +41443,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26061,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41230,6 +41457,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662758110922.jpg",
     "pictureCreatorId": 7,
@@ -41242,6 +41470,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26062,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41255,6 +41484,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662758140706.jpg",
     "pictureCreatorId": 7,
@@ -41294,6 +41524,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26064,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41307,6 +41538,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662758021830.jpg",
     "pictureCreatorId": 7,
@@ -41319,6 +41551,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26065,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41332,6 +41565,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662758207525.jpg",
     "pictureCreatorId": 7,
@@ -41344,6 +41578,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26066,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41357,6 +41592,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662757856057.jpg",
     "pictureCreatorId": 7,
@@ -41369,6 +41605,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26067,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41382,6 +41619,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662758041316.jpg",
     "pictureCreatorId": 7,
@@ -41556,6 +41794,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26074,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41569,6 +41808,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "",
     "pictureCreatorId": 7,
@@ -41581,6 +41821,7 @@
     "content": "完成世界任务【静态风景 · 后续】后，\n在大世界【帮助许多兰那罗（见【见闻 - 兰那罗】分类）】后，在【此处地下洞中】开启的【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26075,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41594,6 +41835,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662757921536.jpg",
     "pictureCreatorId": 7,
@@ -41631,6 +41873,7 @@
     "content": "这是一个在此处【地下大零件底部】【调查】获得一个【遗落的能量块】",
     "hiddenFlag": 0,
     "id": 26077,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -41639,6 +41882,7 @@
       }
     ],
     "markerCreatorId": 90,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "遗落的能量块",
     "picture": "",
     "pictureCreatorId": 90,
@@ -41767,7 +42011,7 @@
     "markerTitle": "鱼肉",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2815.7081156989043,-178.45214421056608",
+    "position": "-2826.918852210934,-162.99432684714156",
     "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
@@ -42149,46 +42393,6 @@
     "pictureCreatorId": 7,
     "position": "-2366.5115304089477,-16.66860298186839",
     "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此处有1朵【清心】",
-    "hiddenFlag": 0,
-    "id": 26104,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 1400
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "清心",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "-2366.7120209950435,-13.709555910268136",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此处有1朵【清心】",
-    "hiddenFlag": 0,
-    "id": 26105,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "清心",
-        "itemId": 1400
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "清心",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "-2361.460995854807,-13.709555910268136",
-    "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
   },
@@ -42774,12 +42978,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1311
+        "iconTag": "丘丘王",
+        "itemId": 2080
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘王",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4556.085068346974,582.4959738915195",
@@ -43148,7 +43352,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【树上平台上】有1朵【树王圣体菇】",
+    "content": "此处【树上 传送锚点所处平台上】有1朵【树王圣体菇】",
     "hiddenFlag": 0,
     "id": 26155,
     "itemList": [
@@ -43302,7 +43506,7 @@
     "markerTitle": "香辛果",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3695.2265457377025,1543.8602899609305",
+    "position": "-3697.917177198306,1545.5840145276625",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""
@@ -43556,6 +43760,11 @@
         "count": 1,
         "iconTag": "日落果",
         "itemId": 1336
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
@@ -43563,7 +43772,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2751.40809132299,-950.8920423551353",
-    "refreshTime": 86400000,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -43641,14 +43850,19 @@
         "count": 1,
         "iconTag": "日落果",
         "itemId": 1336
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
     "markerTitle": "日落果",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-2850.0472174979586,-1095.9143689567072",
-    "refreshTime": 86400000,
+    "position": "-2854.176532830595,-1093.7141293230152",
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -44218,7 +44432,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3614.916493771482,169.83290123370352",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -44243,7 +44457,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3612.3334085961146,168.166915761366",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -44288,7 +44502,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处与【兰钵达】玩游戏，记住【绿色亮晶晶有几个】出现的【普通宝箱】\n内有【2原石、1草之印】\n注：3个\n\n在大世界陪【12位】兰那罗玩游戏，并【开启其宝箱】后，可达成成就【请安全玩耍】",
+    "content": "在此处与【兰钵答】玩游戏，记住【绿色亮晶晶有几个】出现的【普通宝箱】\n内有【2原石、1草之印】\n注：3个\n\n在大世界陪【12位】兰那罗玩游戏，并【开启其宝箱】后，可达成成就【请安全玩耍】",
     "hiddenFlag": 0,
     "id": 26222,
     "itemList": [
@@ -44800,9 +45014,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下洞内】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并对话后\n可获得【摩拉×5000、劫波莲×3】",
+    "content": "此处【地下 桓那洞内】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并对话后\n可获得【摩拉×5000、劫波莲×3】",
     "hiddenFlag": 0,
     "id": 26247,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -44811,6 +45026,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "兰那罗",
     "picture": "https://yuanshen.site/comment_png/1662313523031.jpg",
     "pictureCreatorId": 7,
@@ -44843,6 +45059,7 @@
     "content": "此处【遗迹巨像内 顶层】【房间内】放置能量块开门后直接开启的【华丽宝箱】\n内有【10原石、4草之印】\n\n注：进行世界任务【吉祥具书「吉祥具书 · 加扎里篇」】 时，随进度开启",
     "hiddenFlag": 0,
     "id": 26250,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -44856,6 +45073,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663733089459.jpg",
     "pictureCreatorId": 7,
@@ -45285,7 +45503,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【树上平台】有1朵【树王圣体菇】",
+    "content": "此处【树上 传送锚点所处平台】有1朵【树王圣体菇】",
     "hiddenFlag": 0,
     "id": 26272,
     "itemList": [
@@ -45405,7 +45623,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（若某次只开出晶蝶，代表拿过了）",
     "hiddenFlag": 0,
     "id": 26278,
     "itemList": [
@@ -45585,7 +45803,7 @@
     "videoPath": ""
   },
   {
-    "content": "在此处【兰巴德就馆】内【兰巴德】处可购买\n注：须弥声望4级后，有消费折扣\n【食谱：兰巴德鱼卷】1125/1250摩拉\n【食谱：薄荷豆汤】1125/1250摩拉\n【食谱：烤肉卷】2250/2500摩拉\n【食谱：椰炭饼】4500/5000摩拉（3.1版本新增）\n【食谱：萨布兹炖肉】4500/5000摩拉（3.4版本新增）\n【食谱：秘香肉团】4500/5000摩拉（3.4版本新增）",
+    "content": "在此处【兰巴德就馆】内【兰巴德】处可购买\n注：须弥声望4级后，有消费折扣\n【食谱：兰巴德鱼卷】1125/1250摩拉\n【食谱：薄荷豆汤】1125/1250摩拉\n【食谱：烤肉卷】2250/2500摩拉\n【食谱：脆饼珐提】2250/2500摩拉（3.6版本新增）\n【食谱：椰炭饼】4500/5000摩拉（3.1版本新增）\n【食谱：萨布兹炖肉】4500/5000摩拉（3.4版本新增）\n【食谱：秘香肉团】4500/5000摩拉（3.4版本新增）",
     "hiddenFlag": 0,
     "id": 26287,
     "itemList": [
@@ -45860,7 +46078,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【枯树干中】有一个直接开启的【普通宝箱】\n内有【2原石、1草之印】",
+    "content": "此处【枯树干中】有一个可以在晴天直接开启的【普通宝箱】（雨天树干内会有积水）\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26301,
     "itemList": [
@@ -45928,6 +46146,7 @@
     "content": "此处【地下 源水洞(A-B)】中，【树上】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：用【雷元素攻击】激活树下【弹弹菇】后，弹起至树上。",
     "hiddenFlag": 0,
     "id": 26304,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -45936,6 +46155,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1663948745405.jpg",
     "pictureCreatorId": 7,
@@ -45992,6 +46212,7 @@
     "content": "此处【地下洞中】有1朵【须弥蔷薇】",
     "hiddenFlag": 0,
     "id": 26307,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -46000,6 +46221,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "须弥蔷薇",
     "picture": "",
     "pictureCreatorId": 7,
@@ -46138,6 +46360,7 @@
     "content": "此处【地下池中】有一朵【月莲】\n\n注：由【东北侧】山洞洞口进入",
     "hiddenFlag": 0,
     "id": 26314,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -46146,6 +46369,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -48064,7 +48288,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地上】有【2颗】日落果",
+    "content": "此处【树下】有【2颗】日落果",
     "hiddenFlag": 0,
     "id": 26408,
     "itemList": [
@@ -48078,7 +48302,7 @@
     "markerTitle": "日落果",
     "picture": "",
     "pictureCreatorId": 7,
-    "position": "-3603.7061630508347,613.4843530784074",
+    "position": "-3605.083603860922,613.1665497515041",
     "refreshTime": 86400000,
     "version": 1,
     "videoPath": ""
@@ -48092,6 +48316,11 @@
         "count": 1,
         "iconTag": "日落果",
         "itemId": 1336
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
@@ -48099,7 +48328,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3604.206260683238,616.7355426104577",
-    "refreshTime": 86400000,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -48247,6 +48476,7 @@
     "content": "此处【底部】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 26417,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -48255,6 +48485,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664210671023.jpg",
     "pictureCreatorId": 7,
@@ -48444,7 +48675,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3500.3987449988526,1497.529784926005",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -48469,7 +48700,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-3507.824815968537,1508.847634353875",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -48497,13 +48728,7 @@
     "content": "测试",
     "hiddenFlag": 0,
     "id": 26429,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "无",
-        "itemId": 1391
-      }
-    ],
+    "itemList": [],
     "markerCreatorId": 1,
     "markerTitle": "测试",
     "picture": "",
@@ -48562,6 +48787,7 @@
     "content": "此处【源水洞(A-B)】【枯树桩内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【水天供书「膏腴土地下的唤雨之曲」】 时，随进度进入",
     "hiddenFlag": 0,
     "id": 26432,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -48570,6 +48796,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664086339021.jpg",
     "pictureCreatorId": 7,
@@ -48719,9 +48946,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并与其对话后。\n可获得【摩拉×5000、香辛果×3】\n\n注：需在【西侧】演奏【黯道的曲调】开启传送机关",
+    "content": "此处【地下 扎莱洞中】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并与其对话后。\n可获得【摩拉×5000、香辛果×3】\n\n注：需在【西侧】演奏【黯道的曲调】开启传送机关",
     "hiddenFlag": 0,
     "id": 26441,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -48730,6 +48958,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "兰那罗",
     "picture": "https://yuanshen.site/comment_png/1662482350002.jpg",
     "pictureCreatorId": 7,
@@ -48739,7 +48968,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下 扎莱洞中】【携带草种子重击】击碎岩石出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需演奏【通往黯道的曲调】开启传送机关。\n于【洞外藤蔓石下】携带草种子进入洞中",
+    "content": "此处【地下 扎莱洞中】【携带草种子重击】击碎岩石出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需演奏【黯道的曲调】开启传送机关。\n于【洞外藤蔓石下】携带草种子进入洞中",
     "hiddenFlag": 0,
     "id": 26442,
     "isRelated": 0,
@@ -48756,7 +48985,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663403738643.jpg",
     "pictureCreatorId": 7,
@@ -48794,6 +49023,7 @@
     "content": "此处【地下】树丛上有【4颗】墩墩桃\n\n注：需演奏【通往黯道的曲调】开启传送机关",
     "hiddenFlag": 0,
     "id": 26444,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -48802,6 +49032,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "墩墩桃",
     "picture": "",
     "pictureCreatorId": 7,
@@ -48916,7 +49147,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处树丛上有【2颗】香辛果",
+    "content": "此处【半山腰】【树丛上】有【2颗】香辛果",
     "hiddenFlag": 0,
     "id": 26450,
     "itemList": [
@@ -48936,7 +49167,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处树丛上有【2颗】香辛果",
+    "content": "此处【半山腰】【树丛上】有【2颗】香辛果",
     "hiddenFlag": 0,
     "id": 26451,
     "itemList": [
@@ -49023,6 +49254,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需【摧毁死域瘤】后，对【幽闭花】演奏【兽径的曲调】使墙壁消失。\n\n【兽径的曲调】需进行世界任务【「森林书 第二章」梦中的苗圃 - 揭示兽径的曲调】时获取",
     "hiddenFlag": 0,
     "id": 26456,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49031,6 +49263,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -49043,6 +49276,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需【摧毁死域瘤】后，对【幽闭花】演奏【兽径的曲调】使墙壁消失。\n\n【兽径的曲调】需进行世界任务【「森林书 第二章」梦中的苗圃 - 揭示兽径的曲调】时获取",
     "hiddenFlag": 0,
     "id": 26457,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49051,6 +49285,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -49063,6 +49298,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需【摧毁死域瘤】后，对【幽闭花】演奏【兽径的曲调】使墙壁消失。\n\n【兽径的曲调】需进行世界任务【「森林书 第二章」梦中的苗圃 - 揭示兽径的曲调】时获取",
     "hiddenFlag": 0,
     "id": 26458,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49071,6 +49307,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -49127,6 +49364,7 @@
     "content": "此处【地下洞穴屋内】有一位【迷茫的兰那罗】\n【使用草元素攻击唤醒】并与其对话后。\n可获得【摩拉×5000、树王圣体菇×3】\n\n注：需在地下【摧毁死域瘤】后，对【幽闭花】演奏【兽径的曲调】使墙壁消失。",
     "hiddenFlag": 0,
     "id": 26461,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49135,6 +49373,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "兰那罗",
     "picture": "https://yuanshen.site/comment_png/1662314066031.jpg",
     "pictureCreatorId": 7,
@@ -49289,9 +49528,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下】有【1只】【雷】兽境幼兽\n注：需清除该处死域",
+    "content": "此处【地下】有【1只】【雷】兽境幼兽\n\n注：需清除该处死域后",
     "hiddenFlag": 0,
     "id": 26470,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49300,6 +49540,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "兽境犬",
     "picture": "",
     "pictureCreatorId": 7,
@@ -49309,9 +49550,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下】有【1只】【雷】兽境猎犬\n注：需清除该处死域",
+    "content": "此处【地下】有【1只】【雷】兽境猎犬\n\n注：需清除该处死域后",
     "hiddenFlag": 0,
     "id": 26471,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49320,6 +49562,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "兽境犬",
     "picture": "",
     "pictureCreatorId": 7,
@@ -49488,7 +49731,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -49506,6 +49749,7 @@
     "content": "此处【地下 迦鲁洞(C)】【稍高处枯树干内】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：需进行世界任务【正法炬书】月升之章 时，随任务进度进入",
     "hiddenFlag": 0,
     "id": 26481,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49514,6 +49758,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664204832835.jpg",
     "pictureCreatorId": 7,
@@ -49539,12 +49784,12 @@
         "itemId": 1250
       }
     ],
-    "markerCreatorId": 7,
+    "markerCreatorId": 33,
     "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663929171309.jpg",
     "pictureCreatorId": 7,
-    "position": "-3438.6690322139725,-979.4120305427814",
+    "position": "-3432.5012171870735,-979.8332185492691",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -49553,6 +49798,7 @@
     "content": "在此处【地下 纳迦洞中】完成限时挑战【30秒内开启】的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需进行世界任务【正法炬书】终章 时，随任务进度开启",
     "hiddenFlag": 0,
     "id": 26484,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -49566,6 +49812,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662375840597.jpg",
     "pictureCreatorId": 7,
@@ -50048,7 +50295,7 @@
     "videoPath": ""
   },
   {
-    "content": "在【地下洞中垂直洞穴中部】此处【使用雷元素攻击】【三乘种子】显现植物机关，解开藤蔓后直接开启的【奇馈宝箱】\n内有【图纸：「纺缉的硕果琳琅」】、【5原石】\n\n注：击败两拨怪物后解锁【草元素方碑】，激活草元素方碑后，解开对面洞口藤曼。\n对面宝箱【id：26564】",
+    "content": "在【地下洞中垂直洞穴中部】此处【使用雷元素攻击】【三乘种子】显现植物机关，解开藤蔓后直接开启的【奇馈宝箱】\n内有【图纸：「纺缉的硕果琳琅」】、【5原石】\n\n注：击败两拨怪物后解锁【草元素方碑】，激活草元素方碑后，解开对面洞口藤蔓。\n对面宝箱【id：26564】",
     "hiddenFlag": 0,
     "id": 26508,
     "isRelated": 0,
@@ -50065,7 +50312,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661695328742.jpg",
     "pictureCreatorId": 7,
@@ -50333,6 +50580,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需完成世界任务【静态风景 · 后篇】并集齐【11张】画片进入",
     "hiddenFlag": 0,
     "id": 26522,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -50341,6 +50589,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -50373,6 +50622,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需完成世界任务【静态风景 · 后篇】并集齐【11张】画片进入",
     "hiddenFlag": 0,
     "id": 26524,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -50381,6 +50631,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -50393,6 +50644,7 @@
     "content": "此处【地下洞中】有一朵【月莲】\n注：需完成世界任务【静态风景 · 后篇】并集齐【11张】画片进入",
     "hiddenFlag": 0,
     "id": 26525,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -50401,6 +50653,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "月莲",
     "picture": "",
     "pictureCreatorId": 7,
@@ -50545,6 +50798,11 @@
         "count": 1,
         "iconTag": "挖掘宝箱",
         "itemId": 1381
+      },
+      {
+        "count": 1,
+        "iconTag": "挖掘宝箱",
+        "itemId": 1448
       }
     ],
     "markerCreatorId": 7,
@@ -50585,6 +50843,11 @@
         "count": 1,
         "iconTag": "苹果",
         "itemId": 1337
+      },
+      {
+        "count": 1,
+        "iconTag": "萃华树-萃华木",
+        "itemId": 2058
       }
     ],
     "markerCreatorId": 7,
@@ -50592,7 +50855,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4036.4093971295642,-300.90337339647795",
-    "refreshTime": 86400000,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -50707,7 +50970,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】击破【水泡】随机在此处出现的【奇馈宝箱】\n内有【图纸：「渔采的绝对界限」】、【5原石】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】击破【水泡】随机概率在此处出现的【奇馈宝箱】\n内有【图纸：「渔采的绝对界限」】、【5原石】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（可在图纸、锻造界面搜索该名称查询是否拿过）",
     "hiddenFlag": 0,
     "id": 26540,
     "itemList": [
@@ -50817,7 +51080,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】在此处【底部】【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】在此处【底部】【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（若某次只开出晶蝶，代表拿过了）",
     "hiddenFlag": 0,
     "id": 26545,
     "itemList": [
@@ -50843,13 +51106,18 @@
     "itemList": [
       {
         "count": 1,
+        "iconTag": "挖掘宝箱",
+        "itemId": 1381
+      },
+      {
+        "count": 1,
         "iconTag": "精致宝箱",
         "itemId": 1242
       },
       {
         "count": 1,
         "iconTag": "挖掘宝箱",
-        "itemId": 1381
+        "itemId": 1448
       }
     ],
     "markerCreatorId": 7,
@@ -50862,7 +51130,7 @@
     "videoPath": ""
   },
   {
-    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现",
+    "content": "于【雨天】在此处【击破水泡】概率出现一个石堆\n调查后随机获得【10000/15000/20000摩拉】\n\n注：若未出现请【现实中时间12小时后】再次击破，直至出现。\n（若某次只开出晶蝶，代表拿过了）",
     "hiddenFlag": 0,
     "id": 26547,
     "itemList": [
@@ -50970,6 +51238,7 @@
     "content": "此处【地下枯树桩中】有【2颗】香辛果",
     "hiddenFlag": 0,
     "id": 26553,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -50978,6 +51247,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "香辛果",
     "picture": "",
     "pictureCreatorId": 7,
@@ -51266,6 +51536,7 @@
     "content": "完成世界任务【石锁机关秘话】后\n在【地下 善见洞中】【演奏曲调入梦】后，在此处与【兰提沙】对话并击败【只解开一层兰伽拉梨】的【恒常机关阵列】出现【普通宝箱】\n内有【2原石、1草之印】",
     "hiddenFlag": 0,
     "id": 26567,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -51279,6 +51550,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662754088933.jpg",
     "pictureCreatorId": 7,
@@ -51424,19 +51696,21 @@
     "content": "跟随此处【地下】的仙灵来到【神像旁】出现的【普通宝箱】\n内有【2原石、1草之印】\n\n注：需演奏【黯道的曲调】进入",
     "hiddenFlag": 0,
     "id": 26574,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 1248
+      },
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1661693405663.jpg",
     "pictureCreatorId": 7,
@@ -51826,18 +52100,20 @@
     "videoPath": ""
   },
   {
-    "content": "（不可收集）\n此处【地下洞中较高处】有\n《索赫蕾的笔记》",
+    "content": "（不可收集）\n此处【地下洞中较高处】有\n《索赫蕾的笔记》\n\n【似乎是研究笔记中的一页，但似乎因为内容与主题研究无关而被撕去了，纸面上许多地方生了苔藓,已经残缺不全。】\n\n…与赞迪克一起探索了这片丛林，这里的生物种群十分完备，尽管在其他地方逐渐滋生的「死域」也对此地的生态环境造成了影响，但尚且不必担忧…在水域中发现了几种全新的微小甲壳生物，命名为「纳西达德虫」好了——「草神的恩赐」，嘿嘿。\n\n…这里遗留的古代机械群，深深吸引了赞迪克的注意…\n\n…赞迪克很年轻，年轻又英俊。但可惜性格太古板，其学科又与我们生论派并不相通，即使一同探索也没什么共同语言可言，真是苦恼…\n\n…与赞迪克讨论了本地的动植物特征，进行了演化模型的猜想，我们都很开心。约定了今晚的野餐…",
     "hiddenFlag": 0,
     "id": 26593,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
-        "iconTag": "书籍",
-        "itemId": 1268
+        "iconTag": "文本",
+        "itemId": 2067
       }
     ],
     "markerCreatorId": 63,
-    "markerTitle": "书籍",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
+    "markerTitle": "文本",
     "picture": "https://yuanshen.site/comment_png/1661423610664.jpg",
     "pictureCreatorId": 63,
     "position": "-2284.2907279740225,1472.6401970414527",
@@ -51846,7 +52122,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个大型丘丘人",
+    "content": "这是一个【】丘丘暴徒",
     "hiddenFlag": 0,
     "id": 26594,
     "itemList": [
@@ -51857,7 +52133,7 @@
       }
     ],
     "markerCreatorId": 11,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "pictureCreatorId": 11,
     "position": "1047,-2490",
@@ -51928,7 +52204,7 @@
     "videoPath": ""
   },
   {
-    "content": "这是一个【大型木盾丘丘人】",
+    "content": "此处有1只【木盾丘丘暴徒】",
     "hiddenFlag": 0,
     "id": 26598,
     "itemList": [
@@ -51939,7 +52215,7 @@
       }
     ],
     "markerCreatorId": 11,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘暴徒",
     "picture": "",
     "pictureCreatorId": 11,
     "position": "787,-2409",
@@ -52211,19 +52487,21 @@
     "content": "跟随此处【瀑布上】的仙灵出现【普通宝箱】\n内有【2原石、1草之印】\n",
     "hiddenFlag": 0,
     "id": 26612,
+    "isRelated": 0,
     "itemList": [
-      {
-        "count": 1,
-        "iconTag": "普通宝箱",
-        "itemId": 1241
-      },
       {
         "count": 1,
         "iconTag": "指引仙灵",
         "itemId": 1248
+      },
+      {
+        "count": 1,
+        "iconTag": "普通宝箱",
+        "itemId": 1241
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1663924967852.jpg",
     "pictureCreatorId": 7,
@@ -52290,6 +52568,7 @@
     "content": "在此处【地下 纳迦洞中】完成限时挑战【60秒内击败敌人】出现的【普通宝箱】\n内有【2原石、1草之印】 \n\n注：需进行世界任务【正法炬书】终章 时，随任务进度开启。\n需要完成【无忧节】后，现实中【第2日】刷新",
     "hiddenFlag": 0,
     "id": 26615,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -52303,6 +52582,7 @@
       }
     ],
     "markerCreatorId": 50,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "宝箱",
     "picture": "https://yuanshen.site/comment_png/1662374996439.jpg",
     "pictureCreatorId": 50,
@@ -52437,46 +52717,6 @@
     "videoPath": ""
   },
   {
-    "content": "此为其【2】\n完成此处限时挑战开启【奇馈宝箱】获得【羊皮卷】\n\n【羊皮卷】根据获得顺序，获得\n【1】【启封的羊皮卷】\n【2】【引路的羊皮卷】\n【3】【低语的羊皮卷】",
-    "hiddenFlag": 0,
-    "id": 26622,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "羊皮卷",
-        "itemId": 1380
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "羊皮卷",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "-2432.30559859589,952.9394067875655",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此为其【1】\n在此处完成【限时挑战】开启出现的【普通宝箱】获得【羊皮卷】\n\n【羊皮卷】根据获得顺序，获得\n【1】【启封的羊皮卷】\n【2】【引路的羊皮卷】\n【3】【低语的羊皮卷】",
-    "hiddenFlag": 0,
-    "id": 26623,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "羊皮卷",
-        "itemId": 1380
-      }
-    ],
-    "markerCreatorId": 7,
-    "markerTitle": "羊皮卷",
-    "picture": "",
-    "pictureCreatorId": 7,
-    "position": "-2811.954747380984,1164.5710812076913",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
     "content": "此处【地上 遗迹巨像下】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 26624,
@@ -52557,7 +52797,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个山洞洞口，位于卡萨扎莱宫，，此洞口简称扎莱洞\n注：需演奏【黯道的曲调】开启传送机关进入",
+    "content": "此处有一个山洞洞口，通往东侧地下\n\n注：需演奏【黯道的曲调】开启传送机关进入。\n\n位于卡萨扎莱宫，此洞口简称【扎莱洞】",
     "hiddenFlag": 0,
     "id": 26629,
     "itemList": [
@@ -52897,34 +53137,19 @@
         "count": 1,
         "iconTag": "点燃火把或火堆",
         "itemId": 1388
-      }
-    ],
-    "markerCreatorId": 50,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
-    "markerTitle": "宝箱",
-    "picture": "https://yuanshen.site/comment_png/1661763691996.jpg",
-    "pictureCreatorId": 50,
-    "position": "-2844.9000244188296,1105.0629536962333",
-    "refreshTime": 0,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此为其【4】\n获得【低语的羊皮卷】后，\n在此处【山洞中营地】按照【藏宝图路线】顺序\n先点燃【相当于获得藏宝图宝箱位置】的【3个】火盆，\n最后点燃【相当于终点位置】的火盆顺序出现的【华丽宝箱】\n内有【神秘的羊皮卷】",
-    "hiddenFlag": 0,
-    "id": 26662,
-    "itemList": [
+      },
       {
         "count": 1,
         "iconTag": "羊皮卷",
         "itemId": 1380
       }
     ],
-    "markerCreatorId": 7,
-    "markerTitle": "羊皮卷",
-    "picture": "https://yuanshen.site/comment_png/1661763723022.jpg",
-    "pictureCreatorId": 7,
-    "position": "-2845.2065286500824,1102.0436854140635",
+    "markerCreatorId": 50,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
+    "markerTitle": "宝箱",
+    "picture": "https://yuanshen.site/comment_png/1661763691996.jpg",
+    "pictureCreatorId": 50,
+    "position": "-2844.9000244188296,1105.0629536962333",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -53436,13 +53661,18 @@
     "itemList": [
       {
         "count": 1,
+        "iconTag": "挖掘宝箱",
+        "itemId": 1381
+      },
+      {
+        "count": 1,
         "iconTag": "精致宝箱",
         "itemId": 1242
       },
       {
         "count": 1,
         "iconTag": "挖掘宝箱",
-        "itemId": 1381
+        "itemId": 1448
       }
     ],
     "markerCreatorId": 7,
@@ -53602,9 +53832,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【无郁洞（A-B）较高处】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
+    "content": "此处【地下 无郁洞（A-B）较高处】有一个石堆\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 26696,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -53613,6 +53844,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664205127597.jpg",
     "pictureCreatorId": 7,
@@ -53660,6 +53892,11 @@
         "count": 1,
         "iconTag": "挖掘宝箱",
         "itemId": 1381
+      },
+      {
+        "count": 1,
+        "iconTag": "挖掘宝箱",
+        "itemId": 1448
       }
     ],
     "markerCreatorId": 7,
@@ -53709,7 +53946,7 @@
       },
       {
         "count": 1,
-        "iconTag": "元素方碑",
+        "iconTag": "元素方碑·风",
         "itemId": 1256
       }
     ],
@@ -53989,7 +54226,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处【地下山洞中，底部小屋内】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并与其对话后。\n可获得【摩拉×5000、墩墩桃×3】\n",
+    "content": "此处【纳真洞中 底部小屋内】有一位【迷茫的兰那罗】\n【使用草元素攻击】唤醒并与其对话后\n可获得【摩拉×5000、墩墩桃×3】\n",
     "hiddenFlag": 0,
     "id": 26713,
     "isRelated": 0,
@@ -54001,7 +54238,7 @@
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "兰那罗",
     "picture": "https://yuanshen.site/comment_png/1662474570642.jpg",
     "pictureCreatorId": 7,
@@ -54116,6 +54353,7 @@
     "content": "在此处【调查】获得一个【遗落的能量块】",
     "hiddenFlag": 0,
     "id": 26720,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -54124,6 +54362,7 @@
       }
     ],
     "markerCreatorId": 90,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "遗落的能量块",
     "picture": "",
     "pictureCreatorId": 90,
@@ -54233,9 +54472,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处【茶茶洞(A-B）中】有一个【散失的草神瞳】",
+    "content": "此处【茶荼洞(A-B）中】有一个【散失的草神瞳】",
     "hiddenFlag": 0,
     "id": 26726,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -54244,6 +54484,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "散失的草神瞳",
     "picture": "https://yuanshen.site/comment_png/1663932152904.jpg",
     "pictureCreatorId": 7,
@@ -54742,11 +54983,11 @@
         "itemId": 1265
       }
     ],
-    "markerCreatorId": 30,
+    "markerCreatorId": 119,
     "markerTitle": "桓摩洞(B)",
     "picture": "https://yuanshen.site/comment_png/1673506424308.jpg",
     "pictureCreatorId": 119,
-    "position": "-2754,1169",
+    "position": "-2751.998774510724,1178.2191822051955",
     "refreshTime": 0,
     "version": 1,
     "videoPath": ""
@@ -54764,8 +55005,8 @@
     ],
     "markerCreatorId": 7,
     "markerTitle": "利遮洞(C)",
-    "picture": "",
-    "pictureCreatorId": 7,
+    "picture": "https://yuanshen.site/comment_png/1682787461484.jpg",
+    "pictureCreatorId": 119,
     "position": "-2732.0042958257536,1132.0012803317813",
     "refreshTime": 0,
     "version": 1,
@@ -54792,7 +55033,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个山洞洞口，进【行料理是自然的风味】与兰茶茶一起行动，此洞口简称茶茶洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
+    "content": "此处有一个山洞洞口，进行【料理是自然的风味】与兰茶荼一起行动，此洞口简称茶荼洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」 】任务的基础。",
     "hiddenFlag": 0,
     "id": 26754,
     "itemList": [
@@ -54803,7 +55044,7 @@
       }
     ],
     "markerCreatorId": 30,
-    "markerTitle": "茶茶洞(B)",
+    "markerTitle": "茶荼洞(B)",
     "picture": "",
     "pictureCreatorId": 30,
     "position": "-3823.5,-177.5",
@@ -54812,7 +55053,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有一个山洞洞口，进【行料理是自然的风味】与兰茶茶一起行动，此洞口简称茶茶洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」\n】任务的基础。",
+    "content": "此处有一个山洞洞口，进行【料理是自然的风味】与兰茶荼一起行动，此洞口简称茶荼洞。此洞也是【失梦的苗圃-为了「果实」、「种子」，还有「树」】任务的基础。",
     "hiddenFlag": 0,
     "id": 26755,
     "itemList": [
@@ -54823,7 +55064,7 @@
       }
     ],
     "markerCreatorId": 30,
-    "markerTitle": "茶茶洞(A)",
+    "markerTitle": "茶荼洞(A)",
     "picture": "",
     "pictureCreatorId": 30,
     "position": "-3909,-138",
@@ -54937,14 +55178,16 @@
     "content": "【晴雨自性】\n\n完成世界任务【「水天供书」膏腴土地下的唤雨之曲】后，在【地下】演奏【新芽的曲调】获得并【携带草种子重击「缚缡耶」】解锁屏障后可解锁。\n\n首次通过奖励【冒险阅历+500、原石×40、摩拉×40000、草之印×5、裁断的翎羽（4星）×1、「巧思」的指引×2、大英雄的经验×3、精锻用魔矿×5】\n\n内有【普通宝箱×1】、【珍贵宝箱×1】\n\n【普通宝箱】内有【2原石、1草之印】\n【珍贵宝箱】内有【10原石、3草之印】",
     "hiddenFlag": 0,
     "id": 26770,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
         "iconTag": "副本",
-        "itemId": 1284
+        "itemId": 1276
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "晴雨的经纬",
     "picture": "",
     "pictureCreatorId": 7,
@@ -54961,7 +55204,7 @@
       {
         "count": 1,
         "iconTag": "副本",
-        "itemId": 1284
+        "itemId": 1276
       }
     ],
     "markerCreatorId": 7,
@@ -54982,11 +55225,11 @@
       {
         "count": 1,
         "iconTag": "副本",
-        "itemId": 1284
+        "itemId": 1276
       }
     ],
     "markerCreatorId": 7,
-    "markerExtraContent": "{\"sumeru_underground\": true}",
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "童梦的切片",
     "picture": "",
     "pictureCreatorId": 7,
@@ -55043,7 +55286,7 @@
       {
         "count": 1,
         "iconTag": "副本",
-        "itemId": 1284
+        "itemId": 1276
       }
     ],
     "markerCreatorId": 7,
@@ -55202,12 +55445,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1311
+        "iconTag": "丘丘王",
+        "itemId": 2080
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘王",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4286.13121491939,1856.4560635522075",
@@ -55222,12 +55465,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "大型丘丘人",
-        "itemId": 1311
+        "iconTag": "丘丘王",
+        "itemId": 2080
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "大型丘丘人",
+    "markerTitle": "丘丘王",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-4279.879994514346,1870.211096187807",
@@ -55656,7 +55899,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "6369.045106170412,2497.2934636710925",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -55681,7 +55924,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "6413.720499752379,2471.534038917149",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -55706,7 +55949,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "6419.221573708817,2473.2846794344077",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -55756,7 +55999,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-575.4693434253054,-1204.0422817712279",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -55781,7 +56024,7 @@
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-545.9635831134997,-1233.052896057221",
-    "refreshTime": 0,
+    "refreshTime": 43200000,
     "version": 1,
     "videoPath": ""
   },
@@ -55892,12 +56135,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 1309
+        "iconTag": "遗迹重机",
+        "itemId": 2081
       }
     ],
     "markerCreatorId": 7,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹重机",
     "picture": "",
     "pictureCreatorId": 7,
     "position": "-2967.1931749373543,1047.6378725515433",
@@ -55912,21 +56155,21 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 1309
+        "iconTag": "遗迹重机",
+        "itemId": 2081
       }
     ],
-    "markerCreatorId": 49,
-    "markerTitle": "遗迹构装体",
+    "markerCreatorId": 122,
+    "markerTitle": "遗迹重机",
     "picture": "",
     "pictureCreatorId": 49,
-    "position": "-4776.5,-433",
+    "position": "-4779.75,-491.25",
     "refreshTime": -1,
     "version": 1,
     "videoPath": ""
   },
   {
-    "content": "此处有一个【遗迹猎者】",
+    "content": "此处有【1个】【遗迹猎者】",
     "hiddenFlag": 0,
     "id": 26822,
     "itemList": [
@@ -56291,7 +56534,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【3个】【有翼草本蕈兽】",
+    "content": "此处有【3个】【有翼草本真蕈】",
     "hiddenFlag": 0,
     "id": 26842,
     "itemList": [
@@ -56351,7 +56594,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【2个】【浮游草蕈兽】",
+    "content": "此处有【2个】【浮游草蕈兽】\n\n注：若已完成「智慧主之章·第二幕」传说任务，则此蕈兽永久消失。",
     "hiddenFlag": 0,
     "id": 26845,
     "itemList": [
@@ -56971,7 +57214,7 @@
     "videoPath": ""
   },
   {
-    "content": "先遣队",
+    "content": "先遣队冰胖",
     "hiddenFlag": 0,
     "id": 26879,
     "itemList": [
@@ -57211,9 +57454,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处地下有【1个】【雷蕈兽】",
+    "content": "此处【地下】有【1个】【旋转雷蕈兽】",
     "hiddenFlag": 0,
     "id": 26893,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -57222,6 +57466,7 @@
       }
     ],
     "markerCreatorId": 58,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 58,
@@ -57291,9 +57536,10 @@
     "videoPath": ""
   },
   {
-    "content": "此处地下有【1个】【旋转雷蕈兽】",
+    "content": "此处【地下】有【1个】【旋转雷蕈兽】",
     "hiddenFlag": 0,
     "id": 26897,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -57302,6 +57548,7 @@
       }
     ],
     "markerCreatorId": 11,
+    "markerExtraContent": "{\"sumeru_underground\": true}",
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 11,
@@ -57551,7 +57798,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【3个】【浮游水蕈兽】",
+    "content": "此处有【1个】【浮游水蕈兽】",
     "hiddenFlag": 0,
     "id": 26911,
     "itemList": [
@@ -57565,7 +57812,7 @@
     "markerTitle": "蕈兽",
     "picture": "",
     "pictureCreatorId": 28,
-    "position": "-2921.5821393748693,133.91659552968213",
+    "position": "-2938.3366152036615,139.16856280574393",
     "refreshTime": -1,
     "version": 1,
     "videoPath": ""
@@ -58179,6 +58426,7 @@
     "content": "此处有一个石堆\r\n调查后随机获得【10000/15000/20000摩拉】",
     "hiddenFlag": 0,
     "id": 26949,
+    "isRelated": 0,
     "itemList": [
       {
         "count": 1,
@@ -58187,6 +58435,7 @@
       }
     ],
     "markerCreatorId": 7,
+    "markerExtraContent": "{\"sumeru_underground\":true}",
     "markerTitle": "石堆",
     "picture": "https://yuanshen.site/comment_png/1664208243002.jpg",
     "pictureCreatorId": 7,
@@ -58648,8 +58897,8 @@
     ],
     "markerCreatorId": 58,
     "markerTitle": "大型丘丘人",
-    "picture": "",
-    "pictureCreatorId": 58,
+    "picture": "https://yuanshen.site/comment_png/1676719660710.jpg",
+    "pictureCreatorId": 147,
     "position": "-4247.899993896484,-9.886374045850062",
     "refreshTime": -1,
     "version": 1,
@@ -58831,7 +59080,7 @@
     "picture": "",
     "pictureCreatorId": 64,
     "position": "-4405.97262150067,1625.3080276008977",
-    "refreshTime": -1,
+    "refreshTime": 0,
     "version": 1,
     "videoPath": ""
   },
@@ -58842,12 +59091,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 1309
+        "iconTag": "遗迹猎者",
+        "itemId": 2082
       }
     ],
     "markerCreatorId": 64,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹猎者",
     "picture": "",
     "pictureCreatorId": 64,
     "position": "-4413.749277326855,1594.5610707723245",
@@ -58856,12 +59105,12 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【6个】丘丘人",
+    "content": "此处有【2个】丘丘人",
     "hiddenFlag": 0,
     "id": 26986,
     "itemList": [
       {
-        "count": 1,
+        "count": 2,
         "iconTag": "丘丘人",
         "itemId": 1319
       }
@@ -58936,7 +59185,7 @@
     "videoPath": ""
   },
   {
-    "content": "此处有【6个】丘丘人",
+    "content": "此处有【1个】丘丘人",
     "hiddenFlag": 0,
     "id": 26990,
     "itemList": [
@@ -58946,11 +59195,11 @@
         "itemId": 1319
       }
     ],
-    "markerCreatorId": 69,
+    "markerCreatorId": 147,
     "markerTitle": "丘丘人",
-    "picture": "",
-    "pictureCreatorId": 69,
-    "position": "-2780,1042",
+    "picture": "https://yuanshen.site/comment_png/1676718791207.jpg",
+    "pictureCreatorId": 147,
+    "position": "-2816,1066.75",
     "refreshTime": -1,
     "version": 1,
     "videoPath": ""
@@ -58982,12 +59231,12 @@
     "itemList": [
       {
         "count": 1,
-        "iconTag": "遗迹人形",
-        "itemId": 1309
+        "iconTag": "遗迹猎者",
+        "itemId": 2082
       }
     ],
     "markerCreatorId": 64,
-    "markerTitle": "遗迹构装体",
+    "markerTitle": "遗迹猎者",
     "picture": "",
     "pictureCreatorId": 64,
     "position": "-4349.179482729118,1544.7297959122197",
@@ -59111,26 +59360,6 @@
     "picture": "",
     "pictureCreatorId": 56,
     "position": "-3429.5,-966.5",
-    "refreshTime": 172800000,
-    "version": 1,
-    "videoPath": ""
-  },
-  {
-    "content": "此处有一朵【月莲】",
-    "hiddenFlag": 0,
-    "id": 27000,
-    "itemList": [
-      {
-        "count": 1,
-        "iconTag": "月莲",
-        "itemId": 1292
-      }
-    ],
-    "markerCreatorId": 56,
-    "markerTitle": "月莲",
-    "picture": "",
-    "pictureCreatorId": 56,
-    "position": "-3560,-833.5",
     "refreshTime": 172800000,
     "version": 1,
     "videoPath": ""

@@ -14,6 +14,8 @@ from funclib.err_code_lib import ERR_PASS, ERR_STUCK, ERR_COLLECTOR_FLOW_TIMEOUT
 from source.ui.ui import ui_control
 import source.ui.page as UIPage
 from source.mission.mission_template import MissionExecutor, ERR_FAIL,ERR_PASS
+from source.funclib.err_code_lib import ERR_NONE
+
 SUCC_RATE_WEIGHTING = 6
 COLLECTION = 0
 ENEMY = 1
@@ -29,7 +31,7 @@ class MissionAutoCollector(MissionExecutor):
         if rate < 0.1:
             rate = 0.1
         ret = ((1/rate)*SUCC_RATE_WEIGHTING) * distance
-        logger.trace(f"ret: {ret} rate: {rate} distance:{distance} rate_weight: {(1/rate)*SUCC_RATE_WEIGHTING}")
+        # logger.trace(f"ret: {ret} rate: {rate} distance:{distance} rate_weight: {(1/rate)*SUCC_RATE_WEIGHTING}")
         return ret
     
     def __init__(self):
@@ -146,14 +148,23 @@ class MissionAutoCollector(MissionExecutor):
             if r == ERR_FAIL:
                 self._add_logs("MOVE FAIL")
                 self._set_collected_id()
+                if not self._add_collection_i():
+                    break
                 continue
             
             r = self.collect(MODE="AUTO", collector_type=self.collector_type, is_combat = (self.collector_type==ENEMY), is_activate_pickup=True)
             if r == ERR_FAIL:
-                self._add_logs("COLLECT FAIL")
+                err_info = self.CFCF.flow_connector.puo.get_last_err_code()
+                self._add_logs(f"COLLECT FAIL: {err_info}")
                 self._set_collected_id()
+                if not self._add_collection_i():
+                    break
                 continue
-            self._add_logs("SUCCESS")
+            err_info = self.CFCF.flow_connector.puo.get_last_err_code()
+            if err_info != ERR_NONE:
+                self._add_logs("SUCCESS")
+            else:
+                self._add_logs(f"COLLECT FAIL: {err_info}")
 
             if not self._add_collection_i():
                 break

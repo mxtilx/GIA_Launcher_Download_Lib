@@ -212,6 +212,8 @@ config/mission_groups/*.json
 !config/mission_groups/AutoCollectorMission.json
 !config/mission_groups/SakuraBloomMissionGroup.json
 !config/mission_groups/Default.json
+!config/mission_groups/SweatFlowerMissionGroup.json
+!config/mission_groups/VioletgrassMissionGroup.json
 
 # test file
 source/test/test242.py
@@ -222,14 +224,7 @@ testt.py
 config/commission/commission_dict.json
 
 # gettext-markdown
-doc/base/*.pygettext
-doc/base/dev/*.pygettext
-doc/base/dev/abandoned/*.pygettext
-doc/en_US_old
-doc/markdown_i18n/locale/en_US/LC_MESSAGES/en_US.pot
-doc/markdown_i18n/locale/zh_CN/LC_MESSAGES/zh_CN.pot
 
-doc/markdown_i18n/locale/en_US/LC_MESSAGES/en_US.mo
-doc/markdown_i18n/locale/zh_CN/LC_MESSAGES/zh_CN.mo
 translation/locale/en_US/LC_MESSAGES/en_US.mo
 translation/locale/zh_CN/LC_MESSAGES/zh_CN.mo
+.history/*

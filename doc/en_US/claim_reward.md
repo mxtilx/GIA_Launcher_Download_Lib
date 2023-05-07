@@ -1,9 +1,12 @@
-# 领取日常奖励
-可以领取探索派遣、每日委托的奖励。
+# Cliam Daily Reward
 
-## 领取探索派遣
-在原先的探索点位上更换角色。
+You can recieve the rewards of expedition and daily commission.
 
-## 启动
-Task List启动。
+## Expedition
+
+Reset character at the original point.
+
+## Startup
+
+Starup from TaskList.
 

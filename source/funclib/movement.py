@@ -5,6 +5,7 @@ from source.funclib import generic_lib
 from source.map.map import genshin_map
 from source.manager import asset
 from source.common.timer_module import Timer
+from source.assets.movement import *
 
 itt = itt
 AHEAD = 0
@@ -53,6 +54,36 @@ def jump_in_loop(jump_dt:float=2):
     if jump_timer2.get_diff_time() >= 0.3 and jump_timer2.get_diff_time()<=2: # double jump
         itt.key_press('spacebar')
         jump_timer2.start_time -= 2
+
+class JumpInLoop():
+    def __init__(self, jump_dt:float=2) -> None:
+        self.jump_dt = jump_dt
+        self.jump_timer1 = Timer()
+        self.jump_timer2 = Timer()
+        self.jump_times = 0
+        self.jump_timer3 = Timer()
+    
+    def jump_in_loop(self, skip_first = True, jump_dt = None):
+        if jump_dt != None:
+            self.jump_dt = jump_dt
+        if skip_first:
+            if self.jump_timer3.get_diff_time() >= 2: # first
+                self.jump_times += 1
+                self.jump_timer3.reset()
+                return
+            elif self.jump_times >= 2: # 2 first
+                self.jump_times = 0
+                self.jump_timer3.reset()
+            else:
+                self.jump_times = 0
+                self.jump_timer3.reset()
+        if self.jump_timer1.get_diff_time() >= self.jump_dt:
+            self.jump_timer1.reset()
+            self.jump_timer2.reset()
+            itt.key_press('spacebar')
+        if self.jump_timer2.get_diff_time() >= 0.3 and self.jump_timer2.get_diff_time()<=2: # double jump
+            itt.key_press('spacebar')
+            self.jump_timer2.start_time -= 2
 
 def angle2movex(angle):
     cvn = maxmin(angle*10,500,-500) # 10: magic num, test from test246.py
@@ -214,14 +245,37 @@ def f():
     return False
     
 def get_current_motion_state() -> str:
-    if itt.get_img_existence(asset.IconGeneralMotionClimbing):
+    def preprocessing(img):
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        lower_white = np.array([0, 0, 200])
+        upper_white = np.array([180, 60, 255])
+        mask = cv2.inRange(hsv, lower_white, upper_white)
+        return mask
+    cap = itt.capture()
+    cap = preprocessing(cap)
+    img1 = crop(cap.copy(), IconMovementClimb.cap_posi)
+    r1 = itt.similar_img(img1, IconMovementClimbing.image[:,:,0])
+    img1 = crop(cap.copy(), IconMovementSwim.cap_posi)
+    r2 = itt.similar_img(img1, IconMovementSwimming.image[:,:,0])
+    img1 = crop(cap.copy(), IconMovementFly.cap_posi)
+    r3 = itt.similar_img(img1, IconMovementFlying.image[:,:,0])
+    if max(r1,r2,r3)>0.8:
+        logger.trace(f"get_current_motion_state: climb{round(r1,2)} swim{round(r2,2)} fly{round(r3,2)}")
+    if r1 > 0.85:
         return CLIMBING
-    elif itt.get_img_existence(asset.IconGeneralMotionFlying):
-        return FLYING
-    elif itt.get_img_existence(asset.IconGeneralMotionSwimming):
+    if r2 > 0.85:
         return SWIMMING
-    else:
-        return WALKING
+    if r3 > 0.8:
+        return FLYING
+    return WALKING
+    # if itt.get_img_existence(asset.IconGeneralMotionClimbing):
+    #     return CLIMBING
+    # elif itt.get_img_existence(asset.IconGeneralMotionFlying):
+    #     return FLYING
+    # elif itt.get_img_existence(asset.IconGeneralMotionSwimming):
+    #     return SWIMMING
+    # else:
+    #     return WALKING
 
 def move_to_posi_LoopMode(target_posi, stop_func, threshold = 6):
     """移动到指定坐标。适合用于while循环的模式。
@@ -242,10 +296,11 @@ def move_to_posi_LoopMode(target_posi, stop_func, threshold = 6):
 # view_to_angle(-90)
 if __name__ == '__main__':
     while 1:
-        time.sleep(0.05)
-        cap = itt.capture(jpgmode=0)
-        ban_posi=asset.IconCommissionCommissionIcon.cap_posi
-        cap[ban_posi[1]:ban_posi[3],ban_posi[0]:ban_posi[2]]=0
-        print(view_to_imgicon(cap, asset.IconCommissionInCommission))
-    # cview(-90, VERTICALLY)
-    move_to_position([71, -2205])
+        time.sleep(0.1)
+        print(get_current_motion_state())
+    #     cap = itt.capture(jpgmode=0)
+    #     ban_posi=asset.IconCommissionCommissionIcon.cap_posi
+    #     cap[ban_posi[1]:ban_posi[3],ban_posi[0]:ban_posi[2]]=0
+    #     print(view_to_imgicon(cap, asset.IconCommissionInCommission))
+    # # cview(-90, VERTICALLY)
+    # move_to_position([71, -2205])
