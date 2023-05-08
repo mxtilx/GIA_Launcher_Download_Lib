@@ -65,6 +65,9 @@
   "AreaDomainSwitchChallenge": {
     "common": "assets\\imgs\\Windows\\Domain\\common\\AreaDomainSwitchChallenge.jpg"
   },
+  "AreaGeneralInteractiveItemInformation": {
+    "common": "assets\\imgs\\Windows\\General\\common\\AreaGeneralInteractiveItemInformation.jpg"
+  },
   "AreaTalkSelects": {
     "common": "assets\\imgs\\Windows\\Talk\\common\\AreaTalkSelects.jpg"
   },
@@ -176,7 +179,8 @@
     "common": "assets\\imgs\\Windows\\Expedition\\common\\IconClaimRewardExpedition.jpg"
   },
   "IconCombatCharacterDied": {
-    "common": "assets\\imgs\\Windows\\Combat\\common\\IconCombatCharacterDied.jpg"
+    "en_US": "assets\\imgs\\Windows\\Combat\\en_US\\IconCombatCharacterDied.jpg",
+    "zh_CN": "assets\\imgs\\Windows\\Combat\\zh_CN\\IconCombatCharacterDied.jpg"
   },
   "IconCombatChooseTeam": {
     "common": "assets\\imgs\\Windows\\Combat\\common\\IconCombatChooseTeam.jpg"
@@ -214,6 +218,9 @@
   "IconGeneralMotionSwimming": {
     "common": "assets\\imgs\\Windows\\General\\common\\IconGeneralMotionSwimming.jpg"
   },
+  "IconGeneralTalkBubble": {
+    "common": "assets\\imgs\\Windows\\General\\common\\IconGeneralTalkBubble.jpg"
+  },
   "IconLeyLindOutcropBlossomOfRevelation": {
     "common": "assets\\imgs\\Windows\\LeyLineOutcrop\\common\\IconLeyLindOutcropBlossomOfRevelation.jpg"
   },
@@ -222,6 +229,24 @@
   },
   "IconLeyLineOutcropReward": {
     "common": "assets\\imgs\\Windows\\LeyLineOutcrop\\common\\IconLeyLineOutcropReward.jpg"
+  },
+  "IconMovementClimb": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementClimb.jpg"
+  },
+  "IconMovementClimbing": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementClimbing.jpg"
+  },
+  "IconMovementFly": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementFly.jpg"
+  },
+  "IconMovementFlying": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementFlying.jpg"
+  },
+  "IconMovementSwim": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementSwim.jpg"
+  },
+  "IconMovementSwimming": {
+    "common": "assets\\imgs\\Windows\\Movement\\common\\IconMovementSwimming.jpg"
   },
   "IconUIBag": {
     "common": "assets\\imgs\\Windows\\UI\\common\\IconUIBag.jpg"
