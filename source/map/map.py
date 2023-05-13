@@ -1,17 +1,14 @@
-from cached_property import cached_property
-
 from source.common import timer_module
 from source.ui.ui import ui_control
 import source.ui.page as UIPage
 from source.interaction.interaction_core import itt
-from source.manager import asset, scene_manager
+from source.manager import asset
 from source.map.data.teleporter import DICT_TELEPORTER
 from source.map.detection.bigmap import BigMap
 from source.map.detection.minimap import MiniMap
 from source.map.extractor.convert import MapConverter
 from source.map.position.position import *
 from source.util import *
-from source.common.timer_module import AdvanceTimer
 import threading
 
 REGION_TEYVAT = [
@@ -57,6 +54,11 @@ class Map(MiniMap, BigMap, MapConverter):
         # self.lock.release()
 
     def get_and_verify_position(self):
+        """Not in use
+
+        Returns:
+            None
+        """
         # print(self.check_bigmap_timer.get_diff_time())
         curr_posi = self.get_position()
         if self.check_bigmap_timer.get_diff_time()<5:
@@ -114,6 +116,28 @@ class Map(MiniMap, BigMap, MapConverter):
             ui_control.ui_goto(UIPage.page_main)
             self.small_map_init_flag = True
 
+    def get_smallmap_from_teleporter(self, area=None):
+        if area == None:
+            area = ['Inazuma',"Liyue","Mondstadt"]
+        rlist = []
+        rd = []
+        for md in range(10,22):
+            for i in DICT_TELEPORTER:
+                tper = DICT_TELEPORTER[i]
+                if not tper.region in area:
+                    continue
+                self.init_position(tper.position)
+                self.get_position()
+                d = euclidean_distance(self.get_position(), self.convert_GIMAP_to_cvAutoTrack(tper.position))
+                if d<=md:
+                    rlist.append(tper)
+                    rd.append(d)
+                    logger.info(f"id {len(rlist)-1} position {tper.position} {tper.name} {tper.region}, d={d}")
+        
+        return rlist, rd         
+        # self.init_position(tuple(list(map(int,max_position))))
+        # logger.info(f"init_smallmap_from_teleporter:{max_n} {max_position} {max_tper.name}")
+
     def while_until_no_excessive_error(self) -> None:
         self.reinit_smallmap()
 
@@ -160,7 +184,7 @@ class Map(MiniMap, BigMap, MapConverter):
         return GIMAPPosition(self.bigmap)
 
 
-    def _move_bigmap(self, target_posi, float_posi=0, force_center = False) -> list:
+    def _move_bigmap(self, target_posi, float_posi=0, force_center = False, csf=lambda:False) -> list:
         """move bigmap center to target position
 
         Args:
@@ -186,6 +210,9 @@ class Map(MiniMap, BigMap, MapConverter):
             screen_center_x = 1024 / 2
             screen_center_y = 768 / 2
 
+        if csf():
+            return
+        
         itt.move_to(screen_center_x + float_posi, screen_center_y + float_posi)  # screen center
 
         itt.left_down()
@@ -279,13 +306,17 @@ class Map(MiniMap, BigMap, MapConverter):
             itt.appear_then_click(asset.ButtonBigmapCloseMarkTableInTP)
         itt.delay('animation')
 
-    def bigmap_tp(self, posi: list, tp_mode=0, tp_type: list = None) -> TianLiPosition:
-        """
+    def bigmap_tp(self, posi: list, tp_mode=0, tp_type: list = None, csf=lambda:False) -> TianLiPosition:
+        """传送到指定坐标。
 
-        传送到指定坐标。
-        模式: 
-        0: 自动选择最近的可传送目标传送
-        
+        Args:
+            posi (list): _description_
+            tp_mode (int, optional): 0: 自动选择最近的可传送目标传送. Defaults to 0.
+            tp_type (list, optional): _description_. Defaults to None.
+            csf (_type_, optional): checkup stop func. Defaults to lambda:False.
+
+        Returns:
+            TianLiPosition: _description_
         """
         if tp_type == None:
             tp_type = ["Teleporter", "Statue", "Domain"]
@@ -300,7 +331,7 @@ class Map(MiniMap, BigMap, MapConverter):
 
         self._switch_to_area(tp_region)
 
-        click_posi = self._move_bigmap(tp_posi)
+        click_posi = self._move_bigmap(tp_posi, csf=csf)
 
         if tp_type == "Domain": # 部分domain有特殊名字
             logger.debug("tp to Domain")
