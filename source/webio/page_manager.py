@@ -1,41 +1,11 @@
 import subprocess
 
-from pywebio import output, session, pin
+
 from source.util import *
+from source.webio.page import Page
 
-class Page:
-    def __init__(self):
-        self.loaded = False
-        self.main_scope = 'Main'
 
-    def load(self):
-        if not self.loaded:
-            self.loaded = True
-            output.put_scope(self.main_scope)  # 创建主scope
-            self._on_load()
 
-    def unload(self):
-        if self.loaded:
-            self.loaded = False
-            self._on_unload()
-            output.remove(self.main_scope)
-
-    def _on_load(self):
-        pin.pin['isSessionExist'] = "1"
-
-    def _on_unload(self):
-        pass
-
-    def _value_list2buttons_type(self, l1):
-        replace_dict = {
-            "MainPage": t2t("Main"),
-            "SettingPage": t2t("Setting"),
-            "CombatSettingPage": t2t("CombatSetting"),
-            "CollectorSettingPage": t2t("CollectorSetting")
-        }
-        for i in range(len(l1)):
-            l1[i] = (replace_dict[l1[i]], l1[i])
-        return l1
 
 class PageManager:
     def __init__(self):

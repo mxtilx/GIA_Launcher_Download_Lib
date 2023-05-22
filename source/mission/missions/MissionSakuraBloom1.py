@@ -1,9 +1,14 @@
 from source.mission.mission_template import MissionExecutor, ERR_PASS, ERR_FAIL
 from source.interaction.interaction_core import itt
+META={
+    'name':{
+        'zh_CN':'采集绯樱绣球1',
+        'en_US':'Collect Sakura Bloom 1'
+    }
+}
 
 
-
-class MissionSakuraBloom1(MissionExecutor):
+class MissionMain(MissionExecutor):
     """13 SakuraBloom
 
     Args:
@@ -78,6 +83,6 @@ class MissionSakuraBloom1(MissionExecutor):
         # self.collect(MODE="AUTO",pickup_points=[[71, -2205],[65,-2230]])
         
 if __name__ == '__main__':
-    mission = MissionSakuraBloom1()
+    mission = MissionMain()
     mission.start()
     mission.continue_threading()

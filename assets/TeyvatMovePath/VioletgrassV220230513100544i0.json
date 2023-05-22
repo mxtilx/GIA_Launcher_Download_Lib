@@ -2,6 +2,7 @@
   "additional_info": {
     "pickup_points": []
   },
+  "adsorptive_position": [],
   "break_position": [
     [
       1419.135,
@@ -235,7 +236,6 @@
       1352.397299999999,
       -3970.5096
     ]
-    
   ],
   "end_position": [
     1133.5181000000005,

@@ -1,19 +1,23 @@
 from source.util import *
 from source.flow import collector_flow_upgrad, teyvat_move_flow_upgrad
 from source.common.base_threading import BaseThreading
-from source.operator.pickup_operator import PickupOperator
+from source.pickup.pickup_operator import PickupOperator
 from source.interaction.minimap_tracker import tracker
 from source.funclib import combat_lib, generic_lib, movement
 from source.interaction.interaction_core import itt
-from source.funclib.err_code_lib import ERR_PASS
+from source.funclib.err_code_lib import ERR_PASS, ERR_STUCK
 from source.common.timer_module import AdvanceTimer
 from source.controller.combat_controller import CombatController
 from source.map.map import genshin_map
 from source.exceptions.mission import *
 
+class MissionError(Exception):pass
 
 ERR_FAIL = "FAIL"
 
+EXCEPTION_RECOVER = 'recover'
+EXCEPTION_SKIP = 'skip'
+EXCEPTION_RAISE = 'raise'
 
 class MissionExecutor(BaseThreading):
     def __init__(self, is_CFCF=False, is_TMCF=False, is_PUO=False, is_CCT=False):
@@ -42,6 +46,7 @@ class MissionExecutor(BaseThreading):
         self.default_precise_arrive = False
         self.fight_if_needed = False
         self.raise_exception_flag = False
+        self.handle_exception_mode = EXCEPTION_RECOVER
         self.itt = itt
 
     def _init_sub_threading(self, feat_name=""):
@@ -70,9 +75,7 @@ class MissionExecutor(BaseThreading):
                 self.CCT_initialized = True
                 self.CCT.start()
         logger.info(f"{self.name} {feat_name} has been initialized and started.")
-        
-        
-        
+
     def refresh_picked_list(self):
         self.picked_list = []
     
@@ -93,27 +96,35 @@ class MissionExecutor(BaseThreading):
             self._detect_exception()
         return self.exception_flag    
     
-    def _handle_exception(self):
+    def _recover(self):
+        tracker.reinit_smallmap()
+        curr_posi = list(tracker.get_position())
+        target_posi = list(tracker.bigmap_tp(posi=curr_posi, tp_type=["Statue"], csf=self.checkup_stop_func).tianli)
+        self.TMCF.reset()
+        self.TMCF.set_parameter(MODE="AUTO",stop_rule=1,target_posi=target_posi,is_tp=False)
+        self.TMCF.start_flow()
+        while 1:
+            time.sleep(0.2)
+            if self.TMCF.get_working_statement() == False:
+                break
+        itt.delay(5,comment="Waiting for revival")
+    
+    def _handle_exception(self, mess=''):
         if self.checkup_stop_func():raise MissionEnd
         if self.exception_flag:
-            logger.info(f"Handling exception: recover")
-            # 跑到七天神像去回血
-            tracker.reinit_smallmap()
-            curr_posi = list(tracker.get_position())
-            target_posi = list(tracker.bigmap_tp(posi=curr_posi, tp_type=["Statue"], csf=self.checkup_stop_func).tianli)
-            self.TMCF.reset()
-            self.TMCF.set_parameter(MODE="AUTO",stop_rule=1,target_posi=target_posi,is_tp=False)
-            self.TMCF.start_flow()
-            while 1:
-                time.sleep(0.2)
-                if self.TMCF.get_working_statement() == False:
-                    break
-            itt.delay(5,comment="Waiting for revival")
-            self.exception_flag = False
-            logger.info(f"End of handling exception")
-            if self.raise_exception_flag:
-                raise HandleExceptionInMission
-            return ERR_FAIL
+            if self.handle_exception_mode == EXCEPTION_RECOVER:
+                logger.info(f"Handling exception: recover")
+                # 跑到七天神像去回血
+                self._recover()
+                self.exception_flag = False
+                logger.info(f"End of handling exception")
+                if self.raise_exception_flag:
+                    raise HandleExceptionInMission
+                return ERR_FAIL
+            elif self.handle_exception_mode == EXCEPTION_SKIP:
+                return ERR_FAIL
+            elif self.handle_exception_mode == EXCEPTION_RAISE:
+                raise MissionError(mess)
         else:
             return ERR_PASS
     
@@ -141,9 +152,14 @@ class MissionExecutor(BaseThreading):
              stop_offset:int = None):
         self._init_sub_threading("TMCF")
         self._detect_fight_if_needed()
+        puo_start_flag = False
+        if not self.PUO.pause_threading_flag:
+            logger.debug(f"in tmf, pause puo.")
+            puo_start_flag = True
+            self.PUO.pause_threading()
         
         self.TMCF.reset()
-        self.TMCF.set_parameter(MODE=MODE,stop_rule=stop_rule,target_posi=target_posi,path_dict=path_dict,to_next_posi_offset=to_next_posi_offset,special_keys_posi_offset=special_keys_posi_offset,reaction_to_enemy=reaction_to_enemy,is_tp=is_tp,is_reinit=is_reinit,is_precise_arrival=is_precise_arrival,stop_offset=stop_offset)
+        self.TMCF.set_parameter(MODE=MODE,stop_rule=stop_rule,target_posi=target_posi,path_dict=path_dict,to_next_posi_offset=to_next_posi_offset,special_keys_posi_offset=special_keys_posi_offset,reaction_to_enemy=reaction_to_enemy,is_tp=is_tp,is_reinit=is_reinit,is_precise_arrival=is_precise_arrival,stop_offset=stop_offset,is_auto_pickup=puo_start_flag)
         self.TMCF.start_flow()
         while 1:
             time.sleep(0.6)
@@ -154,6 +170,9 @@ class MissionExecutor(BaseThreading):
                 break
         if self.TMCF.get_and_reset_err_code() != ERR_PASS:
             self.exception_flag = True
+        
+        if puo_start_flag:
+            self.PUO.continue_threading()
         return self._handle_exception()
         
     def move_straight(self, position, is_tp = False, is_precise_arrival=None, stop_rule=None):
@@ -168,7 +187,10 @@ class MissionExecutor(BaseThreading):
         return r
         
     def move_along(self, path, is_tp = None, is_precise_arrival=None):
-        path_dict = self.get_path_file(path)
+        if isinstance(path,str):
+            path_dict = self.get_path_file(path)
+        elif isinstance(path,dict):
+            path_dict = path
         is_reinit = True
         
         if is_tp is None:
@@ -182,6 +204,7 @@ class MissionExecutor(BaseThreading):
         r = self.move(MODE="PATH", path_dict = path_dict, is_tp = is_tp, is_reinit=is_reinit, is_precise_arrival=is_precise_arrival)
         self.last_move_along_position = path_dict["end_position"]
         return r
+    
     def start_combat(self, mode="Normal"):
         self._init_sub_threading("CCT")
         self.CCT.mode=mode
@@ -251,8 +274,7 @@ class MissionExecutor(BaseThreading):
                 jil.jump_in_loop()
                     
         itt.key_up('w')
-        return False
-                
+        return False        
     
     def start_pickup(self):
         self._init_sub_threading("PUO")
@@ -281,6 +303,29 @@ class MissionExecutor(BaseThreading):
     
     def _reg_raise_exception(self, state=True):
         self.raise_exception_flag = state
+    
+    def _set_exception_mode(self, mode):
+        self.handle_exception_mode = mode
+    
+    def _tmf_handle_stuck_then_skip(self,k) -> bool:
+        if k == ERR_STUCK:
+            return True
+        return False
+    
+    def _tmf_handle_stuck_then_recover(self,k) -> bool:
+        if k == ERR_STUCK:
+            self._recover()
+            return True
+        return False
+    
+    def _tmf_handle_stuck_then_raise(self,k) -> bool:
+        if k == ERR_STUCK:
+            raise TeyvatMoveError('Move Stuck')
+            return True
+        return False
+    
+    def _col_handle_timeout_then_recover(self,k) -> bool:
+        pass
     
     def switch_character_to(self, name:str):
         r = combat_lib.get_characters_name()

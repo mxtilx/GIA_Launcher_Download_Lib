@@ -11,7 +11,7 @@ import time
 
 from source import listening, webio
 from source.webio import manager
-from source.webio.page_manager import Page
+from source.webio.advance_page import AdvancePage
 from source.funclib import collector_lib
 from source.common import timer_module
 from source.webio.update_notice import upd_message
@@ -22,7 +22,7 @@ from source.config.cvars import *
 # from source.webio.log_handler import webio_poster
 
 
-class MainPage(Page):
+class MainPage(AdvancePage):
     def __init__(self):
         super().__init__()
         self.log_list = []
@@ -37,10 +37,6 @@ class MainPage(Page):
 
     def _on_load(self):  # 加载事件
         super()._on_load()
-        self._load()  # 加载主页
-        t = threading.Thread(target=self._event_thread, daemon=False)  # 创建事件线程
-        session.register_thread(t)  # 注册线程
-        t.start()  # 启动线程
         pin.pin['FlowMode'] = listening.current_flow
 
     def _event_thread(self):
@@ -67,14 +63,14 @@ class MainPage(Page):
                 output.clear_scope("SCOPEMissionIntroduction")
                 if self.ui_mission_select is None:
                     continue
-                output.put_text(self._get_mission_groups_dict()["introduction"][GLOBAL_LANG],scope="SCOPEMissionIntroduction")
+                # output.put_text(self._get_mission_groups_dict()["introduction"][GLOBAL_LANG],scope="SCOPEMissionIntroduction")
             
             self.log_list_lock.acquire()
             for text, color in self.log_list:
                 if text == "$$end$$":
                     output.put_text("", scope='LogArea')
                 else:
-                    output.put_text(text, scope='LogArea', inline=True).style(f'color: {color}; font_size: 20px')
+                    output.put_text(text, scope='LogArea', inline=True).style(f'color: {color}; font_size: 20px') # ; background: aqua
             
             self.log_list.clear()
             self.log_list_lock.release()
@@ -101,16 +97,8 @@ class MainPage(Page):
     
     def _load(self):
         # 标题
-        output.put_markdown('# Main', scope=self.main_scope)
-
-        output.put_row([
-            # 页面切换按钮
-            
-            output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope),
-            # 获得链接按钮
-            output.put_button(label=t2t("Get IP address"), onclick=self.on_click_ip_address, scope=self.main_scope)
-
-        ], scope=self.main_scope)
+        # 获得链接按钮
+        output.put_button(label=t2t("Get IP address"), onclick=self.on_click_ip_address, scope=self.main_scope)
 
         task_options = [
                 {
@@ -142,28 +130,19 @@ class MainPage(Page):
             output.put_column([  # 左竖列
                 output.put_markdown('## '+t2t("Task List")),
                 output.put_markdown(t2t("Can only be activated from the button")),
-
-                
-                
                 pin.put_checkbox(name="task_list", options=task_options),
-
                 output.put_row([output.put_text(t2t('启动/停止Task')), None, output.put_scope('Button_StartStop')],size='40% 10px 60%'),
-                
                 output.put_markdown(t2t('## Statement')),
-
                 output.put_row([output.put_text(t2t('任务状态')), None, output.put_scope('StateArea')],size='40% 10px 60%'),
-
-                output.put_markdown(t2t('## Mission')),  # 左竖列标题
-
-                #Mission select
-                output.put_row([  
-                    output.put_text(t2t('Mission Group')),
-                    output.put_column([
-                        pin.put_select("MissionSelect",self._get_mission_groups_config()),
-                        output.put_scope("SCOPEMissionIntroduction")
-                        ])
-                ]),
-                
+                # output.put_markdown(t2t('## Mission')),  # 左竖列标题
+                # Mission select
+                # output.put_row([  # 5%
+                #     output.put_text(t2t('Mission Group')),
+                #     output.put_column([
+                #         pin.put_select("MissionSelect",self._get_mission_groups_config()),
+                #         output.put_scope("SCOPEMissionIntroduction")
+                #         ])
+                # ]),
                 output.put_markdown(t2t('## Function')),  # 左竖列标题
                 output.put_markdown(t2t("Can only be activated from the hotkey \'[\'")),
                 output.put_row([  # FlowMode
@@ -174,8 +153,7 @@ class MainPage(Page):
                         # {'label': t2t('AutoDomain'), 'value': listening.FLOW_DOMAIN},
                         # {'label': t2t('AutoCollector'), 'value': listening.FLOW_COLLECTOR}
                     ])])
-                
-            ]), None,
+            ], size='auto'), None,
             output.put_scope('Log')
 
         ], scope=self.main_scope, size='40% 10px 60%')
@@ -196,16 +174,16 @@ class MainPage(Page):
         if m!="":
             output.popup(t2t('更新提示'), m)
         
-    def _get_mission_groups_config(self):
-        jsons = load_json_from_folder(f"{CONFIG_PATH}\\mission_groups")
-        r = [i["label"] for i in jsons]
-        return r
+    # def _get_mission_groups_config(self):
+    #     jsons = load_json_from_folder(f"{CONFIG_PATH}\\mission_groups")
+    #     r = [i["label"] for i in jsons]
+    #     return r
 
-    def _get_mission_groups_dict(self):
-        jsonname = pin.pin["MissionSelect"]
-        if jsonname is None:
-            raise FileNotFoundError
-        return load_json(str(jsonname),default_path=f"{CONFIG_PATH}\\mission_groups")
+    # def _get_mission_groups_dict(self):
+    #     jsonname = pin.pin["MissionSelect"]
+    #     if jsonname is None:
+    #         raise FileNotFoundError
+    #     return load_json(str(jsonname),default_path=f"{CONFIG_PATH}\\mission_groups")
     
     def on_click_pickup(self):
         output.clear('Button_PickUp')
@@ -213,7 +191,6 @@ class MainPage(Page):
         output.put_button(label=str(listening.FEAT_PICKUP), onclick=self.on_click_pickup, scope='Button_PickUp')
     
     def on_click_startstop(self):
-        output.clear('Button_StartStop')
         # listening.MISSION_MANAGER.set_mission_list(list(pin.pin["MissionSelect"]))
         listening.TASK_MANAGER.set_tasklist(pin.pin["task_list"])
         listening.TASK_MANAGER.start_stop_tasklist()
@@ -224,6 +201,7 @@ class MainPage(Page):
             GIAconfig.update()
 
         time.sleep(0.2)
+        output.clear('Button_StartStop')
         output.put_button(label=str(listening.TASK_MANAGER.start_tasklist_flag), onclick=self.on_click_startstop,
                           scope='Button_StartStop')
 
@@ -239,11 +217,8 @@ class MainPage(Page):
             self.log_list.append((text, color))
             self.log_list_lock.release()
 
-    def _on_unload(self):
-        pass
 
-
-class ConfigPage(Page):
+class ConfigPage(AdvancePage):
     def __init__(self, config_file_name):
         super().__init__()
 
@@ -276,24 +251,11 @@ class ConfigPage(Page):
     def _load(self):
         self.last_file = None
 
-        # 标题
-        output.put_markdown(t2t('# Config'), scope=self.main_scope)
-
-        # 页面切换按钮
-        output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
-
         # 配置页
         output.put_markdown(t2t('## config:'), scope=self.main_scope)
 
         output.put_scope("select_scope", scope=self.main_scope)
         pin.put_select('file', self._config_file2lableAfile(self.config_files), scope="select_scope")
-
-    def _on_load(self):
-        super()._on_load()
-        self._load()  # 加载页面
-        t = threading.Thread(target=self._event_thread, daemon=False)
-        session.register_thread(t)  # 注册线程
-        t.start()
 
     def _config_file2lableAfile(self, l1):
         replace_dict = {
@@ -305,7 +267,7 @@ class ConfigPage(Page):
             "collection_blacklist.json": t2t("collection_blacklist.json"),
             "collection_log.json": t2t("collection_log.json"),
             "Collector.json": t2t("Collector.json"),
-            "LeyLineOutcrop": t2t("LeyLineOutcrop.json")
+            "LeyLineOutcrop.json": t2t("LeyLineOutcrop.json")
         }
         
         for i in range(len(l1)):
@@ -626,12 +588,6 @@ class SettingPage(ConfigPage):
     def _load(self):
         self.last_file = None
 
-        # 标题
-        output.put_markdown(t2t('# Setting'), scope=self.main_scope)
-
-        # 页面切换按钮
-        output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
-
         # 配置页
         output.put_markdown(t2t('## config:'), scope=self.main_scope)
         output.put_scope("select_scope", scope=self.main_scope)
@@ -696,12 +652,6 @@ class CombatSettingPage(ConfigPage):
     def _load(self):
         self.last_file = None
 
-        # 标题
-        output.put_markdown(t2t('# CombatSetting'), scope=self.main_scope)
-
-        # 页面切换按钮
-        output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
-
         # 添加team.json
         output.put_markdown(t2t('# Add team'), scope=self.main_scope)
 
@@ -750,12 +700,6 @@ class CollectorSettingPage(ConfigPage):
     
     def _load(self):
         self.last_file = None
-
-        # 标题
-        output.put_markdown('# ' + t2t('CollectorSetting'), scope=self.main_scope)
-
-        # 页面切换按钮
-        output.put_buttons(self._value_list2buttons_type(list(manager.page_dict)), onclick=webio.manager.load_page, scope=self.main_scope)
 
         # 配置页
         output.put_markdown(t2t('## config:'), scope=self.main_scope)
@@ -926,3 +870,7 @@ class CollectorSettingPage(ConfigPage):
                 output.put_text(f"{display_name} : {v}", scope=scope_name)
             else:
                 pin.put_input(component_name, label=display_name, value=v, scope=scope_name, type='number')
+
+
+
+    

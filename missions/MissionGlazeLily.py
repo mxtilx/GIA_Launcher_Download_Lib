@@ -1,6 +1,11 @@
 from source.mission.template.mission_just_collect import MissionJustCollectGroup
-
-class MissionGlazeLily(MissionJustCollectGroup):
+META={
+    'name':{
+        'zh_CN':'采集琉璃百合',
+        'en_US':'Collect Glaze Lily'
+    }
+}
+class MissionMain(MissionJustCollectGroup):
     def __init__(self):
         super().__init__(['GlazeLily20230513214207i0',
                           'GlazeLily20230513214422i0',
@@ -10,5 +15,5 @@ class MissionGlazeLily(MissionJustCollectGroup):
 
 if __name__ == '__main__':
     import time
-    MissionGlazeLily().start()
+    MissionMain().start()
     while 1:time.sleep(1)

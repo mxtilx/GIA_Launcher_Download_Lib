@@ -3,7 +3,7 @@ from source.common import timer_module, static_lib
 from source.funclib import generic_lib, movement
 from source.manager import scene_manager, asset
 from source.interaction.interaction_core import itt
-from source.controller import teyvat_move_controller
+from source.pickup.pickup_operator import PickupOperator
 from funclib.err_code_lib import ERR_PASS, ERR_STUCK
 from source.ui.ui import ui_control
 import source.ui.page as UIPage
@@ -40,6 +40,8 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.is_precise_arrival = False
         self.stop_offset = None
         self.is_tianli_navigation = True
+        self.is_auto_pickup = False
+        self.PUO = PickupOperator()
 
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -67,6 +69,7 @@ class TeyvatMoveFlowConnector(FlowConnector):
         self.is_precise_arrival = False
         self.stop_offset = None
         self.is_tianli_navigation = True
+        self.is_auto_pickup = False
         
         self.motion_state = IN_MOVE
         self.jump_timer = timer_module.Timer()
@@ -103,6 +106,8 @@ class TeyvatMoveCommon():
         self.jump_timer3 = timer_module.Timer()
         self.history_position = []
         self.history_position_timer = timer_module.AdvanceTimer(limit=1).start()
+        self.last_w_position = [0,0]
+        self.press_w_timer = timer_module.AdvanceTimer(limit=1).start()
 
     def switch_motion_state(self, jump=True):
         self.motion_state = movement.get_current_motion_state()
@@ -137,6 +142,12 @@ class TeyvatMoveCommon():
                 logger.warning(f"MOVE STUCK")
                 return True
         return False
+    
+    def auto_w(self, curr_posi):
+        if self.press_w_timer.reached_and_reset():
+            if list(self.last_w_position) == list(curr_posi):
+                logger.info(f"position duplication, press w")
+                itt.key_press('w')
 
 class Navigation(TianliNavigator):
     def __init__(self, start, end) -> None:
@@ -275,6 +286,8 @@ class TeyvatMove_Automatic(FlowTemplate, TeyvatMoveCommon, Navigation):
             itt.key_down('w')
             self.in_flag = True
         
+        self.auto_w(self.current_posi)
+        
         # if len(genshin_map.history_posi) >= 29:
         #     p1 = genshin_map.history_posi[0][1:]
         #     p2 = genshin_map.history_posi[-1][1:]
@@ -345,11 +358,20 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
         
         
         self.landing_timer = timer_module.Timer(2)
-        self.sprint_timer = timer_module.AdvanceTimer(5).reset()
-        self.in_pt = timer_module.Performance()
+        self.sprint_timer = timer_module.AdvanceTimer(2.5).reset()
+        self.in_pt = timer_module.Performance(output_cycle=25)
 
     
     def CalculateTheDistanceBetweenTheAngleExtensionLineAndTheTarget(self, curr,target):
+        """Not In Use
+
+        Args:
+            curr (_type_): _description_
+            target (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         θ = genshin_map.get_rotation()
         if θ<0:
             θ+=360
@@ -367,6 +389,11 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
         return D
     
     def _exec_special_key(self, special_key):
+        """Not In Use
+
+        Args:
+            special_key (_type_): _description_
+        """
         # key_name = special_key
         itt.key_press(special_key)
         logger.info(f"key {special_key} exec.")
@@ -382,6 +409,10 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
     def state_before(self):
         self.curr_path = self.upper.path_dict["position_list"]
         self.curr_breaks = self.upper.path_dict["break_position"]
+        if 'adsorptive_position' in self.upper.path_dict:
+            self.adsorptive_position = self.upper.path_dict["adsorptive_position"]
+        else:
+            self.adsorptive_position = []
         self.ready_to_end = False
         self.init_start = False
         self.curr_path_index = 0
@@ -456,6 +487,7 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
             else:
                 break
         
+        
         # 动作识别
         is_jump = False
         is_nearby = euclidean_distance(curr_posi, target_posi)<2
@@ -487,15 +519,37 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
                 else:
                     self.landing_timer.reset()
         
+        # 吸附模式: 当当前距离小于允许吸附距离，开始向目标吸附点移动
+        if len(self.adsorptive_position)>0:
+            adsorptive_threshold = 6
+            if self.motion_state == IN_MOVE:
+                if min(euclidean_distance_plist(curr_posi, self.adsorptive_position)) < adsorptive_threshold:
+                    for adsor_p in self.adsorptive_position:
+                        if euclidean_distance(adsor_p, curr_posi) < adsorptive_threshold:
+                            logger.info(f"adsorption: {adsor_p} start")
+                            for i in range(20):
+                                if movement.move_to_posi_LoopMode(adsor_p, self.upper.checkup_stop_func, threshold=1):break
+                                if self.upper.is_auto_pickup:
+                                    if self.upper.PUO.pickup_recognize():break
+                                time.sleep(0.2)
+                                if i%5==0:
+                                    logger.debug(f"adsorption: {i}")
+                            logger.info(f"adsorption: {adsor_p} end")        
+                            self.adsorptive_position.pop(self.adsorptive_position.index(adsor_p))
+                            break
         
+        # 自动拾取
+        if self.upper.is_auto_pickup:
+            while self.upper.PUO.pickup_recognize():pass
         
-        
-        if self.is_stuck(curr_posi, threshold=18):
+        # 检测移动是否卡住
+        if self.is_stuck(curr_posi, threshold=45):
             itt.key_press('spacebar')
         if self.is_stuck(curr_posi, threshold=60):
             self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
             self._set_rfc(FC.END)
         
+        # 冲
         if self.sprint_timer.reached():
             if euclidean_distance(curr_posi, target_posi)>=30:
                 if self.motion_state == IN_MOVE:
@@ -503,6 +557,10 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
                     itt.key_press('left_shift')
                     self.sprint_timer.reset()
         
+        # w
+        self.auto_w(curr_posi)
+        
+        # 是否准备结束
         if self.ready_to_end:
             self.end_times += 1
             logger.debug(f"ready to end: {self.end_times} {offset}")
@@ -510,9 +568,13 @@ class TeyvatMove_FollowPath(FlowTemplate, TeyvatMoveCommon):
             logger.warning(f"TMF PATH FAIL: CANNOT APPROACH TO END POSITION")
             self._set_nfid(ST.END_TEYVAT_MOVE_STUCK)
             self._set_rfc(FC.END)
+        
+        # 输出日志
         logger.debug(f"next break position distance: {euclidean_distance(target_posi, curr_posi)}")
         self.in_pt.output_log(mess='TMF Path Performance:')
         # delta_distance = self.CalculateTheDistanceBetweenTheAngleExtensionLineAndTheTarget(curr_posi,target_posi)
+        
+        # 移动视角
         delta_degree = abs(movement.calculate_delta_angle(genshin_map.get_rotation(),movement.calculate_posi2degree(target_posi)))
         if delta_degree >= 20:
             itt.key_up('w')
@@ -602,7 +664,25 @@ class TeyvatMoveFlowController(FlowController):
                       tp_type:list = None,
                       is_reinit:bool = None,
                       is_precise_arrival:bool = None,
-                      stop_offset = None):
+                      stop_offset = None,
+                      is_auto_pickup:bool = None):
+        """设置参数，如果不填则使用上次的设置。
+
+        Args:
+            MODE (str, optional): 选择移动模式。可选为“AUTO”自动移动或“PATH”沿路径移动. Defaults to None.\n
+            target_posi (list, optional): 目标坐标。TianLi格式. Defaults to None.\n
+            path_dict (dict, optional): 路径字典。PATH模式时必填. Defaults to None.\n
+            stop_rule (int, optional): 停止条件. Defaults to None.\n
+            is_tp (bool, optional): 是否在移动前TP. Defaults to None.\n
+            to_next_posi_offset (float, optional): 到下一个posi的offset。一般无需设置. Defaults to None.\n
+            special_keys_posi_offset (float, optional): SK的offset。无需设置. Defaults to None.\n
+            reaction_to_enemy (str, optional): 对敌反应。无效设置. Defaults to None.\n
+            tp_type (list, optional): tp类型。列表可包含`Domain` `Teleporter` `Statue`. Defaults to None.\n
+            is_reinit (bool, optional): 是否重初始化TLPS小地图. Defaults to None.\n
+            is_precise_arrival (bool, optional): 是否需要准确到达移动终点. Defaults to None.\n
+            stop_offset (_type_, optional): 停止范围，小于时停止. Defaults to None.\n
+            is_auto_pickup (bool, optional): 是否自动拾取可采集物. Defaults to None.
+        """
         if MODE != None:
             self.flow_connector.MODE = MODE
         if stop_rule != None:
@@ -627,6 +707,8 @@ class TeyvatMoveFlowController(FlowController):
             self.flow_connector.is_precise_arrival = is_precise_arrival
         if stop_offset != None:
             self.flow_connector.stop_offset = stop_offset
+        if is_auto_pickup != None:
+            self.flow_connector.is_auto_pickup = is_auto_pickup
 
         
 if __name__ == '__main__':
@@ -639,7 +721,7 @@ if __name__ == '__main__':
     #     movement.change_view_to_angle(degree, lambda:False)
     
     TMFC = TeyvatMoveFlowController()
-    TMFC.set_parameter(MODE="PATH",path_dict=load_json("LLDV20230513110820i0.json","assets\\TeyvatMovePath"), is_tp=True)
+    TMFC.set_parameter(MODE="PATH",path_dict=load_json("Cecilia20230513195754i0.json","assets\\TeyvatMovePath"), is_tp=True)
     # TMFC.set_parameter(MODE="AUTO", target_posi=[2032,-4879], is_tp=False)
     TMFC.start_flow()
     TMFC.start()
