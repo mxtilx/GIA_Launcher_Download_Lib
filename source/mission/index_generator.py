@@ -20,7 +20,7 @@ def generate_mission_index():
         f.write("\"\"\"This file is generated automatically. Do not manually modify it.\"\"\"\n")
         f.write(f"import os, sys\n")
         f.write(f"sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\n")
-        f.write(f"MISSION_INDEX = {str(mission_list)}\n")
+        f.write(f"MISSION_INDEX = {str(mission_list+extra_mission_list)}\n")
         f.write("def get_mission_object(mission_name:str):\n")
         for i in mission_list:
             f.write(f"    if mission_name == '{i}':\n")
@@ -42,7 +42,7 @@ def generate_mission_index():
             f.write(f"    META['{i}'] = missions.{i}.META\n")
         path_meta = os.path.join(ROOT_PATH,'missions\\mission_meta.py')
         path_index = os.path.join(ROOT_PATH,'missions\\mission_index.py')
-        f.write(f"    with open('{path_meta}', 'w', encoding='utf-8') as f:\n")
+        f.write(f"    with open(r'{path_meta}', 'w', encoding='utf-8') as f:\n")
         f.write("        f.write(f'MISSION_META = {str(META)}')\n")
         f.write(f"    print('index end')\n")
 
